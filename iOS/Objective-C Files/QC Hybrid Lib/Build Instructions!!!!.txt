@@ -1,0 +1,10 @@
+
+
+The first time you build this library the build will fail.  
+
+To build correctly you must build first for the Simulator and then the iOS Device.  When you have built for both there will be no build errors.
+
+The reason for this is that there is a custom build script that runs after the normal compilation for either platform is complete.  This script uses lipo to merge both the iOS Device and Simulator libraries into one library called qc_hybrid.a.  If either the iOS Device or the Simulator version of the library is missing it can not merge them together to create the qc_hybrid.a library.
+
+
+Lee Barney

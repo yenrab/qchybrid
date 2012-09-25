@@ -1,0 +1,161 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red63\green110\blue116;
+\red0\green116\blue0;\red14\green14\blue255;\red196\green26\blue22;\red28\green0\blue207;}
+\margl1440\margr1440\vieww15740\viewh13740\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Steps used to create a QuickConnectFamily Hybrid plugin.\
+\
+\
+	1.	Use Xcode to create a new CocoaTouch static library project\
+	2.	Drag the contents of the Plugin Support directory into the library project.\
+	3.	Change the interface of the library's main class to  be like: \
+			
+\f1\fs22 \cf2 \CocoaLigature0 @interface\cf0  MyPlugin : \cf3 NSObject\cf0  <\cf4 QCFHybridExtension\cf0 >\
+		
+\f0\fs24 \CocoaLigature1 by having your plugin class implement the QCFHybridExtension protocol.  #include the QCHybridExtension.h file in the main class' .h file as well.\
+	4.	Add the following in the main library class' .h file as part of the #includes:\
+			
+\f1\fs22 \cf2 \CocoaLigature0 @class\cf0  \cf4 QuickConnect\cf0 ;\
+\pard\tx560\pardeftab560\pardirnatural
+\cf2 				@class\cf0  \cf4 SBJSON\cf0 ;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 	5.	Create the BCO, VCO, ValCO, and ECO objects needed for your extension\
+	6.	Add the QCFHybridExtension protocol mapCommandsInHandler: method.  In this method make all of the calls to mapCommandTo*** to create the stacks to be used in you plugin. \
+	  Example:\
+\pard\tx560\pardeftab560\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 		+ (\cf2 void\cf0 ) mapCommandsInHandler:(\cf4 QuickConnect\cf0 *)theHandler\{\
+    		\cf5 //make your calls to thehHandler's mapCommandTo*** here\cf0 \
+		\}
+\f0\fs24 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 fdsa\
+	7.	Select your project's Build Phases tab and add a Run Script Build phase.  Past the 
+\f1\fs22 \cf5 \CocoaLigature0 Run Script Contents
+\f0\fs24 \cf0 \CocoaLigature1  seen at the bottom of this file as the content of the script.  It will combine the iOS and simulator versions of the library into one library for distribution to your users.\
+	8.	Create the JavaScript functions needed for your plugin in a JavaScript file.\
+	9.	Create user docs that describe for the user how to use you plugin.\
+\
+\
+\
+\
+
+\f1\fs22 \cf5 \CocoaLigature0 # Run Script Contents\
+# Version 2.0 (updated for Xcode 4, with some fixes)\cf0 \
+\pard\tx560\pardeftab560\pardirnatural
+\cf5 # Changes:\cf0 \
+\cf5 #    - Works with xcode 4, even when running xcode 3 projects (Workarounds for apple bugs)\cf0 \
+\cf5 #    - Faster / better: only runs lipo once, instead of once per recursion\cf0 \
+\cf5 #    - Added some debugging statemetns that can be switched on/off by changing the DEBUG_THIS_SCRIPT variable to "true"\cf0 \
+\cf5 #    - Fixed some typos\cf0 \
+\cf5 # \cf0 \
+\cf5 # Purpose:\cf0 \
+\cf5 #   Create a static library for iPhone from within XCode\cf0 \
+\cf5 #   Because Apple staff DELIBERATELY broke Xcode to make this impossible from the GUI (Xcode 3.2.3 specifically states this in the Release notes!)\cf0 \
+\cf5 #   ...no, I don't understand why they did this!\cf0 \
+\cf5 #\cf0 \
+\cf5 # Author: Adam Martin - {\field{\*\fldinst{HYPERLINK "http://twitter.com/redglassesapps"}}{\fldrslt \cf6 http://twitter.com/redglassesapps}}\cf0 \
+\cf5 # Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\cf0 \
+\cf5 #\cf0 \
+\cf5 # More info: see this Stack Overflow question: {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4"}}{\fldrslt \cf6 http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4}}\cf0 \
+\
+\cf5 #################[ Tests: helps workaround any future bugs in Xcode ]########\cf0 \
+\cf5 #\cf0 \
+DEBUG_THIS_SCRIPT=\cf7 "true"\cf0 \
+\
+\
+if [ $DEBUG_THIS_SCRIPT = \cf7 "true"\cf0  ]\
+then\
+echo \cf7 "########### TESTS #############"\cf0 \
+echo \cf7 "Use the following variables when debugging this script; note that they may change on recursions"\cf0 \
+echo \cf7 "BUILD_DIR = $BUILD_DIR"\cf0 \
+echo \cf7 "BUILD_ROOT = $BUILD_ROOT"\cf0 \
+echo \cf7 "CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR"\cf0 \
+echo \cf7 "BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR"\cf0 \
+echo \cf7 "CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR"\cf0 \
+echo \cf7 "TARGET_BUILD_DIR = $TARGET_BUILD_DIR"\cf0 \
+fi\
+\
+\cf5 #####################[ part 1 ]##################\cf0 \
+\cf5 # First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\cf0 \
+\cf5 #    (incidental: searching for substrings in sh is a nightmare! Sob)\cf0 \
+\
+SDK_VERSION=$(echo $\{SDK_NAME\} | grep -o \cf8 '.\\\{3\\\}$'\cf0 )\
+\
+\cf5 # Next, work out if we're in SIM or DEVICE\cf0 \
+\
+if [ $\{PLATFORM_NAME\} = \cf7 "iphonesimulator"\cf0  ]\
+then\
+OTHER_SDK_TO_BUILD=iphoneos$\{SDK_VERSION\}\
+else\
+OTHER_SDK_TO_BUILD=iphonesimulator$\{SDK_VERSION\}\
+fi\
+\
+echo \cf7 "XCode has selected SDK: $\{PLATFORM_NAME\} with version: $\{SDK_VERSION\} (although back-targetting: $\{IPHONEOS_DEPLOYMENT_TARGET\})"\cf0 \
+echo \cf7 "...therefore, OTHER_SDK_TO_BUILD = $\{OTHER_SDK_TO_BUILD\}"\cf0 \
+\cf5 #\cf0 \
+\cf5 #####################[ end of part 1 ]##################\cf0 \
+\
+\cf5 #####################[ part 2 ]##################\cf0 \
+\cf5 #\cf0 \
+\cf5 # IF this is the original invocation, invoke WHATEVER other builds are required\cf0 \
+\cf5 #\cf0 \
+\cf5 # Xcode is already building ONE target...\cf0 \
+\cf5 #\cf0 \
+\cf5 # ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\cf0 \
+\cf5 # ...we need to build ALL targets\cf0 \
+\cf5 # ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\cf0 \
+\cf5 #\cf0 \
+\cf5 #\cf0 \
+\cf5 # So: build ONLY the missing platforms/configurations.\cf0 \
+\
+if [ \cf7 "true"\cf0  == $\{ALREADYINVOKED:-false\} ]\
+then\
+echo \cf7 "RECURSION: I am NOT the root invocation, so I'm NOT going to recurse"\cf0 \
+else\
+\cf5 # CRITICAL:\cf0 \
+\cf5 # Prevent infinite recursion (Xcode sucks)\cf0 \
+export ALREADYINVOKED=\cf7 "true"\cf0 \
+\
+echo \cf7 "RECURSION: I am the root ... recursing all missing build targets NOW..."\cf0 \
+echo \cf7 "RECURSION: ...about to invoke: xcodebuild -configuration \\"$\{CONFIGURATION\}\\" -target \\"$\{TARGET_NAME\}\\" -sdk \\"$\{OTHER_SDK_TO_BUILD\}\\" $\{ACTION\} RUN_CLANG_STATIC_ANALYZER=NO"\cf0 \
+xcodebuild -configuration \cf7 "$\{CONFIGURATION\}"\cf0  -target \cf7 "$\{TARGET_NAME\}"\cf0  -sdk \cf7 "$\{OTHER_SDK_TO_BUILD\}"\cf0  $\{ACTION\} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\cf7 "$\{BUILD_DIR\}"\cf0  BUILD_ROOT=\cf7 "$\{BUILD_ROOT\}"\cf0 \
+\
+ACTION=\cf7 "build"\cf0 \
+\
+\cf5 #Merge all platform binaries as a fat binary for each configurations.\cf0 \
+\
+\cf5 # Calculate where the (multiple) built files are coming from:\cf0 \
+CURRENTCONFIG_DEVICE_DIR=$\{SYMROOT\}/$\{CONFIGURATION\}-iphoneos\
+CURRENTCONFIG_SIMULATOR_DIR=$\{SYMROOT\}/$\{CONFIGURATION\}-iphonesimulator\
+\
+echo \cf7 "Taking device build from: $\{CURRENTCONFIG_DEVICE_DIR\}"\cf0 \
+echo \cf7 "Taking simulator build from: $\{CURRENTCONFIG_SIMULATOR_DIR\}"\cf0 \
+\
+CREATING_UNIVERSAL_DIR=$\{SYMROOT\}/$\{CONFIGURATION\}-universal\
+echo \cf7 "...I will output a universal build to: "\cf0 \
+pwd\
+\
+\cf5 #########\cf0 \
+\cf5 #\cf0 \
+\cf5 # Modified here by Lee Barney to generate the output to the build directory using the same library name as declared in the project.\cf0 \
+lipo -create -output \cf7 "$\{EXECUTABLE_NAME\}"\cf0  \cf7 "$\{CURRENTCONFIG_DEVICE_DIR\}/$\{EXECUTABLE_NAME\}"\cf0  \cf7 "$\{CURRENTCONFIG_SIMULATOR_DIR\}/$\{EXECUTABLE_NAME\}"\cf0 \
+\
+\cf5 #########\cf0 \
+\cf5 #\cf0 \
+\cf5 # Added: StackOverflow suggestion to also copy "include" files\cf0 \
+\cf5 #    (untested, but should work OK)\cf0 \
+\cf5 #\cf0 \
+if [ -d \cf7 "$\{CURRENTCONFIG_DEVICE_DIR\}/usr/local/include"\cf0  ]\
+then\
+mkdir -p \cf7 "$\{CREATING_UNIVERSAL_DIR\}/usr/local/include"\cf0 \
+\cf5 # * needs to be outside the double quotes?\cf0 \
+cp \cf7 "$\{CURRENTCONFIG_DEVICE_DIR\}/usr/local/include/"\cf0 * \cf7 "$\{CREATING_UNIVERSAL_DIR\}/usr/local/include"\cf0 \
+fi\
+fi\
+\
+\
+}

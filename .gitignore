@@ -1,0 +1,20 @@
+
+.DS_Store
+
+Android/QC Xcode 4 Android Addition.dmg
+
+*.xcworkspacedata
+
+*.xcuserstate
+
+*.xcsettings
+
+*.xcbkptlist
+
+*.xcscheme
+
+iOS/Objective-C Files/QC Hybrid Lib/QC Hybrid Lib.xcodeproj/xcuserdata/barneyl.xcuserdatad/xcschemes/xcschememanagement.plist
+
+iOS/Objective-C Files/QC Hybrid Lib/QC Hybrid Lib.xcodeproj/xcuserdata/lee.xcuserdatad/xcschemes/xcschememanagement.plist
+
+iOS/Objective-C Files/QC Hybrid Lib/qc_hybrid.a

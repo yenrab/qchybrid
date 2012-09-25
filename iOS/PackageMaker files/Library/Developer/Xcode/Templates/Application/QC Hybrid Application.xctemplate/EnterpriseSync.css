@@ -1,0 +1,84 @@
+/*
+ Copyright (c) 2008, 2009 Lee Barney
+ Permission is hereby granted, free of charge, to any person obtaining a 
+ copy of this software and associated documentation files (the "Software"), 
+ to deal in the Software without restriction, including without limitation the 
+ rights to use, copy, modify, merge, publish, distribute, sublicense, 
+ and/or sell copies of the Software, and to permit persons to whom the Software 
+ is furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be 
+ included in all copies or substantial portions of the Software.
+ 
+
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+ PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ 
+ */
+ 
+ /*
+ *  These are the standard css classes when you are using enterprise sync
+ *
+ */
+.syncDisplay{
+    position: absolute;
+
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .8;
+}
+
+.syncText{
+    position: absolute;
+    top:40%;
+    width: 100%;
+    color:green;
+    text-align: center;
+    font-size:250%;
+    font-style:italic;
+    font-weight:bold;
+    
+    
+    -webkit-animation-name: sync;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-delay: 0;
+    
+}
+@-webkit-keyframes 'sync' {
+ 
+      from {
+        fcolor: green;
+        -webkit-animation-timing-function: ease-in-out;
+      }
+ 
+ 
+      50% {
+        color: blue;
+        -webkit-animation-timing-function: ease-in-out;
+      }
+ 
+      to {
+        color: green;
+      }
+ 
+}
+
+
+.progressText{
+    position: absolute;
+    top:55%;
+    width:100%;
+    text-align:center;
+    color:white;
+}

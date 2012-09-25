@@ -1,0 +1,992 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		711D1D03133BD33B00602524 /* ShowEmailEditorVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 711D1D01133BD33B00602524 /* ShowEmailEditorVCO.m */; };
+		711D1D04133BD33B00602524 /* ShowEmailEditorVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 711D1D02133BD33B00602524 /* ShowEmailEditorVCO.h */; };
+		713CBDA11369FC0300368A54 /* SaveContentsToFileBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 713CBD9F1369FC0300368A54 /* SaveContentsToFileBCO.h */; };
+		713CBDA21369FC0300368A54 /* SaveContentsToFileBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 713CBDA01369FC0300368A54 /* SaveContentsToFileBCO.m */; };
+		713CBDA51369FC9500368A54 /* SendSaveResultsVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 713CBDA31369FC9500368A54 /* SendSaveResultsVCO.h */; };
+		713CBDA61369FC9500368A54 /* SendSaveResultsVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 713CBDA41369FC9500368A54 /* SendSaveResultsVCO.m */; };
+		713CBDEF136A28BC00368A54 /* DeleteFileBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 713CBDED136A28BC00368A54 /* DeleteFileBCO.h */; };
+		713CBDF0136A28BC00368A54 /* DeleteFileBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 713CBDEE136A28BC00368A54 /* DeleteFileBCO.m */; };
+		713CBDF4136A28D200368A54 /* FileManipulationVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 713CBDF2136A28D200368A54 /* FileManipulationVCO.h */; };
+		713CBDF5136A28D200368A54 /* FileManipulationVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 713CBDF3136A28D200368A54 /* FileManipulationVCO.m */; };
+		713CBDF8136A6A4600368A54 /* ListFilesBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 713CBDF6136A6A4600368A54 /* ListFilesBCO.h */; };
+		713CBDF9136A6A4600368A54 /* ListFilesBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 713CBDF7136A6A4600368A54 /* ListFilesBCO.m */; };
+		713CBDFC136A6A6D00368A54 /* ListFilesVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 713CBDFA136A6A6D00368A54 /* ListFilesVCO.h */; };
+		713CBDFD136A6A6D00368A54 /* ListFilesVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 713CBDFB136A6A6D00368A54 /* ListFilesVCO.m */; };
+		714DEE04136F5D5E00F188E3 /* MoveImageToCameraRollBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 714DEE02136F5D5E00F188E3 /* MoveImageToCameraRollBCO.h */; };
+		714DEE05136F5D5E00F188E3 /* MoveImageToCameraRollBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 714DEE03136F5D5E00F188E3 /* MoveImageToCameraRollBCO.m */; };
+		714DEE08136F5D7200F188E3 /* MoveImageToCameraRollVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 714DEE06136F5D7200F188E3 /* MoveImageToCameraRollVCO.h */; };
+		714DEE09136F5D7200F188E3 /* MoveImageToCameraRollVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 714DEE07136F5D7200F188E3 /* MoveImageToCameraRollVCO.m */; };
+		716EF47B1372FC10007430D5 /* CreateDirBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 716EF4791372FC0F007430D5 /* CreateDirBCO.h */; };
+		716EF47C1372FC10007430D5 /* CreateDirBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 716EF47A1372FC0F007430D5 /* CreateDirBCO.m */; };
+		716EF48113731014007430D5 /* GetContentsOfFileBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 716EF47F13731014007430D5 /* GetContentsOfFileBCO.h */; };
+		716EF48213731014007430D5 /* GetContentsOfFileBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 716EF48013731014007430D5 /* GetContentsOfFileBCO.m */; };
+		716F1B91137C6A5C00F61DCF /* ShowFileVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 716F1B8F137C6A5C00F61DCF /* ShowFileVCO.h */; };
+		716F1B92137C6A5C00F61DCF /* ShowFileVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 716F1B90137C6A5C00F61DCF /* ShowFileVCO.m */; };
+		719E543E138FF89C009BA356 /* QCVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 719E543D138FF89C009BA356 /* QCVersion.h */; };
+		71BB17CB132FBDD0006D5060 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BB17CA132FBDD0006D5060 /* Foundation.framework */; };
+		71D082861381C07C007DEFE2 /* FileDisplayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D082841381C07C007DEFE2 /* FileDisplayDataSource.h */; };
+		71D082871381C07C007DEFE2 /* FileDisplayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D082851381C07C007DEFE2 /* FileDisplayDataSource.m */; };
+		71EC669B133AA5F100A708E1 /* AudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65E5133AA5F100A708E1 /* AudioPlayer.h */; };
+		71EC669C133AA5F100A708E1 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65E6133AA5F100A708E1 /* AudioPlayer.m */; };
+		71EC669D133AA5F100A708E1 /* AudioQueueObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65E7133AA5F100A708E1 /* AudioQueueObject.h */; };
+		71EC669E133AA5F100A708E1 /* AudioQueueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65E8133AA5F100A708E1 /* AudioQueueObject.m */; };
+		71EC669F133AA5F100A708E1 /* AudioRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65E9133AA5F100A708E1 /* AudioRecorder.h */; };
+		71EC66A0133AA5F100A708E1 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65EA133AA5F100A708E1 /* AudioRecorder.m */; };
+		71EC66A1133AA5F100A708E1 /* BatchFileDownloadBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65EB133AA5F100A708E1 /* BatchFileDownloadBCO.h */; };
+		71EC66A2133AA5F100A708E1 /* BatchFileDownloadBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65EC133AA5F100A708E1 /* BatchFileDownloadBCO.m */; };
+		71EC66A3133AA5F100A708E1 /* BatchQCHTTPHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65ED133AA5F100A708E1 /* BatchQCHTTPHandler.h */; };
+		71EC66A4133AA5F100A708E1 /* BatchQCHTTPHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65EE133AA5F100A708E1 /* BatchQCHTTPHandler.m */; };
+		71EC66A5133AA5F100A708E1 /* BNZHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65EF133AA5F100A708E1 /* BNZHex.h */; };
+		71EC66A6133AA5F100A708E1 /* BNZHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65F0133AA5F100A708E1 /* BNZHex.m */; };
+		71EC66A7133AA5F100A708E1 /* CanMakePaymentsVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65F1133AA5F100A708E1 /* CanMakePaymentsVCO.h */; };
+		71EC66A8133AA5F100A708E1 /* CanMakePaymentsVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65F2133AA5F100A708E1 /* CanMakePaymentsVCO.m */; };
+		71EC66A9133AA5F100A708E1 /* CloseDataBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65F3133AA5F100A708E1 /* CloseDataBCO.h */; };
+		71EC66AA133AA5F100A708E1 /* CloseDataBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65F4133AA5F100A708E1 /* CloseDataBCO.m */; };
+		71EC66AB133AA5F100A708E1 /* CloseDataVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65F5133AA5F100A708E1 /* CloseDataVCO.h */; };
+		71EC66AC133AA5F100A708E1 /* CloseDataVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65F6133AA5F100A708E1 /* CloseDataVCO.m */; };
+		71EC66AF133AA5F100A708E1 /* ContactPickerVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65F9133AA5F100A708E1 /* ContactPickerVCO.h */; };
+		71EC66B0133AA5F100A708E1 /* ContactPickerVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65FA133AA5F100A708E1 /* ContactPickerVCO.m */; };
+		71EC66B1133AA5F100A708E1 /* CreateButtonVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65FB133AA5F100A708E1 /* CreateButtonVCO.h */; };
+		71EC66B2133AA5F100A708E1 /* CreateButtonVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65FC133AA5F100A708E1 /* CreateButtonVCO.m */; };
+		71EC66B3133AA5F100A708E1 /* CreateFooterVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65FD133AA5F100A708E1 /* CreateFooterVCO.h */; };
+		71EC66B4133AA5F100A708E1 /* CreateFooterVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC65FE133AA5F100A708E1 /* CreateFooterVCO.m */; };
+		71EC66B5133AA5F100A708E1 /* DataAccessResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC65FF133AA5F100A708E1 /* DataAccessResult.h */; };
+		71EC66B6133AA5F100A708E1 /* DataAccessResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6600133AA5F100A708E1 /* DataAccessResult.m */; };
+		71EC66B7133AA5F100A708E1 /* DatabaseDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6601133AA5F100A708E1 /* DatabaseDefinitions.h */; };
+		71EC66B8133AA5F100A708E1 /* DatabaseDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6602133AA5F100A708E1 /* DatabaseDefinitions.m */; };
+		71EC66B9133AA5F100A708E1 /* DatePickerVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6603133AA5F100A708E1 /* DatePickerVCO.h */; };
+		71EC66BA133AA5F100A708E1 /* DatePickerVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6604133AA5F100A708E1 /* DatePickerVCO.m */; };
+		71EC66BB133AA5F100A708E1 /* DeviceWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6605133AA5F100A708E1 /* DeviceWebView.h */; };
+		71EC66BC133AA5F100A708E1 /* DeviceWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6606133AA5F100A708E1 /* DeviceWebView.m */; };
+		71EC66BD133AA5F100A708E1 /* EmailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6607133AA5F100A708E1 /* EmailViewController.h */; };
+		71EC66BE133AA5F100A708E1 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6608133AA5F100A708E1 /* EmailViewController.m */; };
+		71EC66BF133AA5F100A708E1 /* ExecuteDBScriptBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6609133AA5F100A708E1 /* ExecuteDBScriptBCO.h */; };
+		71EC66C0133AA5F100A708E1 /* ExecuteDBScriptBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC660A133AA5F100A708E1 /* ExecuteDBScriptBCO.m */; };
+		71EC66C1133AA5F100A708E1 /* FileDownloadBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC660B133AA5F100A708E1 /* FileDownloadBCO.h */; };
+		71EC66C2133AA5F100A708E1 /* FileDownloadBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC660C133AA5F100A708E1 /* FileDownloadBCO.m */; };
+		71EC66C5133AA5F100A708E1 /* FileUploadBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC660F133AA5F100A708E1 /* FileUploadBCO.h */; };
+		71EC66C6133AA5F100A708E1 /* FileUploadBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6610133AA5F100A708E1 /* FileUploadBCO.m */; };
+		71EC66CB133AA5F100A708E1 /* getDataBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6615133AA5F100A708E1 /* getDataBCO.h */; };
+		71EC66CC133AA5F100A708E1 /* getDataBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6616133AA5F100A708E1 /* getDataBCO.m */; };
+		71EC66CD133AA5F100A708E1 /* GetDeviceInfoVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6617133AA5F100A708E1 /* GetDeviceInfoVCO.h */; };
+		71EC66CE133AA5F100A708E1 /* GetDeviceInfoVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6618133AA5F100A708E1 /* GetDeviceInfoVCO.m */; };
+		71EC66D1133AA5F100A708E1 /* GetPreferencesBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC661B133AA5F100A708E1 /* GetPreferencesBCO.h */; };
+		71EC66D2133AA5F100A708E1 /* GetPreferencesBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC661C133AA5F100A708E1 /* GetPreferencesBCO.m */; };
+		71EC66D3133AA5F100A708E1 /* GetPreferencesVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC661D133AA5F100A708E1 /* GetPreferencesVCO.h */; };
+		71EC66D4133AA5F100A708E1 /* GetPreferencesVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC661E133AA5F100A708E1 /* GetPreferencesVCO.m */; };
+		71EC66D7133AA5F100A708E1 /* HideFooterVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6621133AA5F100A708E1 /* HideFooterVCO.h */; };
+		71EC66D8133AA5F100A708E1 /* HideFooterVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6622133AA5F100A708E1 /* HideFooterVCO.m */; };
+		71EC66D9133AA5F100A708E1 /* iAdBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6623133AA5F100A708E1 /* iAdBCO.h */; };
+		71EC66DA133AA5F100A708E1 /* iAdBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6624133AA5F100A708E1 /* iAdBCO.m */; };
+		71EC66DB133AA5F100A708E1 /* ImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6625133AA5F100A708E1 /* ImagePickerController.h */; };
+		71EC66DC133AA5F100A708E1 /* ImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6626133AA5F100A708E1 /* ImagePickerController.m */; };
+		71EC66DD133AA5F100A708E1 /* ImagePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6627133AA5F100A708E1 /* ImagePickerViewController.h */; };
+		71EC66DE133AA5F100A708E1 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6628133AA5F100A708E1 /* ImagePickerViewController.m */; };
+		71EC66DF133AA5F100A708E1 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC662A133AA5F100A708E1 /* JSON.h */; };
+		71EC66E0133AA5F100A708E1 /* LocationBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC662B133AA5F100A708E1 /* LocationBCO.h */; };
+		71EC66E1133AA5F100A708E1 /* LocationBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC662C133AA5F100A708E1 /* LocationBCO.m */; };
+		71EC66E2133AA5F100A708E1 /* LocationVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC662D133AA5F100A708E1 /* LocationVCO.h */; };
+		71EC66E3133AA5F100A708E1 /* LocationVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC662E133AA5F100A708E1 /* LocationVCO.m */; };
+		71EC66E4133AA5F100A708E1 /* LoggingVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC662F133AA5F100A708E1 /* LoggingVCO.h */; };
+		71EC66E5133AA5F100A708E1 /* LoggingVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6630133AA5F100A708E1 /* LoggingVCO.m */; };
+		71EC66E6133AA5F100A708E1 /* MakePurchaseBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6631133AA5F100A708E1 /* MakePurchaseBCO.h */; };
+		71EC66E7133AA5F100A708E1 /* MakePurchaseBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6632133AA5F100A708E1 /* MakePurchaseBCO.m */; };
+		71EC66E8133AA5F100A708E1 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6633133AA5F100A708E1 /* NSObject+SBJSON.h */; };
+		71EC66E9133AA5F100A708E1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6634133AA5F100A708E1 /* NSObject+SBJSON.m */; };
+		71EC66EA133AA5F100A708E1 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6635133AA5F100A708E1 /* NSString+SBJSON.h */; };
+		71EC66EB133AA5F100A708E1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6636133AA5F100A708E1 /* NSString+SBJSON.m */; };
+		71EC66EC133AA5F100A708E1 /* PickResultsVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6637133AA5F100A708E1 /* PickResultsVCO.h */; };
+		71EC66ED133AA5F100A708E1 /* PickResultsVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6638133AA5F100A708E1 /* PickResultsVCO.m */; };
+		71EC66EE133AA5F100A708E1 /* PlayAudioVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6639133AA5F100A708E1 /* PlayAudioVCO.h */; };
+		71EC66EF133AA5F100A708E1 /* PlayAudioVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC663A133AA5F100A708E1 /* PlayAudioVCO.m */; };
+		71EC66F0133AA5F100A708E1 /* PlaySoundVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC663B133AA5F100A708E1 /* PlaySoundVCO.h */; };
+		71EC66F1133AA5F100A708E1 /* PlaySoundVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC663C133AA5F100A708E1 /* PlaySoundVCO.m */; };
+		71EC66F2133AA5F100A708E1 /* PrepareNonStandardEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC663D133AA5F100A708E1 /* PrepareNonStandardEntity.h */; };
+		71EC66F3133AA5F100A708E1 /* PrepareNonStandardEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC663E133AA5F100A708E1 /* PrepareNonStandardEntity.m */; };
+		71EC66F4133AA5F100A708E1 /* ProgressBarVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC663F133AA5F100A708E1 /* ProgressBarVCO.h */; };
+		71EC66F5133AA5F100A708E1 /* ProgressBarVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6640133AA5F100A708E1 /* ProgressBarVCO.m */; };
+		71EC66F8133AA5F100A708E1 /* QCBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6643133AA5F100A708E1 /* QCBarButtonItem.h */; };
+		71EC66F9133AA5F100A708E1 /* QCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6644133AA5F100A708E1 /* QCBarButtonItem.m */; };
+		71EC6700133AA5F100A708E1 /* QCHTTPHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC664B133AA5F100A708E1 /* QCHTTPHandler.h */; };
+		71EC6701133AA5F100A708E1 /* QCHTTPHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC664C133AA5F100A708E1 /* QCHTTPHandler.m */; };
+		71EC6702133AA5F100A708E1 /* QCHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC664D133AA5F100A708E1 /* QCHTTPRequestDelegate.h */; };
+		71EC6703133AA5F100A708E1 /* QCHTTPRequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC664E133AA5F100A708E1 /* QCHTTPRequestDelegate.m */; };
+		71EC6704133AA5F100A708E1 /* QCMapAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC664F133AA5F100A708E1 /* QCMapAnnotation.h */; };
+		71EC6705133AA5F100A708E1 /* QCMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6650133AA5F100A708E1 /* QCMapAnnotation.m */; };
+		71EC6708133AA5F100A708E1 /* QCMapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6653133AA5F100A708E1 /* QCMapViewController.h */; };
+		71EC6709133AA5F100A708E1 /* QCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6654133AA5F100A708E1 /* QCMapViewController.m */; };
+		71EC670E133AA5F100A708E1 /* QCParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6659133AA5F100A708E1 /* QCParameter.h */; };
+		71EC670F133AA5F100A708E1 /* QCParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC665A133AA5F100A708E1 /* QCParameter.m */; };
+		71EC6710133AA5F100A708E1 /* QCPickerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC665B133AA5F100A708E1 /* QCPickerDelegate.h */; };
+		71EC6711133AA5F100A708E1 /* QCPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC665C133AA5F100A708E1 /* QCPickerDelegate.m */; };
+		71EC6712133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC665D133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.h */; };
+		71EC6713133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC665E133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.m */; };
+		71EC6714133AA5F100A708E1 /* QCStoreRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC665F133AA5F100A708E1 /* QCStoreRequestDelegate.h */; };
+		71EC6715133AA5F100A708E1 /* QCStoreRequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6660133AA5F100A708E1 /* QCStoreRequestDelegate.m */; };
+		71EC6716133AA5F100A708E1 /* QuickConnectViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6661133AA5F100A708E1 /* QuickConnectViewController.h */; };
+		71EC6717133AA5F100A708E1 /* QuickConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6662133AA5F100A708E1 /* QuickConnectViewController.m */; };
+		71EC6718133AA5F100A708E1 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6663133AA5F100A708E1 /* Reachability.h */; };
+		71EC6719133AA5F100A708E1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6664133AA5F100A708E1 /* Reachability.m */; };
+		71EC671A133AA5F100A708E1 /* RecordAudioVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6665133AA5F100A708E1 /* RecordAudioVCO.h */; };
+		71EC671B133AA5F100A708E1 /* RecordAudioVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6666133AA5F100A708E1 /* RecordAudioVCO.m */; };
+		71EC671C133AA5F100A708E1 /* RequestStoreProductInfoBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6667133AA5F100A708E1 /* RequestStoreProductInfoBCO.h */; };
+		71EC671D133AA5F100A708E1 /* RequestStoreProductInfoBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6668133AA5F100A708E1 /* RequestStoreProductInfoBCO.m */; };
+		71EC671E133AA5F100A708E1 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6669133AA5F100A708E1 /* SBJSON.h */; };
+		71EC671F133AA5F100A708E1 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC666A133AA5F100A708E1 /* SBJSON.m */; };
+		71EC6720133AA5F100A708E1 /* SendDBResultVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC666B133AA5F100A708E1 /* SendDBResultVCO.h */; };
+		71EC6721133AA5F100A708E1 /* SendDBResultVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC666C133AA5F100A708E1 /* SendDBResultVCO.m */; };
+		71EC6722133AA5F100A708E1 /* SendPersonPickerResultsVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC666D133AA5F100A708E1 /* SendPersonPickerResultsVCO.h */; };
+		71EC6723133AA5F100A708E1 /* SendPersonPickerResultsVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC666E133AA5F100A708E1 /* SendPersonPickerResultsVCO.m */; };
+		71EC6724133AA5F100A708E1 /* ServerDataAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC666F133AA5F100A708E1 /* ServerDataAccess.h */; };
+		71EC6725133AA5F100A708E1 /* ServerDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6670133AA5F100A708E1 /* ServerDataAccess.m */; };
+		71EC6726133AA5F100A708E1 /* SetButtonsVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6671133AA5F100A708E1 /* SetButtonsVCO.h */; };
+		71EC6727133AA5F100A708E1 /* SetButtonsVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6672133AA5F100A708E1 /* SetButtonsVCO.m */; };
+		71EC6728133AA5F100A708E1 /* SetDataBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6673133AA5F100A708E1 /* SetDataBCO.h */; };
+		71EC6729133AA5F100A708E1 /* SetDataBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6674133AA5F100A708E1 /* SetDataBCO.m */; };
+		71EC672C133AA5F100A708E1 /* ShowCameraPickerVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6677133AA5F100A708E1 /* ShowCameraPickerVCO.h */; };
+		71EC672D133AA5F100A708E1 /* ShowCameraPickerVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6678133AA5F100A708E1 /* ShowCameraPickerVCO.m */; };
+		71EC6732133AA5F100A708E1 /* ShowImagePickerVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC667D133AA5F100A708E1 /* ShowImagePickerVCO.h */; };
+		71EC6733133AA5F100A708E1 /* ShowImagePickerVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC667E133AA5F100A708E1 /* ShowImagePickerVCO.m */; };
+		71EC6736133AA5F100A708E1 /* ShowMapVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6681133AA5F100A708E1 /* ShowMapVCO.h */; };
+		71EC6737133AA5F100A708E1 /* ShowMapVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6682133AA5F100A708E1 /* ShowMapVCO.m */; };
+		71EC6738133AA5F100A708E1 /* SQLiteDataAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6683133AA5F100A708E1 /* SQLiteDataAccess.h */; };
+		71EC6739133AA5F100A708E1 /* SQLiteDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6684133AA5F100A708E1 /* SQLiteDataAccess.m */; };
+		71EC673A133AA5F100A708E1 /* SwitchAccelerometerBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6685133AA5F100A708E1 /* SwitchAccelerometerBCO.h */; };
+		71EC673B133AA5F100A708E1 /* SwitchAccelerometerBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6686133AA5F100A708E1 /* SwitchAccelerometerBCO.m */; };
+		71EC673C133AA5F100A708E1 /* SwitchActivityIndicatorVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6687133AA5F100A708E1 /* SwitchActivityIndicatorVCO.h */; };
+		71EC673D133AA5F100A708E1 /* SwitchActivityIndicatorVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6688133AA5F100A708E1 /* SwitchActivityIndicatorVCO.m */; };
+		71EC673E133AA5F100A708E1 /* SwitchBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6689133AA5F100A708E1 /* SwitchBCO.h */; };
+		71EC673F133AA5F100A708E1 /* SwitchBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC668A133AA5F100A708E1 /* SwitchBCO.m */; };
+		71EC6740133AA5F100A708E1 /* SwitchHeadingBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC668B133AA5F100A708E1 /* SwitchHeadingBCO.h */; };
+		71EC6741133AA5F100A708E1 /* SwitchHeadingBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC668C133AA5F100A708E1 /* SwitchHeadingBCO.m */; };
+		71EC6742133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC668D133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.h */; };
+		71EC6743133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC668E133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.m */; };
+		71EC6744133AA5F100A708E1 /* SwitchRotationBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC668F133AA5F100A708E1 /* SwitchRotationBCO.h */; };
+		71EC6745133AA5F100A708E1 /* SwitchRotationBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6690133AA5F100A708E1 /* SwitchRotationBCO.m */; };
+		71EC6748133AA5F100A708E1 /* TabBarBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6693133AA5F100A708E1 /* TabBarBCO.h */; };
+		71EC6749133AA5F100A708E1 /* TabBarBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6694133AA5F100A708E1 /* TabBarBCO.m */; };
+		71EC674A133AA5F100A708E1 /* TransactionHandlerBCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6695133AA5F100A708E1 /* TransactionHandlerBCO.h */; };
+		71EC674B133AA5F100A708E1 /* TransactionHandlerBCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC6696133AA5F100A708E1 /* TransactionHandlerBCO.m */; };
+		71EC674E133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EC6699133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.h */; };
+		71EC674F133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC669A133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.m */; };
+		9B326868140BECC9003FC7B4 /* AllCOHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B326867140BECC9003FC7B4 /* AllCOHeaders.h */; };
+		9B94F1D91538C0AA0023E315 /* qc_native.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B94F1D81538C0AA0023E315 /* qc_native.a */; };
+		9BD2040414A259E4000BACC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2040314A259E4000BACC5 /* main.m */; };
+		9BD2040714A259F3000BACC5 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BD2040514A259F3000BACC5 /* AppDelegate.h */; };
+		9BD2040814A259F3000BACC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2040614A259F3000BACC5 /* AppDelegate.m */; };
+		9BD2040F14A26866000BACC5 /* InterlayerMessageSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BD2040D14A26866000BACC5 /* InterlayerMessageSystem.h */; };
+		9BD2041014A26866000BACC5 /* InterlayerMessageSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2040E14A26866000BACC5 /* InterlayerMessageSystem.m */; };
+		9BD2042B14A3E331000BACC5 /* QCControlObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BD2042714A3E330000BACC5 /* QCControlObject.h */; };
+		9BD2042C14A3E331000BACC5 /* QCMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BD2042814A3E330000BACC5 /* QCMapper.h */; };
+		9BD2042D14A3E331000BACC5 /* QCRequestHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BD2042914A3E330000BACC5 /* QCRequestHandler.h */; };
+		9BD2042E14A3E331000BACC5 /* QuickConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BD2042A14A3E331000BACC5 /* QuickConnect.h */; };
+		9BE2DAA614B2E499007C1038 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9BE2DAA414B2E499007C1038 /* sqlite3.c */; };
+		9BE2DAA714B2E499007C1038 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BE2DAA514B2E499007C1038 /* sqlite3.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		711D1D01133BD33B00602524 /* ShowEmailEditorVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowEmailEditorVCO.m; sourceTree = "<group>"; };
+		711D1D02133BD33B00602524 /* ShowEmailEditorVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowEmailEditorVCO.h; sourceTree = "<group>"; };
+		713CBD9F1369FC0300368A54 /* SaveContentsToFileBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveContentsToFileBCO.h; sourceTree = "<group>"; };
+		713CBDA01369FC0300368A54 /* SaveContentsToFileBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveContentsToFileBCO.m; sourceTree = "<group>"; };
+		713CBDA31369FC9500368A54 /* SendSaveResultsVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSaveResultsVCO.h; sourceTree = "<group>"; };
+		713CBDA41369FC9500368A54 /* SendSaveResultsVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSaveResultsVCO.m; sourceTree = "<group>"; };
+		713CBDED136A28BC00368A54 /* DeleteFileBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteFileBCO.h; sourceTree = "<group>"; };
+		713CBDEE136A28BC00368A54 /* DeleteFileBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteFileBCO.m; sourceTree = "<group>"; };
+		713CBDF2136A28D200368A54 /* FileManipulationVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManipulationVCO.h; sourceTree = "<group>"; };
+		713CBDF3136A28D200368A54 /* FileManipulationVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FileManipulationVCO.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		713CBDF6136A6A4600368A54 /* ListFilesBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFilesBCO.h; sourceTree = "<group>"; };
+		713CBDF7136A6A4600368A54 /* ListFilesBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFilesBCO.m; sourceTree = "<group>"; };
+		713CBDFA136A6A6D00368A54 /* ListFilesVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFilesVCO.h; sourceTree = "<group>"; };
+		713CBDFB136A6A6D00368A54 /* ListFilesVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFilesVCO.m; sourceTree = "<group>"; };
+		714DEE02136F5D5E00F188E3 /* MoveImageToCameraRollBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveImageToCameraRollBCO.h; sourceTree = "<group>"; };
+		714DEE03136F5D5E00F188E3 /* MoveImageToCameraRollBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveImageToCameraRollBCO.m; sourceTree = "<group>"; };
+		714DEE06136F5D7200F188E3 /* MoveImageToCameraRollVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveImageToCameraRollVCO.h; sourceTree = "<group>"; };
+		714DEE07136F5D7200F188E3 /* MoveImageToCameraRollVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveImageToCameraRollVCO.m; sourceTree = "<group>"; };
+		716EF4791372FC0F007430D5 /* CreateDirBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDirBCO.h; sourceTree = "<group>"; };
+		716EF47A1372FC0F007430D5 /* CreateDirBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDirBCO.m; sourceTree = "<group>"; };
+		716EF47F13731014007430D5 /* GetContentsOfFileBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetContentsOfFileBCO.h; sourceTree = "<group>"; };
+		716EF48013731014007430D5 /* GetContentsOfFileBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GetContentsOfFileBCO.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		716F1B8F137C6A5C00F61DCF /* ShowFileVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowFileVCO.h; sourceTree = "<group>"; };
+		716F1B90137C6A5C00F61DCF /* ShowFileVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFileVCO.m; sourceTree = "<group>"; };
+		719E543D138FF89C009BA356 /* QCVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCVersion.h; sourceTree = "<group>"; };
+		71BB17C7132FBDD0006D5060 /* libQC Hybrid Lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQC Hybrid Lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71BB17CA132FBDD0006D5060 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		71BB17CE132FBDD0006D5060 /* QC Hybrid Lib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QC Hybrid Lib-Prefix.pch"; sourceTree = "<group>"; };
+		71D082841381C07C007DEFE2 /* FileDisplayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDisplayDataSource.h; sourceTree = "<group>"; };
+		71D082851381C07C007DEFE2 /* FileDisplayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDisplayDataSource.m; sourceTree = "<group>"; };
+		71EC65E5133AA5F100A708E1 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		71EC65E6133AA5F100A708E1 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
+		71EC65E7133AA5F100A708E1 /* AudioQueueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioQueueObject.h; sourceTree = "<group>"; };
+		71EC65E8133AA5F100A708E1 /* AudioQueueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioQueueObject.m; sourceTree = "<group>"; };
+		71EC65E9133AA5F100A708E1 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		71EC65EA133AA5F100A708E1 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		71EC65EB133AA5F100A708E1 /* BatchFileDownloadBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatchFileDownloadBCO.h; path = "QC Hybrid Lib/BatchFileDownloadBCO.h"; sourceTree = "<group>"; };
+		71EC65EC133AA5F100A708E1 /* BatchFileDownloadBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatchFileDownloadBCO.m; path = "QC Hybrid Lib/BatchFileDownloadBCO.m"; sourceTree = "<group>"; };
+		71EC65ED133AA5F100A708E1 /* BatchQCHTTPHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatchQCHTTPHandler.h; sourceTree = "<group>"; };
+		71EC65EE133AA5F100A708E1 /* BatchQCHTTPHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchQCHTTPHandler.m; sourceTree = "<group>"; };
+		71EC65EF133AA5F100A708E1 /* BNZHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNZHex.h; sourceTree = "<group>"; };
+		71EC65F0133AA5F100A708E1 /* BNZHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNZHex.m; sourceTree = "<group>"; };
+		71EC65F1133AA5F100A708E1 /* CanMakePaymentsVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanMakePaymentsVCO.h; path = "QC Hybrid Lib/CanMakePaymentsVCO.h"; sourceTree = "<group>"; };
+		71EC65F2133AA5F100A708E1 /* CanMakePaymentsVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanMakePaymentsVCO.m; path = "QC Hybrid Lib/CanMakePaymentsVCO.m"; sourceTree = "<group>"; };
+		71EC65F3133AA5F100A708E1 /* CloseDataBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloseDataBCO.h; path = "QC Hybrid Lib/CloseDataBCO.h"; sourceTree = "<group>"; };
+		71EC65F4133AA5F100A708E1 /* CloseDataBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CloseDataBCO.m; path = "QC Hybrid Lib/CloseDataBCO.m"; sourceTree = "<group>"; };
+		71EC65F5133AA5F100A708E1 /* CloseDataVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloseDataVCO.h; path = "QC Hybrid Lib/CloseDataVCO.h"; sourceTree = "<group>"; };
+		71EC65F6133AA5F100A708E1 /* CloseDataVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CloseDataVCO.m; path = "QC Hybrid Lib/CloseDataVCO.m"; sourceTree = "<group>"; };
+		71EC65F9133AA5F100A708E1 /* ContactPickerVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactPickerVCO.h; path = "QC Hybrid Lib/ContactPickerVCO.h"; sourceTree = "<group>"; };
+		71EC65FA133AA5F100A708E1 /* ContactPickerVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactPickerVCO.m; path = "QC Hybrid Lib/ContactPickerVCO.m"; sourceTree = "<group>"; };
+		71EC65FB133AA5F100A708E1 /* CreateButtonVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateButtonVCO.h; path = "QC Hybrid Lib/CreateButtonVCO.h"; sourceTree = "<group>"; };
+		71EC65FC133AA5F100A708E1 /* CreateButtonVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateButtonVCO.m; path = "QC Hybrid Lib/CreateButtonVCO.m"; sourceTree = "<group>"; };
+		71EC65FD133AA5F100A708E1 /* CreateFooterVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateFooterVCO.h; path = "QC Hybrid Lib/CreateFooterVCO.h"; sourceTree = "<group>"; };
+		71EC65FE133AA5F100A708E1 /* CreateFooterVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateFooterVCO.m; path = "QC Hybrid Lib/CreateFooterVCO.m"; sourceTree = "<group>"; };
+		71EC65FF133AA5F100A708E1 /* DataAccessResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccessResult.h; sourceTree = "<group>"; };
+		71EC6600133AA5F100A708E1 /* DataAccessResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccessResult.m; sourceTree = "<group>"; };
+		71EC6601133AA5F100A708E1 /* DatabaseDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseDefinitions.h; sourceTree = "<group>"; };
+		71EC6602133AA5F100A708E1 /* DatabaseDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseDefinitions.m; sourceTree = "<group>"; };
+		71EC6603133AA5F100A708E1 /* DatePickerVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerVCO.h; path = "QC Hybrid Lib/DatePickerVCO.h"; sourceTree = "<group>"; };
+		71EC6604133AA5F100A708E1 /* DatePickerVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerVCO.m; path = "QC Hybrid Lib/DatePickerVCO.m"; sourceTree = "<group>"; };
+		71EC6605133AA5F100A708E1 /* DeviceWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceWebView.h; sourceTree = "<group>"; };
+		71EC6606133AA5F100A708E1 /* DeviceWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceWebView.m; sourceTree = "<group>"; };
+		71EC6607133AA5F100A708E1 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailViewController.h; sourceTree = "<group>"; };
+		71EC6608133AA5F100A708E1 /* EmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailViewController.m; sourceTree = "<group>"; };
+		71EC6609133AA5F100A708E1 /* ExecuteDBScriptBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExecuteDBScriptBCO.h; path = "QC Hybrid Lib/ExecuteDBScriptBCO.h"; sourceTree = "<group>"; };
+		71EC660A133AA5F100A708E1 /* ExecuteDBScriptBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExecuteDBScriptBCO.m; path = "QC Hybrid Lib/ExecuteDBScriptBCO.m"; sourceTree = "<group>"; };
+		71EC660B133AA5F100A708E1 /* FileDownloadBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDownloadBCO.h; path = "QC Hybrid Lib/FileDownloadBCO.h"; sourceTree = "<group>"; };
+		71EC660C133AA5F100A708E1 /* FileDownloadBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileDownloadBCO.m; path = "QC Hybrid Lib/FileDownloadBCO.m"; sourceTree = "<group>"; };
+		71EC660F133AA5F100A708E1 /* FileUploadBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUploadBCO.h; path = "QC Hybrid Lib/FileUploadBCO.h"; sourceTree = "<group>"; };
+		71EC6610133AA5F100A708E1 /* FileUploadBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUploadBCO.m; path = "QC Hybrid Lib/FileUploadBCO.m"; sourceTree = "<group>"; };
+		71EC6615133AA5F100A708E1 /* getDataBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getDataBCO.h; path = "QC Hybrid Lib/getDataBCO.h"; sourceTree = "<group>"; };
+		71EC6616133AA5F100A708E1 /* getDataBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = getDataBCO.m; path = "QC Hybrid Lib/getDataBCO.m"; sourceTree = "<group>"; };
+		71EC6617133AA5F100A708E1 /* GetDeviceInfoVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetDeviceInfoVCO.h; path = "QC Hybrid Lib/GetDeviceInfoVCO.h"; sourceTree = "<group>"; };
+		71EC6618133AA5F100A708E1 /* GetDeviceInfoVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetDeviceInfoVCO.m; path = "QC Hybrid Lib/GetDeviceInfoVCO.m"; sourceTree = "<group>"; };
+		71EC661B133AA5F100A708E1 /* GetPreferencesBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPreferencesBCO.h; path = "QC Hybrid Lib/GetPreferencesBCO.h"; sourceTree = "<group>"; };
+		71EC661C133AA5F100A708E1 /* GetPreferencesBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPreferencesBCO.m; path = "QC Hybrid Lib/GetPreferencesBCO.m"; sourceTree = "<group>"; };
+		71EC661D133AA5F100A708E1 /* GetPreferencesVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPreferencesVCO.h; path = "QC Hybrid Lib/GetPreferencesVCO.h"; sourceTree = "<group>"; };
+		71EC661E133AA5F100A708E1 /* GetPreferencesVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPreferencesVCO.m; path = "QC Hybrid Lib/GetPreferencesVCO.m"; sourceTree = "<group>"; };
+		71EC6621133AA5F100A708E1 /* HideFooterVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HideFooterVCO.h; path = "QC Hybrid Lib/HideFooterVCO.h"; sourceTree = "<group>"; };
+		71EC6622133AA5F100A708E1 /* HideFooterVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HideFooterVCO.m; path = "QC Hybrid Lib/HideFooterVCO.m"; sourceTree = "<group>"; };
+		71EC6623133AA5F100A708E1 /* iAdBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iAdBCO.h; path = "QC Hybrid Lib/iAdBCO.h"; sourceTree = "<group>"; };
+		71EC6624133AA5F100A708E1 /* iAdBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iAdBCO.m; path = "QC Hybrid Lib/iAdBCO.m"; sourceTree = "<group>"; };
+		71EC6625133AA5F100A708E1 /* ImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerController.h; sourceTree = "<group>"; };
+		71EC6626133AA5F100A708E1 /* ImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerController.m; sourceTree = "<group>"; };
+		71EC6627133AA5F100A708E1 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
+		71EC6628133AA5F100A708E1 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
+		71EC662A133AA5F100A708E1 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		71EC662B133AA5F100A708E1 /* LocationBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationBCO.h; path = "QC Hybrid Lib/LocationBCO.h"; sourceTree = "<group>"; };
+		71EC662C133AA5F100A708E1 /* LocationBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationBCO.m; path = "QC Hybrid Lib/LocationBCO.m"; sourceTree = "<group>"; };
+		71EC662D133AA5F100A708E1 /* LocationVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationVCO.h; path = "QC Hybrid Lib/LocationVCO.h"; sourceTree = "<group>"; };
+		71EC662E133AA5F100A708E1 /* LocationVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationVCO.m; path = "QC Hybrid Lib/LocationVCO.m"; sourceTree = "<group>"; };
+		71EC662F133AA5F100A708E1 /* LoggingVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggingVCO.h; path = "QC Hybrid Lib/LoggingVCO.h"; sourceTree = "<group>"; };
+		71EC6630133AA5F100A708E1 /* LoggingVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoggingVCO.m; path = "QC Hybrid Lib/LoggingVCO.m"; sourceTree = "<group>"; };
+		71EC6631133AA5F100A708E1 /* MakePurchaseBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakePurchaseBCO.h; path = "QC Hybrid Lib/MakePurchaseBCO.h"; sourceTree = "<group>"; };
+		71EC6632133AA5F100A708E1 /* MakePurchaseBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakePurchaseBCO.m; path = "QC Hybrid Lib/MakePurchaseBCO.m"; sourceTree = "<group>"; };
+		71EC6633133AA5F100A708E1 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		71EC6634133AA5F100A708E1 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		71EC6635133AA5F100A708E1 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		71EC6636133AA5F100A708E1 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		71EC6637133AA5F100A708E1 /* PickResultsVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickResultsVCO.h; path = "QC Hybrid Lib/PickResultsVCO.h"; sourceTree = "<group>"; };
+		71EC6638133AA5F100A708E1 /* PickResultsVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickResultsVCO.m; path = "QC Hybrid Lib/PickResultsVCO.m"; sourceTree = "<group>"; };
+		71EC6639133AA5F100A708E1 /* PlayAudioVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayAudioVCO.h; path = "QC Hybrid Lib/PlayAudioVCO.h"; sourceTree = "<group>"; };
+		71EC663A133AA5F100A708E1 /* PlayAudioVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayAudioVCO.m; path = "QC Hybrid Lib/PlayAudioVCO.m"; sourceTree = "<group>"; };
+		71EC663B133AA5F100A708E1 /* PlaySoundVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaySoundVCO.h; path = "QC Hybrid Lib/PlaySoundVCO.h"; sourceTree = "<group>"; };
+		71EC663C133AA5F100A708E1 /* PlaySoundVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaySoundVCO.m; path = "QC Hybrid Lib/PlaySoundVCO.m"; sourceTree = "<group>"; };
+		71EC663D133AA5F100A708E1 /* PrepareNonStandardEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareNonStandardEntity.h; sourceTree = "<group>"; };
+		71EC663E133AA5F100A708E1 /* PrepareNonStandardEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareNonStandardEntity.m; sourceTree = "<group>"; };
+		71EC663F133AA5F100A708E1 /* ProgressBarVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressBarVCO.h; path = "QC Hybrid Lib/ProgressBarVCO.h"; sourceTree = "<group>"; };
+		71EC6640133AA5F100A708E1 /* ProgressBarVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressBarVCO.m; path = "QC Hybrid Lib/ProgressBarVCO.m"; sourceTree = "<group>"; };
+		71EC6643133AA5F100A708E1 /* QCBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCBarButtonItem.h; sourceTree = "<group>"; };
+		71EC6644133AA5F100A708E1 /* QCBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCBarButtonItem.m; sourceTree = "<group>"; };
+		71EC664B133AA5F100A708E1 /* QCHTTPHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCHTTPHandler.h; sourceTree = "<group>"; };
+		71EC664C133AA5F100A708E1 /* QCHTTPHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCHTTPHandler.m; sourceTree = "<group>"; };
+		71EC664D133AA5F100A708E1 /* QCHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		71EC664E133AA5F100A708E1 /* QCHTTPRequestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCHTTPRequestDelegate.m; sourceTree = "<group>"; };
+		71EC664F133AA5F100A708E1 /* QCMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMapAnnotation.h; sourceTree = "<group>"; };
+		71EC6650133AA5F100A708E1 /* QCMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMapAnnotation.m; sourceTree = "<group>"; };
+		71EC6653133AA5F100A708E1 /* QCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMapViewController.h; sourceTree = "<group>"; };
+		71EC6654133AA5F100A708E1 /* QCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMapViewController.m; sourceTree = "<group>"; };
+		71EC6659133AA5F100A708E1 /* QCParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCParameter.h; sourceTree = "<group>"; };
+		71EC665A133AA5F100A708E1 /* QCParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCParameter.m; sourceTree = "<group>"; };
+		71EC665B133AA5F100A708E1 /* QCPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCPickerDelegate.h; sourceTree = "<group>"; };
+		71EC665C133AA5F100A708E1 /* QCPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCPickerDelegate.m; sourceTree = "<group>"; };
+		71EC665D133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCStorePurchaseRequestDelegate.h; sourceTree = "<group>"; };
+		71EC665E133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCStorePurchaseRequestDelegate.m; sourceTree = "<group>"; };
+		71EC665F133AA5F100A708E1 /* QCStoreRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCStoreRequestDelegate.h; sourceTree = "<group>"; };
+		71EC6660133AA5F100A708E1 /* QCStoreRequestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCStoreRequestDelegate.m; sourceTree = "<group>"; };
+		71EC6661133AA5F100A708E1 /* QuickConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickConnectViewController.h; sourceTree = "<group>"; };
+		71EC6662133AA5F100A708E1 /* QuickConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickConnectViewController.m; sourceTree = "<group>"; };
+		71EC6663133AA5F100A708E1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		71EC6664133AA5F100A708E1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		71EC6665133AA5F100A708E1 /* RecordAudioVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordAudioVCO.h; path = "QC Hybrid Lib/RecordAudioVCO.h"; sourceTree = "<group>"; };
+		71EC6666133AA5F100A708E1 /* RecordAudioVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordAudioVCO.m; path = "QC Hybrid Lib/RecordAudioVCO.m"; sourceTree = "<group>"; };
+		71EC6667133AA5F100A708E1 /* RequestStoreProductInfoBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestStoreProductInfoBCO.h; path = "QC Hybrid Lib/RequestStoreProductInfoBCO.h"; sourceTree = "<group>"; };
+		71EC6668133AA5F100A708E1 /* RequestStoreProductInfoBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestStoreProductInfoBCO.m; path = "QC Hybrid Lib/RequestStoreProductInfoBCO.m"; sourceTree = "<group>"; };
+		71EC6669133AA5F100A708E1 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		71EC666A133AA5F100A708E1 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		71EC666B133AA5F100A708E1 /* SendDBResultVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendDBResultVCO.h; path = "QC Hybrid Lib/SendDBResultVCO.h"; sourceTree = "<group>"; };
+		71EC666C133AA5F100A708E1 /* SendDBResultVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendDBResultVCO.m; path = "QC Hybrid Lib/SendDBResultVCO.m"; sourceTree = "<group>"; };
+		71EC666D133AA5F100A708E1 /* SendPersonPickerResultsVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendPersonPickerResultsVCO.h; path = "QC Hybrid Lib/SendPersonPickerResultsVCO.h"; sourceTree = "<group>"; };
+		71EC666E133AA5F100A708E1 /* SendPersonPickerResultsVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendPersonPickerResultsVCO.m; path = "QC Hybrid Lib/SendPersonPickerResultsVCO.m"; sourceTree = "<group>"; };
+		71EC666F133AA5F100A708E1 /* ServerDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDataAccess.h; sourceTree = "<group>"; };
+		71EC6670133AA5F100A708E1 /* ServerDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerDataAccess.m; sourceTree = "<group>"; };
+		71EC6671133AA5F100A708E1 /* SetButtonsVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetButtonsVCO.h; path = "QC Hybrid Lib/SetButtonsVCO.h"; sourceTree = "<group>"; };
+		71EC6672133AA5F100A708E1 /* SetButtonsVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetButtonsVCO.m; path = "QC Hybrid Lib/SetButtonsVCO.m"; sourceTree = "<group>"; };
+		71EC6673133AA5F100A708E1 /* SetDataBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetDataBCO.h; path = "QC Hybrid Lib/SetDataBCO.h"; sourceTree = "<group>"; };
+		71EC6674133AA5F100A708E1 /* SetDataBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetDataBCO.m; path = "QC Hybrid Lib/SetDataBCO.m"; sourceTree = "<group>"; };
+		71EC6677133AA5F100A708E1 /* ShowCameraPickerVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCameraPickerVCO.h; path = "QC Hybrid Lib/ShowCameraPickerVCO.h"; sourceTree = "<group>"; };
+		71EC6678133AA5F100A708E1 /* ShowCameraPickerVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCameraPickerVCO.m; path = "QC Hybrid Lib/ShowCameraPickerVCO.m"; sourceTree = "<group>"; };
+		71EC667D133AA5F100A708E1 /* ShowImagePickerVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowImagePickerVCO.h; path = "QC Hybrid Lib/ShowImagePickerVCO.h"; sourceTree = "<group>"; };
+		71EC667E133AA5F100A708E1 /* ShowImagePickerVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowImagePickerVCO.m; path = "QC Hybrid Lib/ShowImagePickerVCO.m"; sourceTree = "<group>"; };
+		71EC6681133AA5F100A708E1 /* ShowMapVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowMapVCO.h; path = "QC Hybrid Lib/ShowMapVCO.h"; sourceTree = "<group>"; };
+		71EC6682133AA5F100A708E1 /* ShowMapVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowMapVCO.m; path = "QC Hybrid Lib/ShowMapVCO.m"; sourceTree = "<group>"; };
+		71EC6683133AA5F100A708E1 /* SQLiteDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteDataAccess.h; sourceTree = "<group>"; };
+		71EC6684133AA5F100A708E1 /* SQLiteDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteDataAccess.m; sourceTree = "<group>"; };
+		71EC6685133AA5F100A708E1 /* SwitchAccelerometerBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchAccelerometerBCO.h; path = "QC Hybrid Lib/SwitchAccelerometerBCO.h"; sourceTree = "<group>"; };
+		71EC6686133AA5F100A708E1 /* SwitchAccelerometerBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchAccelerometerBCO.m; path = "QC Hybrid Lib/SwitchAccelerometerBCO.m"; sourceTree = "<group>"; };
+		71EC6687133AA5F100A708E1 /* SwitchActivityIndicatorVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchActivityIndicatorVCO.h; path = "QC Hybrid Lib/SwitchActivityIndicatorVCO.h"; sourceTree = "<group>"; };
+		71EC6688133AA5F100A708E1 /* SwitchActivityIndicatorVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchActivityIndicatorVCO.m; path = "QC Hybrid Lib/SwitchActivityIndicatorVCO.m"; sourceTree = "<group>"; };
+		71EC6689133AA5F100A708E1 /* SwitchBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchBCO.h; path = "QC Hybrid Lib/SwitchBCO.h"; sourceTree = "<group>"; };
+		71EC668A133AA5F100A708E1 /* SwitchBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchBCO.m; path = "QC Hybrid Lib/SwitchBCO.m"; sourceTree = "<group>"; };
+		71EC668B133AA5F100A708E1 /* SwitchHeadingBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchHeadingBCO.h; path = "QC Hybrid Lib/SwitchHeadingBCO.h"; sourceTree = "<group>"; };
+		71EC668C133AA5F100A708E1 /* SwitchHeadingBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchHeadingBCO.m; path = "QC Hybrid Lib/SwitchHeadingBCO.m"; sourceTree = "<group>"; };
+		71EC668D133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchNetworkIndicatorBCO.h; path = "QC Hybrid Lib/SwitchNetworkIndicatorBCO.h"; sourceTree = "<group>"; };
+		71EC668E133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchNetworkIndicatorBCO.m; path = "QC Hybrid Lib/SwitchNetworkIndicatorBCO.m"; sourceTree = "<group>"; };
+		71EC668F133AA5F100A708E1 /* SwitchRotationBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchRotationBCO.h; path = "QC Hybrid Lib/SwitchRotationBCO.h"; sourceTree = "<group>"; };
+		71EC6690133AA5F100A708E1 /* SwitchRotationBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchRotationBCO.m; path = "QC Hybrid Lib/SwitchRotationBCO.m"; sourceTree = "<group>"; };
+		71EC6693133AA5F100A708E1 /* TabBarBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarBCO.h; path = "QC Hybrid Lib/TabBarBCO.h"; sourceTree = "<group>"; };
+		71EC6694133AA5F100A708E1 /* TabBarBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarBCO.m; path = "QC Hybrid Lib/TabBarBCO.m"; sourceTree = "<group>"; };
+		71EC6695133AA5F100A708E1 /* TransactionHandlerBCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionHandlerBCO.h; path = "QC Hybrid Lib/TransactionHandlerBCO.h"; sourceTree = "<group>"; };
+		71EC6696133AA5F100A708E1 /* TransactionHandlerBCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionHandlerBCO.m; path = "QC Hybrid Lib/TransactionHandlerBCO.m"; sourceTree = "<group>"; };
+		71EC6699133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifyDeviceIsConnectedToInternetVCO.h; path = "QC Hybrid Lib/VerifyDeviceIsConnectedToInternetVCO.h"; sourceTree = "<group>"; };
+		71EC669A133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifyDeviceIsConnectedToInternetVCO.m; path = "QC Hybrid Lib/VerifyDeviceIsConnectedToInternetVCO.m"; sourceTree = "<group>"; };
+		9B2472BF136C90A7004CC4B7 /* Build Instructions!!!!.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Build Instructions!!!!.txt"; sourceTree = "<group>"; };
+		9B326867140BECC9003FC7B4 /* AllCOHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCOHeaders.h; sourceTree = "<group>"; };
+		9B94F1D81538C0AA0023E315 /* qc_native.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = qc_native.a; sourceTree = "<group>"; };
+		9BD2040314A259E4000BACC5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BD2040514A259F3000BACC5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9BD2040614A259F3000BACC5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9BD2040D14A26866000BACC5 /* InterlayerMessageSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterlayerMessageSystem.h; sourceTree = "<group>"; };
+		9BD2040E14A26866000BACC5 /* InterlayerMessageSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterlayerMessageSystem.m; sourceTree = "<group>"; };
+		9BD2042714A3E330000BACC5 /* QCControlObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCControlObject.h; sourceTree = "<group>"; };
+		9BD2042814A3E330000BACC5 /* QCMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMapper.h; sourceTree = "<group>"; };
+		9BD2042914A3E330000BACC5 /* QCRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCRequestHandler.h; sourceTree = "<group>"; };
+		9BD2042A14A3E331000BACC5 /* QuickConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickConnect.h; sourceTree = "<group>"; };
+		9BE2DAA414B2E499007C1038 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		9BE2DAA514B2E499007C1038 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71BB17C4132FBDD0006D5060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71BB17CB132FBDD0006D5060 /* Foundation.framework in Frameworks */,
+				9B94F1D91538C0AA0023E315 /* qc_native.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7116E9CD133AAC7F0091B744 /* Control Objects */ = {
+			isa = PBXGroup;
+			children = (
+				711D1D01133BD33B00602524 /* ShowEmailEditorVCO.m */,
+				711D1D02133BD33B00602524 /* ShowEmailEditorVCO.h */,
+				71EC6667133AA5F100A708E1 /* RequestStoreProductInfoBCO.h */,
+				71EC6668133AA5F100A708E1 /* RequestStoreProductInfoBCO.m */,
+				71EC668F133AA5F100A708E1 /* SwitchRotationBCO.h */,
+				71EC6690133AA5F100A708E1 /* SwitchRotationBCO.m */,
+				71EC6693133AA5F100A708E1 /* TabBarBCO.h */,
+				71EC6694133AA5F100A708E1 /* TabBarBCO.m */,
+				71EC6695133AA5F100A708E1 /* TransactionHandlerBCO.h */,
+				71EC6696133AA5F100A708E1 /* TransactionHandlerBCO.m */,
+				71EC65EB133AA5F100A708E1 /* BatchFileDownloadBCO.h */,
+				71EC65EC133AA5F100A708E1 /* BatchFileDownloadBCO.m */,
+				71EC65F1133AA5F100A708E1 /* CanMakePaymentsVCO.h */,
+				71EC65F2133AA5F100A708E1 /* CanMakePaymentsVCO.m */,
+				71EC65F3133AA5F100A708E1 /* CloseDataBCO.h */,
+				71EC65F4133AA5F100A708E1 /* CloseDataBCO.m */,
+				71EC65F5133AA5F100A708E1 /* CloseDataVCO.h */,
+				71EC65F6133AA5F100A708E1 /* CloseDataVCO.m */,
+				71EC65F9133AA5F100A708E1 /* ContactPickerVCO.h */,
+				71EC65FA133AA5F100A708E1 /* ContactPickerVCO.m */,
+				71EC65FB133AA5F100A708E1 /* CreateButtonVCO.h */,
+				71EC65FC133AA5F100A708E1 /* CreateButtonVCO.m */,
+				71EC65FD133AA5F100A708E1 /* CreateFooterVCO.h */,
+				71EC65FE133AA5F100A708E1 /* CreateFooterVCO.m */,
+				71EC6603133AA5F100A708E1 /* DatePickerVCO.h */,
+				71EC6604133AA5F100A708E1 /* DatePickerVCO.m */,
+				71EC6609133AA5F100A708E1 /* ExecuteDBScriptBCO.h */,
+				71EC660A133AA5F100A708E1 /* ExecuteDBScriptBCO.m */,
+				71EC660B133AA5F100A708E1 /* FileDownloadBCO.h */,
+				71EC660C133AA5F100A708E1 /* FileDownloadBCO.m */,
+				71EC660F133AA5F100A708E1 /* FileUploadBCO.h */,
+				71EC6610133AA5F100A708E1 /* FileUploadBCO.m */,
+				71EC6615133AA5F100A708E1 /* getDataBCO.h */,
+				71EC6616133AA5F100A708E1 /* getDataBCO.m */,
+				71EC6617133AA5F100A708E1 /* GetDeviceInfoVCO.h */,
+				71EC6618133AA5F100A708E1 /* GetDeviceInfoVCO.m */,
+				71EC661B133AA5F100A708E1 /* GetPreferencesBCO.h */,
+				71EC661C133AA5F100A708E1 /* GetPreferencesBCO.m */,
+				71EC661D133AA5F100A708E1 /* GetPreferencesVCO.h */,
+				71EC661E133AA5F100A708E1 /* GetPreferencesVCO.m */,
+				71EC6621133AA5F100A708E1 /* HideFooterVCO.h */,
+				71EC6622133AA5F100A708E1 /* HideFooterVCO.m */,
+				71EC6623133AA5F100A708E1 /* iAdBCO.h */,
+				71EC6624133AA5F100A708E1 /* iAdBCO.m */,
+				71EC662B133AA5F100A708E1 /* LocationBCO.h */,
+				71EC662C133AA5F100A708E1 /* LocationBCO.m */,
+				71EC662D133AA5F100A708E1 /* LocationVCO.h */,
+				71EC662E133AA5F100A708E1 /* LocationVCO.m */,
+				71EC662F133AA5F100A708E1 /* LoggingVCO.h */,
+				71EC6630133AA5F100A708E1 /* LoggingVCO.m */,
+				71EC6631133AA5F100A708E1 /* MakePurchaseBCO.h */,
+				71EC6632133AA5F100A708E1 /* MakePurchaseBCO.m */,
+				71EC6637133AA5F100A708E1 /* PickResultsVCO.h */,
+				71EC6638133AA5F100A708E1 /* PickResultsVCO.m */,
+				71EC6639133AA5F100A708E1 /* PlayAudioVCO.h */,
+				71EC663A133AA5F100A708E1 /* PlayAudioVCO.m */,
+				71EC663B133AA5F100A708E1 /* PlaySoundVCO.h */,
+				71EC663C133AA5F100A708E1 /* PlaySoundVCO.m */,
+				71EC663F133AA5F100A708E1 /* ProgressBarVCO.h */,
+				71EC6640133AA5F100A708E1 /* ProgressBarVCO.m */,
+				71EC6665133AA5F100A708E1 /* RecordAudioVCO.h */,
+				71EC6666133AA5F100A708E1 /* RecordAudioVCO.m */,
+				71EC666B133AA5F100A708E1 /* SendDBResultVCO.h */,
+				71EC666C133AA5F100A708E1 /* SendDBResultVCO.m */,
+				71EC666D133AA5F100A708E1 /* SendPersonPickerResultsVCO.h */,
+				71EC666E133AA5F100A708E1 /* SendPersonPickerResultsVCO.m */,
+				713CBDA31369FC9500368A54 /* SendSaveResultsVCO.h */,
+				713CBDA41369FC9500368A54 /* SendSaveResultsVCO.m */,
+				71EC6671133AA5F100A708E1 /* SetButtonsVCO.h */,
+				71EC6672133AA5F100A708E1 /* SetButtonsVCO.m */,
+				71EC6673133AA5F100A708E1 /* SetDataBCO.h */,
+				71EC6674133AA5F100A708E1 /* SetDataBCO.m */,
+				71EC6677133AA5F100A708E1 /* ShowCameraPickerVCO.h */,
+				71EC6678133AA5F100A708E1 /* ShowCameraPickerVCO.m */,
+				71EC667D133AA5F100A708E1 /* ShowImagePickerVCO.h */,
+				71EC667E133AA5F100A708E1 /* ShowImagePickerVCO.m */,
+				71EC6681133AA5F100A708E1 /* ShowMapVCO.h */,
+				71EC6682133AA5F100A708E1 /* ShowMapVCO.m */,
+				716F1B8F137C6A5C00F61DCF /* ShowFileVCO.h */,
+				716F1B90137C6A5C00F61DCF /* ShowFileVCO.m */,
+				71EC6685133AA5F100A708E1 /* SwitchAccelerometerBCO.h */,
+				71EC6686133AA5F100A708E1 /* SwitchAccelerometerBCO.m */,
+				71EC6687133AA5F100A708E1 /* SwitchActivityIndicatorVCO.h */,
+				71EC6688133AA5F100A708E1 /* SwitchActivityIndicatorVCO.m */,
+				71EC6689133AA5F100A708E1 /* SwitchBCO.h */,
+				71EC668A133AA5F100A708E1 /* SwitchBCO.m */,
+				71EC668B133AA5F100A708E1 /* SwitchHeadingBCO.h */,
+				71EC668C133AA5F100A708E1 /* SwitchHeadingBCO.m */,
+				71EC668D133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.h */,
+				71EC668E133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.m */,
+				713CBD9F1369FC0300368A54 /* SaveContentsToFileBCO.h */,
+				713CBDA01369FC0300368A54 /* SaveContentsToFileBCO.m */,
+				716EF47F13731014007430D5 /* GetContentsOfFileBCO.h */,
+				716EF48013731014007430D5 /* GetContentsOfFileBCO.m */,
+				713CBDED136A28BC00368A54 /* DeleteFileBCO.h */,
+				713CBDEE136A28BC00368A54 /* DeleteFileBCO.m */,
+				713CBDF2136A28D200368A54 /* FileManipulationVCO.h */,
+				713CBDF3136A28D200368A54 /* FileManipulationVCO.m */,
+				713CBDF6136A6A4600368A54 /* ListFilesBCO.h */,
+				713CBDF7136A6A4600368A54 /* ListFilesBCO.m */,
+				713CBDFA136A6A6D00368A54 /* ListFilesVCO.h */,
+				713CBDFB136A6A6D00368A54 /* ListFilesVCO.m */,
+				716EF4791372FC0F007430D5 /* CreateDirBCO.h */,
+				716EF47A1372FC0F007430D5 /* CreateDirBCO.m */,
+				714DEE02136F5D5E00F188E3 /* MoveImageToCameraRollBCO.h */,
+				714DEE03136F5D5E00F188E3 /* MoveImageToCameraRollBCO.m */,
+				714DEE06136F5D7200F188E3 /* MoveImageToCameraRollVCO.h */,
+				714DEE07136F5D7200F188E3 /* MoveImageToCameraRollVCO.m */,
+				71EC6699133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.h */,
+				71EC669A133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.m */,
+			);
+			name = "Control Objects";
+			sourceTree = "<group>";
+		};
+		71BB17BC132FBDD0006D5060 = {
+			isa = PBXGroup;
+			children = (
+				9BE2DAA014B2E34B007C1038 /* sqlite */,
+				719E543D138FF89C009BA356 /* QCVersion.h */,
+				9BD2042714A3E330000BACC5 /* QCControlObject.h */,
+				9BD2042814A3E330000BACC5 /* QCMapper.h */,
+				9BD2042914A3E330000BACC5 /* QCRequestHandler.h */,
+				9BD2042A14A3E331000BACC5 /* QuickConnect.h */,
+				9B2472BF136C90A7004CC4B7 /* Build Instructions!!!!.txt */,
+				9B94F1D81538C0AA0023E315 /* qc_native.a */,
+				7116E9CD133AAC7F0091B744 /* Control Objects */,
+				71BB17CC132FBDD0006D5060 /* QC Hybrid Lib */,
+				71BB17C9132FBDD0006D5060 /* Frameworks */,
+				71BB17C8132FBDD0006D5060 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71BB17C8132FBDD0006D5060 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71BB17C7132FBDD0006D5060 /* libQC Hybrid Lib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71BB17C9132FBDD0006D5060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71BB17CA132FBDD0006D5060 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71BB17CC132FBDD0006D5060 /* QC Hybrid Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9BD2040514A259F3000BACC5 /* AppDelegate.h */,
+				9BD2040614A259F3000BACC5 /* AppDelegate.m */,
+				9BD2040314A259E4000BACC5 /* main.m */,
+				71EC65E5133AA5F100A708E1 /* AudioPlayer.h */,
+				71EC65E6133AA5F100A708E1 /* AudioPlayer.m */,
+				71EC65E7133AA5F100A708E1 /* AudioQueueObject.h */,
+				71EC65E8133AA5F100A708E1 /* AudioQueueObject.m */,
+				71EC65E9133AA5F100A708E1 /* AudioRecorder.h */,
+				71EC65EA133AA5F100A708E1 /* AudioRecorder.m */,
+				71EC65ED133AA5F100A708E1 /* BatchQCHTTPHandler.h */,
+				71EC65EE133AA5F100A708E1 /* BatchQCHTTPHandler.m */,
+				71EC65EF133AA5F100A708E1 /* BNZHex.h */,
+				71EC65F0133AA5F100A708E1 /* BNZHex.m */,
+				71EC65FF133AA5F100A708E1 /* DataAccessResult.h */,
+				71EC6600133AA5F100A708E1 /* DataAccessResult.m */,
+				71EC6601133AA5F100A708E1 /* DatabaseDefinitions.h */,
+				71EC6602133AA5F100A708E1 /* DatabaseDefinitions.m */,
+				71EC6605133AA5F100A708E1 /* DeviceWebView.h */,
+				71EC6606133AA5F100A708E1 /* DeviceWebView.m */,
+				71EC6608133AA5F100A708E1 /* EmailViewController.m */,
+				71EC6625133AA5F100A708E1 /* ImagePickerController.h */,
+				71EC6626133AA5F100A708E1 /* ImagePickerController.m */,
+				71EC6627133AA5F100A708E1 /* ImagePickerViewController.h */,
+				71EC6628133AA5F100A708E1 /* ImagePickerViewController.m */,
+				71EC6607133AA5F100A708E1 /* EmailViewController.h */,
+				71EC662A133AA5F100A708E1 /* JSON.h */,
+				71EC6633133AA5F100A708E1 /* NSObject+SBJSON.h */,
+				71EC6634133AA5F100A708E1 /* NSObject+SBJSON.m */,
+				71EC6635133AA5F100A708E1 /* NSString+SBJSON.h */,
+				71EC6636133AA5F100A708E1 /* NSString+SBJSON.m */,
+				71EC663D133AA5F100A708E1 /* PrepareNonStandardEntity.h */,
+				71EC663E133AA5F100A708E1 /* PrepareNonStandardEntity.m */,
+				71EC6643133AA5F100A708E1 /* QCBarButtonItem.h */,
+				71EC6644133AA5F100A708E1 /* QCBarButtonItem.m */,
+				71EC664B133AA5F100A708E1 /* QCHTTPHandler.h */,
+				71EC664C133AA5F100A708E1 /* QCHTTPHandler.m */,
+				71EC664D133AA5F100A708E1 /* QCHTTPRequestDelegate.h */,
+				71EC664E133AA5F100A708E1 /* QCHTTPRequestDelegate.m */,
+				71EC664F133AA5F100A708E1 /* QCMapAnnotation.h */,
+				71EC6650133AA5F100A708E1 /* QCMapAnnotation.m */,
+				71EC6653133AA5F100A708E1 /* QCMapViewController.h */,
+				71EC6654133AA5F100A708E1 /* QCMapViewController.m */,
+				71EC6659133AA5F100A708E1 /* QCParameter.h */,
+				71EC665A133AA5F100A708E1 /* QCParameter.m */,
+				71EC665B133AA5F100A708E1 /* QCPickerDelegate.h */,
+				71EC665C133AA5F100A708E1 /* QCPickerDelegate.m */,
+				71EC665D133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.h */,
+				71EC665E133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.m */,
+				71EC665F133AA5F100A708E1 /* QCStoreRequestDelegate.h */,
+				71EC6660133AA5F100A708E1 /* QCStoreRequestDelegate.m */,
+				71EC6661133AA5F100A708E1 /* QuickConnectViewController.h */,
+				71EC6662133AA5F100A708E1 /* QuickConnectViewController.m */,
+				9BD2040D14A26866000BACC5 /* InterlayerMessageSystem.h */,
+				9BD2040E14A26866000BACC5 /* InterlayerMessageSystem.m */,
+				71D082841381C07C007DEFE2 /* FileDisplayDataSource.h */,
+				71D082851381C07C007DEFE2 /* FileDisplayDataSource.m */,
+				71EC6663133AA5F100A708E1 /* Reachability.h */,
+				71EC6664133AA5F100A708E1 /* Reachability.m */,
+				71EC6669133AA5F100A708E1 /* SBJSON.h */,
+				71EC666A133AA5F100A708E1 /* SBJSON.m */,
+				71EC666F133AA5F100A708E1 /* ServerDataAccess.h */,
+				71EC6670133AA5F100A708E1 /* ServerDataAccess.m */,
+				71EC6683133AA5F100A708E1 /* SQLiteDataAccess.h */,
+				71EC6684133AA5F100A708E1 /* SQLiteDataAccess.m */,
+				71BB17CD132FBDD0006D5060 /* Supporting Files */,
+				9B326867140BECC9003FC7B4 /* AllCOHeaders.h */,
+			);
+			path = "QC Hybrid Lib";
+			sourceTree = "<group>";
+		};
+		71BB17CD132FBDD0006D5060 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71BB17CE132FBDD0006D5060 /* QC Hybrid Lib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BE2DAA014B2E34B007C1038 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				9BE2DAA414B2E499007C1038 /* sqlite3.c */,
+				9BE2DAA514B2E499007C1038 /* sqlite3.h */,
+			);
+			name = sqlite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		71BB17C5132FBDD0006D5060 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71EC669B133AA5F100A708E1 /* AudioPlayer.h in Headers */,
+				71EC669D133AA5F100A708E1 /* AudioQueueObject.h in Headers */,
+				71EC669F133AA5F100A708E1 /* AudioRecorder.h in Headers */,
+				71EC66A1133AA5F100A708E1 /* BatchFileDownloadBCO.h in Headers */,
+				71EC66A3133AA5F100A708E1 /* BatchQCHTTPHandler.h in Headers */,
+				71EC66A5133AA5F100A708E1 /* BNZHex.h in Headers */,
+				71EC66A7133AA5F100A708E1 /* CanMakePaymentsVCO.h in Headers */,
+				71EC66A9133AA5F100A708E1 /* CloseDataBCO.h in Headers */,
+				71EC66AB133AA5F100A708E1 /* CloseDataVCO.h in Headers */,
+				71EC66AF133AA5F100A708E1 /* ContactPickerVCO.h in Headers */,
+				71EC66B1133AA5F100A708E1 /* CreateButtonVCO.h in Headers */,
+				71EC66B3133AA5F100A708E1 /* CreateFooterVCO.h in Headers */,
+				71EC66B5133AA5F100A708E1 /* DataAccessResult.h in Headers */,
+				71EC66B7133AA5F100A708E1 /* DatabaseDefinitions.h in Headers */,
+				71EC66B9133AA5F100A708E1 /* DatePickerVCO.h in Headers */,
+				71EC66BB133AA5F100A708E1 /* DeviceWebView.h in Headers */,
+				71EC66BD133AA5F100A708E1 /* EmailViewController.h in Headers */,
+				71EC66BF133AA5F100A708E1 /* ExecuteDBScriptBCO.h in Headers */,
+				71EC66C1133AA5F100A708E1 /* FileDownloadBCO.h in Headers */,
+				71EC66C5133AA5F100A708E1 /* FileUploadBCO.h in Headers */,
+				71EC66CB133AA5F100A708E1 /* getDataBCO.h in Headers */,
+				71EC66CD133AA5F100A708E1 /* GetDeviceInfoVCO.h in Headers */,
+				71EC66D1133AA5F100A708E1 /* GetPreferencesBCO.h in Headers */,
+				71EC66D3133AA5F100A708E1 /* GetPreferencesVCO.h in Headers */,
+				71EC66D7133AA5F100A708E1 /* HideFooterVCO.h in Headers */,
+				71EC66D9133AA5F100A708E1 /* iAdBCO.h in Headers */,
+				71EC66DB133AA5F100A708E1 /* ImagePickerController.h in Headers */,
+				71EC66DD133AA5F100A708E1 /* ImagePickerViewController.h in Headers */,
+				71EC66DF133AA5F100A708E1 /* JSON.h in Headers */,
+				71EC66E0133AA5F100A708E1 /* LocationBCO.h in Headers */,
+				71EC66E2133AA5F100A708E1 /* LocationVCO.h in Headers */,
+				71EC66E4133AA5F100A708E1 /* LoggingVCO.h in Headers */,
+				71EC66E6133AA5F100A708E1 /* MakePurchaseBCO.h in Headers */,
+				71EC66E8133AA5F100A708E1 /* NSObject+SBJSON.h in Headers */,
+				71EC66EA133AA5F100A708E1 /* NSString+SBJSON.h in Headers */,
+				71EC66EC133AA5F100A708E1 /* PickResultsVCO.h in Headers */,
+				71EC66EE133AA5F100A708E1 /* PlayAudioVCO.h in Headers */,
+				71EC66F0133AA5F100A708E1 /* PlaySoundVCO.h in Headers */,
+				71EC66F2133AA5F100A708E1 /* PrepareNonStandardEntity.h in Headers */,
+				71EC66F4133AA5F100A708E1 /* ProgressBarVCO.h in Headers */,
+				71EC66F8133AA5F100A708E1 /* QCBarButtonItem.h in Headers */,
+				71EC6700133AA5F100A708E1 /* QCHTTPHandler.h in Headers */,
+				71EC6702133AA5F100A708E1 /* QCHTTPRequestDelegate.h in Headers */,
+				71EC6704133AA5F100A708E1 /* QCMapAnnotation.h in Headers */,
+				71EC6708133AA5F100A708E1 /* QCMapViewController.h in Headers */,
+				71EC670E133AA5F100A708E1 /* QCParameter.h in Headers */,
+				71EC6710133AA5F100A708E1 /* QCPickerDelegate.h in Headers */,
+				71EC6712133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.h in Headers */,
+				71EC6714133AA5F100A708E1 /* QCStoreRequestDelegate.h in Headers */,
+				71EC6716133AA5F100A708E1 /* QuickConnectViewController.h in Headers */,
+				71EC6718133AA5F100A708E1 /* Reachability.h in Headers */,
+				71EC671A133AA5F100A708E1 /* RecordAudioVCO.h in Headers */,
+				71EC671C133AA5F100A708E1 /* RequestStoreProductInfoBCO.h in Headers */,
+				71EC671E133AA5F100A708E1 /* SBJSON.h in Headers */,
+				71EC6720133AA5F100A708E1 /* SendDBResultVCO.h in Headers */,
+				71EC6722133AA5F100A708E1 /* SendPersonPickerResultsVCO.h in Headers */,
+				71EC6724133AA5F100A708E1 /* ServerDataAccess.h in Headers */,
+				71EC6726133AA5F100A708E1 /* SetButtonsVCO.h in Headers */,
+				71EC6728133AA5F100A708E1 /* SetDataBCO.h in Headers */,
+				71EC672C133AA5F100A708E1 /* ShowCameraPickerVCO.h in Headers */,
+				71EC6732133AA5F100A708E1 /* ShowImagePickerVCO.h in Headers */,
+				71EC6736133AA5F100A708E1 /* ShowMapVCO.h in Headers */,
+				71EC6738133AA5F100A708E1 /* SQLiteDataAccess.h in Headers */,
+				71EC673A133AA5F100A708E1 /* SwitchAccelerometerBCO.h in Headers */,
+				71EC673C133AA5F100A708E1 /* SwitchActivityIndicatorVCO.h in Headers */,
+				71EC673E133AA5F100A708E1 /* SwitchBCO.h in Headers */,
+				71EC6740133AA5F100A708E1 /* SwitchHeadingBCO.h in Headers */,
+				71EC6742133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.h in Headers */,
+				71EC6744133AA5F100A708E1 /* SwitchRotationBCO.h in Headers */,
+				71EC6748133AA5F100A708E1 /* TabBarBCO.h in Headers */,
+				71EC674A133AA5F100A708E1 /* TransactionHandlerBCO.h in Headers */,
+				71EC674E133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.h in Headers */,
+				711D1D04133BD33B00602524 /* ShowEmailEditorVCO.h in Headers */,
+				713CBDA11369FC0300368A54 /* SaveContentsToFileBCO.h in Headers */,
+				713CBDA51369FC9500368A54 /* SendSaveResultsVCO.h in Headers */,
+				713CBDEF136A28BC00368A54 /* DeleteFileBCO.h in Headers */,
+				713CBDF4136A28D200368A54 /* FileManipulationVCO.h in Headers */,
+				713CBDF8136A6A4600368A54 /* ListFilesBCO.h in Headers */,
+				713CBDFC136A6A6D00368A54 /* ListFilesVCO.h in Headers */,
+				714DEE04136F5D5E00F188E3 /* MoveImageToCameraRollBCO.h in Headers */,
+				714DEE08136F5D7200F188E3 /* MoveImageToCameraRollVCO.h in Headers */,
+				716EF47B1372FC10007430D5 /* CreateDirBCO.h in Headers */,
+				716EF48113731014007430D5 /* GetContentsOfFileBCO.h in Headers */,
+				716F1B91137C6A5C00F61DCF /* ShowFileVCO.h in Headers */,
+				71D082861381C07C007DEFE2 /* FileDisplayDataSource.h in Headers */,
+				719E543E138FF89C009BA356 /* QCVersion.h in Headers */,
+				9B326868140BECC9003FC7B4 /* AllCOHeaders.h in Headers */,
+				9BD2040714A259F3000BACC5 /* AppDelegate.h in Headers */,
+				9BD2040F14A26866000BACC5 /* InterlayerMessageSystem.h in Headers */,
+				9BD2042B14A3E331000BACC5 /* QCControlObject.h in Headers */,
+				9BD2042C14A3E331000BACC5 /* QCMapper.h in Headers */,
+				9BD2042D14A3E331000BACC5 /* QCRequestHandler.h in Headers */,
+				9BD2042E14A3E331000BACC5 /* QuickConnect.h in Headers */,
+				9BE2DAA714B2E499007C1038 /* sqlite3.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		71BB17C6132FBDD0006D5060 /* QC Hybrid Lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71BB17D1132FBDD0006D5060 /* Build configuration list for PBXNativeTarget "QC Hybrid Lib" */;
+			buildPhases = (
+				71BB17C3132FBDD0006D5060 /* Sources */,
+				71BB17C4132FBDD0006D5060 /* Frameworks */,
+				71BB17C5132FBDD0006D5060 /* Headers */,
+				71A06674133BAA9000AAC922 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QC Hybrid Lib";
+			productName = "QC Hybrid Lib";
+			productReference = 71BB17C7132FBDD0006D5060 /* libQC Hybrid Lib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71BB17BE132FBDD0006D5060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 71BB17C1132FBDD0006D5060 /* Build configuration list for PBXProject "QC Hybrid Lib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 71BB17BC132FBDD0006D5060;
+			productRefGroup = 71BB17C8132FBDD0006D5060 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71BB17C6132FBDD0006D5060 /* QC Hybrid Lib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71A06674133BAA9000AAC922 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Version 2.0 (updated for Xcode 4, with some fixes)\n# Changes:\n#    - Works with xcode 4, even when running xcode 3 projects (Workarounds for apple bugs)\n#    - Faster / better: only runs lipo once, instead of once per recursion\n#    - Added some debugging statemetns that can be switched on/off by changing the DEBUG_THIS_SCRIPT variable to \"true\"\n#    - Fixed some typos\n# \n# Purpose:\n#   Create a static library for iPhone from within XCode\n#   Because Apple staff DELIBERATELY broke Xcode to make this impossible from the GUI (Xcode 3.2.3 specifically states this in the Release notes!)\n#   ...no, I don't understand why they did this!\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n# More info: see this Stack Overflow question: http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n\n#################[ Tests: helps workaround any future bugs in Xcode ]########\n#\nDEBUG_THIS_SCRIPT=\"true\"\n\n\nif [ $DEBUG_THIS_SCRIPT = \"true\" ]\nthen\necho \"########### TESTS #############\"\necho \"Use the following variables when debugging this script; note that they may change on recursions\"\necho \"BUILD_DIR = $BUILD_DIR\"\necho \"BUILD_ROOT = $BUILD_ROOT\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR\"\necho \"CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR\"\necho \"TARGET_BUILD_DIR = $TARGET_BUILD_DIR\"\nfi\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\n#if [ \"true\" == ${ALREADYINVOKED:-false} ]\n#then\n#echo \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\n#else\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\n#export ALREADYINVOKED=\"true\"\n\n#echo \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\n#echo \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUILD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\"\n#xcodebuild -configuration \"${CONFIGURATION}\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n#ACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\n# Calculate where the (multiple) built files are coming from:\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\necho \"Taking device build from: ${CURRENTCONFIG_DEVICE_DIR}\"\necho \"Taking simulator build from: ${CURRENTCONFIG_SIMULATOR_DIR}\"\n\nCREATING_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\necho \"...I will output a universal build to: \"\npwd\n\n\nlipo -create -output \"qc_hybrid.a\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n#########\n#\n# Added: StackOverflow suggestion to also copy \"include\" files\n#    (untested, but should work OK)\n#\n#if [ -d \"${CURRENTCONFIG_DEVICE_DIR}/usr/local/include\" ]\n#then\n#mkdir -p \"${CREATING_UNIVERSAL_DIR}/usr/local/include\"\n# * needs to be outside the double quotes?\n#cp \"${CURRENTCONFIG_DEVICE_DIR}/usr/local/include/\"* \"${CREATING_UNIVERSAL_DIR}/usr/local/include\"\n#fi\n#fi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71BB17C3132FBDD0006D5060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71EC669C133AA5F100A708E1 /* AudioPlayer.m in Sources */,
+				71EC669E133AA5F100A708E1 /* AudioQueueObject.m in Sources */,
+				71EC66A0133AA5F100A708E1 /* AudioRecorder.m in Sources */,
+				71EC66A2133AA5F100A708E1 /* BatchFileDownloadBCO.m in Sources */,
+				71EC66A4133AA5F100A708E1 /* BatchQCHTTPHandler.m in Sources */,
+				71EC66A6133AA5F100A708E1 /* BNZHex.m in Sources */,
+				71EC66A8133AA5F100A708E1 /* CanMakePaymentsVCO.m in Sources */,
+				71EC66AA133AA5F100A708E1 /* CloseDataBCO.m in Sources */,
+				71EC66AC133AA5F100A708E1 /* CloseDataVCO.m in Sources */,
+				71EC66B0133AA5F100A708E1 /* ContactPickerVCO.m in Sources */,
+				71EC66B2133AA5F100A708E1 /* CreateButtonVCO.m in Sources */,
+				71EC66B4133AA5F100A708E1 /* CreateFooterVCO.m in Sources */,
+				71EC66B6133AA5F100A708E1 /* DataAccessResult.m in Sources */,
+				71EC66B8133AA5F100A708E1 /* DatabaseDefinitions.m in Sources */,
+				71EC66BA133AA5F100A708E1 /* DatePickerVCO.m in Sources */,
+				71EC66BC133AA5F100A708E1 /* DeviceWebView.m in Sources */,
+				71EC66BE133AA5F100A708E1 /* EmailViewController.m in Sources */,
+				71EC66C0133AA5F100A708E1 /* ExecuteDBScriptBCO.m in Sources */,
+				71EC66C2133AA5F100A708E1 /* FileDownloadBCO.m in Sources */,
+				71EC66C6133AA5F100A708E1 /* FileUploadBCO.m in Sources */,
+				71EC66CC133AA5F100A708E1 /* getDataBCO.m in Sources */,
+				71EC66CE133AA5F100A708E1 /* GetDeviceInfoVCO.m in Sources */,
+				71EC66D2133AA5F100A708E1 /* GetPreferencesBCO.m in Sources */,
+				71EC66D4133AA5F100A708E1 /* GetPreferencesVCO.m in Sources */,
+				71EC66D8133AA5F100A708E1 /* HideFooterVCO.m in Sources */,
+				71EC66DA133AA5F100A708E1 /* iAdBCO.m in Sources */,
+				71EC66DC133AA5F100A708E1 /* ImagePickerController.m in Sources */,
+				71EC66DE133AA5F100A708E1 /* ImagePickerViewController.m in Sources */,
+				71EC66E1133AA5F100A708E1 /* LocationBCO.m in Sources */,
+				71EC66E3133AA5F100A708E1 /* LocationVCO.m in Sources */,
+				71EC66E5133AA5F100A708E1 /* LoggingVCO.m in Sources */,
+				71EC66E7133AA5F100A708E1 /* MakePurchaseBCO.m in Sources */,
+				71EC66E9133AA5F100A708E1 /* NSObject+SBJSON.m in Sources */,
+				71EC66EB133AA5F100A708E1 /* NSString+SBJSON.m in Sources */,
+				71EC66ED133AA5F100A708E1 /* PickResultsVCO.m in Sources */,
+				71EC66EF133AA5F100A708E1 /* PlayAudioVCO.m in Sources */,
+				71EC66F1133AA5F100A708E1 /* PlaySoundVCO.m in Sources */,
+				71EC66F3133AA5F100A708E1 /* PrepareNonStandardEntity.m in Sources */,
+				71EC66F5133AA5F100A708E1 /* ProgressBarVCO.m in Sources */,
+				71EC66F9133AA5F100A708E1 /* QCBarButtonItem.m in Sources */,
+				71EC6701133AA5F100A708E1 /* QCHTTPHandler.m in Sources */,
+				71EC6703133AA5F100A708E1 /* QCHTTPRequestDelegate.m in Sources */,
+				71EC6705133AA5F100A708E1 /* QCMapAnnotation.m in Sources */,
+				71EC6709133AA5F100A708E1 /* QCMapViewController.m in Sources */,
+				71EC670F133AA5F100A708E1 /* QCParameter.m in Sources */,
+				71EC6711133AA5F100A708E1 /* QCPickerDelegate.m in Sources */,
+				71EC6713133AA5F100A708E1 /* QCStorePurchaseRequestDelegate.m in Sources */,
+				71EC6715133AA5F100A708E1 /* QCStoreRequestDelegate.m in Sources */,
+				71EC6717133AA5F100A708E1 /* QuickConnectViewController.m in Sources */,
+				71EC6719133AA5F100A708E1 /* Reachability.m in Sources */,
+				71EC671B133AA5F100A708E1 /* RecordAudioVCO.m in Sources */,
+				71EC671D133AA5F100A708E1 /* RequestStoreProductInfoBCO.m in Sources */,
+				71EC671F133AA5F100A708E1 /* SBJSON.m in Sources */,
+				71EC6721133AA5F100A708E1 /* SendDBResultVCO.m in Sources */,
+				71EC6723133AA5F100A708E1 /* SendPersonPickerResultsVCO.m in Sources */,
+				71EC6725133AA5F100A708E1 /* ServerDataAccess.m in Sources */,
+				71EC6727133AA5F100A708E1 /* SetButtonsVCO.m in Sources */,
+				71EC6729133AA5F100A708E1 /* SetDataBCO.m in Sources */,
+				71EC672D133AA5F100A708E1 /* ShowCameraPickerVCO.m in Sources */,
+				71EC6733133AA5F100A708E1 /* ShowImagePickerVCO.m in Sources */,
+				71EC6737133AA5F100A708E1 /* ShowMapVCO.m in Sources */,
+				71EC6739133AA5F100A708E1 /* SQLiteDataAccess.m in Sources */,
+				71EC673B133AA5F100A708E1 /* SwitchAccelerometerBCO.m in Sources */,
+				71EC673D133AA5F100A708E1 /* SwitchActivityIndicatorVCO.m in Sources */,
+				71EC673F133AA5F100A708E1 /* SwitchBCO.m in Sources */,
+				71EC6741133AA5F100A708E1 /* SwitchHeadingBCO.m in Sources */,
+				71EC6743133AA5F100A708E1 /* SwitchNetworkIndicatorBCO.m in Sources */,
+				71EC6745133AA5F100A708E1 /* SwitchRotationBCO.m in Sources */,
+				71EC6749133AA5F100A708E1 /* TabBarBCO.m in Sources */,
+				71EC674B133AA5F100A708E1 /* TransactionHandlerBCO.m in Sources */,
+				71EC674F133AA5F100A708E1 /* VerifyDeviceIsConnectedToInternetVCO.m in Sources */,
+				711D1D03133BD33B00602524 /* ShowEmailEditorVCO.m in Sources */,
+				713CBDA21369FC0300368A54 /* SaveContentsToFileBCO.m in Sources */,
+				713CBDA61369FC9500368A54 /* SendSaveResultsVCO.m in Sources */,
+				713CBDF0136A28BC00368A54 /* DeleteFileBCO.m in Sources */,
+				713CBDF5136A28D200368A54 /* FileManipulationVCO.m in Sources */,
+				713CBDF9136A6A4600368A54 /* ListFilesBCO.m in Sources */,
+				713CBDFD136A6A6D00368A54 /* ListFilesVCO.m in Sources */,
+				714DEE05136F5D5E00F188E3 /* MoveImageToCameraRollBCO.m in Sources */,
+				714DEE09136F5D7200F188E3 /* MoveImageToCameraRollVCO.m in Sources */,
+				716EF47C1372FC10007430D5 /* CreateDirBCO.m in Sources */,
+				716EF48213731014007430D5 /* GetContentsOfFileBCO.m in Sources */,
+				716F1B92137C6A5C00F61DCF /* ShowFileVCO.m in Sources */,
+				71D082871381C07C007DEFE2 /* FileDisplayDataSource.m in Sources */,
+				9BD2040414A259E4000BACC5 /* main.m in Sources */,
+				9BD2040814A259F3000BACC5 /* AppDelegate.m in Sources */,
+				9BD2041014A26866000BACC5 /* InterlayerMessageSystem.m in Sources */,
+				9BE2DAA614B2E499007C1038 /* sqlite3.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		71BB17CF132FBDD0006D5060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		71BB17D0132FBDD0006D5060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		71BB17D2132FBDD0006D5060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/QC_Hybrid_Lib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QC Hybrid Lib/QC Hybrid Lib-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		71BB17D3132FBDD0006D5060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/QC_Hybrid_Lib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QC Hybrid Lib/QC Hybrid Lib-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71BB17C1132FBDD0006D5060 /* Build configuration list for PBXProject "QC Hybrid Lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BB17CF132FBDD0006D5060 /* Debug */,
+				71BB17D0132FBDD0006D5060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71BB17D1132FBDD0006D5060 /* Build configuration list for PBXNativeTarget "QC Hybrid Lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BB17D2132FBDD0006D5060 /* Debug */,
+				71BB17D3132FBDD0006D5060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71BB17BE132FBDD0006D5060 /* Project object */;
+}

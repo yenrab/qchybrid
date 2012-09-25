@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>org.quickconnectfamily.qcHybridTouchApplication</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Definitions</key>
+	<dict>
+    <key>*:*:importCocoa</key>
+		<string>#import &lt;UIKit/UIKit.h&gt;
+#import "QuickConnectViewController.h"
+        
+        </string>
+
+    
+    <key>index.html</key>
+    <dict>
+        <key>Path</key>
+        <string>index.html</string>
+    </dict>
+    <key>main.css</key>
+    <dict>
+        <key>Path</key>
+        <string>main.css</string>
+    </dict>
+    <key>main.js</key>
+    <dict>
+        <key>Path</key>
+        <string>main.js</string>
+    </dict>
+    <key>mappings.js</key>
+    <dict>
+        <key>Path</key>
+        <string>mappings.js</string>
+    </dict>
+    <key>functions.js</key>
+    <dict>
+        <key>Path</key>
+        <string>functions.js</string>
+    </dict>
+    <key>databaseDefinition.js</key>
+    <dict>
+        <key>Path</key>
+        <string>databaseDefinition.js</string>
+    </dict>
+
+    
+    <key>DBScript.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>DBScript.js</string>
+    </dict>
+    
+    <key>ImagePickerViewController.xib</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>ImagePickerViewController.xib</string>
+    </dict>
+    <key>QuickConnect.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>QuickConnect.js</string>
+    </dict>
+    <key>DataAccessObject.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>DataAccessObject.js</string>
+    </dict>
+    <key>LocationObject.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>LocationObject.js</string>
+    </dict>
+    <key>EnterpriseSync.css</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>EnterpriseSync.css</string>
+    </dict>
+    <key>MapView.xib</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>MapView.xib</string>
+    </dict>
+    <key>ServerAccessObject.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>ServerAccessObject.js</string>
+    </dict>
+    <key>EnterpriseSyncFunctions.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>EnterpriseSyncFunctions.js</string>
+    </dict>
+    <key>QCNativeFooter.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>QCNativeFooter.js</string>
+    </dict>
+    <key>EnterpriseSyncMappings.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>EnterpriseSyncMappings.js</string>
+    </dict>
+    <key>QCUtilities.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>QCUtilities.js</string>
+    </dict>
+
+    <key>SetupQC.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>SetupQC.js</string>
+    </dict>
+    
+    <key>com.js</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>com.js</string>
+    </dict>
+    <key>qc_hybrid.a</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>qc_hybrid.a</string>
+    </dict>
+    <key>QuickConnectViewController.h</key>
+    <dict>
+        <key>Group</key>
+        <string>Supporting Files</string>
+        <key>Path</key>
+        <string>QuickConnectViewController.h</string>
+    </dict>
+    <key>___VARIABLE_classPrefix:identifier___AppDelegate.h:ivars</key>
+		<dict>
+			<key>Beginning</key>
+			<string>@interface ___VARIABLE_classPrefix:identifier___AppDelegate : QuickConnectViewController &lt;UIApplicationDelegate&gt;</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+
+		<key>___VARIABLE_classPrefix:identifier___AppDelegate.m:applicationdidFinishLaunchingWithOptions</key>
+		<dict>
+			<key>Beginning</key>
+			<string>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = ___RP___[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]___AR___;
+    [self addWebViewToWindow:self.window];</string>
+			<key>End</key>
+			<string>    [self.window makeKeyAndVisible];
+    return YES;
+}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>This template provides a starting point for a QuickConnectFamily Hybrid Applicaion.</string>
+	<key>Identifier</key>
+	<string>org.quickconnectfamily.qcApplication</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>___PACKAGENAME___-Prefix.pch:Availability:iPhoneAvailability:3</string>
+        <string>qc_hybrid.a</string>
+        <string>QuickConnectViewController.h</string>
+        <string>index.html</string>
+        <string>main.css</string>
+        <string>main.js</string>
+        <string>mappings.js</string>
+        <string>functions.js</string>
+        <string>databaseDefinition.js</string>
+        <string>com.js</string>
+        <string>DBScript.js</string>
+        <string>ImagePickerViewController.xib</string>
+        <string>QuickConnect.js</string>
+        <string>DataAccessObject.js</string>
+        <string>LocationObject.js</string>
+        <string>EnterpriseSync.css</string>
+        <string>MapView.xib</string>
+        <string>ServerAccessObject.js</string>
+        <string>EnterpriseSyncFunctions.js</string>
+        <string>QCNativeFooter.js</string>
+        <string>EnterpriseSyncMappings.js</string>
+        <string>QCUtilities.js</string>
+        <string>SetupQC.js</string>
+	</array>
+    <key>Targets</key>
+	<array>
+		<dict>
+        <key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Frameworks</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/bash</string>
+					<key>ShellScript</key>
+					<string>
+				
+								
+
+				#androidVersionFilePath="$SOURCE_ROOT_AS_PATH_COMPONENT/$EXECUTABLE_NAME_AS_PATH_COMPONENT/main.m" 
+        androidVersionFilePath="$SOURCE_ROOT/$EXECUTABLE_NAME/main.m"      
+        androidVersionLine=`grep "AndroidSDK" "$androidVersionFilePath"`
+        #echo $androidVersionLine
+        androidVersion=0
+        for word in $androidVersionLine           
+        do               
+        androidVersion=$word
+        #echo 'word: '$androidVersion
+        done  
+        if [ $androidVersion = 0 ]; then
+            echo 'not building for android'
+            exit 0;
+        fi    
+        echo '---------------Building for Android------------------'
+        				
+if [ ! -d AndroidBuild ]; then               
+mkdir AndroidBuild           
+fi                                 
+#get the bundle identifier    
+echo $INFOPLIST_FILE
+BUNDLE_ID=($(/usr/libexec/PlistBuddy -c Print:CFBundleIdentifier "$INFOPLIST_FILE"))         
+BUNDLE_VERSION=($(/usr/libexec/PlistBuddy -c Print:CFBundleVersion "$INFOPLIST_FILE"))           
+ANDROID_VERSION_NAME=($(/usr/libexec/PlistBuddy -c Print:AndroidAppVersionCode "$INFOPLIST_FILE")) 
+if [ -z BUNDLE_VERSION ]; then
+    BUNDLE_VERSION='1.0'
+fi
+
+#check to see if the developer has defined an integer value for the android application version           
+if [ ${#ANDROID_VERSION_NAME} = 0 ]; then
+    ANDROID_VERSION_NAME=1                       
+    fi 
+    
+    APP_PACKAGE=${BUNDLE_ID%\$*}
+    APP_PACKAGE_LEN=${#APP_PACKAGE}
+        APP_PACKAGE=${APP_PACKAGE:0:APP_PACKAGE_LEN-1}  
+        #EXECUTABLE_NAME_AS_PATH_COMPONENT=${EXECUTABLE_NAME// /\\ }
+        #SOURCE_ROOT_AS_PATH_COMPONENT=${SOURCE_ROOT// /\\ }
+        
+        androidSDK=/Developer/androidSDK           
+        export androidSDK
+        echo ----------------Clearing old build               
+        rm -rf AndroidBuild           
+        
+        echo ----------------Copying standard files               
+        #copy the default android_build directory and other standard files               
+        #from the template directory into the current directory               
+        cp -R $HOME/Library/Developer/Xcode/Templates/Application/QC\ Hybrid\ Application.xctemplate/AndroidSetup .               
+        mv AndroidSetup AndroidBuild    
+        
+        echo ----------------Copying Application files
+        #ignore the file type not found errors
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.png AndroidBuild/res/drawable/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.jpg AndroidBuild/res/drawable/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.gif AndroidBuild/res/drawable/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.jpg AndroidBuild/res/drawable/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.bmp AndroidBuild/res/drawable/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.webp AndroidBuild/res/drawable/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mov AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.ogg AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.webm AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mp4 AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.3gp AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mp3 AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mid AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.wav AndroidBuild/res/raw/ 2&gt;/dev/null
+        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mkv AndroidBuild/res/raw/ 2&gt;/dev/null
+        
+                                         
+                                         
+        rsync -av --exclude='bigtest11-Info.plist' --exclude='bigtest11-Prefix.pch' --exclude='com.js' --exclude='DataAccessObject.js' --exclude='DBScript.js' --exclude='en.lproj' --exclude='qc_hybrid.a' --exclude='MapView.xib' --exclude='ImagePickerViewController.xib' --exclude='EnterpriseSync.css' --exclude='EnterpriseSyncFunctions.js' --exclude='EnterpriseSyncMappings.js' --exclude='json2.js' --exclude='LocationObject.js' --exclude='QCUtilities.js' --exclude='QuickConnect.js' --exclude='ServerAccessObject.js' --exclude='setupQC.js' --exclude='QuickConnectViewController.h' --exclude='*.mov*' exclude='*.MOV*' --exclude='.m4v' --exclude='.M4V' --exclude='*.jpg*' --exclude='*.JPG*' --exclude='*.png*' --exclude='*.PNG*' --exclude='*.bmp*' --exclude='*.BMP*' --exclude='*.gif*' --exclude='*.GIF*' --exclude='*.webp*' --exclude='*.WEBP*' --exclude='*.mpg*' --exclude='*.MPG*' --exclude='*.mpeg*' --exclude='*.MPEG*' --exclude='*.webm*' --exclude='*.WEBM*' --exclude='*.wav*' --exclude='*.WAV*' --exclude='*.ogg*' --exclude='*.OGG*' --exclude='*.mid*' --exclude='*.MID*' --exclude='*.mp3*' --exclude='*.MP3*' $SOURCE_ROOT/$EXECUTABLE_NAME/ AndroidBuild/assets/
+                     
+        
+                                                                                                                                
+        
+        echo ----------------Building AndroidManifest.xml                                 
+        activityName=${EXECUTABLE_NAME// /};                              
+            #write out the AndroidManifest.xml file contents           
+            echo '&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android" package="'$APP_PACKAGE'" android:versionCode="'$ANDROID_VERSION_NAME'" android:versionName="1.0"&gt;&lt;uses-sdk android:minSdkVersion="'$androidVersion'"/&gt;&lt;uses-permission android:name="android.permission.INTERNET" /&gt;&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"&gt;&lt;/uses-permission&gt;&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"&gt;&lt;/uses-permission&gt;&lt;uses-permission android:name="android.permission.READ_PHONE_STATE"/&gt;&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/&gt;&lt;application android:icon="@drawable/icon" android:label="@string/app_name"&gt;&lt;activity android:name="'$activityName'" android:label="@string/app_name" android:screenOrientation="portrait"&gt;&lt;intent-filter&gt;           &lt;action android:name="android.intent.action.MAIN" /&gt;&lt;category android:name="android.intent.category.LAUNCHER" /&gt;&lt;/intent-filter&gt;&lt;/activity&gt;&lt;uses-library android:name="com.google.android.maps" /&gt;&lt;/application&gt;&lt;/manifest&gt;' &gt; AndroidBuild/AndroidManifest.xml                           
+            
+            
+            echo ----------------Building strings.xml               
+            #write out the strings.xml file contents               
+            echo '&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;resources&gt;&lt;string name="app_name"&gt;'$EXECUTABLE_NAME'&lt;/string&gt;&lt;/resources&gt;' &gt; AndroidBuild/res/values/strings.xml
+            
+            
+            echo ----------------Building Activity.java               
+            packagePath=${APP_PACKAGE//.//}               
+                mkdir -p AndroidBuild/src/$packagePath               
+                #write out the Activity.java file contents                   
+                activityFilePath=AndroidBuild/src/$packagePath/$activityName.java               
+                echo $activityFilePath               
+                echo 'package '$APP_PACKAGE'; import org.quickconnectfamily.hybrid.QCAndroid; import org.quickconnectfamily.hybrid.R; import android.app.Activity; import android.os.Bundle; public class '$activityName' extends QCAndroid { @Override public void onCreate(Bundle theBundle) {  super.onCreate(theBundle); } }' &gt; $activityFilePath                          
+                echo ----------------Building ant files                                                                                                                             
+                echo '&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;project name="'$EXECUTABLE_NAME'" default="QC Hybrid Application"&gt;&lt;loadproperties srcFile="local.properties" /&gt;&lt;property file="ant.properties" /&gt;&lt;loadproperties srcFile="project.properties" /&gt;&lt;!-- version-tag: '$ANDROID_VERSION_NAME' --&gt;&lt;import file="'$androidSDK'/tools/ant/build.xml" /&gt;&lt;/project&gt;' &gt; AndroidBuild/build.xml  
+                echo 'target=Google Inc.:Google APIs:'$androidVersion &gt; AndroidBuild/project.properties                                         
+                
+                
+                echo -------------Updating Android Keystore------------------------
+                # remove the debug keystore if it exists.  This will keep it from expiring.           
+                if [ -f ~/.Android/debug.keystore ]; then               
+                echo "Removing old keystore"               
+                rm ~/.Android//debug.keystore           
+                else               
+                echo "First build.  Keystore does not exist."           
+                fi               
+                # regenerate the debug keystore               
+                # keytool is included in the standard JDK install               
+                keytool -genkey -v -storepass android -alias android -keypass android -keystore AndroidBuild/debug.keystore -validity 2000 -dname 'CN=Android Debug,O=Android,C=US'                                             
+                echo -------------Compiling and assembling application------------------------               
+                cd AndroidBuild               
+                ant debug                                                                                                                         
+                
+                exit 0                                  						
+                    </string>
+				</dict>
+                
+				<dict>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/bash</string>
+					<key>ShellScript</key>
+					<string>
+                
+                #check to see if android should be run
+androidVersionFilePath="$SOURCE_ROOT/$EXECUTABLE_NAME/main.m"      
+androidVersionLine=`grep "AndroidSDK" "$androidVersionFilePath"`
+#echo $androidVersionLine
+androidVersion=0;
+for word in $androidVersionLine           
+do               
+    androidVersion=$word
+#echo 'word: '$androidVersion
+done     
+if [ $androidVersion = 0 ]; then
+    echo 'Not building for Android'
+    exit 0;
+fi
+        echo '---------------Building for Android------------------'
+    
+                    #finding run environment
+#get the bundle identifier           
+echo $INFOPLIST_FILE
+BUNDLE_ID=($(/usr/libexec/PlistBuddy -c Print:CFBundleIdentifier "$INFOPLIST_FILE"))         
+                             
+APP_PACKAGE=${BUNDLE_ID%\$*}
+APP_PACKAGE_LEN=${#APP_PACKAGE}
+APP_PACKAGE=${APP_PACKAGE:0:APP_PACKAGE_LEN-1}
+echo -------------Initializing emulator------------------------
+androidSDK='/Developer/androidSDK'
+# see if an emulator is running or a device is connected. 
+    #/Developer/androidSDK/platform-tools/adb kill-server
+    foundDevicesAndEmulators=$($androidSDK/platform-tools/adb devices)
+    echo 'devices: '$foundDevicesAndEmulators
+FoundEmulator=$($androidSDK/platform-tools/adb devices| grep -v devices | grep emulator)           
+    
+    echo "emulator: '$FoundEmulator'" 
+FoundDevice=$($androidSDK/platform-tools/adb devices| grep -v devices | grep -v emulator)           
+    
+    echo "device '$FoundDevice'"
+Found=$FoundDevice              
+if [ -z $Found ]; then               
+           echo 'checking emulator'   
+    Found=$FoundEmulator               
+fi               
+    echo 'found1: '$Found
+Found=${Found%%device*}               
+Found=$Found | sed 's/ //g' 
+    echo 'found: '$Found
+if [ -z $Found ]; then               
+    echo 'No device or emulator found on which to install the application.  If you wish to run on a device plug it in.  If you want to run on an emulator start it prior to building.'               
+    
+    exit 1               
+else 
+    if [ -z $FoundDevice ]; then  
+    #exit the debugger and clear/flush the log                   
+    #$androidSDK/platform-tools/adb -s $Found logcat -c      
+
+    #bring the found emulator to the front
+    $HOME/Library/Developer/Xcode/Templates/Application/QC\ Hybrid\ Application.xctemplate/appswitch -a emulator-arm
+    fi
+fi
+
+instFileName=$(pwd)/AndroidBuild/bin/$EXECUTABLE_NAME-debug.apk               
+echo -------------un-installing $APP_PACKAGE from $Found---------------------- 
+$androidSDK/platform-tools/adb -s $Found uninstall $APP_PACKAGE               
+echo -------------Doing install / reinstall----------------------               
+echo -----------installing $instFileName-----------------  
+    #installing: /Users/lee/Desktop/junk/workupJunk/bin/workupJunk-debug.apk found: 	040365FE0100400C
+    
+    
+
+    echo "installing: $instFileName found: $Found"
+    $androidSDK/platform-tools/adb -s $Found install -r "$instFileName" 
+    
+echo "-------------launching $APP_PACKAGE/$EXECUTABLE_NAME--------------"   
+activityName=${EXECUTABLE_NAME// /};
+$androidSDK/platform-tools/adb -s $Found shell am start -a android.intent.action.MAIN -n $APP_PACKAGE/.$activityName                            
+echo -------------launching debugger--------------               
+$androidSDK/platform-tools/adb -s $Found logcat -f logfile.txt *:V &#38;               
+echo -------------launch complete-------------               
+
+    exit 0
+
+                                                        						
+                                                        						
+                                                        						
+                                                        						</string>
+				</dict>
+                
+			</array>
+			<key>Frameworks</key>
+			<array>
+                <string>Foundation</string>
+				<string>UIKit</string>
+				<string>CoreGraphics</string>
+				<string>QuartzCore</string>
+				<string>Accelerate</string>
+				<string>AddressBook</string>
+				<string>AddressBookUI</string>
+				<string>AudioToolbox</string>
+				<string>AVFoundation</string>
+				<string>CoreLocation</string>
+				<string>GameKit</string>
+				<string>iAd</string>
+				<string>MapKit</string>
+				<string>MediaPlayer</string>
+				<string>MessageUI</string>
+				<string>QuickLook</string>
+				<string>StoreKit</string>
+				<string>SystemConfiguration</string>
+				<string>QuartzCore</string>
+			</array>
+		</dict>
+	</array>
+    
+    
+    
+    
+    <key>Options</key>
+	<array>
+		<dict>
+			<key>Default</key>
+			<string>Do Not Build for Android</string>
+			<key>Description</key>
+			<string>What Android SDK version to create a project for.</string>
+			<key>Identifier</key>
+			<string>AndroidSDKVersion</string>
+			<key>Name</key>
+			<string>Android SDK Version</string>
+			<key>SortOrder</key>
+			<integer>3</integer>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Units</key>
+			<dict>
+            <key>Do not build for Android</key>
+                <dict>
+                </dict>
+				<key>4</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 4</string>
+                    </dict>
+                </dict>
+				<key>7</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 7</string>
+                    </dict>
+                </dict>
+                <key>8</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 8</string>
+                    </dict>
+                </dict>
+                <key>9</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 9</string>
+                    </dict>
+                </dict>
+                <key>10</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 10</string>
+                    </dict>
+                </dict>   
+                <key>11</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 11</string>
+                    </dict>
+                </dict>
+                <key>12</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 12</string>
+                    </dict>
+                </dict>
+                <key>13</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 13</string>
+                    </dict>
+                </dict>
+                <key>14</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 14</string>
+                    </dict>
+                </dict>
+                <key>15</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 15</string>
+                    </dict>
+                </dict>
+			</dict>
+		</dict>
+	</array>
+
+    
+    
+</dict>
+</plist>
