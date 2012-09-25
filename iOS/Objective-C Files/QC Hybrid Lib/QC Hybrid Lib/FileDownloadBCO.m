@@ -12,12 +12,12 @@
 
 @implementation FileDownloadBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"downloading file: %@",parameters);
-	NSString *URLString = [parameters objectAtIndex:1];
-    NSString *fileName = [parameters objectAtIndex:2];
-	NSString *URLParameters = [parameters objectAtIndex:3];
-	NSString *OverWriteFlag = [parameters objectAtIndex:4];
+	NSString *URLString = parameters[1];
+    NSString *fileName = parameters[2];
+	NSString *URLParameters = parameters[3];
+	NSString *OverWriteFlag = parameters[4];
 	
 	QCHTTPHandler *getHandler = [[QCHTTPHandler alloc] init];
 	

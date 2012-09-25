@@ -32,22 +32,22 @@
 
 @implementation ExecuteDBScriptBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"executing script %@", parameters);
 	DataAccessResult* retVal=nil;
-    QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+    QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
 	//NSLog(@"param count: %i",[parameters count]);
 	if( [parameters count] >= 2){
-		NSString *dbName = [parameters objectAtIndex:1];
-		NSArray *linker = [parameters objectAtIndex:2];
+		NSString *dbName = parameters[1];
+		NSArray *linker = parameters[2];
 		
 		
 		
 		
-		SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)[controller.databases objectForKey:dbName];
+		SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)(controller.databases)[dbName];
 		if(aDBAccess == nil){
 			aDBAccess = [[SQLiteDataAccess alloc] initWithDatabase:dbName isWriteable: YES];
-			[controller.databases setObject:aDBAccess forKey:dbName];
+			(controller.databases)[dbName] = aDBAccess;
 		}
 		retVal = [aDBAccess startTransaction];
 		
@@ -55,19 +55,19 @@
 		NSError *error;
 		int numStatements = [linker count];
 		for (int i = 0; i < numStatements; i++) {
-			NSArray *row = [linker objectAtIndex:i];
-			NSString *SQL = [row objectAtIndex:1];
+			NSArray *row = linker[i];
+			NSString *SQL = row[1];
 			
 			SQL = [SQL stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 			//NSLog(@"SQL: %@",SQL);
-			NSArray *key = [generator objectWithString:[row objectAtIndex:0] error:&error];
-			NSArray *values = [key objectAtIndex:1];
+			NSArray *key = [generator objectWithString:row[0] error:&error];
+			NSArray *values = key[1];
 			NSMutableArray *mutableValues = [NSMutableArray arrayWithArray:values];
 			//NSLog(@"values: %@",mutableValues);
 			for (int i = 0; i < [mutableValues count]; i++) {
 				//NSLog(@"class: %@ value: %@",[[mutableValues objectAtIndex:i] class],[mutableValues objectAtIndex:i]);
-				if ([mutableValues objectAtIndex:i] == [NSNull null]) {
-					[mutableValues replaceObjectAtIndex:i withObject:@""];
+				if (mutableValues[i] == [NSNull null]) {
+					mutableValues[i] = @"";
 				}
 			}
 			//NSLog(@"values: %@",mutableValues);
@@ -84,7 +84,7 @@
 			[aDBAccess rollback];
 		}
     }
-    [dictionary setObject:retVal?retVal : @"Must have 3 parameters" forKey:@"dbScriptResults"];
+    dictionary[@"dbScriptResults"] = retVal?retVal : @"Must have 3 parameters";
     return QC_STACK_CONTINUE;
 }
 @end

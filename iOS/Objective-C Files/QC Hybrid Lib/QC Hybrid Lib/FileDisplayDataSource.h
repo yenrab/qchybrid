@@ -13,6 +13,6 @@
 @interface FileDisplayDataSource : NSObject <QLPreviewControllerDataSource>{
     NSArray *documents;
 }
-@property (nonatomic, retain) NSArray *documents;
+@property (nonatomic, strong) NSArray *documents;
 -(id)initWithFile:(NSString*)aFileName;
 @end

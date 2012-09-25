@@ -29,13 +29,13 @@
 
 @implementation CreateFooterVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"in create footer");
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
-    NSString *toolbarId = [parameters objectAtIndex:1];
+    QuickConnectViewController *controller = parameters[0];
+    NSString *toolbarId = parameters[1];
 	//NSString *toolbarId = @"mainFooter";
-    NSString *barColor = [parameters objectAtIndex:2];
-    BOOL translucent = [[parameters objectAtIndex:3] boolValue];
+    NSString *barColor = parameters[2];
+    BOOL translucent = [parameters[3] boolValue];
 	//NSLog(@"Tool bar id: %@",toolbarId);
 	
 	
@@ -63,7 +63,7 @@
 	//NSLog(@"footers %@", [controller nativeFooters]);
 	NSMutableDictionary *theFooters = [controller nativeFooters];
 	
-	[theFooters setObject:toolbar forKey:toolbarId];
+	theFooters[toolbarId] = toolbar;
 	//NSLog(@"footers %@", [controller nativeFooters]);
 	
 	[controller.view addSubview:toolbar];

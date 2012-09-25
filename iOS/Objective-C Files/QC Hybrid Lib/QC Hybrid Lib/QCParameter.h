@@ -30,6 +30,6 @@
 	id value;
 }
 
-@property (nonatomic, retain) NSString* name;
-@property (nonatomic, retain) id value;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) id value;
 @end

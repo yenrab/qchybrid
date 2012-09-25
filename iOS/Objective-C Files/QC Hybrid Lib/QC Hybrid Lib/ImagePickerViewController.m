@@ -56,10 +56,10 @@
     //NSLog(@"picked");
 	[self dismissModalViewControllerAnimated:NO];
 	
-	UIImage *imageToSend = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	UIImage *imageToSend = info[@"UIImagePickerControllerOriginalImage"];
 
-	if ([info objectForKey:@"UIImagePickerControllerOriginalImage"] != nil) {
-		imageToSend = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	if (info[@"UIImagePickerControllerOriginalImage"] != nil) {
+		imageToSend = info[@"UIImagePickerControllerOriginalImage"];
 	}
     //NSLog(@"about to add webView");
     [theQCController.window addSubview:theQCController.webView];
@@ -81,13 +81,13 @@
             /*
              *  a picture name must have been supplied so save the bytes to the documents directory
              */
-            NSString *fileName = [self.passThroughParams objectAtIndex:1];
+            NSString *fileName = (self.passThroughParams)[1];
             NSArray *arrayPaths = 
             NSSearchPathForDirectoriesInDomains(
                                                 NSDocumentDirectory,
                                                 NSUserDomainMask,
                                                 YES);
-            NSString *docDir = [arrayPaths objectAtIndex:0];
+            NSString *docDir = arrayPaths[0];
             NSString *filePath = [NSString stringWithFormat:@"%@/%@",docDir,fileName];
             
             [UIImagePNGRepresentation(imageToSend) writeToFile:filePath atomically:YES];
@@ -102,12 +102,12 @@
 		NSData *data = UIImagePNGRepresentation(imageToSend);
 		NSFileManager *fileManager = [NSFileManager defaultManager];
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,  YES);
-		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *documentsDirectory = paths[0];
         // create a UUID to use as the name of the moved file
         //create a UUID for the user
         CFUUIDRef	fileUUID = CFUUIDCreate(nil);//create a new UUID
         //get the string representation of the UUID
-        NSString	*fileNameString = [NSString stringWithFormat:@"%@.png", (__bridge NSString*)CFUUIDCreateString(nil, fileUUID)];
+        NSString	*fileNameString = [NSString stringWithFormat:@"%@.png", (NSString*)CFBridgingRelease(CFUUIDCreateString(nil, fileUUID))];
         CFRelease(fileUUID);
         
 		NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:fileNameString];
@@ -124,15 +124,14 @@
     self.aPicker = nil;
 
 	//NSArray *list = [[dictionary objectForKey:@"BCOresults"] objectAtIndex:0];
-    NSString *executionKey = [[self.passThroughParams lastObject] objectAtIndex:0];//objectAtIndex:2] objectAtIndex:0];
+    NSString *executionKey = [self.passThroughParams lastObject][0];//objectAtIndex:2] objectAtIndex:0];
     
-    NSArray *resultsVal = [NSArray arrayWithObjects:
-                       retVal, 
-                       executionKey, nil];
+    NSArray *resultsVal = @[retVal, 
+                       executionKey];
 	
 	SBJSON *generator = [SBJSON alloc];
 	//NSLog(@"passThroughParams %@",self.passThroughParams);
-	[retVal addObject:[self.passThroughParams objectAtIndex:1]];
+	[retVal addObject:(self.passThroughParams)[1]];
 	NSError *JSONError;
 	NSString *dataString = [generator stringWithObject:resultsVal error:&JSONError];
 	//NSLog(@"Error: %@",JSONError);

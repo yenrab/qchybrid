@@ -11,12 +11,12 @@
 
 @implementation MoveImageToCameraRollBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *dirPath = [paths objectAtIndex:0];
+    NSString *dirPath = paths[0];
     
-    NSString *fileName = [parameters objectAtIndex:1];
+    NSString *fileName = parameters[1];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",dirPath,fileName];
     
     
@@ -26,7 +26,7 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *err = nil;
     [fileManager  removeItemAtPath:filePath error:&err];
-    [dictionary setObject:[NSArray arrayWithObjects:@"movedToRoll", fileName, nil] forKey:@"fileMoved"];
+    dictionary[@"fileMoved"] = @[@"movedToRoll", fileName];
     
     return QC_STACK_CONTINUE;
 }

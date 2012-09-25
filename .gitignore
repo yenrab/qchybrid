@@ -18,3 +18,5 @@ iOS/Objective-C Files/QC Hybrid Lib/QC Hybrid Lib.xcodeproj/xcuserdata/barneyl.x
 iOS/Objective-C Files/QC Hybrid Lib/QC Hybrid Lib.xcodeproj/xcuserdata/lee.xcuserdatad/xcschemes/xcschememanagement.plist
 
 iOS/Objective-C Files/QC Hybrid Lib/qc_hybrid.a
+
+*.a

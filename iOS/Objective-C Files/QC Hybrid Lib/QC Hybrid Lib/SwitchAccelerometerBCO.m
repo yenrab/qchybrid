@@ -29,10 +29,10 @@
 @implementation SwitchAccelerometerBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     
-	NSMutableArray *parameters = [dictionary objectForKey:@"parameters"];
+	NSMutableArray *parameters = dictionary[@"parameters"];
     //NSLog(@"switching %@", parameters);
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *useAccellerometerStr = [parameters objectAtIndex:1];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *useAccellerometerStr = parameters[1];
 	if([useAccellerometerStr isEqualToString:@"YES"]){
 		//NSLog(@"turning on");
 		controller.activateAccelerometer = YES;

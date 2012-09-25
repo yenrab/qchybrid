@@ -31,16 +31,16 @@
 
 @implementation TransactionHandlerBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"handling transaction request %@", parameters);
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
+    QuickConnectViewController *controller = parameters[0];
     
-	NSString *dbName = [parameters objectAtIndex:1];
-	NSString *requestType = [parameters objectAtIndex:2];
-	SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)[controller.databases objectForKey:dbName];
+	NSString *dbName = parameters[1];
+	NSString *requestType = parameters[2];
+	SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)(controller.databases)[dbName];
 	if(aDBAccess == nil){
 		aDBAccess = [[SQLiteDataAccess alloc] initWithDatabase:dbName isWriteable: YES];
-		[controller.databases setObject:aDBAccess forKey:dbName];
+		(controller.databases)[dbName] = aDBAccess;
 	}
 	DataAccessResult* retVal;
 	if([requestType isEqual:@"start"]){
@@ -53,7 +53,7 @@
 		//NSLog(@"rolling back");
 		retVal = [aDBAccess rollback];
 	}
-    [dictionary setObject:retVal forKey:@"dbInteractionResult"];
+    dictionary[@"dbInteractionResult"] = retVal;
 	return QC_STACK_CONTINUE;
 }
 @end

@@ -31,11 +31,11 @@
 @implementation DatePickerVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
     datePicker.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    NSString *type = [(NSString*)[parameters objectAtIndex:1] lowercaseString];
+    NSString *type = [(NSString*)parameters[1] lowercaseString];
     if([type compare:@"datetime"] == NSOrderedSame){
         datePicker.datePickerMode = UIDatePickerModeDateAndTime;
     }
@@ -60,7 +60,7 @@
                                    pickerSize.height + barHeight);
     [datePicker setBackgroundColor:[UIColor blackColor]];
     
-	QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+	QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
 	DeviceWebView *webView = [controller webView];
     [webView setPicker:datePicker];
     UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];

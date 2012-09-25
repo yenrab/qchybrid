@@ -23,10 +23,10 @@
 
 }
 
-@property (nonatomic, retain) NSArray *passThroughParams;
-@property (nonatomic, retain) QuickConnectViewController *theQCController;
-@property (nonatomic, retain) UIPopoverController *popoverController;
-@property (nonatomic, retain) UIImagePickerController *aPicker;
+@property (nonatomic, strong) NSArray *passThroughParams;
+@property (nonatomic, strong) QuickConnectViewController *theQCController;
+@property (nonatomic, strong) UIPopoverController *popoverController;
+@property (nonatomic, strong) UIImagePickerController *aPicker;
 @property (readwrite) CGRect hidden;
 @property (readwrite) CGRect base;
 

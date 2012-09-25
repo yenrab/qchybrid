@@ -69,7 +69,7 @@ NSString * SBJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
 #define skipDigits(c) while (isdigit(*c)) c++
 
 static NSError *err(int code, NSString *str) {
-    NSDictionary *ui = [NSDictionary dictionaryWithObject:str forKey:NSLocalizedDescriptionKey];
+    NSDictionary *ui = @{NSLocalizedDescriptionKey: str};
     return [NSError errorWithDomain:SBJSONErrorDomain code:code userInfo:ui];
 }
 
@@ -77,10 +77,8 @@ static NSError *errWithUnderlier(int code, NSError **u, NSString *str) {
     if (!u)
         return err(code, str);
     
-    NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:
-                        str, NSLocalizedDescriptionKey,
-                        *u, NSUnderlyingErrorKey,
-                        nil];
+    NSDictionary *ui = @{NSLocalizedDescriptionKey: str,
+                        NSUnderlyingErrorKey: *u};
     return [NSError errorWithDomain:SBJSONErrorDomain code:code userInfo:ui];
 }
 
@@ -254,7 +252,7 @@ static char ctrl[0x22];
             return NO;
 
         [json appendString:colon];
-        if (![self appendValue:[fragment objectForKey:value] into:json error:error]) {
+        if (![self appendValue:fragment[value] into:json error:error]) {
             *error = err(EUNSUPPORTED, [NSString stringWithFormat:@"Unsupported value for key %@ in object", value]);
             return NO;
         }
@@ -425,7 +423,7 @@ static char ctrl[0x22];
 {
     if (!strncmp(c, "rue", 3)) {
         c += 3;
-        *o = [NSNumber numberWithBool:YES];
+        *o = @YES;
         return YES;
     }
     *error = err(EPARSE, @"Expected 'true'");
@@ -436,7 +434,7 @@ static char ctrl[0x22];
 {
     if (!strncmp(c, "alse", 4)) {
         c += 4;
-        *o = [NSNumber numberWithBool:NO];
+        *o = @NO;
         return YES;
     }
     *error = err(EPARSE, @"Expected 'false'");
@@ -529,7 +527,7 @@ static char ctrl[0x22];
             return NO;
         }
         
-        [*o setObject:v forKey:k];
+        (*o)[k] = v;
         
         skipWhitespace(c);
         if (*c == ',' && c++) {

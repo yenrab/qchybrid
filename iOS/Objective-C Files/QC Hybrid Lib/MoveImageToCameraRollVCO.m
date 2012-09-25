@@ -16,12 +16,11 @@
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     //add the execution the list and the key in to send them back to the JavaScript
-    NSArray *list = [[dictionary objectForKey:@"BCOresults"] objectAtIndex:0];
-    NSString *executionKey = [[[dictionary objectForKey:@"parameters"] objectAtIndex:2] objectAtIndex:0];
+    NSArray *list = dictionary[@"BCOresults"][0];
+    NSString *executionKey = dictionary[@"parameters"][2][0];
     
-    NSArray *retVal = [NSArray arrayWithObjects:
-                       list, 
-                       executionKey, nil];
+    NSArray *retVal = @[list, 
+                       executionKey];
     
     NSError *genError;
     SBJSON *generator = [SBJSON alloc];
@@ -30,7 +29,7 @@
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
     NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
-    QuickConnectViewController *controller = [[dictionary objectForKey:@"parameters"] objectAtIndex:0];
+    QuickConnectViewController *controller = dictionary[@"parameters"][0];
     [controller.webView stringByEvaluatingJavaScriptFromString:jsString];
    
     return QC_STACK_EXIT;

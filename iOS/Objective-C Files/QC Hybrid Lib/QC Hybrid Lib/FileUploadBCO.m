@@ -29,15 +29,15 @@
 
 @implementation FileUploadBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"uploading file: %@",parameters);
-    NSString *fileName = [parameters objectAtIndex:1];
-	NSString *URLString = [parameters objectAtIndex:2];
-	NSString *userName = [parameters objectAtIndex:3];
-	NSString *pword = [parameters objectAtIndex:4];
-	NSString *mimeType = [parameters objectAtIndex:5];
-	NSDictionary *URLParameters = [parameters objectAtIndex:6];
-	NSString *asName = [parameters objectAtIndex:7];
+    NSString *fileName = parameters[1];
+	NSString *URLString = parameters[2];
+	NSString *userName = parameters[3];
+	NSString *pword = parameters[4];
+	NSString *mimeType = parameters[5];
+	NSDictionary *URLParameters = parameters[6];
+	NSString *asName = parameters[7];
 	if ([asName compare:@"No_Ne"] == NSOrderedSame) {
 		asName = fileName;
 	}

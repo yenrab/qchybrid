@@ -11,11 +11,11 @@
 
 @implementation BatchFileDownloadBCO
 + (BOOL) handleIt:(NSMutableDictionary*) theDictionary{
-    NSMutableArray *parameters = [theDictionary objectForKey:@"parameters"];
+    NSMutableArray *parameters = theDictionary[@"parameters"];
     //NSLog(@"downloading with parameters: %@",parameters);
-	NSArray *URLStrings = [parameters objectAtIndex:1];
-    NSArray *fileNames = [parameters objectAtIndex:2];
-	NSString *URLParameters = [parameters objectAtIndex:3];
+	NSArray *URLStrings = parameters[1];
+    NSArray *fileNames = parameters[2];
+	NSString *URLParameters = parameters[3];
 	
 	BatchQCHTTPHandler *batchHandler = [[BatchQCHTTPHandler alloc] init];
 	

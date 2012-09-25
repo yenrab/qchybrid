@@ -34,14 +34,13 @@
     //add the execution the list and the key in to send them back to the JavaScript
     NSLog(@"Dict: %@",dictionary);
     
-    NSArray *manipulationResult = [dictionary objectForKey:@"fileManipulationResult"];
-    NSArray *parametersPassed = [dictionary objectForKey:@"parameters"];
-    NSString *executionKey = [[parametersPassed lastObject] objectAtIndex:0];
+    NSArray *manipulationResult = dictionary[@"fileManipulationResult"];
+    NSArray *parametersPassed = dictionary[@"parameters"];
+    NSString *executionKey = [parametersPassed lastObject][0];
     
-    NSArray *dataToSend = [NSArray arrayWithObjects:
-                                          manipulationResult, 
-                                          executionKey, nil];
-    QuickConnectViewController *theController = [parametersPassed objectAtIndex:0];
+    NSArray *dataToSend = @[manipulationResult, 
+                                          executionKey];
+    QuickConnectViewController *theController = parametersPassed[0];
     [theController.messagingSystem sendCompletionRequest:dataToSend];
     
     //NSArray *deleteResult = [[dictionary objectForKey:@"BCOresults"] objectAtIndex:0];

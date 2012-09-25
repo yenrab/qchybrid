@@ -20,9 +20,9 @@
 	MKCoordinateRegion viewableRegion;
 	BOOL startedInLandscape;
 }
-@property (nonatomic, retain) MKMapView *mapView;
-@property (nonatomic, retain) UIView *fullView;
-@property (nonatomic, retain) NSArray *annotations;
+@property (nonatomic, strong) MKMapView *mapView;
+@property (nonatomic, strong) UIView *fullView;
+@property (nonatomic, strong) NSArray *annotations;
 @property (nonatomic) MKCoordinateRegion viewableRegion;
 @property (readwrite) BOOL startedInLandscape;
 

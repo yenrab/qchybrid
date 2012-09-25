@@ -29,12 +29,12 @@
 
 @implementation TabBarBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *cmd = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *cmd = parameters[1];
 	
 	if ([cmd isEqualToString:@"setHidden"]){
-		[controller.tabbar setHidden:[[parameters objectAtIndex:2] boolValue]];
+		[controller.tabbar setHidden:[parameters[2] boolValue]];
 	}
 	else {
         [controller designTabBar:parameters];

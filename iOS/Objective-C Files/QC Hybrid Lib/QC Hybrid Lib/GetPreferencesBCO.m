@@ -29,7 +29,7 @@
 
 @implementation GetPreferencesBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //NSLog(@"default domain names array %@", [defaults persistentDomainNames]);
     id results = nil;
@@ -37,19 +37,19 @@
             results = @"Preference values are not accessable from code until they have been viewed in the Settings app.";
     }
     else{
-        NSDictionary *allPrefs = [defaults persistentDomainForName:[[defaults persistentDomainNames] objectAtIndex:2]];
+        NSDictionary *allPrefs = [defaults persistentDomainForName:[defaults persistentDomainNames][2]];
         results = allPrefs;
         //NSLog(@"preferences map: %@", allPrefs);
-        NSString * prefName = [parameters objectAtIndex:1];
+        NSString * prefName = parameters[1];
         //NSLog(@"preference name wanted: %@", prefName);
         if([prefName compare:@"all"] != NSOrderedSame){
-            results = [allPrefs objectForKey:prefName];
+            results = allPrefs[prefName];
             if(results == nil){
                 results = [NSString stringWithFormat:@"No such preference as %@",prefName];
             }
         }
     }
-    [dictionary setObject:results?results : @"No preferences" forKey:@"preferences"];
+    dictionary[@"preferences"] = results?results : @"No preferences";
     return QC_STACK_CONTINUE;
 }
 @end

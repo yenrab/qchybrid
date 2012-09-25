@@ -60,7 +60,7 @@ static void recordingCallback (
 	const AudioStreamPacketDescription	*inPacketDesc
 ) {
 	// This callback, being outside the implementation block, needs a reference to the AudioRecorder object
-	AudioRecorder *recorder = (__bridge AudioRecorder *) inUserData;
+	AudioRecorder *recorder = (AudioRecorder *) CFBridgingRelease(inUserData);
 		
 	// if there is audio data, write it to the file
 	if (inNumPackets > 0) {
@@ -97,7 +97,7 @@ static void propertyListenerCallback (
 	AudioQueueRef			queueObject,
 	AudioQueuePropertyID	propertyID
 ) {
-	AudioRecorder *recorder = (__bridge AudioRecorder *) inUserData;
+	AudioRecorder *recorder = (AudioRecorder *) CFBridgingRelease(inUserData);
 
 	if (recorder.stopping) {
 	
@@ -137,7 +137,7 @@ static void propertyListenerCallback (
 		AudioQueueNewInput (
 			&audioFormat,
 			recordingCallback,
-			self,									// userData
+			(__bridge void *)(self),									// userData
 			NULL,									// run loop
 			NULL,									// run loop mode
 			0,										// flags
@@ -160,10 +160,10 @@ static void propertyListenerCallback (
 			[self queueObject],
 			kAudioQueueProperty_IsRunning,
 			propertyListenerCallback,
-			self
+			(__bridge void *)(self)
 		);
 
-		[self setAudioFileURL: (__bridge CFURLRef) fileURL];
+		[self setAudioFileURL: (CFURLRef) fileURL];
 		
 		[self enableLevelMetering];
 	}
@@ -275,7 +275,6 @@ static void propertyListenerCallback (
 		TRUE
 	);
 	
-	[super dealloc];
 }
 
 @end

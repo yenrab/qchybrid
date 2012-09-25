@@ -29,8 +29,8 @@
 
 @implementation SwitchNetworkIndicatorBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	NSString *enableNetworkStr = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+	NSString *enableNetworkStr = parameters[1];
 	if([enableNetworkStr isEqualToString:@"YES"]){
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	}

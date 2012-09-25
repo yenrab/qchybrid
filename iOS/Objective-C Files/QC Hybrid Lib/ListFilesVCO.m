@@ -31,12 +31,11 @@
 @implementation ListFilesVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     //add the execution the list and the key in to send them back to the JavaScript
-    NSArray *list = [[dictionary objectForKey:@"BCOresults"] objectAtIndex:0];
-    NSString *executionKey = [[[dictionary objectForKey:@"parameters"] lastObject] objectAtIndex:0];
+    NSArray *list = dictionary[@"BCOresults"][0];
+    NSString *executionKey = [dictionary[@"parameters"] lastObject][0];
 
-    NSArray *retVal = [NSArray arrayWithObjects:
-                       list, 
-                       executionKey, nil];
+    NSArray *retVal = @[list, 
+                       executionKey];
     //NSLog(@"retVal in list files: %@",retVal);
     NSError *genError;
     SBJSON *generator = [SBJSON alloc];
@@ -48,7 +47,7 @@
     dataString = [dataString stringByReplacingOccurrencesOfString:@"NSFile" withString:@""];
     NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
     //NSLog(@"jsString: %@",jsString);
-    QuickConnectViewController *controller = [[dictionary objectForKey:@"parameters"] objectAtIndex:0];
+    QuickConnectViewController *controller = dictionary[@"parameters"][0];
     [controller.webView stringByEvaluatingJavaScriptFromString:jsString];
     
     return QC_STACK_EXIT;

@@ -105,43 +105,43 @@
     @property (nonatomic, retain) QLPreviewController *previewer;
 #endif
 	
-@property (nonatomic, retain) QuickConnect *theHandler;
-    @property (nonatomic, retain) InterlayerMessageSystem *messagingSystem;
+@property (nonatomic, strong) QuickConnect *theHandler;
+    @property (nonatomic, strong) InterlayerMessageSystem *messagingSystem;
 @property (readwrite) BOOL activateAccelerometer;
 @property (readwrite) BOOL activateCompass;
 @property (readwrite) BOOL shouldAutoRotate;
-@property (nonatomic, retain) DeviceWebView *webView;
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain) AVAudioRecorder *audioRecorder;
-@property (nonatomic, retain) NSMutableDictionary *audioPlayers;
-@property (nonatomic, retain) NSMutableDictionary *databases;
+@property (nonatomic, strong) DeviceWebView *webView;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) AVAudioRecorder *audioRecorder;
+@property (nonatomic, strong) NSMutableDictionary *audioPlayers;
+@property (nonatomic, strong) NSMutableDictionary *databases;
 //@property (nonatomic, retain) NSMutableDictionary *httpServers;
 
-@property (nonatomic, retain) NSMutableDictionary *nativeHeaders;
-@property (nonatomic, retain) NSMutableDictionary *nativeFooters;
-@property (nonatomic, retain) NSMutableDictionary *nativeButtons;
+@property (nonatomic, strong) NSMutableDictionary *nativeHeaders;
+@property (nonatomic, strong) NSMutableDictionary *nativeFooters;
+@property (nonatomic, strong) NSMutableDictionary *nativeButtons;
 
 
-@property (nonatomic, retain) NSMutableDictionary *shownFooters;
+@property (nonatomic, strong) NSMutableDictionary *shownFooters;
 
-@property (nonatomic, retain) QCStorePurchaseRequestDelegate *purchaseDelegate;
-
-
-@property (nonatomic, retain) GKPeerPickerController *thePicker;
-@property (nonatomic, retain) GKSession *theSession;
-@property (nonatomic, retain) NSMutableArray *thePeers;
-
-@property (nonatomic, retain) UIImageView* imageView;
-@property (nonatomic, retain) UIImagePickerController* imagePickerController;
+@property (nonatomic, strong) QCStorePurchaseRequestDelegate *purchaseDelegate;
 
 
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) GKPeerPickerController *thePicker;
+@property (nonatomic, strong) GKSession *theSession;
+@property (nonatomic, strong) NSMutableArray *thePeers;
 
-@property (nonatomic, retain) UITabBar *tabbar;
+@property (nonatomic, strong) UIImageView* imageView;
+@property (nonatomic, strong) UIImagePickerController* imagePickerController;
+
+
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+
+@property (nonatomic, strong) UITabBar *tabbar;
     
     
-@property (nonatomic, retain) NSOperationQueue *messagePollingQueue;
+@property (nonatomic, strong) NSOperationQueue *messagePollingQueue;
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_4_0
 @property (nonatomic, retain) ADBannerView *bannerView;

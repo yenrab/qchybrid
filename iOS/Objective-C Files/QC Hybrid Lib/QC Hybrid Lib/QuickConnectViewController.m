@@ -426,9 +426,9 @@
 		
 		for(int i = 0; i < numFooters; i++){
 			
-			NSString *footerId = [footerIds objectAtIndex:i];
+			NSString *footerId = footerIds[i];
 			//UIToolbar *barToHide = [ nativeFooters objectForKey:footerId];
-			[paramsToPass replaceObjectAtIndex:1 withObject:footerId];
+			paramsToPass[1] = footerId;
             NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObject:paramsToPass forKey:@"parameters"];
 			[theHandler handleRequest:@"hideFooter" withParameters:parameters];
 		}
@@ -479,10 +479,10 @@
 	////NSLog(@"footerIds: %@",footerIds);
 	int numFooters = [footerIds count];
 	for(int i = 0; i < numFooters; i++){
-		NSString *footerId = [footerIds objectAtIndex:i];
+		NSString *footerId = footerIds[i];
 		//UIToolbar *barToShow = [nativeFooters objectForKey:footerId];
 		////NSLog(@"showing footer: %@",footerId);
-		[paramsToPass replaceObjectAtIndex:1 withObject:footerId];
+		paramsToPass[1] = footerId;
         NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObject:paramsToPass forKey:@"parameters"];
 		[theHandler handleRequest:@"showFooter" withParameters:parameters];
 	}
@@ -734,27 +734,27 @@
 	//		4		H
 	//		5		TabBarItems
 	
-	NSString *TabBarX = [parameters objectAtIndex:1];
-	NSString *TabBarY = [parameters objectAtIndex:2];
-	NSString *TabBarWidth = [parameters objectAtIndex:3];
-	NSString *TabBarHeight = [parameters objectAtIndex:4];
+	NSString *TabBarX = parameters[1];
+	NSString *TabBarY = parameters[2];
+	NSString *TabBarWidth = parameters[3];
+	NSString *TabBarHeight = parameters[4];
 	
 	//	CGRect frame = CGRectMake(0.0f, 32.0f, 320.0f, 20.0f);
 	CGRect frame = CGRectMake([TabBarX floatValue], [TabBarY floatValue], [TabBarWidth floatValue], [TabBarHeight floatValue]);
 	tabbar = [[UITabBar alloc] initWithFrame:frame];
 	
 	NSArray *Items;	
-	Items = [parameters objectAtIndex:5];
+	Items = parameters[5];
 	NSMutableArray *tabItems = [[NSMutableArray alloc] initWithCapacity:[Items count]];
 	
 	for(int i = 0; i < [Items count]; i++){
-		NSArray	*ItemRecords = [Items objectAtIndex:i];
-		[tabItems addObject:[[UITabBarItem alloc] initWithTitle:[ItemRecords objectAtIndex:0] image:[UIImage imageNamed:[ItemRecords objectAtIndex:1]] tag:i+1]]; 	
+		NSArray	*ItemRecords = Items[i];
+		[tabItems addObject:[[UITabBarItem alloc] initWithTitle:ItemRecords[0] image:[UIImage imageNamed:ItemRecords[1]] tag:i+1]]; 	
 		//[ItemRecords release];
 	}
 	
 	tabbar.items = tabItems; 
-	[tabbar setSelectedItem:[tabItems objectAtIndex:0]];
+	[tabbar setSelectedItem:tabItems[0]];
 	tabbar.alpha = 1.0; 	
 	tabbar.userInteractionEnabled = YES; 	
 	[tabbar setBackgroundColor:[UIColor blueColor]];
@@ -766,7 +766,7 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
 	//NSLog(@"%@",item.title);
 	NSMutableArray *passingArray = [[NSMutableArray alloc] initWithCapacity:1];
-	[passingArray addObject:[NSNumber numberWithInt: item.tag]];
+	[passingArray addObject:@(item.tag)];
 	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
 	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
@@ -796,12 +796,12 @@
 	NSMutableArray *transactionResults = [[NSMutableArray alloc] init];
 	for(int i = 0; i < numTransactions; i++)
     {
-		SKPaymentTransaction *transaction = [transactions objectAtIndex:i];
+		SKPaymentTransaction *transaction = transactions[i];
 		NSMutableArray *transactionResult = [NSMutableArray arrayWithCapacity:7];
-		NSNumber *state = [NSNumber numberWithInt:transaction.transactionState];
+		NSNumber *state = @(transaction.transactionState);
 		[transactionResult insertObject:state atIndex:0];
 		[transactionResult insertObject:transaction.payment.productIdentifier atIndex:1];
-		[transactionResult insertObject:[NSNumber numberWithInt:transaction.payment.quantity] atIndex:2];
+		[transactionResult insertObject:@(transaction.payment.quantity) atIndex:2];
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
@@ -841,7 +841,7 @@
     UISwitch *onoff = (UISwitch *) sender;
 	int switchId = [onoff tag];
 	NSMutableArray *passingArray = [[NSMutableArray alloc] initWithCapacity:2];
-	[passingArray addObject:[NSNumber numberWithInt: switchId]];
+	[passingArray addObject:@(switchId)];
 	
 	if (onoff.on == YES){
 		[passingArray addObject:@"YES"];
@@ -879,7 +879,7 @@
                           ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
                           ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
                           ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
-    NSArray *passingArray = [NSArray arrayWithObject:hexToken];
+    NSArray *passingArray = @[hexToken];
 	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
 	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
@@ -894,7 +894,7 @@
 
 - (void) pushNotificationToJavaScript:(NSDictionary *)userInfo{
 	
-	NSArray *passingArray = [NSArray arrayWithObject:userInfo];
+	NSArray *passingArray = @[userInfo];
 	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
 	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];

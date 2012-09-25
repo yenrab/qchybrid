@@ -32,7 +32,7 @@
 	NSArray *passThroughParameters;
 }
 
-@property (nonatomic, retain) NSArray *passThroughParameters;
+@property (nonatomic, strong) NSArray *passThroughParameters;
 
 - (QCStoreRequestDelegate*)initWithPassthroughParameters:(NSArray *)params;
 

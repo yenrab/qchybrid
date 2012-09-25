@@ -32,9 +32,9 @@
     
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,  YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentsDirectory = paths[0];
     
-    NSString *fileNameString = [[dictionary objectForKey:@"parameters"] objectAtIndex:1];
+    NSString *fileNameString = dictionary[@"parameters"][1];
     fileNameString = [fileNameString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //NSLog(@"file name: %@",fileNameString);
     if([fileNameString isEqualToString:@"undefined"]){
@@ -64,11 +64,11 @@
                 //[attributes setValue:@"" forKey: NSFileExtendedAttributes]);
                 filePath = [filePath stringByReplacingOccurrencesOfString:documentsDirectory withString:@""];
                 filePath = [filePath substringFromIndex:1];
-                [retVal addObject:[NSArray arrayWithObjects:attributes, filePath, nil]];
+                [retVal addObject:@[attributes, filePath]];
             }
             //NSLog(@"file list: %@",retVal);
             if (!retVal) {
-                retVal = [NSArray array];
+                retVal = @[];
             }
             
         }
@@ -78,10 +78,10 @@
     }
     if (err != nil) {
         //NSLog(@"error: %@",err);
-        [dictionary setObject:[NSArray arrayWithObjects:@"ERROR", [NSString stringWithFormat:@"Unable to get contents of %@", fileNameString], nil] forKey:@"fileManipulationResult"];
+        dictionary[@"fileManipulationResult"] = @[@"ERROR", [NSString stringWithFormat:@"Unable to get contents of %@", fileNameString]];
     }
     else{
-        [dictionary setObject:[NSArray arrayWithObjects:resultIndicator,retVal, nil] forKey:@"fileManipulationResult"];
+        dictionary[@"fileManipulationResult"] = @[resultIndicator,retVal];
     }
     return QC_STACK_CONTINUE;
 }

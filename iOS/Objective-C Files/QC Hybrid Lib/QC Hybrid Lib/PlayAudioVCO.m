@@ -31,20 +31,20 @@
 
 @implementation PlayAudioVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	NSString *flag = [parameters objectAtIndex:2];
-	QuickConnectViewController *aController = [parameters objectAtIndex:0];
-	NSString *fileName = [parameters objectAtIndex:1];
-    NSInteger numLoops = [[parameters objectAtIndex:3] integerValue];
+    NSArray *parameters = dictionary[@"parameters"];
+	NSString *flag = parameters[2];
+	QuickConnectViewController *aController = parameters[0];
+	NSString *fileName = parameters[1];
+    NSInteger numLoops = [parameters[3] integerValue];
     
-    AVAudioPlayer *audioPlayer = [aController.audioPlayers objectForKey:fileName];
+    AVAudioPlayer *audioPlayer = (aController.audioPlayers)[fileName];
     if(!audioPlayer){
         NSArray *dirPaths;
         NSString *docsDir;
         
         dirPaths = NSSearchPathForDirectoriesInDomains(
                                                        NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = [dirPaths objectAtIndex:0];
+        docsDir = dirPaths[0];
         NSString *soundFilePath = [docsDir
                                    stringByAppendingPathComponent:fileName];
         

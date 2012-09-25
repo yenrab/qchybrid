@@ -12,10 +12,10 @@
 @implementation CreateDirBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     //NSLog(@"creating dir");
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    NSString *dirName = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+    NSString *dirName = parameters[1];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *dirPath = [paths objectAtIndex:0];
+    NSString *dirPath = paths[0];
     NSError *err = nil;
     if (![dirName isEqualToString:@"undefined"]) {
         dirName = [dirName stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -28,7 +28,7 @@
     if (err != nil) {
         resultIndicator = @"failedDirCreation";
     }
-    [dictionary setObject:[NSArray arrayWithObjects:resultIndicator,dirName, nil] forKey:@"fileManipulationResult"];
+    dictionary[@"fileManipulationResult"] = @[resultIndicator,dirName];
     return QC_STACK_CONTINUE;
 }
 @end

@@ -18,7 +18,7 @@
 -(void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
 	int numTransactions = [transactions count];
 	for (int i = 0; i < numTransactions; i++) {
-		SKPaymentTransaction *aTransaction = [transactions objectAtIndex:i];
+		SKPaymentTransaction *aTransaction = transactions[i];
 		NSMutableArray *retVal = [[NSMutableArray alloc] init];
 		//remove compled transactions
 		if (aTransaction.transactionState != SKPaymentTransactionStatePurchasing) {
@@ -29,7 +29,7 @@
 		   || aTransaction.transactionState == SKPaymentTransactionStateRestored){
 			[retVal addObject:@"purchaseSuccess"];
 			[retVal addObject:aTransaction.payment.productIdentifier];
-			 [retVal addObject:[NSNumber numberWithInt: aTransaction.payment.quantity]];
+			 [retVal addObject:@(aTransaction.payment.quantity)];
 		}
 		else if(aTransaction.transactionState == SKPaymentTransactionStateFailed){
 			[retVal addObject:@"purchaseFailure"];

@@ -14,7 +14,7 @@
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     //NSLog(@"saving file");
     
-    NSString *fileNameString = [[dictionary objectForKey:@"parameters"] objectAtIndex:1];
+    NSString *fileNameString = dictionary[@"parameters"][1];
     //NSLog(@"file name string: %@",fileNameString);
     //fileNameString = [fileNameString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //NSLog(@"file name string: %@",fileNameString);
@@ -27,11 +27,11 @@
     //NSLog(@"path components: %@",fileNamePaths);
     fileNameString = [fileNamePaths lastObject];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *dirPath = [paths objectAtIndex:0];
+    NSString *dirPath = paths[0];
     NSError *err = nil;
 
     for (int i = 0; i < [fileNamePaths count] -1; i++) {
-        dirPath = [NSString stringWithFormat:@"%@/%@",dirPath,[fileNamePaths objectAtIndex:i]];
+        dirPath = [NSString stringWithFormat:@"%@/%@",dirPath,fileNamePaths[i]];
     }
     //NSLog(@"dir string: %@",dirPath);
     if ([fileNamePaths count] > 1) {
@@ -44,16 +44,16 @@
     NSString *fullPath = [dirPath stringByAppendingPathComponent:fileNameString];
     //NSString *text = [[[dictionary objectForKey:@"parameters"] objectAtIndex:2]
     //                 stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *text = [[dictionary objectForKey:@"parameters"] objectAtIndex:2];
+    NSString *text = dictionary[@"parameters"][2];
     //NSLog(@"save file: %@",fullPath);
     [text writeToFile:fullPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
     if (err != nil) {
         //NSLog(@"file save error: %@",err);
-        [dictionary setObject:[NSArray arrayWithObjects:@"ERROR", [NSString stringWithFormat:@"Unable to save %@ to disk", fileNameString], nil] forKey:@"fileManipulationResult"];
+        dictionary[@"fileManipulationResult"] = @[@"ERROR", [NSString stringWithFormat:@"Unable to save %@ to disk", fileNameString]];
     }
     else{
         //NSLog(@"file saved");
-        [dictionary setObject:[NSArray arrayWithObjects:@"fileSaved",fileNameString, nil] forKey:@"fileManipulationResult"];
+        dictionary[@"fileManipulationResult"] = @[@"fileSaved",fileNameString];
     }
     return QC_STACK_CONTINUE;
 }

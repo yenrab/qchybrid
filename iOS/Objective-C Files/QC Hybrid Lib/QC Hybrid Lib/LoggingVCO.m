@@ -31,13 +31,13 @@
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     //NSLog(@"logging: %@",dictionary);
     
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"parameters: %@",parameters);
 	NSString *message =@"ERROR: A Message was to be logged but an error occured preparing it.\n\n\n";
 	if([parameters count] >= 1){
         //NSLog(@"parameter: %@",[parameters objectAtIndex:1]);
 		//message = [[parameters objectAtIndex:1] stringByReplacingOccurrencesOfString:@"_@_"  withString:@"\n\t\t"];
-        message = [parameters objectAtIndex:1];
+        message = parameters[1];
 	}
 	NSLog(@"JavaScriptMessage: %@",message);
 	return QC_STACK_EXIT;

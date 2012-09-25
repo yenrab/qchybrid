@@ -32,8 +32,8 @@
 
 @implementation GetDeviceInfoVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+    NSArray *parameters = dictionary[@"parameters"];
+	QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
 	UIWebView *webView = [controller webView];
 	UIDevice *aDevice = [UIDevice currentDevice];
     NSLocale *currentLocale = [NSLocale currentLocale];
@@ -53,7 +53,7 @@
     }
     [passingArray addObject: timeZoneString];
 	
-	[passingArray addObject:[NSNumber numberWithUnsignedInt:[[NSProcessInfo processInfo] processorCount]]];
+	[passingArray addObject:@([[NSProcessInfo processInfo] processorCount])];
     NSString *distributionType = @"Release";
     if(isBeta){
         distributionType = @"Beta";

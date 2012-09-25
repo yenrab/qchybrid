@@ -32,7 +32,7 @@
 		QCHTTPHandler *getHandler = [[QCHTTPHandler alloc] init];
 		getHandler.batchHandler = self;
 		//NSLog(@"downloading: %@ %@",[saveFileNames objectAtIndex:i], [urls objectAtIndex:i]);
-		[getHandler startGet:[saveFileNames objectAtIndex:i] fromURL:[urls objectAtIndex:i] URLParameters:urlParamters shouldOverwrite:NO];
+		[getHandler startGet:saveFileNames[i] fromURL:urls[i] URLParameters:urlParamters shouldOverwrite:NO];
 	}
 }
 - (void) notifyRequestComplete:(NSString*)filePathString{
@@ -50,7 +50,7 @@
 		
 		NSMutableArray *retVal = [NSMutableArray arrayWithCapacity:2];
 		[retVal addObject:self.saveFilePaths];
-		[retVal addObject:[self.passThroughParameters objectAtIndex:8]];
+		[retVal addObject:(self.passThroughParameters)[8]];
 		//NSLog(@"%@",retVal);
 		
 		NSError *genError;
@@ -60,7 +60,7 @@
 		dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
 		dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
 		NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
-		QuickConnectViewController *controller = [passThroughParameters objectAtIndex:0];
+		QuickConnectViewController *controller = passThroughParameters[0];
 		[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
 	}
 	//}

@@ -31,23 +31,23 @@
 @implementation PlaySoundVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"playing sound");
 	
-	SystemSoundID aSound = [((NSNumber*)[parameters objectAtIndex:1]) intValue];
+	SystemSoundID aSound = [((NSNumber*)parameters[1]) intValue];
 	if(aSound == -1){
 		aSound = kSystemSoundID_Vibrate;
 	}
     else{
-        NSString *fullFileName = [parameters objectAtIndex:2];
+        NSString *fullFileName = parameters[2];
         NSArray *fileNamePortions = [fullFileName componentsSeparatedByString:@"."];
-        NSString *fileName = [fileNamePortions objectAtIndex:0];
-        NSString *fileType = [fileNamePortions objectAtIndex:1];
+        NSString *fileName = fileNamePortions[0];
+        NSString *fileType = fileNamePortions[1];
         NSString *soundFile = [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
         
         NSURL *url = [NSURL fileURLWithPath:soundFile];
         //if the audio file is takes longer than 5 seconds to play you will get a -1500 error
-        AudioServicesCreateSystemSoundID( (__bridge CFURLRef) url, &aSound );
+        AudioServicesCreateSystemSoundID( (CFURLRef) CFBridgingRetain(url), &aSound );
     }
 	AudioServicesPlaySystemSound(aSound);
     //NSLog(@"done playing sound: %i", aSound);

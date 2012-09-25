@@ -29,9 +29,9 @@
 
 @implementation SwitchActivityIndicatorVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *enableActivityStr = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *enableActivityStr = parameters[1];
 	if([enableActivityStr isEqualToString:@"YES"]){
 		if(controller.activityIndicator == nil){
 			controller.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];

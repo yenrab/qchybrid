@@ -35,17 +35,17 @@
 @implementation ShowMapVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	NSArray *locations = [parameters objectAtIndex:1];
-	NSDecimalNumber *showCurrentLocation = [parameters objectAtIndex:2];
-	NSString *mapType = [parameters objectAtIndex:3];
+    NSArray *parameters = dictionary[@"parameters"];
+	NSArray *locations = parameters[1];
+	NSDecimalNumber *showCurrentLocation = parameters[2];
+	NSString *mapType = parameters[3];
     //NSLog(@"Locations: %@", locations);
 	int numLocations = [locations count];
 	if(numLocations == 0){
 		return QC_STACK_EXIT;
 	}
     QCMapViewController *aMapViewController = [[QCMapViewController alloc] initWithNibName:@"MapView" bundle:nil];
-	QuickConnectViewController *theController = [parameters objectAtIndex:0];
+	QuickConnectViewController *theController = parameters[0];
 	
 	[aMapViewController.view setAlpha:0];
 	[[[theController webView] superview] addSubview:aMapViewController.view];
@@ -123,10 +123,10 @@
 	}
 	else{
 		for (int i = 0; i < numLocations; i++) {
-			NSArray *location = [locations objectAtIndex:i];
+			NSArray *location = locations[i];
 			CLLocationCoordinate2D adder;
-			adder.latitude = [[location objectAtIndex:0] doubleValue];
-			adder.longitude = [[location objectAtIndex:1] doubleValue];
+			adder.latitude = [location[0] doubleValue];
+			adder.longitude = [location[1] doubleValue];
 			if(adder.latitude > greatestLat){
 				greatestLat = adder.latitude;
 			}
@@ -143,17 +143,17 @@
 			NSString *subtitle;
 			
 			if ([location count] >= 3) {
-				title = [NSString stringWithString:[location objectAtIndex:2]];
+				title = [NSString stringWithString:location[2]];
 			}
 			else {
-				title = [NSString stringWithString:@""];
+				title = @"";
 			}
 
 			if ([location count] >= 4) {
-				subtitle = [NSString stringWithString:[location objectAtIndex:3]];
+				subtitle = [NSString stringWithString:location[3]];
 			}
 			else {
-				subtitle = [NSString stringWithString:@""];
+				subtitle = @"";
 			}
 			//create an MKAnnotation
 			QCMapAnnotation *annotation = [[QCMapAnnotation alloc] initWithCoordinate:adder andTitle:title andSubtitle:subtitle];

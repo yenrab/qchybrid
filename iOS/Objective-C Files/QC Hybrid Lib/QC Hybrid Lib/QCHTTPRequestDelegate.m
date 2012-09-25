@@ -67,7 +67,7 @@
 	[retVal addObject:webDataString];
 	//NSLog(@"paramArray: %@",self.passThroughParameters);
     //add the execution key in to send them back to the JavaScript
-    [retVal addObject:[[self.passThroughParameters objectAtIndex:6] objectAtIndex:0]];
+    [retVal addObject:(self.passThroughParameters)[6][0]];
 	//NSLog(@"returning results from QCHTTPRequestDelegate: %@",retVal);
 	
 	NSError *error;
@@ -79,7 +79,7 @@
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
 	//NSLog(@"%@",jsString);
-    QuickConnectViewController *controller = [self.passThroughParameters objectAtIndex:0];
+    QuickConnectViewController *controller = (self.passThroughParameters)[0];
 	[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
 	
 }  

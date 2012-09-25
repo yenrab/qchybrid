@@ -28,12 +28,12 @@
 @implementation DeleteFileBCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    NSString *fileNameString = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+    NSString *fileNameString = parameters[1];
     fileNameString = [fileNameString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *resultIndicator = @"deleteFailure";
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [paths objectAtIndex:0];
+    NSString *path = paths[0];
     
     path = [NSString stringWithFormat:@"%@/%@",path,fileNameString];
     NSLog(@"deleting file %@",path);
@@ -44,7 +44,7 @@
         }
     }
     NSLog(@"result: %@",resultIndicator);
-    [dictionary setObject:[NSArray arrayWithObjects:resultIndicator,fileNameString, nil] forKey:@"fileManipulationResult"];
+    dictionary[@"fileManipulationResult"] = @[resultIndicator,fileNameString];
     return QC_STACK_CONTINUE;
 }
 @end

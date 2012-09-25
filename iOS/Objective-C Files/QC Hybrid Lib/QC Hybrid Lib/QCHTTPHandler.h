@@ -53,11 +53,11 @@
 	BatchQCHTTPHandler			*batchHandler;
 	BOOL						shouldOverwrite;
 }
-@property (nonatomic, retain) NSArray *passThroughParameters;
-@property (nonatomic, retain) NSString *fileName;
-@property (nonatomic, retain) NSMutableData *getResult;
+@property (nonatomic, strong) NSArray *passThroughParameters;
+@property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, strong) NSMutableData *getResult;
 @property (readwrite) BOOL doingAGet;
-@property (nonatomic, retain) BatchQCHTTPHandler *batchHandler;
+@property (nonatomic, strong) BatchQCHTTPHandler *batchHandler;
 @property (readwrite) BOOL shouldOverwrite;
 
 - (void)startPost:(NSString *)fullFileName asName:(NSString *)asName toURL:(NSString *)URLString withUserName:(NSString *)userName andPassword:(NSString *)pword contentType:(NSString *)mimeType URLParameters:(NSDictionary *)URLParameters;

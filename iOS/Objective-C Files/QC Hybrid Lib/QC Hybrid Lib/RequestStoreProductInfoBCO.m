@@ -15,9 +15,9 @@
 
 @implementation RequestStoreProductInfoBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	
-	NSArray *identifierArray = [parameters objectAtIndex:1];
+	NSArray *identifierArray = parameters[1];
 	
     SKProductsRequest *aRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:identifierArray]];
 	

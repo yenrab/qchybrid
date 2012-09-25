@@ -31,6 +31,6 @@
     NSObject *picker;
 }
 
-@property (nonatomic, retain) NSObject* picker;
+@property (nonatomic, strong) NSObject* picker;
 
 @end

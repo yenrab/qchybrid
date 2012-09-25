@@ -36,7 +36,7 @@
 - (id) initWithHandler:(QuickConnectViewController*)theController;
 - (void) getJSONStringFromWebView:(NSMutableString*)jsonStringHolder;
 - (BOOL) sendCompletionRequest:(NSArray*)dataToSend;
-- (NSDictionary*)getLocalStorage:(NSError**)error;
+//- (NSDictionary*)getLocalStorage:(NSError**)error;
 - (BOOL)setLocalStorage:(NSDictionary*)theStorageDictionary;
 
 @end

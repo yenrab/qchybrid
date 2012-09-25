@@ -35,7 +35,7 @@
 @interface DatabaseDefinitions : NSObject {
 	NSMutableDictionary *databases;
 }
-@property (nonatomic, retain) NSMutableDictionary *databases;
+@property (nonatomic, strong) NSMutableDictionary *databases;
 
 - (DatabaseDefinitions*)initDatabases;
 - (SQLiteDataAccess*)getDatabaseForName:(NSString*)aDatabaseName;

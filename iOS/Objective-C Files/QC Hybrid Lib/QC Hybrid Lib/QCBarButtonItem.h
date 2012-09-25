@@ -31,8 +31,8 @@
 	UIWebView *webView;
 }
 
-@property (nonatomic, retain) NSString *theJavaScriptCallBack;
-@property (nonatomic, retain) UIWebView *webView;
+@property (nonatomic, strong) NSString *theJavaScriptCallBack;
+@property (nonatomic, strong) UIWebView *webView;
 
 - (void) qcExecuteJavaScriptCallback;
 @end

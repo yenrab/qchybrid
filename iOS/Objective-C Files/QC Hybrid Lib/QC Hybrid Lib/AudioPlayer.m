@@ -57,7 +57,7 @@ static void playbackCallback (
 	AudioQueueBufferRef		bufferReference
 ) {
 	// This callback, being outside the implementation block, needs a reference to the AudioPlayer object
-	AudioPlayer *player = (__bridge AudioPlayer *) inUserData;
+	AudioPlayer *player = (AudioPlayer *) CFBridgingRelease(inUserData);
 	if ([player donePlayingFile]) return;
 		
 	UInt32 numBytes;
@@ -172,7 +172,7 @@ static void playbackCallback (
 	//
 	// If you have a fixed file-type, you may want to hardcode this.
 	//
-    NSURL *audioURL = (__bridge NSURL*)soundFile;
+    NSURL *audioURL = (NSURL*)CFBridgingRelease(soundFile);
 	AudioFileTypeID fileTypeHint = kAudioFileMP3Type;
 	NSString *fileExtension = [[audioURL path] pathExtension];
 	if ([fileExtension isEqual:@"mp3"])
@@ -236,7 +236,7 @@ static void playbackCallback (
 	AudioQueueNewOutput (
 		&audioFormat,
 		playbackCallback,
-		self, 
+		(__bridge void *)(self), 
 		CFRunLoopGetCurrent (),
 		kCFRunLoopCommonModes,
 		0,								// run loop flags
@@ -260,7 +260,7 @@ static void playbackCallback (
 		kAudioQueueProperty_IsRunning,
 		//propertyListenerCallback,
         NULL,
-		self
+		(__bridge void *)(self)
 	);
 
 	// copy the audio file's magic cookie to the audio queue object to give it 
@@ -287,7 +287,7 @@ static void playbackCallback (
 		);
 
 		playbackCallback ( 
-			self,
+			(__bridge void *)(self),
 			[self queueObject],
 			buffers[bufferIndex]
 		);
@@ -381,7 +381,6 @@ static void playbackCallback (
 		YES
 	);
 	
-	[super dealloc];
 }
 
 @end

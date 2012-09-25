@@ -15,5 +15,5 @@
 @interface QCStorePurchaseRequestDelegate : NSObject <SKPaymentTransactionObserver>{
 	QuickConnectViewController *viewController;
 }
-@property (nonatomic, retain) QuickConnectViewController *viewController;
+@property (nonatomic, strong) QuickConnectViewController *viewController;
 @end

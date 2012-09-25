@@ -26,6 +26,7 @@
 #import "InterlayerMessageSystem.h"
 #import "QuickConnectViewController.h"
 #import "QuickConnect.h"
+#import "DeviceWebView.h"
 
 @implementation InterlayerMessageSystem
 
@@ -65,8 +66,8 @@
             continue;
         }
         for (NSMutableDictionary *aRequest in theQueue) {
-            NSString *command = [aRequest objectForKey:@"cmd"];
-            NSMutableArray *parameters = [aRequest objectForKey:@"parameters"];
+            NSString *command = aRequest[@"cmd"];
+            NSMutableArray *parameters = aRequest[@"parameters"];
             [parameters insertObject:theQCViewController atIndex:0];//this is here for backwards compatibility.  See about removing it.
             //send the request as the paramters since it has the command in it.  That is needed later in the libraries.
             [theQCViewController.theHandler handleRequest:command withParameters:aRequest];
@@ -112,7 +113,7 @@
     return YES;
 }
 
-
+/*
 - (NSDictionary*)getLocalStorage:(NSError**)error{
     NSLog(@"getting");
     NSString *executableString = @"qc.getLocalStorageAsJSON()";
@@ -131,6 +132,7 @@
         return nil;
     }
 }
+ */
 
 - (BOOL)setLocalStorage:(NSDictionary*)theStorageDictionary{
     NSLog(@"setting");

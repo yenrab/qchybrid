@@ -12,10 +12,10 @@
 
 @implementation MakePurchaseBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     
-	SKMutablePayment *payment = [SKMutablePayment paymentWithProductIdentifier:[parameters objectAtIndex:1]];
-	payment.quantity = (NSInteger)[parameters objectAtIndex:2];
+	SKMutablePayment *payment = [SKMutablePayment paymentWithProductIdentifier:parameters[1]];
+	payment.quantity = (NSInteger)parameters[2];
 	[[SKPaymentQueue defaultQueue] addPayment:payment];
 	return QC_STACK_EXIT;
 }

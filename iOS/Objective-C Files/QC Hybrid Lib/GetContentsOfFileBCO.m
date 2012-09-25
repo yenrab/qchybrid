@@ -13,8 +13,8 @@
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,  YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *fileNameString = [[dictionary objectForKey:@"parameters"] objectAtIndex:1];
+    NSString *documentsDirectory = paths[0];
+    NSString *fileNameString = dictionary[@"parameters"][1];
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:fileNameString];
     BOOL foundFile = YES;
     BOOL isDir = NO;
@@ -42,7 +42,7 @@
         //fileContents = [fileContents stringByReplacingOccurrencesOfString:@"\"" withString:@"&nquote;"];
         fileContents = [[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@"&nln;"];
     }
-    [dictionary setObject:[NSArray arrayWithObjects:foundFile?@"foundContents" : @"noSuchFile",fileContents, nil] forKey:@"fileManipulationResult"];
+    dictionary[@"fileManipulationResult"] = @[foundFile?@"foundContents" : @"noSuchFile",fileContents];
     return QC_STACK_CONTINUE;
 
 }

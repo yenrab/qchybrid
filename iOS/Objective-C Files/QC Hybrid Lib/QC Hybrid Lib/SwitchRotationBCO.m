@@ -28,10 +28,10 @@
 
 @implementation SwitchRotationBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"switching %@", parameters);
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *enableRotationStr = [parameters objectAtIndex:1];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *enableRotationStr = parameters[1];
 	if([enableRotationStr isEqualToString:@"YES"]){
 		//NSLog(@"turning on");
 		controller.shouldAutoRotate = YES;

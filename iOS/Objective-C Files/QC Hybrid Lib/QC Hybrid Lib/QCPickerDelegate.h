@@ -17,7 +17,7 @@
 	NSArray *storedParams;
 	QuickConnectViewController *theController;
 }
-@property (nonatomic, retain) NSArray *storedParams;
-@property (nonatomic, retain) QuickConnectViewController *theController;
+@property (nonatomic, strong) NSArray *storedParams;
+@property (nonatomic, strong) QuickConnectViewController *theController;
 
 @end

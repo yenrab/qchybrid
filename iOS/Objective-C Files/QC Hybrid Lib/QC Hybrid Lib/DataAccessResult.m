@@ -38,12 +38,12 @@
 
 - (NSDictionary*) asJSONObject{
     NSMutableDictionary *convertedObject = [NSMutableDictionary dictionaryWithCapacity:6];
-    [convertedObject setObject:self.fieldNames != nil ? self.fieldNames : [NSArray array] forKey:@"fieldNames"];
-    [convertedObject setObject:self.columnTypes != nil ? self.columnTypes : [NSArray array] forKey:@"columnTypes"];
-    [convertedObject setObject:self.results forKey:@"results"];
-    [convertedObject setObject:self.errorDescription forKey:@"errorDescription"];
-    [convertedObject setObject:[NSNumber numberWithInt:self.rowsAffected] forKey:@"rowsAffected"];
-    [convertedObject setObject:[NSNumber numberWithInt:self.insertedID] forKey:@"insertedID"];
+    convertedObject[@"fieldNames"] = self.fieldNames != nil ? self.fieldNames : @[];
+    convertedObject[@"columnTypes"] = self.columnTypes != nil ? self.columnTypes : @[];
+    convertedObject[@"results"] = self.results;
+    convertedObject[@"errorDescription"] = self.errorDescription;
+    convertedObject[@"rowsAffected"] = @(self.rowsAffected);
+    convertedObject[@"insertedID"] = @(self.insertedID);
     return convertedObject;
 }
 
@@ -51,11 +51,11 @@
     int numRows = [results count];
     //NSLog(@"row count %i",numRows);
     for(int i = 0; i < numRows; i++){
-        NSMutableArray *row = [results objectAtIndex:i];
+        NSMutableArray *row = results[i];
         int numRecords = [row count];
         //NSLog(@"record count %i",numRecords);
         for(int j = 0; j < numRecords; j++){
-            NSObject *aField = [row objectAtIndex:j];
+            NSObject *aField = row[j];
             if([aField respondsToSelector:@selector(rangeOfString:)]){
                 NSString * aString = (NSString*)aField;
                 aString = [aString stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
@@ -65,7 +65,7 @@
                 aString = [aString stringByReplacingOccurrencesOfString:@"]" withString:@"&nrbracket;"];
                 aString = [aString stringByReplacingOccurrencesOfString:@"\"" withString:@"&nquote;"];
                 //NSLog(@"modified string: %@",aString);
-                [row replaceObjectAtIndex:j withObject:aString];
+                row[j] = aString;
             }
         }
     }

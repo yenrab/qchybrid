@@ -14,8 +14,8 @@
 	QuickConnectViewController *theQCController;
 }
 
-@property (nonatomic, retain) NSArray *passThroughParams;
-@property (nonatomic, retain) QuickConnectViewController *theQCController;
+@property (nonatomic, strong) NSArray *passThroughParams;
+@property (nonatomic, strong) QuickConnectViewController *theQCController;
 
 
 @end

@@ -30,9 +30,9 @@
 
 @implementation SwitchBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *cmd = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *cmd = parameters[1];
 	
 	if ([cmd isEqualToString:@"CreateSwitch"]){
 		 // 0 - QCVC
@@ -44,12 +44,12 @@
 		 // 6 - Height
 		 // 7 - Default Value YES | NO
 		 
-		 UISwitch *switch1 = [[UISwitch alloc] initWithFrame:CGRectMake([[parameters objectAtIndex:3] floatValue],
-																		[[parameters objectAtIndex:4] floatValue],
-																		[[parameters objectAtIndex:5] floatValue],
-																		[[parameters objectAtIndex:6] floatValue])];
-		 [switch1 setTag:[[parameters objectAtIndex:2] intValue]];
-		 [switch1 setOn:[[parameters objectAtIndex:7] boolValue] animated:NO];
+		 UISwitch *switch1 = [[UISwitch alloc] initWithFrame:CGRectMake([parameters[3] floatValue],
+																		[parameters[4] floatValue],
+																		[parameters[5] floatValue],
+																		[parameters[6] floatValue])];
+		 [switch1 setTag:[parameters[2] intValue]];
+		 [switch1 setOn:[parameters[7] boolValue] animated:NO];
 		 [switch1 addTarget:controller action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
 		 [controller.view addSubview:switch1];
 	}
@@ -59,8 +59,8 @@
 		// 2 - Unique Switch ID - Integer.
 		// 3 - Bool YES | NO
 		
-        UISwitch *switch1 = (UISwitch*)[controller.view viewWithTag:[[parameters objectAtIndex:2] intValue]];
- 		[switch1 setHidden:[[parameters objectAtIndex:3] boolValue]];
+        UISwitch *switch1 = (UISwitch*)[controller.view viewWithTag:[parameters[2] intValue]];
+ 		[switch1 setHidden:[parameters[3] boolValue]];
 	}
 	else if ([cmd isEqualToString:@"setValue"]){
 		// 0 - QCVC
@@ -69,18 +69,18 @@
 		// 3 - Value YES | NO
 		// 4 - Animated Yes | NO
 		
-        UISwitch *switch1 = (UISwitch*)[controller.view viewWithTag:[[parameters objectAtIndex:2] intValue]];
-		[switch1 setOn:[[parameters objectAtIndex:3] boolValue] animated:[[parameters objectAtIndex:4] boolValue]];
+        UISwitch *switch1 = (UISwitch*)[controller.view viewWithTag:[parameters[2] intValue]];
+		[switch1 setOn:[parameters[3] boolValue] animated:[parameters[4] boolValue]];
 	}
 	else if ([cmd isEqualToString:@"getValue"]){
 		// 0 - QCVC
 		// 1 - cmd
 		// 2 - Unique Switch ID - Integer.
 		
-        UISwitch *switch1 = (UISwitch*)[controller.view viewWithTag:[[parameters objectAtIndex:2] intValue]];
+        UISwitch *switch1 = (UISwitch*)[controller.view viewWithTag:[parameters[2] intValue]];
 		
 		NSMutableArray *passingArray = [[NSMutableArray alloc] initWithCapacity:2];
-		[passingArray addObject:[NSNumber numberWithInt: [[parameters objectAtIndex:2] intValue]]];
+		[passingArray addObject:@([parameters[2] intValue])];
 		
 		if (switch1.on == YES){
 			[passingArray addObject:@"YES"];

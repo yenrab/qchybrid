@@ -29,9 +29,9 @@
 
 @implementation SetButtonsVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	UIToolbar *footerForDisplay = [[controller nativeFooters] objectForKey:[parameters objectAtIndex:1]];
+    NSArray *parameters = dictionary[@"parameters"];
+    QuickConnectViewController *controller = parameters[0];
+	UIToolbar *footerForDisplay = [controller nativeFooters][parameters[1]];
 	//NSLog(@"params: %@",parameters);
 	int numParams = [parameters count];
 	NSMutableArray *buttons = [NSMutableArray arrayWithCapacity:numParams - 2];
@@ -39,7 +39,7 @@
 	[buttons addObject:flexibleSpaceLeft];
 	for(int i = 2; i < numParams; i++){
 		//NSLog(@"parameter: %d has value: %@",i,[parameters objectAtIndex:i]);
-		NSObject *aButton = [[controller nativeButtons] objectForKey:[parameters objectAtIndex:i]];
+		NSObject *aButton = [controller nativeButtons][parameters[i]];
 		if(aButton != nil){
 			[buttons addObject:aButton];
 		}

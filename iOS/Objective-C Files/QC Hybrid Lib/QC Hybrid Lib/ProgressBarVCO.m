@@ -33,9 +33,9 @@
 
 @implementation ProgressBarVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *cmd = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *cmd = parameters[1];
 	
 	if ([cmd isEqualToString:@"CreateProgressBar"]){
 		// 0 - QCVC
@@ -47,14 +47,14 @@
 		// 6 - Height
 		// 7 - Default Value - float value 1.0 is max value.  .01 is 1% - .10 is 10%
 		
-		UIProgressView *progress = [[UIProgressView alloc] initWithFrame:CGRectMake([[parameters objectAtIndex:3] floatValue],
-																					[[parameters objectAtIndex:4] floatValue],
-																					[[parameters objectAtIndex:5] floatValue],
-																					[[parameters objectAtIndex:6] floatValue])];
-		[progress setTag:[[parameters objectAtIndex:2] intValue]];
+		UIProgressView *progress = [[UIProgressView alloc] initWithFrame:CGRectMake([parameters[3] floatValue],
+																					[parameters[4] floatValue],
+																					[parameters[5] floatValue],
+																					[parameters[6] floatValue])];
+		[progress setTag:[parameters[2] intValue]];
 		
 		[controller.view addSubview:progress];
-		[progress setProgress:[[parameters objectAtIndex:7] floatValue]];
+		[progress setProgress:[parameters[7] floatValue]];
 		
 	}
 	else if ([cmd isEqualToString:@"setHidden"]){
@@ -63,8 +63,8 @@
 		// 2 - Unique Switch ID - Integer.
 		// 3 - Bool YES | NO
 		
-        UIProgressView *progress = (UIProgressView*)[controller.view viewWithTag:[[parameters objectAtIndex:2] intValue]];
- 		[progress setHidden:[[parameters objectAtIndex:3] boolValue]];
+        UIProgressView *progress = (UIProgressView*)[controller.view viewWithTag:[parameters[2] intValue]];
+ 		[progress setHidden:[parameters[3] boolValue]];
 	}
 	else if ([cmd isEqualToString:@"setValue"]){
 		// 0 - QCVC
@@ -72,8 +72,8 @@
 		// 2 - Unique Switch ID - Integer.
 		// 3 - Value - float value 1.0 is max value.  .01 is 1% - .10 is 10%
 		
-        UIProgressView *progress = (UIProgressView*)[controller.view viewWithTag:[[parameters objectAtIndex:2] intValue]];
-		[progress setProgress:[[parameters objectAtIndex:3] floatValue]];	
+        UIProgressView *progress = (UIProgressView*)[controller.view viewWithTag:[parameters[2] intValue]];
+		[progress setProgress:[parameters[3] floatValue]];	
 	}
 	
 	return QC_STACK_EXIT;

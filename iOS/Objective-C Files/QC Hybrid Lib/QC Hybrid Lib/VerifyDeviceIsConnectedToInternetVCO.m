@@ -36,8 +36,8 @@
 @implementation VerifyDeviceIsConnectedToInternetVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
+    NSArray *parameters = dictionary[@"parameters"];
+    QuickConnectViewController *controller = parameters[0];
 	NSString *reachability  = @"";
 	BOOL isConnectable = NO;
 	[[Reachability sharedReachability] setHostName:@"www.google.com"];
@@ -62,7 +62,7 @@
     //NSLog(@"in vco %@", parameters);
     NSMutableArray *retVal = [[NSMutableArray alloc] init];
     [retVal addObject:reachability];
-    NSString *executionKey = [[[dictionary objectForKey:@"parameters"] lastObject] objectAtIndex:0];
+    NSString *executionKey = [dictionary[@"parameters"] lastObject][0];
     [retVal addObject:executionKey];
     //NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
 	SBJSON *generator = [SBJSON alloc];

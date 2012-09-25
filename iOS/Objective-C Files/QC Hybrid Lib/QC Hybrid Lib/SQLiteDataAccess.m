@@ -59,7 +59,7 @@ static NSString *dbSemaphore = @"dblock";
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *documentsDirectory = paths[0];
         NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"data.sqlite"];
         //NSLog(@"%@",writableDBPath);
         success = [fileManager fileExistsAtPath:writableDBPath];
@@ -86,7 +86,7 @@ static NSString *dbSemaphore = @"dblock";
         
         //NSLog(@"assigned");
         //create the dictionary that maps parameter types to bind method calls
-        NSArray *keys = [NSArray arrayWithObjects:[NSString class], [NSDecimalNumber class], nil];
+        NSArray *keys = @[[NSString class], [NSDecimalNumber class]];
         ////NSLog(@"keys %@", keys);
         NSMutableArray * values = [[NSMutableArray alloc] init];
         [values addObject:@"bind_text:withIndex:andBindVariable:"];
@@ -159,7 +159,7 @@ static NSString *dbSemaphore = @"dblock";
             int numParams = [parameters count];
             //NSLog(@"numQueryParams: %i", numParams);
             for (int i = 0; i < numParams; i++) {
-                id value = [parameters objectAtIndex:i];
+                id value = parameters[i];
                 //NSLog(@"value type: %@", [value class]);
                 if ([value isKindOfClass:[NSString class]]) {
                     //bind_text:(sqlite3_stmt*)statement withIndex:(int) andBindVariable:(id)aVariable
@@ -202,7 +202,7 @@ static NSString *dbSemaphore = @"dblock";
             }
         }
         NSMutableArray *results = [NSMutableArray arrayWithCapacity:0];//[[NSMutableArray alloc] initWithCapacity:0];
-        [theResult setErrorDescription:[NSString stringWithUTF8String:sqlite3_errmsg(database)]];
+        [theResult setErrorDescription:@(sqlite3_errmsg(database))];
 		
         // We "step" through the results - once for each row.
         // if the statement executed is not a select statement sqlite3_step will return SQLITE_DONE on the first iteration.
@@ -222,7 +222,7 @@ static NSString *dbSemaphore = @"dblock";
 					if([theResult columnTypes] == nil){
 						NSMutableArray *columnTypes = [[NSMutableArray alloc] initWithCapacity:0];
 						for(int i = 0; i < numResultColumns; i++){
-							NSNumber * columnType = [NSNumber numberWithInt:sqlite3_column_type(statement,i)];
+							NSNumber * columnType = @(sqlite3_column_type(statement,i));
 							[columnTypes addObject:columnType];
 							//[columnType autorelease];
 						}
@@ -235,7 +235,7 @@ static NSString *dbSemaphore = @"dblock";
 				}
 				else{
 					numTriesAttempted = numTimesToTry+1;
-					NSString *errorString = [NSString stringWithUTF8String:sqlite3_errmsg(database)];
+					NSString *errorString = @(sqlite3_errmsg(database));
 					//NSLog(@"error %i message  %@",queryResult, errorString);
 					[theResult setErrorDescription:errorString];
 					break;
@@ -251,7 +251,7 @@ static NSString *dbSemaphore = @"dblock";
 				
 				NSMutableArray *row = [[NSMutableArray alloc] initWithCapacity:numResultColumns];
 				for(int i = 0; i < numResultColumns; i++){
-					int type  = [[[theResult columnTypes] objectAtIndex:i] intValue];
+					int type  = [[theResult columnTypes][i] intValue];
 					if(type == SQLITE_INTEGER){
 						//NSLog(@"integer: %i",sqlite3_column_int(statement, i));
 						NSNumber *aNum = [[NSNumber alloc] initWithInt:sqlite3_column_int(statement, i)];
@@ -283,7 +283,7 @@ static NSString *dbSemaphore = @"dblock";
 			}
         }
 		if(results == nil){
-			results = [NSArray array];
+			results = [NSMutableArray array];
 		}
 		[theResult setResults:results];
 		//[results release];
@@ -295,9 +295,9 @@ static NSString *dbSemaphore = @"dblock";
          [theResult setErrorDescription:error];
          [error release];
          */
-        [theResult setErrorDescription:[NSString stringWithUTF8String:sqlite3_errmsg(database)]];
+        [theResult setErrorDescription:@(sqlite3_errmsg(database))];
 		
-		[theResult setResults:[NSArray array]];
+		[theResult setResults:[NSMutableArray array]];
 	}
 	// "Finalize" the statement - releases the resources associated with the statement.
     

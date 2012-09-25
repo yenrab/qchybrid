@@ -31,15 +31,15 @@
 
 @implementation CloseDataBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"close parameters %@", parameters);
     if( [parameters count] >= 2){
-        NSString *dbName = [parameters objectAtIndex:1];
+        NSString *dbName = parameters[1];
         //NSLog(@"closing %@", dbName);
-        QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+        QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
         //NSLog(@"databases %@",controller.databases);
         //NSLog(@"controller %@", controller);
-        SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)[controller.databases objectForKey:dbName];
+        SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)(controller.databases)[dbName];
         if(aDBAccess != nil){
             [aDBAccess close];
             [controller.databases removeObjectForKey:dbName];

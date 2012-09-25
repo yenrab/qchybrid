@@ -33,32 +33,32 @@
 @implementation GetDataBCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"params in getdata %@", parameters);
-	QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+	QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
 	if( [parameters count] >= 3){
-		NSString *dbName = [parameters objectAtIndex:1];
-		NSString *SQL = [parameters objectAtIndex:2];
+		NSString *dbName = parameters[1];
+		NSString *SQL = parameters[2];
 		//SQL = [SQL stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		NSArray *preparedStatementValues = nil;
 		if([parameters count] >= 4){
-            preparedStatementValues = [parameters objectAtIndex:3];
+            preparedStatementValues = parameters[3];
 		}
         
-        SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)[controller.databases objectForKey:dbName];
+        SQLiteDataAccess *aDBAccess = (SQLiteDataAccess*)(controller.databases)[dbName];
         if(aDBAccess == nil){
             aDBAccess = [[SQLiteDataAccess alloc] initWithDatabase:dbName isWriteable: YES];
-            [controller.databases setObject:aDBAccess forKey:dbName];
+            (controller.databases)[dbName] = aDBAccess;
         }
         //NSLog(@"prepared statement values: %@",preparedStatementValues);
         //[dictionary setObject:[aDBAccess getData:SQL withParameters:preparedStatementValues] forKey:@"dbInteractionResult"];
         NSMutableArray *interactionResult = nil;
-        if (!(interactionResult = [dictionary objectForKey:@"dbInteractionResults"])) {
+        if (!(interactionResult = dictionary[@"dbInteractionResults"])) {
             interactionResult = [NSMutableArray arrayWithCapacity:1];
         }
         [interactionResult addObject:[aDBAccess getData:SQL withParameters:preparedStatementValues]];
         //NSLog(@"sql: %@ %@",SQL, preparedStatementValues);
-        [dictionary setObject:interactionResult forKey:@"dbInteractionResults"];
+        dictionary[@"dbInteractionResults"] = interactionResult;
 		return QC_STACK_CONTINUE;
 	}
 	return QC_STACK_EXIT;

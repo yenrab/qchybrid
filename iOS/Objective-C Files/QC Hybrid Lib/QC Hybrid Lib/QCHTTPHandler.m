@@ -84,12 +84,12 @@ enum {
 // Properties that don't need to be seen by the outside world.
 
 @property (nonatomic, readonly) BOOL              isSending;
-@property (nonatomic, retain)   NSURLConnection * connection;
+@property (nonatomic, strong)   NSURLConnection * connection;
 @property (nonatomic, copy)     NSData *          bodyPrefixData;
-@property (nonatomic, retain)   NSInputStream *   fileStream;
+@property (nonatomic, strong)   NSInputStream *   fileStream;
 @property (nonatomic, copy)     NSData *          bodySuffixData;
-@property (nonatomic, retain)   NSOutputStream *  producerStream;
-@property (nonatomic, retain)   NSInputStream *   consumerStream;
+@property (nonatomic, strong)   NSOutputStream *  producerStream;
+@property (nonatomic, strong)   NSInputStream *   consumerStream;
 @property (nonatomic, assign)   const uint8_t *   buffer;
 @property (nonatomic, assign)   uint8_t *         bufferOnHeap;
 @property (nonatomic, assign)   size_t            bufferOffset;
@@ -182,8 +182,8 @@ enum {
     
 	
 	NSArray *fileNamePortions = [fullFileName componentsSeparatedByString:@"."];
-	NSString *aFileName = [fileNamePortions objectAtIndex:0];
-	NSString *fileType = [fileNamePortions objectAtIndex:1];
+	NSString *aFileName = fileNamePortions[0];
+	NSString *fileType = fileNamePortions[1];
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:aFileName ofType:fileType];
 	
 	/*
@@ -196,7 +196,7 @@ enum {
 		 * get the path to the applications document directory and append the name of the file
 		 */
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *documentsDirectory = paths[0];
 		filePath = [documentsDirectory stringByAppendingPathComponent:fullFileName];
 		/*
 		 *  check to see if the file was found in the applications document directory.
@@ -285,7 +285,7 @@ enum {
 		//add in any url parameters sent
 		NSArray *keys = [URLParameters allKeys];
 		for(NSString *aKey in keys){
-			NSString *aValue = [URLParameters objectForKey:aKey];
+			NSString *aValue = URLParameters[aKey];
 			bodySuffixStr = [bodySuffixStr stringByAppendingFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n"
 							 "\r\n"
 							 "%@\r\n",
@@ -304,7 +304,7 @@ enum {
         self.bodySuffixData = [bodySuffixStr dataUsingEncoding:NSASCIIStringEncoding];
         
 
-        fileLengthNum = (NSNumber *) [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL] objectForKey:NSFileSize];
+        fileLengthNum = (NSNumber *) [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL][NSFileSize];
         
 
         bodyLength =
@@ -372,12 +372,12 @@ enum {
 	self.getResult = [NSMutableData dataWithLength:0];
 	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *documentsDirectory = paths[0];
 	NSString *writablePath = [documentsDirectory stringByAppendingPathComponent:self.fileName];
 	//NSLog(@"get writeable path: %@",writablePath);
 	if ([fileManager fileExistsAtPath:writablePath] && !self.shouldOverwrite) {
 		if (batchHandler == nil) {
-			NSArray *resultArray = [NSArray arrayWithObject:writablePath];
+			NSArray *resultArray = @[writablePath];
 			[self sendResultsBack:resultArray];
 		}
 		else {
@@ -484,7 +484,7 @@ enum {
                     
                     if (bytesRead == -1) {
                         [self _stopSendWithStatus:@"File read error"];
-						[self sendResultsBack:[NSArray arrayWithObjects:@"File Error",@"Unable to read file",nil]];
+						[self sendResultsBack:@[@"File Error",@"Unable to read file"]];
                     } else if (bytesRead != 0) {
                         self.bufferOffset = 0;
                         self.bufferLimit  = bytesRead;
@@ -532,7 +532,7 @@ enum {
                 bytesWritten = [self.producerStream write:&self.buffer[self.bufferOffset] maxLength:self.bufferLimit - self.bufferOffset];
                 if (bytesWritten <= 0) {
                     [self _stopSendWithStatus:@"Network write error"];
-					[self sendResultsBack:[NSArray arrayWithObjects:@"Network write failure",@"Unable to send data",nil]];
+					[self sendResultsBack:@[@"Network write failure",@"Unable to send data"]];
                 } else {
                     self.bufferOffset += bytesWritten;
                 }
@@ -541,13 +541,13 @@ enum {
         case NSStreamEventErrorOccurred: {
             NSLog(@"producer stream error %@", [aStream streamError]);
             [self _stopSendWithStatus:@"Stream open error"];
-			[self sendResultsBack:[NSArray arrayWithObjects:@"File Error",@"Unable to open file",nil]];
+			[self sendResultsBack:@[@"File Error",@"Unable to open file"]];
         } break;
         case NSStreamEventEndEncountered: {
-			[self sendResultsBack:[NSArray arrayWithObjects:@"Networking Error",@"Unable to access upload site.  Please check your device for access and check the URL.",nil]];
+			[self sendResultsBack:@[@"Networking Error",@"Unable to access upload site.  Please check your device for access and check the URL."]];
         } break;
         default: {
-			[self sendResultsBack:[NSArray arrayWithObjects:@"Generic Error",@"Unable to upload file",nil]];
+			[self sendResultsBack:@[@"Generic Error",@"Unable to upload file"]];
         } break;
     }
 }
@@ -568,9 +568,8 @@ enum {
     if ((httpResponse.statusCode / 100) != 2) {
         [self _stopSendWithStatus:[NSString stringWithFormat:@"HTTP error %zd", (ssize_t) httpResponse.statusCode]];
 		
-		[self sendResultsBack:[NSArray arrayWithObjects:@"HTTP Error",
-							   [NSString stringWithFormat:@"HTTP Error: %zd %@",(ssize_t) httpResponse.statusCode,[NSHTTPURLResponse localizedStringForStatusCode:httpResponse.statusCode]]
-							   ,nil]];
+		[self sendResultsBack:@[@"HTTP Error",
+							   [NSString stringWithFormat:@"HTTP Error: %zd %@",(ssize_t) httpResponse.statusCode,[NSHTTPURLResponse localizedStringForStatusCode:httpResponse.statusCode]]]];
     } else {
         //NSLog(@"Response OK.");
 		//NSLog(@"headers: %@",[httpResponse allHeaderFields]); 
@@ -590,7 +589,7 @@ enum {
 		//NSLog(@"the result is: %@",results);
 		
 		//NSLog(@"parameters: %@",self.passThroughParameters);
-		NSArray *resultArray = [NSArray arrayWithObjects:@"Upload Complete",results, nil];
+		NSArray *resultArray = @[@"Upload Complete",results];
 		[self sendResultsBack:resultArray];
 	}
 }
@@ -605,7 +604,7 @@ enum {
     #pragma unused(theConnection)
     
     [self _stopSendWithStatus:@"Connection failed"];
-	NSArray *results = [NSArray arrayWithObjects:@"Connection Failed",[error localizedFailureReason],nil];
+	NSArray *results = @[@"Connection Failed",[error localizedFailureReason]];
 	[self sendResultsBack:results];
 	
 	[[NSRunLoop currentRunLoop] runUntilDate:[NSDate distantPast]];
@@ -620,13 +619,13 @@ enum {
 		//NSLog(@"done getting");
 		
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *documentsDirectory = paths[0];
 		NSString *writablePath = [documentsDirectory stringByAppendingPathComponent:self.fileName];
 		//NSLog(@"path: %@",writablePath);
 		//NSLog(@"%@ %@",self.fileName, self.getResult);
 		[self.getResult writeToFile:writablePath atomically:YES];
 		if (batchHandler == nil) {
-			NSArray *resultArray = [NSArray arrayWithObject:writablePath];
+			NSArray *resultArray = @[writablePath];
 			[self sendResultsBack:resultArray];
 		}
 		else {
@@ -655,7 +654,7 @@ enum {
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
 	//NSLog(@"results: %@",results);
 	[retVal addObject:results];
-	[retVal addObject:[self.passThroughParameters objectAtIndex:8]];
+	[retVal addObject:(self.passThroughParameters)[8]];
     NSError *genError;
 	SBJSON *generator = [SBJSON alloc];
 	NSString *dataString = [generator stringWithObject:retVal error:&genError];
@@ -665,7 +664,7 @@ enum {
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
 	//NSLog(@"pass through %@",passThroughParameters);
-    QuickConnectViewController *controller = [passThroughParameters objectAtIndex:0];
+    QuickConnectViewController *controller = passThroughParameters[0];
 	[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
 }
 

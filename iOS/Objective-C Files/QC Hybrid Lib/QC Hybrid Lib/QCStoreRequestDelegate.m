@@ -47,7 +47,7 @@
 	int numProducts = [response.products count];
 	NSMutableArray *productDescriptionArray = [NSMutableArray arrayWithCapacity:numProducts];
 	for (int i = 0; i < numProducts; i++) {
-		SKProduct *aProduct = [response.products objectAtIndex:i];
+		SKProduct *aProduct = (response.products)[i];
 		NSMutableArray *aProductDescription = [NSMutableArray arrayWithCapacity:5];
 		[aProductDescription addObject:aProduct.productIdentifier];
 		[aProductDescription addObject:aProduct.localizedTitle];
@@ -62,7 +62,7 @@
 	[retVal addObject:productDescriptionArray];
 	//NSLog(@"paramArray: %@",self.passThroughParameters);
     //add the execution key in to send them back to the JavaScript
-    [retVal addObject:[[self.passThroughParameters objectAtIndex:6] objectAtIndex:0]];
+    [retVal addObject:(self.passThroughParameters)[6][0]];
 	//NSLog(@"returning results from QCStoreRequestDelegate: %@",retVal);
 	
 	
@@ -78,7 +78,7 @@
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
 	//NSLog(@"%@",jsString);
 	
-	QuickConnectViewController *controller = [self.passThroughParameters objectAtIndex:0];
+	QuickConnectViewController *controller = (self.passThroughParameters)[0];
 	[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
 	
 }

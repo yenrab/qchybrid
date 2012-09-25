@@ -34,8 +34,8 @@
 @implementation SendDBResultVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-     NSMutableArray *dbResults = [dictionary objectForKey:@"dbInteractionResults"];
+    NSArray *parameters = dictionary[@"parameters"];
+     NSMutableArray *dbResults = dictionary[@"dbInteractionResults"];
 
 	
 	NSLog(@"in SendDBResultsVCO params %@",parameters);
@@ -58,7 +58,7 @@
      */
     if (numResults == 0) {
         
-		results = [NSArray array];
+		results = @[];
         DataAccessResult *emptyResult = [[DataAccessResult alloc] init];
         emptyResult.errorDescription = @"not an error";
         [dataToSend addObject:emptyResult];
@@ -68,7 +68,7 @@
     else{
         NSMutableArray *convertedResults = [NSMutableArray arrayWithCapacity:numResults];
         for(int i = 0; i < numResults; i++){
-            DataAccessResult * aResult = (DataAccessResult*)[dbResults objectAtIndex:i];
+            DataAccessResult * aResult = (DataAccessResult*)dbResults[i];
             [convertedResults addObject:[aResult asJSONObject]];
         }
         results = convertedResults;
@@ -94,11 +94,11 @@
      */
     [dataToSend addObject:results];
     //add the execution key in to send them back to the JavaScript
-    [dataToSend addObject:[[parameters objectAtIndex:4] objectAtIndex:0]];
+    [dataToSend addObject:parameters[4][0]];
     
     NSLog(@"data to send: %@",dataToSend);
     
-    QuickConnectViewController *theController = [parameters objectAtIndex:0];
+    QuickConnectViewController *theController = parameters[0];
     [theController.messagingSystem sendCompletionRequest:dataToSend];
     /*
 	//NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);

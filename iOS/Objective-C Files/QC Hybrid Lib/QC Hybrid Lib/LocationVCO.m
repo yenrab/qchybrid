@@ -32,19 +32,19 @@
 @implementation LocationVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-	QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+    NSArray *parameters = dictionary[@"parameters"];
+	QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
 	UIWebView *webView = [controller webView];
-	CLLocation *location = (CLLocation*)[parameters objectAtIndex:1];
+	CLLocation *location = (CLLocation*)parameters[1];
 	
 	//NSString * test = [NSString stringWithFormat:@"lat: %f lon: %f alt: %f",location.coordinate.latitude, location.coordinate.longitude, location.altitude];
 	//NSLog(@"%@",test);
 	
 	NSMutableArray *passingArray = [[NSMutableArray alloc] initWithCapacity:3];
-	[passingArray addObject: [NSNumber numberWithDouble: location.coordinate.latitude]];
-	[passingArray addObject: [NSNumber numberWithDouble: location.coordinate.longitude]];
-	[passingArray addObject: [NSNumber numberWithFloat: location.altitude]];
-    [passingArray addObject:[NSNumber numberWithFloat:location.horizontalAccuracy]];
+	[passingArray addObject: @(location.coordinate.latitude)];
+	[passingArray addObject: @(location.coordinate.longitude)];
+	[passingArray addObject: [NSNumber numberWithFloat: (float)location.altitude]];
+    [passingArray addObject:[NSNumber numberWithFloat:(float)location.horizontalAccuracy]];
 	
 	SBJSON *generator = [SBJSON alloc];
 	

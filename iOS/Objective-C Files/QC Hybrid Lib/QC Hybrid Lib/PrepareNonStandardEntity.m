@@ -38,7 +38,8 @@
 	//NSMutableString *personString = [[NSMutableString alloc] init];
 	NSMutableDictionary *retVal = [[NSMutableDictionary alloc] init];
 
-	NSString *namePrefix = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonPrefixProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonPrefixProperty) : [[NSString alloc]init];
+	//NSString *namePrefix = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonPrefixProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonPrefixProperty) : [[NSString alloc]init];
+    NSString *namePrefix = ABRecordCopyValue(aRecord, kABPersonPrefixProperty) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonPrefixProperty)) : [[NSString alloc]init];
 	namePrefix = [namePrefix stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	namePrefix = [namePrefix stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	namePrefix = [namePrefix stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -47,7 +48,8 @@
 	namePrefix = [namePrefix stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	namePrefix = [namePrefix stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
 	
-	NSString *firstName = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonFirstNameProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonFirstNameProperty) : [[NSString alloc]init];
+	//NSString *firstName = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonFirstNameProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonFirstNameProperty) : [[NSString alloc]init];
+    NSString *firstName = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonFirstNameProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonFirstNameProperty)) : [[NSString alloc]init];
 	firstName = [firstName stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	firstName = [firstName stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	firstName = [firstName stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -55,7 +57,7 @@
 	firstName = [firstName stringByReplacingOccurrencesOfString:@"[" withString:@"&#91;"];
 	firstName = [firstName stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	firstName = [firstName stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
-	NSString *middleName = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonMiddleNameProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonMiddleNameProperty) : [[NSString alloc]init];
+	NSString *middleName = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonMiddleNameProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonMiddleNameProperty)) : [[NSString alloc]init];
 	middleName = [middleName stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	middleName = [middleName stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	middleName = [middleName stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -63,7 +65,7 @@
 	middleName = [middleName stringByReplacingOccurrencesOfString:@"[" withString:@"&#91;"];
 	middleName = [middleName stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	middleName = [middleName stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
-	NSString *lastName = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonLastNameProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonLastNameProperty) : [[NSString alloc]init];
+	NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonLastNameProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonLastNameProperty)) : [[NSString alloc]init];
 	lastName = [lastName stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	lastName = [lastName stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	lastName = [lastName stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -71,7 +73,7 @@
 	lastName = [lastName stringByReplacingOccurrencesOfString:@"[" withString:@"&#91;"];
 	lastName = [lastName stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	lastName = [lastName stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
-	NSString *nameSuffix = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonSuffixProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonSuffixProperty) : [[NSString alloc]init];
+	NSString *nameSuffix = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonSuffixProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonSuffixProperty)) : [[NSString alloc]init];
 	nameSuffix = [nameSuffix stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	nameSuffix = [nameSuffix stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	nameSuffix = [nameSuffix stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -79,8 +81,8 @@
 	nameSuffix = [nameSuffix stringByReplacingOccurrencesOfString:@"[" withString:@"&#91;"];
 	nameSuffix = [nameSuffix stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	nameSuffix = [nameSuffix stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
-	NSString *birthday = [((__bridge NSDate*)ABRecordCopyValue(aRecord, kABPersonBirthdayProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonBirthdayProperty) : [[NSString alloc]init]) description];
-	birthday = [[birthday componentsSeparatedByString:@" "] objectAtIndex:0];
+	NSString *birthday = [((NSDate*)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonBirthdayProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonBirthdayProperty)) : [[NSString alloc]init]) description];
+	birthday = [birthday componentsSeparatedByString:@" "][0];
 	birthday = [birthday stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	birthday = [birthday stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	birthday = [birthday stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -93,7 +95,7 @@
 	ABMultiValueRef addressValues = ABRecordCopyValue(aRecord, kABPersonAddressProperty);
 	NSDictionary *addresses = [PrepareNonStandardEntity toCustomEntityString:addressValues];
 	
-	NSString *organization = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonOrganizationProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonOrganizationProperty) : [[NSString alloc]init];
+	NSString *organization = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonOrganizationProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonOrganizationProperty)) : [[NSString alloc]init];
 	organization = [organization stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	organization = [organization stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	organization = [organization stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -101,7 +103,7 @@
 	organization = [organization stringByReplacingOccurrencesOfString:@"[" withString:@"&#91;"];
 	organization = [organization stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	organization = [namePrefix stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
-	NSString *jobTitle = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonJobTitleProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonJobTitleProperty) : [[NSString alloc]init];
+	NSString *jobTitle = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonJobTitleProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonJobTitleProperty)) : [[NSString alloc]init];
 	jobTitle = [jobTitle stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	jobTitle = [jobTitle stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	jobTitle = [jobTitle stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -109,7 +111,7 @@
 	jobTitle = [jobTitle stringByReplacingOccurrencesOfString:@"[" withString:@"&#91;"];
 	jobTitle = [jobTitle stringByReplacingOccurrencesOfString:@"]" withString:@"&#93;"];
 	jobTitle = [namePrefix stringByReplacingOccurrencesOfString:@":" withString:@"&#58;"];
-	NSString *department = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonDepartmentProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonDepartmentProperty) : [[NSString alloc]init];
+	NSString *department = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonDepartmentProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonDepartmentProperty)) : [[NSString alloc]init];
 	department = [department stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	department = [department stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	department = [department stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -122,7 +124,7 @@
 	ABMultiValueRef multiEmail = ABRecordCopyValue(aRecord, kABPersonEmailProperty);
 	NSDictionary *email = [PrepareNonStandardEntity toCustomEntityString:multiEmail];
 	
-	NSString *note = (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonNoteProperty) != nil ? (__bridge NSString *)ABRecordCopyValue(aRecord, kABPersonNoteProperty) : [[NSString alloc]init];
+	NSString *note = (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonNoteProperty)) != nil ? (NSString *)CFBridgingRelease(ABRecordCopyValue(aRecord, kABPersonNoteProperty)) : [[NSString alloc]init];
 	note = [note stringByReplacingOccurrencesOfString:@"'" withString:@"&napos;"];
 	note = [note stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
 	note = [note stringByReplacingOccurrencesOfString:@"{" withString:@"&#123;"];
@@ -139,20 +141,20 @@
 	ABMultiValueRef imRefs = ABRecordCopyValue(aRecord, kABPersonInstantMessageProperty);
 	NSDictionary *im = [PrepareNonStandardEntity toCustomEntityString:imRefs];
 	
-	[retVal setObject:namePrefix forKey:@"prefix"];
-	[retVal setObject:firstName forKey:@"fname"];
-	[retVal setObject:middleName forKey:@"mname"];
-	[retVal setObject:lastName forKey:@"lname"];
-	[retVal setObject:nameSuffix forKey:@"suffix"];
-	[retVal setObject:birthday forKey:@"birthday"];
-	[retVal setObject:addresses forKey:@"address"];
-	[retVal setObject:organization forKey:@"organization"];
-	[retVal setObject:jobTitle forKey:@"jobTitle"];
-	[retVal setObject:department forKey:@"department"];
-	[retVal setObject:email forKey:@"email"];
-	[retVal setObject:note forKey:@"note"];
-	[retVal setObject:phones forKey:@"phone"];
-	[retVal setObject:im forKey:@"im"];
+	retVal[@"prefix"] = namePrefix;
+	retVal[@"fname"] = firstName;
+	retVal[@"mname"] = middleName;
+	retVal[@"lname"] = lastName;
+	retVal[@"suffix"] = nameSuffix;
+	retVal[@"birthday"] = birthday;
+	retVal[@"address"] = addresses;
+	retVal[@"organization"] = organization;
+	retVal[@"jobTitle"] = jobTitle;
+	retVal[@"department"] = department;
+	retVal[@"email"] = email;
+	retVal[@"note"] = note;
+	retVal[@"phone"] = phones;
+	retVal[@"im"] = im;
 	
 	//NSLog(@"retVal: %@",retVal);
 	return retVal;
@@ -165,7 +167,7 @@
 		CFTypeRef valueRef = ABMultiValueCopyValueAtIndex(multi, i);
 		
 		NSMutableString *mutableStr = [NSMutableString stringWithCapacity:0];
-		NSString *label = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(multi, i);
+		NSString *label = (NSString*)CFBridgingRelease(ABMultiValueCopyLabelAtIndex(multi, i));
 		[mutableStr appendString:label];
 		[mutableStr replaceOccurrencesOfString:@"_$!<" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, [mutableStr length])];
 		[mutableStr replaceOccurrencesOfString:@">!$_" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, [mutableStr length])];
@@ -173,9 +175,9 @@
 		NSMutableArray *values = [retVal valueForKey:label];
 		if(values == nil){
 			values = [NSMutableArray arrayWithCapacity:1];
-			[retVal setObject:values forKey:label];
+			retVal[label] = values;
 		}
-		[values addObject:(__bridge id)valueRef];
+		[values addObject:(id)CFBridgingRelease(valueRef)];
 	}
 	return retVal;
 }

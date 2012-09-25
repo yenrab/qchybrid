@@ -34,7 +34,7 @@
 @implementation CanMakePaymentsVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary {
     
-    NSArray* parameters = [dictionary objectForKey:@"parameters"];
+    NSArray* parameters = dictionary[@"parameters"];
     //NSLog(@"params %@",parameters);
 	
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
@@ -46,7 +46,7 @@
 	
 	//NSLog(@"makePaymentsString: :%@",parameters);
     //add the execution key in to send them back to the JavaScript
-    [retVal addObject:[[parameters objectAtIndex:1] objectAtIndex:0]];
+    [retVal addObject:parameters[1][0]];
 	//NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
 	
 	NSError *error;
@@ -58,7 +58,7 @@
 	
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
 	//NSLog(@"",jsString);
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
+    QuickConnectViewController *controller = parameters[0];
 	[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
    
 	return QC_STACK_CONTINUE;

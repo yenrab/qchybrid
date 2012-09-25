@@ -69,7 +69,7 @@
  */
 
 - (SQLiteDataAccess*)getDatabaseForName:(NSString*)aDatabaseName{
-	return [self.databases objectForKey:aDatabaseName];
+	return (self.databases)[aDatabaseName];
 }
 
 

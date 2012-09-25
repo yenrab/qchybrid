@@ -34,15 +34,15 @@
 
 @implementation SendPersonPickerResultsVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"params %@",parameters);
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
-	ABRecordRef person = (__bridge_retained ABRecordRef)[parameters objectAtIndex:2];
+	ABRecordRef person = (__bridge ABRecordRef)parameters[2];
 	//NSDictionary *personDict = [[NSDictionary alloc] init];
 	NSDictionary *personDict = [PrepareNonStandardEntity ABRecordRef:person];
 	[retVal addObject:personDict];
     //add the execution key in to send them back to the JavaScript
-    [retVal addObject:[[parameters objectAtIndex:1] objectAtIndex:0]];
+    [retVal addObject:parameters[1][0]];
 	//NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
 	
 	NSError *error;
@@ -54,7 +54,7 @@
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
 	//NSLog(@"%@",jsString);
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
+    QuickConnectViewController *controller = parameters[0];
 	[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
   
 	return QC_STACK_EXIT;

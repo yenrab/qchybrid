@@ -15,7 +15,7 @@
 {
     if ((self = [super init]))
     {
-        documents = [NSArray arrayWithObject:aFileName];
+        documents = @[aFileName];
     }
     return self;
 }
@@ -30,9 +30,9 @@
     NSURL *retVal = nil;
     //check the documents directory to see if the file is there
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,  YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentsDirectory = paths[0];
     
-    NSString *fileName = [[documents objectAtIndex: index] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *fileName = [documents[index] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:fileName];
     
 	//build the URL and the request for the index.html file

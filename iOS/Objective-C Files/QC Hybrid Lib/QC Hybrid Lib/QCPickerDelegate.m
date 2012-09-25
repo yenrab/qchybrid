@@ -23,7 +23,7 @@
 	
 	NSMutableArray *paramsToPass = [NSMutableArray arrayWithArray:storedParams];
     //NSMutableArray *paramsToPass = [[NSMutableArray alloc] initWithCapacity:2];
-    [paramsToPass addObject:(__bridge id)person];
+    [paramsToPass addObject:(id)CFBridgingRelease(person)];
     [theController dismissModalViewControllerAnimated:YES];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObject:paramsToPass forKey:@"parameters"];
     [theController.theHandler handleRequest:@"sendPersonPickResults" withParameters:parameters];

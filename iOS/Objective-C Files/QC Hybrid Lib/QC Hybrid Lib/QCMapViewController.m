@@ -77,9 +77,9 @@
 	location.latitude = 0.0;
 	location.longitude = 0.0;
 	
-	if([listItems count] >= 4 && [[listItems objectAtIndex:0] isEqualToString:@"200"]) {
-		location.latitude = [[listItems objectAtIndex:2] doubleValue];
-		location.longitude = [[listItems objectAtIndex:3] doubleValue];
+	if([listItems count] >= 4 && [listItems[0] isEqualToString:@"200"]) {
+		location.latitude = [listItems[2] doubleValue];
+		location.longitude = [listItems[3] doubleValue];
 	}
 	else {
 		//Show error

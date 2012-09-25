@@ -32,8 +32,8 @@
 @implementation PickResultsVCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    QuickConnectViewController *aController = (QuickConnectViewController*)[parameters objectAtIndex:0];
+    NSArray *parameters = dictionary[@"parameters"];
+    QuickConnectViewController *aController = (QuickConnectViewController*)parameters[0];
     NSObject *aPicker = [[aController webView] picker];
     [aController webView].picker = nil;
     

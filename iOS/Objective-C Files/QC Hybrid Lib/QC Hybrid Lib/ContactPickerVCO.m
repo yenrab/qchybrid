@@ -29,9 +29,9 @@
 
 @implementation ContactPickerVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	
-    QuickConnectViewController *aController = [parameters objectAtIndex:0];
+    QuickConnectViewController *aController = parameters[0];
 	
     ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
 	QCPickerDelegate *aDelegate = [[QCPickerDelegate alloc] init];
@@ -42,7 +42,7 @@
 	
     picker.peoplePickerDelegate = aDelegate;
 	
-	NSArray *threadingParams = [NSArray arrayWithObjects:aController, picker, nil];
+	NSArray *threadingParams = @[aController, picker];
 	
 	[self performSelectorOnMainThread:@selector(showIt:)
 						   withObject:threadingParams
@@ -52,6 +52,6 @@
 }
 
 + (void) showIt:(NSArray*)threadingParams{
-    [[threadingParams objectAtIndex:0] presentModalViewController:[threadingParams objectAtIndex:1] animated:YES];
+    [threadingParams[0] presentModalViewController:threadingParams[1] animated:YES];
 }
 @end

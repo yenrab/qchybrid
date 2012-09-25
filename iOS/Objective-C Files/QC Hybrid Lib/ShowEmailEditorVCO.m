@@ -29,9 +29,9 @@
 
 @implementation ShowEmailEditorVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSMutableArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSMutableArray *parameters = dictionary[@"parameters"];
 	EmailViewController *aMailDelegate = [[EmailViewController alloc] init];
-	QuickConnectViewController *theController = [parameters objectAtIndex:0];
+	QuickConnectViewController *theController = parameters[0];
 	
 	//setup email
 	aMailDelegate.theQCController = theController;

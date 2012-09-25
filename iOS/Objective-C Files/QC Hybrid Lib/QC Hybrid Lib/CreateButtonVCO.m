@@ -31,19 +31,19 @@
 
 @implementation CreateButtonVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *uniqueId = [parameters objectAtIndex:1];
-	NSString *descriptor = [parameters objectAtIndex:2];
-	NSString *javaScriptCallBack = [NSString stringWithString:[parameters objectAtIndex:3]];
-	BOOL isImageButton = [[parameters objectAtIndex:4] boolValue];
+    NSArray *parameters = dictionary[@"parameters"];
+    QuickConnectViewController *controller = parameters[0];
+	NSString *uniqueId = parameters[1];
+	NSString *descriptor = parameters[2];
+	NSString *javaScriptCallBack = [NSString stringWithString:parameters[3]];
+	BOOL isImageButton = [parameters[4] boolValue];
 	//NSLog(@"params: %@",parameters);
 	
 	QCBarButtonItem *aButton = nil;
 	if(isImageButton != 0){
 		if([descriptor hasPrefix:@"../"]){
 			NSArray *split = [descriptor componentsSeparatedByString:@"../"];
-			descriptor = [split objectAtIndex:1];
+			descriptor = split[1];
 			//NSLog(@"descriptor: %@",descriptor);
 		}
 		NSString *imageFilePath = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] bundlePath],descriptor];

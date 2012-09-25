@@ -34,9 +34,9 @@
 @implementation RecordAudioVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-    QuickConnectViewController *aController = [parameters objectAtIndex:0];
-    NSString *fileName = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+    QuickConnectViewController *aController = parameters[0];
+    NSString *fileName = parameters[1];
     
     if(!aController.audioRecorder){
         NSArray *dirPaths;
@@ -44,23 +44,16 @@
         
         dirPaths = NSSearchPathForDirectoriesInDomains(
                                                        NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = [dirPaths objectAtIndex:0];
+        docsDir = dirPaths[0];
         NSString *soundFilePath = [docsDir
                                    stringByAppendingPathComponent:fileName];
         
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
-        NSDictionary *recordSettings = [NSDictionary 
-                                        dictionaryWithObjectsAndKeys:
-                                        [NSNumber numberWithInt:AVAudioQualityMin],
-                                        AVEncoderAudioQualityKey,
-                                        [NSNumber numberWithInt:16], 
-                                        AVEncoderBitRateKey,
-                                        [NSNumber numberWithInt: 2], 
-                                        AVNumberOfChannelsKey,
-                                        [NSNumber numberWithFloat:44100.0], 
-                                        AVSampleRateKey,
-                                        nil];
+        NSDictionary *recordSettings = @{AVEncoderAudioQualityKey: @(AVAudioQualityMin),
+                                        AVEncoderBitRateKey: @16,
+                                        AVNumberOfChannelsKey: @2,
+                                        AVSampleRateKey: @44100.0f};
         
         NSError *error = nil;
         
@@ -77,7 +70,7 @@
     }
     [aController.audioRecorder prepareToRecord];
     
-    NSString *flag = [parameters objectAtIndex:2];
+    NSString *flag = parameters[2];
     if([flag compare:@"start"] == NSOrderedSame){
         if (!aController.audioRecorder.recording)
         {

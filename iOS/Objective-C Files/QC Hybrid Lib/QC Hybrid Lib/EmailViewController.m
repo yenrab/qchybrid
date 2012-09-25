@@ -37,11 +37,11 @@
 	picker.mailComposeDelegate = self; // <- very important step if you want feedbacks on what the user did with your email view
 	
 	//NSLog(@"parameters: %@", self.passThroughParams);
-	[picker setToRecipients:[self.passThroughParams objectAtIndex:1]];
+	[picker setToRecipients:(self.passThroughParams)[1]];
 	// Fill out the email body text
-	[picker setSubject:[self.passThroughParams objectAtIndex:2]];
+	[picker setSubject:(self.passThroughParams)[2]];
 	
-	[picker setMessageBody:[self.passThroughParams objectAtIndex:3] isHTML:YES]; // depends. Mostly YES, unless you want to send it as plain text
+	[picker setMessageBody:(self.passThroughParams)[3] isHTML:YES]; // depends. Mostly YES, unless you want to send it as plain text
 	picker.navigationBar.barStyle = UIBarStyleBlack; // choose your style, unfortunately, Translucent colors behave quirky.
 	[self presentModalViewController:picker animated:YES];
 
@@ -79,7 +79,7 @@
 	SBJSON *generator = [SBJSON alloc];
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
 	[retVal addObject:resultMessage];
-	[retVal addObject:[self.passThroughParams objectAtIndex:4]];
+	[retVal addObject:(self.passThroughParams)[4]];
 	NSError *JSONError;
 	NSString *dataString = [generator stringWithObject:retVal error:&JSONError];
     //NSLog(@"about to send JSON: %@", dataString);

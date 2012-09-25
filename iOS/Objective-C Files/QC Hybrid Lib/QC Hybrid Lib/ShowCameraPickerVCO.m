@@ -31,9 +31,9 @@
 
 @implementation ShowCameraPickerVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     ImagePickerViewController *anImagePickerDelegate = [[ImagePickerViewController alloc] init];
-	QuickConnectViewController *theController = [parameters objectAtIndex:0];
+	QuickConnectViewController *theController = parameters[0];
 	anImagePickerDelegate.theQCController = theController;
 	anImagePickerDelegate.passThroughParams = parameters;
 

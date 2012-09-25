@@ -31,12 +31,12 @@
 
 @implementation CloseDataVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"close parameters %@",parameters);
     
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
     [retVal addObject:@"place holder"];
-    [retVal addObject:[parameters objectAtIndex:2]];
+    [retVal addObject:parameters[2]];
     //NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
 	SBJSON *generator = [SBJSON alloc];
 	
@@ -47,7 +47,7 @@
     
     NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
 	//NSLog(@"%@",jsString);
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
+    QuickConnectViewController *controller = parameters[0];
 	[controller.webView stringByEvaluatingJavaScriptFromString:jsString];
 	
 	return QC_STACK_EXIT;

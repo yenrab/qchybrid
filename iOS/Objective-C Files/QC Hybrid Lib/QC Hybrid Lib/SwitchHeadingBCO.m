@@ -28,10 +28,10 @@
 
 @implementation SwitchHeadingBCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@"switching %@", parameters);
-	QuickConnectViewController *controller = [parameters objectAtIndex:0];
-	NSString *useCompassStr = [parameters objectAtIndex:1];
+	QuickConnectViewController *controller = parameters[0];
+	NSString *useCompassStr = parameters[1];
 	if([useCompassStr isEqualToString:@"YES"]){
 		//NSLog(@"turning on");
 		controller.activateCompass = YES;

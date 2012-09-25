@@ -16,9 +16,9 @@
 @implementation ShowFileVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
 
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
-     QuickConnectViewController *controller = [[dictionary objectForKey:@"parameters"] objectAtIndex:0];
-	NSString *fileName = [parameters objectAtIndex:1];
+    NSArray *parameters = dictionary[@"parameters"];
+     QuickConnectViewController *controller = dictionary[@"parameters"][0];
+	NSString *fileName = parameters[1];
     QLPreviewController *aPreviewer = [[QLPreviewController alloc] init];
     //NSLog(@"fileName: %@",fileName);
     FileDisplayDataSource *aDataSource = [[FileDisplayDataSource alloc] initWithFile:fileName];
@@ -33,15 +33,14 @@
     
     [controller presentModalViewController:aPreviewer animated:YES];
     
-    NSString *executionKey = [[[dictionary objectForKey:@"parameters"] lastObject] objectAtIndex:0];
+    NSString *executionKey = [dictionary[@"parameters"] lastObject][0];
     //NSLog(@"executionKey %@",executionKey);
     if(!executionKey){
         return QC_STACK_EXIT;
     }
     
-    NSArray *retVal = [NSArray arrayWithObjects:
-                       @"file displayed", 
-                       executionKey, nil];
+    NSArray *retVal = @[@"file displayed", 
+                       executionKey];
     
     NSError *genError;
     SBJSON *generator = [SBJSON alloc];

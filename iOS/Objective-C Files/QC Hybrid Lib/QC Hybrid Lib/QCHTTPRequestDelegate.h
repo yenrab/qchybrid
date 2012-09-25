@@ -34,8 +34,8 @@
 	NSMutableData *webData;
 	NSArray *passThroughParameters;
 }
-@property (nonatomic, retain) NSMutableData *webData;
-@property (nonatomic, retain) NSArray *passThroughParameters;
+@property (nonatomic, strong) NSMutableData *webData;
+@property (nonatomic, strong) NSArray *passThroughParameters;
 
 - (QCHTTPRequestDelegate*)initWithPassthroughParameters:(NSArray *)params;
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;

@@ -30,14 +30,14 @@
 
 @implementation HideFooterVCO
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
     //NSLog(@"hiding footer");
-    QuickConnectViewController *controller = [parameters objectAtIndex:0];
+    QuickConnectViewController *controller = parameters[0];
 	//NSLog(@"shown footers: %@",controller.shownFooters);
-	NSString *footerId = [parameters objectAtIndex:1];
+	NSString *footerId = parameters[1];
 	//see if it is still being shown
-	if([controller.shownFooters objectForKey:footerId] != nil){
-		UIToolbar *barToHide = [[controller nativeFooters] objectForKey:footerId];
+	if((controller.shownFooters)[footerId] != nil){
+		UIToolbar *barToHide = [controller nativeFooters][footerId];
 		
 		Boolean rotating = NO;
 		if([parameters count] == 3){

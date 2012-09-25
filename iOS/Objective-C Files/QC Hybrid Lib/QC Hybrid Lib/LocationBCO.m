@@ -30,9 +30,9 @@
 @implementation LocationBCO
 
 + (BOOL) handleIt:(NSMutableDictionary*) dictionary{
-    NSArray *parameters = [dictionary objectForKey:@"parameters"];
+    NSArray *parameters = dictionary[@"parameters"];
 	//NSLog(@" getting location");
-	QuickConnectViewController *controller = (QuickConnectViewController*)[parameters objectAtIndex:0];
+	QuickConnectViewController *controller = (QuickConnectViewController*)parameters[0];
 	[[controller locationManager] startUpdatingLocation];
 	return QC_STACK_EXIT;
 }
