@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BE562E516135D3F00E31892 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562E416135D3F00E31892 /* UIKit.framework */; };
+		9BE562E716135D3F00E31892 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562E616135D3F00E31892 /* Foundation.framework */; };
+		9BE562E916135D3F00E31892 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562E816135D3F00E31892 /* CoreGraphics.framework */; };
+		9BE562EB16135D3F00E31892 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562EA16135D3F00E31892 /* QuartzCore.framework */; };
+		9BE562ED16135D3F00E31892 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562EC16135D3F00E31892 /* Accelerate.framework */; };
+		9BE562EF16135D3F00E31892 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562EE16135D3F00E31892 /* AddressBook.framework */; };
+		9BE562F116135D3F00E31892 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562F016135D3F00E31892 /* AddressBookUI.framework */; };
+		9BE562F316135D3F00E31892 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562F216135D3F00E31892 /* AudioToolbox.framework */; };
+		9BE562F516135D3F00E31892 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562F416135D3F00E31892 /* AVFoundation.framework */; };
+		9BE562F716135D3F00E31892 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562F616135D3F00E31892 /* CoreLocation.framework */; };
+		9BE562F916135D3F00E31892 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562F816135D3F00E31892 /* GameKit.framework */; };
+		9BE562FB16135D3F00E31892 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562FA16135D3F00E31892 /* iAd.framework */; };
+		9BE562FD16135D3F00E31892 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562FC16135D3F00E31892 /* MapKit.framework */; };
+		9BE562FF16135D3F00E31892 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE562FE16135D3F00E31892 /* MediaPlayer.framework */; };
+		9BE5630116135D3F00E31892 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE5630016135D3F00E31892 /* MessageUI.framework */; };
+		9BE5630316135D3F00E31892 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE5630216135D3F00E31892 /* QuickLook.framework */; };
+		9BE5630516135D3F00E31892 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE5630416135D3F00E31892 /* StoreKit.framework */; };
+		9BE5630716135D3F00E31892 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE5630616135D3F00E31892 /* SystemConfiguration.framework */; };
+		9BE5630D16135D3F00E31892 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5630B16135D3F00E31892 /* InfoPlist.strings */; };
+		9BE5630F16135D4000E31892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5630E16135D3F00E31892 /* main.m */; };
+		9BE5631216135D4100E31892 /* qc_hybrid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE5631116135D4100E31892 /* qc_hybrid.a */; };
+		9BE5631516135D4100E31892 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5631416135D4100E31892 /* index.html */; };
+		9BE5631716135D4100E31892 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5631616135D4100E31892 /* main.css */; };
+		9BE5631916135D4100E31892 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5631816135D4100E31892 /* main.js */; };
+		9BE5631B16135D4100E31892 /* mappings.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5631A16135D4100E31892 /* mappings.js */; };
+		9BE5631D16135D4100E31892 /* functions.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5631C16135D4100E31892 /* functions.js */; };
+		9BE5631F16135D4100E31892 /* databaseDefinition.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5631E16135D4100E31892 /* databaseDefinition.js */; };
+		9BE5632116135D4100E31892 /* com.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632016135D4100E31892 /* com.js */; };
+		9BE5632316135D4100E31892 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632216135D4100E31892 /* Default-568h@2x.png */; };
+		9BE5632516135D4100E31892 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632416135D4100E31892 /* Default@2x.png */; };
+		9BE5632716135D4100E31892 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632616135D4100E31892 /* Default.png */; };
+		9BE5632916135D4100E31892 /* DBScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632816135D4100E31892 /* DBScript.js */; };
+		9BE5632B16135D4100E31892 /* ImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632A16135D4100E31892 /* ImagePickerViewController.xib */; };
+		9BE5632D16135D4100E31892 /* QuickConnect.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632C16135D4100E31892 /* QuickConnect.js */; };
+		9BE5632F16135D4100E31892 /* DataAccessObject.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5632E16135D4100E31892 /* DataAccessObject.js */; };
+		9BE5633116135D4100E31892 /* LocationObject.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633016135D4100E31892 /* LocationObject.js */; };
+		9BE5633316135D4100E31892 /* EnterpriseSync.css in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633216135D4100E31892 /* EnterpriseSync.css */; };
+		9BE5633516135D4100E31892 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633416135D4100E31892 /* MapView.xib */; };
+		9BE5633716135D4100E31892 /* ServerAccessObject.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633616135D4100E31892 /* ServerAccessObject.js */; };
+		9BE5633916135D4100E31892 /* EnterpriseSyncFunctions.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633816135D4100E31892 /* EnterpriseSyncFunctions.js */; };
+		9BE5633B16135D4100E31892 /* QCNativeFooter.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633A16135D4100E31892 /* QCNativeFooter.js */; };
+		9BE5633D16135D4100E31892 /* EnterpriseSyncMappings.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633C16135D4100E31892 /* EnterpriseSyncMappings.js */; };
+		9BE5633F16135D4100E31892 /* QCUtilities.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5633E16135D4100E31892 /* QCUtilities.js */; };
+		9BE5634116135D4200E31892 /* SetupQC.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5634016135D4200E31892 /* SetupQC.js */; };
+		9BE5634A16135D8300E31892 /* test.xls in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5634716135D8300E31892 /* test.xls */; };
+		9BE5634B16135D8300E31892 /* test.doc in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5634816135D8300E31892 /* test.doc */; };
+		9BE5634C16135D8300E31892 /* catalog.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5634916135D8300E31892 /* catalog.pdf */; };
+		9BE5635E16138FF700E31892 /* pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5635D16138FF700E31892 /* pdf.png */; };
+		9BE563611613909200E31892 /* word.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563601613909200E31892 /* word.png */; };
+		9BE56363161390ED00E31892 /* excel.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE56362161390ED00E31892 /* excel.png */; };
+		9BE563AB1613B19800E31892 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563AA1613B19800E31892 /* Default-Portrait~ipad.png */; };
+		9BE563AD1613B1AB00E31892 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563AC1613B1AB00E31892 /* Default-Portrait@2x~ipad.png */; };
+		9BE563AF1613B1BB00E31892 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563AE1613B1BB00E31892 /* Default-Landscape~ipad.png */; };
+		9BE563B11613B1CA00E31892 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563B01613B1CA00E31892 /* Default-Landscape@2x~ipad.png */; };
+		9BE563B31613B2BE00E31892 /* QCSmallAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563B21613B2BE00E31892 /* QCSmallAppIcon.png */; };
+		9BE563B51613B2C700E31892 /* QCRetinaAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE563B41613B2C700E31892 /* QCRetinaAppIcon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9BE562E016135D3F00E31892 /* File View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE562E416135D3F00E31892 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9BE562E616135D3F00E31892 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9BE562E816135D3F00E31892 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9BE562EA16135D3F00E31892 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9BE562EC16135D3F00E31892 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		9BE562EE16135D3F00E31892 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		9BE562F016135D3F00E31892 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		9BE562F216135D3F00E31892 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9BE562F416135D3F00E31892 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9BE562F616135D3F00E31892 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9BE562F816135D3F00E31892 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9BE562FA16135D3F00E31892 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		9BE562FC16135D3F00E31892 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9BE562FE16135D3F00E31892 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9BE5630016135D3F00E31892 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9BE5630216135D3F00E31892 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		9BE5630416135D3F00E31892 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9BE5630616135D3F00E31892 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9BE5630A16135D3F00E31892 /* File View-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "File View-Info.plist"; sourceTree = "<group>"; };
+		9BE5630C16135D3F00E31892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BE5630E16135D3F00E31892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BE5631016135D4000E31892 /* File View-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "File View-Prefix.pch"; sourceTree = "<group>"; };
+		9BE5631116135D4100E31892 /* qc_hybrid.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = qc_hybrid.a; sourceTree = "<group>"; };
+		9BE5631316135D4100E31892 /* QuickConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickConnectViewController.h; sourceTree = "<group>"; };
+		9BE5631416135D4100E31892 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		9BE5631616135D4100E31892 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		9BE5631816135D4100E31892 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		9BE5631A16135D4100E31892 /* mappings.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mappings.js; sourceTree = "<group>"; };
+		9BE5631C16135D4100E31892 /* functions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = functions.js; sourceTree = "<group>"; };
+		9BE5631E16135D4100E31892 /* databaseDefinition.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = databaseDefinition.js; sourceTree = "<group>"; };
+		9BE5632016135D4100E31892 /* com.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = com.js; sourceTree = "<group>"; };
+		9BE5632216135D4100E31892 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9BE5632416135D4100E31892 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9BE5632616135D4100E31892 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9BE5632816135D4100E31892 /* DBScript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = DBScript.js; sourceTree = "<group>"; };
+		9BE5632A16135D4100E31892 /* ImagePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickerViewController.xib; sourceTree = "<group>"; };
+		9BE5632C16135D4100E31892 /* QuickConnect.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = QuickConnect.js; sourceTree = "<group>"; };
+		9BE5632E16135D4100E31892 /* DataAccessObject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = DataAccessObject.js; sourceTree = "<group>"; };
+		9BE5633016135D4100E31892 /* LocationObject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = LocationObject.js; sourceTree = "<group>"; };
+		9BE5633216135D4100E31892 /* EnterpriseSync.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = EnterpriseSync.css; sourceTree = "<group>"; };
+		9BE5633416135D4100E31892 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		9BE5633616135D4100E31892 /* ServerAccessObject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ServerAccessObject.js; sourceTree = "<group>"; };
+		9BE5633816135D4100E31892 /* EnterpriseSyncFunctions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = EnterpriseSyncFunctions.js; sourceTree = "<group>"; };
+		9BE5633A16135D4100E31892 /* QCNativeFooter.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = QCNativeFooter.js; sourceTree = "<group>"; };
+		9BE5633C16135D4100E31892 /* EnterpriseSyncMappings.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = EnterpriseSyncMappings.js; sourceTree = "<group>"; };
+		9BE5633E16135D4100E31892 /* QCUtilities.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = QCUtilities.js; sourceTree = "<group>"; };
+		9BE5634016135D4200E31892 /* SetupQC.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = SetupQC.js; sourceTree = "<group>"; };
+		9BE5634716135D8300E31892 /* test.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.xls; sourceTree = "<group>"; };
+		9BE5634816135D8300E31892 /* test.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.doc; sourceTree = "<group>"; };
+		9BE5634916135D8300E31892 /* catalog.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = catalog.pdf; sourceTree = "<group>"; };
+		9BE5635D16138FF700E31892 /* pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdf.png; sourceTree = "<group>"; };
+		9BE563601613909200E31892 /* word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = word.png; sourceTree = "<group>"; };
+		9BE56362161390ED00E31892 /* excel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = excel.png; sourceTree = "<group>"; };
+		9BE563AA1613B19800E31892 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		9BE563AC1613B1AB00E31892 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		9BE563AE1613B1BB00E31892 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		9BE563B01613B1CA00E31892 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		9BE563B21613B2BE00E31892 /* QCSmallAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QCSmallAppIcon.png; path = ../QCSmallAppIcon.png; sourceTree = "<group>"; };
+		9BE563B41613B2C700E31892 /* QCRetinaAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QCRetinaAppIcon.png; path = ../QCRetinaAppIcon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BE562D916135D3F00E31892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE562E516135D3F00E31892 /* UIKit.framework in Frameworks */,
+				9BE562E716135D3F00E31892 /* Foundation.framework in Frameworks */,
+				9BE562E916135D3F00E31892 /* CoreGraphics.framework in Frameworks */,
+				9BE562EB16135D3F00E31892 /* QuartzCore.framework in Frameworks */,
+				9BE562ED16135D3F00E31892 /* Accelerate.framework in Frameworks */,
+				9BE562EF16135D3F00E31892 /* AddressBook.framework in Frameworks */,
+				9BE562F116135D3F00E31892 /* AddressBookUI.framework in Frameworks */,
+				9BE562F316135D3F00E31892 /* AudioToolbox.framework in Frameworks */,
+				9BE562F516135D3F00E31892 /* AVFoundation.framework in Frameworks */,
+				9BE562F716135D3F00E31892 /* CoreLocation.framework in Frameworks */,
+				9BE562F916135D3F00E31892 /* GameKit.framework in Frameworks */,
+				9BE562FB16135D3F00E31892 /* iAd.framework in Frameworks */,
+				9BE562FD16135D3F00E31892 /* MapKit.framework in Frameworks */,
+				9BE562FF16135D3F00E31892 /* MediaPlayer.framework in Frameworks */,
+				9BE5630116135D3F00E31892 /* MessageUI.framework in Frameworks */,
+				9BE5630316135D3F00E31892 /* QuickLook.framework in Frameworks */,
+				9BE5630516135D3F00E31892 /* StoreKit.framework in Frameworks */,
+				9BE5630716135D3F00E31892 /* SystemConfiguration.framework in Frameworks */,
+				9BE5631216135D4100E31892 /* qc_hybrid.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE562DC16135D3F00E31892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BE562D116135D3F00E31892 = {
+			isa = PBXGroup;
+			children = (
+				9BE5630816135D3F00E31892 /* File View */,
+				9BE562E316135D3F00E31892 /* Frameworks */,
+				9BE562E116135D3F00E31892 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BE562E116135D3F00E31892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BE562E016135D3F00E31892 /* File View.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BE562E316135D3F00E31892 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BE562E416135D3F00E31892 /* UIKit.framework */,
+				9BE562E616135D3F00E31892 /* Foundation.framework */,
+				9BE562E816135D3F00E31892 /* CoreGraphics.framework */,
+				9BE562EA16135D3F00E31892 /* QuartzCore.framework */,
+				9BE562EC16135D3F00E31892 /* Accelerate.framework */,
+				9BE562EE16135D3F00E31892 /* AddressBook.framework */,
+				9BE562F016135D3F00E31892 /* AddressBookUI.framework */,
+				9BE562F216135D3F00E31892 /* AudioToolbox.framework */,
+				9BE562F416135D3F00E31892 /* AVFoundation.framework */,
+				9BE562F616135D3F00E31892 /* CoreLocation.framework */,
+				9BE562F816135D3F00E31892 /* GameKit.framework */,
+				9BE562FA16135D3F00E31892 /* iAd.framework */,
+				9BE562FC16135D3F00E31892 /* MapKit.framework */,
+				9BE562FE16135D3F00E31892 /* MediaPlayer.framework */,
+				9BE5630016135D3F00E31892 /* MessageUI.framework */,
+				9BE5630216135D3F00E31892 /* QuickLook.framework */,
+				9BE5630416135D3F00E31892 /* StoreKit.framework */,
+				9BE5630616135D3F00E31892 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BE5630816135D3F00E31892 /* File View */ = {
+			isa = PBXGroup;
+			children = (
+				9BE5631416135D4100E31892 /* index.html */,
+				9BE5631616135D4100E31892 /* main.css */,
+				9BE5631816135D4100E31892 /* main.js */,
+				9BE5631A16135D4100E31892 /* mappings.js */,
+				9BE5631C16135D4100E31892 /* functions.js */,
+				9BE5631E16135D4100E31892 /* databaseDefinition.js */,
+				9BE5634716135D8300E31892 /* test.xls */,
+				9BE5634816135D8300E31892 /* test.doc */,
+				9BE5634916135D8300E31892 /* catalog.pdf */,
+				9BE5635F16138FFE00E31892 /* images */,
+				9BE5630916135D3F00E31892 /* Supporting Files */,
+			);
+			path = "File View";
+			sourceTree = "<group>";
+		};
+		9BE5630916135D3F00E31892 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BE563B41613B2C700E31892 /* QCRetinaAppIcon.png */,
+				9BE563B21613B2BE00E31892 /* QCSmallAppIcon.png */,
+				9BE563B01613B1CA00E31892 /* Default-Landscape@2x~ipad.png */,
+				9BE563AE1613B1BB00E31892 /* Default-Landscape~ipad.png */,
+				9BE563AC1613B1AB00E31892 /* Default-Portrait@2x~ipad.png */,
+				9BE563AA1613B19800E31892 /* Default-Portrait~ipad.png */,
+				9BE5630A16135D3F00E31892 /* File View-Info.plist */,
+				9BE5630B16135D3F00E31892 /* InfoPlist.strings */,
+				9BE5630E16135D3F00E31892 /* main.m */,
+				9BE5631016135D4000E31892 /* File View-Prefix.pch */,
+				9BE5631116135D4100E31892 /* qc_hybrid.a */,
+				9BE5631316135D4100E31892 /* QuickConnectViewController.h */,
+				9BE5632016135D4100E31892 /* com.js */,
+				9BE5632216135D4100E31892 /* Default-568h@2x.png */,
+				9BE5632416135D4100E31892 /* Default@2x.png */,
+				9BE5632616135D4100E31892 /* Default.png */,
+				9BE5632816135D4100E31892 /* DBScript.js */,
+				9BE5632A16135D4100E31892 /* ImagePickerViewController.xib */,
+				9BE5632C16135D4100E31892 /* QuickConnect.js */,
+				9BE5632E16135D4100E31892 /* DataAccessObject.js */,
+				9BE5633016135D4100E31892 /* LocationObject.js */,
+				9BE5633216135D4100E31892 /* EnterpriseSync.css */,
+				9BE5633416135D4100E31892 /* MapView.xib */,
+				9BE5633616135D4100E31892 /* ServerAccessObject.js */,
+				9BE5633816135D4100E31892 /* EnterpriseSyncFunctions.js */,
+				9BE5633A16135D4100E31892 /* QCNativeFooter.js */,
+				9BE5633C16135D4100E31892 /* EnterpriseSyncMappings.js */,
+				9BE5633E16135D4100E31892 /* QCUtilities.js */,
+				9BE5634016135D4200E31892 /* SetupQC.js */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BE5635F16138FFE00E31892 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9BE5635D16138FF700E31892 /* pdf.png */,
+				9BE563601613909200E31892 /* word.png */,
+				9BE56362161390ED00E31892 /* excel.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BE562DF16135D3F00E31892 /* File View */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BE5634416135D4200E31892 /* Build configuration list for PBXNativeTarget "File View" */;
+			buildPhases = (
+				9BE562D816135D3F00E31892 /* Sources */,
+				9BE562D916135D3F00E31892 /* Frameworks */,
+				9BE562DA16135D3F00E31892 /* Resources */,
+				9BE562DB16135D3F00E31892 /* Sources */,
+				9BE562DC16135D3F00E31892 /* Frameworks */,
+				9BE562DD16135D3F00E31892 /* ShellScript */,
+				9BE562DE16135D3F00E31892 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "File View";
+			productName = "File View";
+			productReference = 9BE562E016135D3F00E31892 /* File View.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BE562D316135D3F00E31892 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Lee Barney";
+			};
+			buildConfigurationList = 9BE562D616135D3F00E31892 /* Build configuration list for PBXProject "File View" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9BE562D116135D3F00E31892;
+			productRefGroup = 9BE562E116135D3F00E31892 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BE562DF16135D3F00E31892 /* File View */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BE562DA16135D3F00E31892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE5630D16135D3F00E31892 /* InfoPlist.strings in Resources */,
+				9BE5631516135D4100E31892 /* index.html in Resources */,
+				9BE5631716135D4100E31892 /* main.css in Resources */,
+				9BE5631916135D4100E31892 /* main.js in Resources */,
+				9BE5631B16135D4100E31892 /* mappings.js in Resources */,
+				9BE5631D16135D4100E31892 /* functions.js in Resources */,
+				9BE5631F16135D4100E31892 /* databaseDefinition.js in Resources */,
+				9BE5632116135D4100E31892 /* com.js in Resources */,
+				9BE5632316135D4100E31892 /* Default-568h@2x.png in Resources */,
+				9BE5632516135D4100E31892 /* Default@2x.png in Resources */,
+				9BE5632716135D4100E31892 /* Default.png in Resources */,
+				9BE5632916135D4100E31892 /* DBScript.js in Resources */,
+				9BE5632B16135D4100E31892 /* ImagePickerViewController.xib in Resources */,
+				9BE5632D16135D4100E31892 /* QuickConnect.js in Resources */,
+				9BE5632F16135D4100E31892 /* DataAccessObject.js in Resources */,
+				9BE5633116135D4100E31892 /* LocationObject.js in Resources */,
+				9BE5633316135D4100E31892 /* EnterpriseSync.css in Resources */,
+				9BE5633516135D4100E31892 /* MapView.xib in Resources */,
+				9BE5633716135D4100E31892 /* ServerAccessObject.js in Resources */,
+				9BE5633916135D4100E31892 /* EnterpriseSyncFunctions.js in Resources */,
+				9BE5633B16135D4100E31892 /* QCNativeFooter.js in Resources */,
+				9BE5633D16135D4100E31892 /* EnterpriseSyncMappings.js in Resources */,
+				9BE5633F16135D4100E31892 /* QCUtilities.js in Resources */,
+				9BE5634116135D4200E31892 /* SetupQC.js in Resources */,
+				9BE5634A16135D8300E31892 /* test.xls in Resources */,
+				9BE5634B16135D8300E31892 /* test.doc in Resources */,
+				9BE5634C16135D8300E31892 /* catalog.pdf in Resources */,
+				9BE5635E16138FF700E31892 /* pdf.png in Resources */,
+				9BE563611613909200E31892 /* word.png in Resources */,
+				9BE56363161390ED00E31892 /* excel.png in Resources */,
+				9BE563AB1613B19800E31892 /* Default-Portrait~ipad.png in Resources */,
+				9BE563AD1613B1AB00E31892 /* Default-Portrait@2x~ipad.png in Resources */,
+				9BE563AF1613B1BB00E31892 /* Default-Landscape~ipad.png in Resources */,
+				9BE563B11613B1CA00E31892 /* Default-Landscape@2x~ipad.png in Resources */,
+				9BE563B31613B2BE00E31892 /* QCSmallAppIcon.png in Resources */,
+				9BE563B51613B2C700E31892 /* QCRetinaAppIcon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9BE562DD16135D3F00E31892 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t#androidVersionFilePath=\"$SOURCE_ROOT_AS_PATH_COMPONENT/$EXECUTABLE_NAME_AS_PATH_COMPONENT/main.m\" \n        androidVersionFilePath=\"$SOURCE_ROOT/$EXECUTABLE_NAME/main.m\"      \n        androidVersionLine=`grep \"AndroidSDK\" \"$androidVersionFilePath\"`\n        #echo $androidVersionLine\n        androidVersion=0\n        for word in $androidVersionLine           \n        do               \n        androidVersion=$word\n        #echo 'word: '$androidVersion\n        done  \n        if [ $androidVersion = 0 ]; then\n            echo 'not building for android'\n            exit 0;\n        fi    \n        echo '---------------Building for Android------------------'\n        \t\t\t\t\nif [ ! -d AndroidBuild ]; then               \nmkdir AndroidBuild           \nfi                                 \n#get the bundle identifier    \necho $INFOPLIST_FILE\nBUNDLE_ID=($(/usr/libexec/PlistBuddy -c Print:CFBundleIdentifier \"$INFOPLIST_FILE\"))         \nBUNDLE_VERSION=($(/usr/libexec/PlistBuddy -c Print:CFBundleVersion \"$INFOPLIST_FILE\"))           \nANDROID_VERSION_NAME=($(/usr/libexec/PlistBuddy -c Print:AndroidAppVersionCode \"$INFOPLIST_FILE\")) \nif [ -z BUNDLE_VERSION ]; then\n    BUNDLE_VERSION='1.0'\nfi\n\n#check to see if the developer has defined an integer value for the android application version           \nif [ ${#ANDROID_VERSION_NAME} = 0 ]; then\n    ANDROID_VERSION_NAME=1                       \n    fi \n    \n    APP_PACKAGE=${BUNDLE_ID%\\$*}\n    APP_PACKAGE_LEN=${#APP_PACKAGE}\n        APP_PACKAGE=${APP_PACKAGE:0:APP_PACKAGE_LEN-1}  \n        #EXECUTABLE_NAME_AS_PATH_COMPONENT=${EXECUTABLE_NAME// /\\\\ }\n        #SOURCE_ROOT_AS_PATH_COMPONENT=${SOURCE_ROOT// /\\\\ }\n        \n        androidSDK=/Developer/androidSDK           \n        export androidSDK\n        echo ----------------Clearing old build               \n        rm -rf AndroidBuild           \n        \n        echo ----------------Copying standard files               \n        #copy the default android_build directory and other standard files               \n        #from the template directory into the current directory               \n        cp -R $HOME/Library/Developer/Xcode/Templates/Application/QC\\ Hybrid\\ Application.xctemplate/AndroidSetup .               \n        mv AndroidSetup AndroidBuild    \n        \n        echo ----------------Copying Application files\n        #ignore the file type not found errors\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.png AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.jpg AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.gif AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.jpg AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.bmp AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.webp AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mov AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.ogg AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.webm AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mp4 AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.3gp AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mp3 AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mid AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.wav AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mkv AndroidBuild/res/raw/ 2>/dev/null\n        \n                                         \n                                         \n        rsync -av --exclude='bigtest11-Info.plist' --exclude='bigtest11-Prefix.pch' --exclude='com.js' --exclude='DataAccessObject.js' --exclude='DBScript.js' --exclude='en.lproj' --exclude='qc_hybrid.a' --exclude='MapView.xib' --exclude='ImagePickerViewController.xib' --exclude='EnterpriseSync.css' --exclude='EnterpriseSyncFunctions.js' --exclude='EnterpriseSyncMappings.js' --exclude='json2.js' --exclude='LocationObject.js' --exclude='QCUtilities.js' --exclude='QuickConnect.js' --exclude='ServerAccessObject.js' --exclude='setupQC.js' --exclude='QuickConnectViewController.h' --exclude='*.mov*' exclude='*.MOV*' --exclude='.m4v' --exclude='.M4V' --exclude='*.jpg*' --exclude='*.JPG*' --exclude='*.png*' --exclude='*.PNG*' --exclude='*.bmp*' --exclude='*.BMP*' --exclude='*.gif*' --exclude='*.GIF*' --exclude='*.webp*' --exclude='*.WEBP*' --exclude='*.mpg*' --exclude='*.MPG*' --exclude='*.mpeg*' --exclude='*.MPEG*' --exclude='*.webm*' --exclude='*.WEBM*' --exclude='*.wav*' --exclude='*.WAV*' --exclude='*.ogg*' --exclude='*.OGG*' --exclude='*.mid*' --exclude='*.MID*' --exclude='*.mp3*' --exclude='*.MP3*' $SOURCE_ROOT/$EXECUTABLE_NAME/ AndroidBuild/assets/\n                     \n        \n                                                                                                                                \n        \n        echo ----------------Building AndroidManifest.xml                                 \n        activityName=${EXECUTABLE_NAME// /};                              \n            #write out the AndroidManifest.xml file contents           \n            echo '<?xml version=\"1.0\" encoding=\"utf-8\"?><manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" package=\"'$APP_PACKAGE'\" android:versionCode=\"'$ANDROID_VERSION_NAME'\" android:versionName=\"1.0\"><uses-sdk android:minSdkVersion=\"'$androidVersion'\"/><uses-permission android:name=\"android.permission.INTERNET\" /><uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"></uses-permission><uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"></uses-permission><uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/><uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/><application android:icon=\"@drawable/icon\" android:label=\"@string/app_name\"><activity android:name=\"'$activityName'\" android:label=\"@string/app_name\" android:screenOrientation=\"portrait\"><intent-filter>           <action android:name=\"android.intent.action.MAIN\" /><category android:name=\"android.intent.category.LAUNCHER\" /></intent-filter></activity><uses-library android:name=\"com.google.android.maps\" /></application></manifest>' > AndroidBuild/AndroidManifest.xml                           \n            \n            \n            echo ----------------Building strings.xml               \n            #write out the strings.xml file contents               \n            echo '<?xml version=\"1.0\" encoding=\"utf-8\"?><resources><string name=\"app_name\">'$EXECUTABLE_NAME'</string></resources>' > AndroidBuild/res/values/strings.xml\n            \n            \n            echo ----------------Building Activity.java               \n            packagePath=${APP_PACKAGE//.//}               \n                mkdir -p AndroidBuild/src/$packagePath               \n                #write out the Activity.java file contents                   \n                activityFilePath=AndroidBuild/src/$packagePath/$activityName.java               \n                echo $activityFilePath               \n                echo 'package '$APP_PACKAGE'; import org.quickconnectfamily.hybrid.QCAndroid; import org.quickconnectfamily.hybrid.R; import android.app.Activity; import android.os.Bundle; public class '$activityName' extends QCAndroid { @Override public void onCreate(Bundle theBundle) {  super.onCreate(theBundle); } }' > $activityFilePath                          \n                echo ----------------Building ant files                                                                                                                             \n                echo '<?xml version=\"1.0\" encoding=\"UTF-8\"?><project name=\"'$EXECUTABLE_NAME'\" default=\"QC Hybrid Application\"><loadproperties srcFile=\"local.properties\" /><property file=\"ant.properties\" /><loadproperties srcFile=\"project.properties\" /><!-- version-tag: '$ANDROID_VERSION_NAME' --><import file=\"'$androidSDK'/tools/ant/build.xml\" /></project>' > AndroidBuild/build.xml  \n                echo 'target=Google Inc.:Google APIs:'$androidVersion > AndroidBuild/project.properties                                         \n                \n                \n                echo -------------Updating Android Keystore------------------------\n                # remove the debug keystore if it exists.  This will keep it from expiring.           \n                if [ -f ~/.Android/debug.keystore ]; then               \n                echo \"Removing old keystore\"               \n                rm ~/.Android//debug.keystore           \n                else               \n                echo \"First build.  Keystore does not exist.\"           \n                fi               \n                # regenerate the debug keystore               \n                # keytool is included in the standard JDK install               \n                keytool -genkey -v -storepass android -alias android -keypass android -keystore AndroidBuild/debug.keystore -validity 2000 -dname 'CN=Android Debug,O=Android,C=US'                                             \n                echo -------------Compiling and assembling application------------------------               \n                cd AndroidBuild               \n                ant debug                                                                                                                         \n                \n                exit 0                                  \t\t\t\t\t\t\n                    ";
+		};
+		9BE562DE16135D3F00E31892 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n                \n                #check to see if android should be run\nandroidVersionFilePath=\"$SOURCE_ROOT/$EXECUTABLE_NAME/main.m\"      \nandroidVersionLine=`grep \"AndroidSDK\" \"$androidVersionFilePath\"`\n#echo $androidVersionLine\nandroidVersion=0;\nfor word in $androidVersionLine           \ndo               \n    androidVersion=$word\n#echo 'word: '$androidVersion\ndone     \nif [ $androidVersion = 0 ]; then\n    echo 'Not building for Android'\n    exit 0;\nfi\n        echo '---------------Building for Android------------------'\n    \n                    #finding run environment\n#get the bundle identifier           \necho $INFOPLIST_FILE\nBUNDLE_ID=($(/usr/libexec/PlistBuddy -c Print:CFBundleIdentifier \"$INFOPLIST_FILE\"))         \n                             \nAPP_PACKAGE=${BUNDLE_ID%\\$*}\nAPP_PACKAGE_LEN=${#APP_PACKAGE}\nAPP_PACKAGE=${APP_PACKAGE:0:APP_PACKAGE_LEN-1}\necho -------------Initializing emulator------------------------\nandroidSDK='/Developer/androidSDK'\n# see if an emulator is running or a device is connected. \n    #/Developer/androidSDK/platform-tools/adb kill-server\n    foundDevicesAndEmulators=$($androidSDK/platform-tools/adb devices)\n    echo 'devices: '$foundDevicesAndEmulators\nFoundEmulator=$($androidSDK/platform-tools/adb devices| grep -v devices | grep emulator)           \n    \n    echo \"emulator: '$FoundEmulator'\" \nFoundDevice=$($androidSDK/platform-tools/adb devices| grep -v devices | grep -v emulator)           \n    \n    echo \"device '$FoundDevice'\"\nFound=$FoundDevice              \nif [ -z $Found ]; then               \n           echo 'checking emulator'   \n    Found=$FoundEmulator               \nfi               \n    echo 'found1: '$Found\nFound=${Found%%device*}               \nFound=$Found | sed 's/ //g' \n    echo 'found: '$Found\nif [ -z $Found ]; then               \n    echo 'No device or emulator found on which to install the application.  If you wish to run on a device plug it in.  If you want to run on an emulator start it prior to building.'               \n    \n    exit 1               \nelse \n    if [ -z $FoundDevice ]; then  \n    #exit the debugger and clear/flush the log                   \n    #$androidSDK/platform-tools/adb -s $Found logcat -c      \n\n    #bring the found emulator to the front\n    $HOME/Library/Developer/Xcode/Templates/Application/QC\\ Hybrid\\ Application.xctemplate/appswitch -a emulator-arm\n    fi\nfi\n\ninstFileName=$(pwd)/AndroidBuild/bin/$EXECUTABLE_NAME-debug.apk               \necho -------------un-installing $APP_PACKAGE from $Found---------------------- \n$androidSDK/platform-tools/adb -s $Found uninstall $APP_PACKAGE               \necho -------------Doing install / reinstall----------------------               \necho -----------installing $instFileName-----------------  \n    #installing: /Users/lee/Desktop/junk/workupJunk/bin/workupJunk-debug.apk found: \t040365FE0100400C\n    \n    \n\n    echo \"installing: $instFileName found: $Found\"\n    $androidSDK/platform-tools/adb -s $Found install -r \"$instFileName\" \n    \necho \"-------------launching $APP_PACKAGE/$EXECUTABLE_NAME--------------\"   \nactivityName=${EXECUTABLE_NAME// /};\n$androidSDK/platform-tools/adb -s $Found shell am start -a android.intent.action.MAIN -n $APP_PACKAGE/.$activityName                            \necho -------------launching debugger--------------               \n$androidSDK/platform-tools/adb -s $Found logcat -f logfile.txt *:V &               \necho -------------launch complete-------------               \n\n    exit 0\n\n                                                        \t\t\t\t\t\t\n                                                        \t\t\t\t\t\t\n                                                        \t\t\t\t\t\t\n                                                        \t\t\t\t\t\t";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BE562D816135D3F00E31892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE5630F16135D4000E31892 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE562DB16135D3F00E31892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9BE5630B16135D3F00E31892 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BE5630C16135D3F00E31892 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BE5634216135D4200E31892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BE5634316135D4200E31892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BE5634516135D4200E31892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "File View/File View-Prefix.pch";
+				INFOPLIST_FILE = "File View/File View-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/File View\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9BE5634616135D4200E31892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "File View/File View-Prefix.pch";
+				INFOPLIST_FILE = "File View/File View-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/File View\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BE562D616135D3F00E31892 /* Build configuration list for PBXProject "File View" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BE5634216135D4200E31892 /* Debug */,
+				9BE5634316135D4200E31892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BE5634416135D4200E31892 /* Build configuration list for PBXNativeTarget "File View" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BE5634516135D4200E31892 /* Debug */,
+				9BE5634616135D4200E31892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BE562D316135D3F00E31892 /* Project object */;
+}

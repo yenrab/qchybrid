@@ -10,7 +10,7 @@
  The above copyright notice and this permission notice shall be 
  included in all copies or substantial portions of the Software.
  
- 
+
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
@@ -21,7 +21,6 @@
  
  
  */
-
 
 /*
  *  The purpose of the DBScript object is to allow multiple database
@@ -41,7 +40,7 @@ function DBScript(theDatabase){
 		 */
 		this.addStatement = function(SQL, statementParameters){
 			if(theDatabase.isNativeDatabase){
-				SQl = escape(SQL);
+				SQL = escape(SQL);
             }
 			var stmtArray = null;
 			var statementsToStore = new Array();
@@ -57,7 +56,7 @@ function DBScript(theDatabase){
 			}
 			else{
 				
-				var storageParams = statementParameters != null ? escape(JSON.stringify(statementParameters)) : "";
+				var storageParams = statementParameters != null ? JSON.stringify(statementParameters) : "";
 				this.numGeneratedParams++;
 				var syncStatementParameters = [new Date().toUTCString(), SQL, storageParams];
 				stmtArray = [this.numGeneratedParams, syncStatementParameters];
@@ -91,22 +90,17 @@ function DBScript(theDatabase){
 		this.executeSetDataScript = function(){
 			if(theDatabase.isNativeDatabase){
 				try{
-					var dataArray = new Array();
-					var data = new Array();
+					var data = new Object();
+					var insertSet = new Array();
 					//put the values into an array so that they retain the correct order on the OC side
 					for(key in this.linker){
 						var row = [key,this.linker[key]];
-						data.push(row);
-						//var data = JSON.stringify(this.linker);
+						resultSet.push(row);
 					}
-					dataArray.push(theDatabase.dbName);
-					dataArray.push(data);
+                    data['name'] = theDatabase.dbName;
+                    data['rows'] = insertSet;
 					
-					//put in a placeholder
-					dataArray.push(new Array());
-					var callBackParameters = generatePassThroughParameters();
-					dataArray.push(callBackParameters);
-					makeCall("runDBScript", JSON.stringify(dataArray));
+					makeCall("runDBScript", data);
 				}
 				catch(err){
 					logError(err);

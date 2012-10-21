@@ -21,20 +21,17 @@
  
  */
 
-qc.WAIT_FOR_DATA = 'wait';
-qc.STACK_EXIT = null;
+/*! \file QCUtilities.js
+ \brief The QCUtilities.js file contains a series of helper functions for you to use in creating your QCFamily Hybrid application.
+ 
+ <em><b>All functions are listed as variables in these files.</b></em>  However, they truely are JavaScript functions.
+ 
+ */
+
+qc.WAIT_FOR_DATA = 'wAiT';
+qc.STACK_EXIT = 'ExIt_StAcK';
 qc.STACK_CONTINUE = true;
 
-/* //this is commented out since it was causing itermittent errors on iOS.
-String.prototype.trim = function(){return 
-	(this.replace(/^[\s\xA0]+/, "").replace(/[\s\xA0]+$/, ""))}
-*/
-String.prototype.startsWith = function(str) 
-{return (this.match("^"+str)==str)}
-
-String.prototype.endsWith = function(str) 
-{return (this.match(str+"$")==str)}
- 
 qc.showSyncView = function(){
     var syncView = document.createElement('div');
     syncView.id = 'syncView';
@@ -72,7 +69,9 @@ function AccelerationObject(){
 	this.y = 0;
 	this.z = 0;
 }
-
+/*! \fn qc.stopBounce()
+ @brief qc.stopBounce() <br/> The qc.stopBounce function causes the view of the entire html page to not have any elastic behavior when the user tries to scroll past the end of the page.
+ */
 qc.stopBounce = function(){
     var height = document.body.scrollHeight;
     if(height > 480){
@@ -82,14 +81,18 @@ qc.stopBounce = function(){
     }
 }
 window.stopBounce = qc.stopBounce;
-
+/*! \fn qc.turnOffScrolling()
+ @brief qc.turnOffScrolling() <br/> The qc.turnOffScrolling function stops the entire html page from scrolling after it is called.
+ */
 qc.turnOffScrolling = function(){
 	document.ontouchmove = function(event){
 		event.preventDefault();
 	}
 }
 window.turnOffScrolling = qc.turnOffScrolling;
-
+/*! \fn qc.turnOnScrolling()
+ @brief qc.turnOnScrolling() <br/> The qc.turnOnScrolling function activates scrolling of the html page if qc.turnOffScrolling has previously been called.
+ */
 qc.turnOnScrolling = function(){
 	document.ontouchmove = function(event){
 		//do nothing
@@ -103,7 +106,10 @@ qc.customScroll = function(xAmount, yAmount){
 	return 'done';
 }
 window.customScroll = qc.customScroll;
-
+/*! \fn qc.trim(aString)
+ @brief qc.trim(aString) <br/> The qc.trim function removes white space characters from the beginning and end of any string it is passed.
+ @return the original string without any leading or trailing white space characters
+ */
 //remove white space from the beginning and end of a string
 qc.trim = function(aString){
     return aString.replace(/^\s+|\s+$/g, '');
@@ -155,16 +161,26 @@ qc.replaceSpecial = function(anObject){
 }
 window.replaceSpecial = qc.replaceSpecial;
 
+
+/*! \fn qc.generateUUID()
+ @brief qc.generateUUID() <br/> The qc.generateUUID function creates a universally unique identifier.
+ @return a string that is universally unique.
+ */
+
 qc.genrateUUID = function(){
 	var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-	    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-	    return v.toString(16);
-	});
+                                                              var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                                                              return v.toString(16);
+                                                              });
 	return uuid;
 }
 
-
 //stop an event from doing its' default behavior
+
+/*! \fn qc.stopDefault(anEvent)
+ @brief qc.stopDefault(anEvent) <br/> The qc.stopDefault function stops any event from completing its standard behavior.
+ If the event is the result of clicking a link calling qc.stopDefault will make the event NOT load the new page.
+ */
 qc.stopDefault = function(event){
     if(event){
         event.preventDefault();
@@ -172,22 +188,32 @@ qc.stopDefault = function(event){
 }
 window.stopDefault = qc.stopDefault;
 
-
 /*
  * These mapping functions require functions for the business rules,
  * view controls, error controls, and security controls NOT the names 
  * of these items as strings.
  */
-qc.mapCommandToBCF = function(aCmd, aBCF){
-    var funcArray = businessMap[aCmd];
+
+/*! \fn qc.mapCommandToDCF(aCommand, aDCF)
+ @brief qc.mapCommandToDCF(aCommand, aDCF) <br/> The qc.mapCommandToDCF function is used in the mappings.js file to map a Business Control Function (DCF) to the specified command.
+ @param aCommand The <b>String</b> that uniquely identifies the stack of Control Functions to which this DCF is to be added.
+ @param aDCF a function that has the behavior of a DCF as described on the main page of this documentation.
+ */
+qc.mapCommandToDCF = function(aCmd, aDCF){
+    var funcArray = dataMap[aCmd];
 	if(funcArray == null){
 		funcArray = new Array();
-		businessMap[aCmd] = funcArray;
+		dataMap[aCmd] = funcArray;
 	}
-	funcArray.push(aBCF);
+	funcArray.push(aDCF);
 }
-window.mapCommandToBCF = qc.mapCommandToBCF;
+window.mapCommandToDCF = qc.mapCommandToDCF;
 
+/*! \fn qc.mapCommandToVCF(aCommand, aVCF)
+ @brief qc.mapCommandToVCF(aCommand, aVCF) <br/> The qc.mapCommandToVCF function is used in the mappings.js file to map a View Control Function (VCF) to the specified command.
+ @param aCommand The <b>String</b> that uniquely identifies the stack of Control Functions to which this VCF is to be added.
+ @param aVCF a function that has the behavior of a VCF as described on the main page of this documentation.
+ */
 qc.mapCommandToVCF = function(aCmd, aVCF){
     var funcArray = viewMap[aCmd];
 	if(funcArray == null){
@@ -198,6 +224,11 @@ qc.mapCommandToVCF = function(aCmd, aVCF){
 }
 window.mapCommandToVCF = qc.mapCommandToVCF;
 
+/*! \fn qc.mapCommandToECF(anErrorCommand, anECF)
+ @brief qc.mapCommandToECF(anErrorCommand, anECF) <br/> The qc.mapCommandToECF function is used in the mappings.js file to map an Error Control Function (ECF) to the specified command.
+ @param aCommand The <b>String</b> that uniquely identifies the stack of Error Control Functions to which this ECF is to be added.
+ @param anECF a function that has the behavior of an ECF as described on the main page of this documentation.
+ */
 qc.mapCommandToECF = function(anErrorCmd, anECF){
 	var funcArray = errorMap[anErrorCmd];
 	if(funcArray == null){
@@ -208,6 +239,11 @@ qc.mapCommandToECF = function(anErrorCmd, anECF){
 }
 window.mapCommandToECF = qc.mapCommandToECF;
 
+/*! \fn qc.mapCommandToValCF(aCommand, aValCF)
+ @brief qc.mapCommandToValCF(aCommand, aDCF) <br/> The qc.mapCommandToValCF function is used in the mappings.js file to map a Validation Control Function (ValCF) to the specified command.
+ @param aCommand The <b>String</b> that uniquely identifies the stack of Control Functions to which this ValCF is to be added.
+ @param aValCF a function that has the behavior of a ValCF as described on the main page of this documentation.
+ */
 qc.mapCommandToValCF = function(aCmd, aValCF){
 	var funcArray = validationMap[aCmd];
 	if(funcArray == null){
@@ -218,6 +254,16 @@ qc.mapCommandToValCF = function(aCmd, aValCF){
 }
 window.mapCommandToValCF = qc.mapCommandToValCF;
 
+qc.copyPaste = function(enable){
+    var bodyElement = document.getElementsByTagName('body')[0];
+    if(enable){
+        body.style.webkitUserSelect = 'auto';
+    }
+    else{
+        body.style.webkitUserSelect = 'none';
+    }
+}
+window.copyPaste = qc.copyPaste;
 
 
 /*
@@ -226,19 +272,26 @@ window.mapCommandToValCF = qc.mapCommandToValCF;
  *  methods.  These can be AJAX calls, browser SQLite calls, or device based SQLite calls.
  */
 qc.generatePassThroughParameters = function(){
-	debug("Fetching execution key: " + executionKey);
+    //debug("Fetching execution key: " + executionKey);
 	debug("You have called an asynchronous function ouside of a Buisness Control Function. This"
-			+" is likey to have unintended consequences. Specificaly, the asynchronous function"
-			+" cannot properly return data.");
+          +" is likey to have unintended consequences. Specificaly, the asynchronous function"
+          +" cannot properly return data.");
 	return [executionKey];
 }
 window.generatePassThroughParameters = qc.generatePassThroughParameters;
 
-qc.logError = function(error){
-	console.log(qc.errorMessage(error));
-}
-window.logError = qc.logError;
 
+/*! \fn qc.logError(error)
+ @brief qc.logError(error) <br/> The qc.logError function is used to display an error caught by a try - catch JavaScript phrase.  This function prints out a full stack trace, the reason for the error, the name of the file in which the error occured, and the line number on which the error occured to the console.
+ @param error the error caught by using try - catch in the code
+ *
+ qc.logError = function(error){
+ 
+ console.log([qc.errorMessage(error)]);
+ 
+ }
+ window.logError = qc.logError;
+ */
 /*
  * errorMessage creates a single string message
  * from all of the data available from an error
@@ -251,36 +304,36 @@ qc.errorMessage = function(err){
     if(err.name && err.message && err.line && err.sourceURL){
         var fileName = err.sourceURL;
         var stringArr = fileName.split('/');
-        fileName = stringArr[stringArr.length -1];
+        var fileName = stringArr[stringArr.length -1];
         errMsg += err.name+': '+err.message+' '+fileName+' line: '+err.line;
     }
     else{
         errMsg += err;
     }
-    errMsg += '_@_call stack:_@_';
     var curr  = arguments.callee.caller,
     FUNC  = 'function', ANON = "{anonymous}",
     fnRE  = /function\s*([\w\-$]+)?\s*\(/i, stack = [],j=0, fn,args,i;
                                         
+    errMsg += '\ncall stack:\n';
     while (curr) {
-    	fn    = fnRE.test(curr.toString()) ? RegExp.$1 || ANON : ANON;
-    	args  = stack.slice.call(curr.arguments);
-    	i     = args.length;
-
-    	while (i--) {
-    		switch (typeof args[i]) {
-    		case 'string'  : args[i] = '"'+args[i].replace(/"/g,'\\"')+'"';
-    		break;
-    		case 'function': args[i] = FUNC; 
-    		break;
-    		}
-    	}
-    	if(fn != 'logError'){
-    		errMsg += fn + '(' + args.join() + ')_@_';
-    	}
-    	curr = curr.caller;
+        var fn    = fnRE.test(curr.toString()) ? RegExp.$1 || ANON : ANON;
+        var args  = stack.slice.call(curr.arguments);
+        var i     = args.length;
+        
+        while (i--) {
+           switch (typeof args[i]) {
+                case 'string'  : args[i] = '"'+args[i].replace(/"/g,'\\"')+'"';
+                        break;
+                case 'function': args[i] = FUNC; 
+                        break;
+            }
+        }
+       if(fn != 'logError'){
+           errMsg += fn + '(' + args.join() + ')';
+       }
+        errMsg+="\n";
+        curr = curr.caller;
     }
-    return errMsg;
+   return errMsg;
 }
-
 window.errorMessage = qc.errorMessage;

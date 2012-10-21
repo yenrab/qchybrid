@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B2BB3DD16123501002CFD96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3DC16123501002CFD96 /* UIKit.framework */; };
+		9B2BB3DF16123501002CFD96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3DE16123501002CFD96 /* Foundation.framework */; };
+		9B2BB3E116123501002CFD96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3E016123501002CFD96 /* CoreGraphics.framework */; };
+		9B2BB3E316123501002CFD96 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3E216123501002CFD96 /* QuartzCore.framework */; };
+		9B2BB3E516123501002CFD96 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3E416123501002CFD96 /* Accelerate.framework */; };
+		9B2BB3E716123501002CFD96 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3E616123501002CFD96 /* AddressBook.framework */; };
+		9B2BB3E916123501002CFD96 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3E816123501002CFD96 /* AddressBookUI.framework */; };
+		9B2BB3EB16123501002CFD96 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3EA16123501002CFD96 /* AudioToolbox.framework */; };
+		9B2BB3ED16123501002CFD96 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3EC16123501002CFD96 /* AVFoundation.framework */; };
+		9B2BB3EF16123501002CFD96 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3EE16123501002CFD96 /* CoreLocation.framework */; };
+		9B2BB3F116123501002CFD96 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3F016123501002CFD96 /* GameKit.framework */; };
+		9B2BB3F316123501002CFD96 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3F216123501002CFD96 /* iAd.framework */; };
+		9B2BB3F516123501002CFD96 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3F416123501002CFD96 /* MapKit.framework */; };
+		9B2BB3F716123501002CFD96 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3F616123501002CFD96 /* MediaPlayer.framework */; };
+		9B2BB3F916123501002CFD96 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3F816123501002CFD96 /* MessageUI.framework */; };
+		9B2BB3FB16123501002CFD96 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3FA16123501002CFD96 /* QuickLook.framework */; };
+		9B2BB3FD16123501002CFD96 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3FC16123501002CFD96 /* StoreKit.framework */; };
+		9B2BB3FF16123501002CFD96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB3FE16123501002CFD96 /* SystemConfiguration.framework */; };
+		9B2BB40516123501002CFD96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB40316123501002CFD96 /* InfoPlist.strings */; };
+		9B2BB40716123501002CFD96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB40616123501002CFD96 /* main.m */; };
+		9B2BB40A16123502002CFD96 /* qc_hybrid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2BB40916123502002CFD96 /* qc_hybrid.a */; };
+		9B2BB40D16123502002CFD96 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB40C16123502002CFD96 /* index.html */; };
+		9B2BB40F16123502002CFD96 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB40E16123502002CFD96 /* main.css */; };
+		9B2BB41116123502002CFD96 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41016123502002CFD96 /* main.js */; };
+		9B2BB41316123502002CFD96 /* mappings.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41216123502002CFD96 /* mappings.js */; };
+		9B2BB41516123502002CFD96 /* functions.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41416123502002CFD96 /* functions.js */; };
+		9B2BB41716123502002CFD96 /* databaseDefinition.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41616123502002CFD96 /* databaseDefinition.js */; };
+		9B2BB41916123502002CFD96 /* com.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41816123502002CFD96 /* com.js */; };
+		9B2BB41B16123502002CFD96 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41A16123502002CFD96 /* Default-568h@2x.png */; };
+		9B2BB41D16123502002CFD96 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41C16123502002CFD96 /* Default@2x.png */; };
+		9B2BB41F16123502002CFD96 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB41E16123502002CFD96 /* Default.png */; };
+		9B2BB42116123502002CFD96 /* DBScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42016123502002CFD96 /* DBScript.js */; };
+		9B2BB42316123502002CFD96 /* ImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42216123502002CFD96 /* ImagePickerViewController.xib */; };
+		9B2BB42516123502002CFD96 /* QuickConnect.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42416123502002CFD96 /* QuickConnect.js */; };
+		9B2BB42716123502002CFD96 /* DataAccessObject.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42616123502002CFD96 /* DataAccessObject.js */; };
+		9B2BB42916123502002CFD96 /* LocationObject.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42816123502002CFD96 /* LocationObject.js */; };
+		9B2BB42B16123502002CFD96 /* EnterpriseSync.css in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42A16123502002CFD96 /* EnterpriseSync.css */; };
+		9B2BB42D16123502002CFD96 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42C16123502002CFD96 /* MapView.xib */; };
+		9B2BB42F16123502002CFD96 /* ServerAccessObject.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB42E16123502002CFD96 /* ServerAccessObject.js */; };
+		9B2BB43116123503002CFD96 /* EnterpriseSyncFunctions.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB43016123503002CFD96 /* EnterpriseSyncFunctions.js */; };
+		9B2BB43316123503002CFD96 /* QCNativeFooter.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB43216123503002CFD96 /* QCNativeFooter.js */; };
+		9B2BB43516123503002CFD96 /* EnterpriseSyncMappings.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB43416123503002CFD96 /* EnterpriseSyncMappings.js */; };
+		9B2BB43716123503002CFD96 /* QCUtilities.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB43616123503002CFD96 /* QCUtilities.js */; };
+		9B2BB43916123503002CFD96 /* SetupQC.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB43816123503002CFD96 /* SetupQC.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B2BB3D816123501002CFD96 /* HTML5 DB Script.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HTML5 DB Script.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2BB3DC16123501002CFD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9B2BB3DE16123501002CFD96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9B2BB3E016123501002CFD96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9B2BB3E216123501002CFD96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9B2BB3E416123501002CFD96 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		9B2BB3E616123501002CFD96 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		9B2BB3E816123501002CFD96 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		9B2BB3EA16123501002CFD96 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9B2BB3EC16123501002CFD96 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9B2BB3EE16123501002CFD96 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9B2BB3F016123501002CFD96 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9B2BB3F216123501002CFD96 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		9B2BB3F416123501002CFD96 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9B2BB3F616123501002CFD96 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9B2BB3F816123501002CFD96 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9B2BB3FA16123501002CFD96 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		9B2BB3FC16123501002CFD96 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9B2BB3FE16123501002CFD96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9B2BB40216123501002CFD96 /* HTML5 DB Script-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTML5 DB Script-Info.plist"; sourceTree = "<group>"; };
+		9B2BB40416123501002CFD96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9B2BB40616123501002CFD96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B2BB40816123501002CFD96 /* HTML5 DB Script-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTML5 DB Script-Prefix.pch"; sourceTree = "<group>"; };
+		9B2BB40916123502002CFD96 /* qc_hybrid.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = qc_hybrid.a; sourceTree = "<group>"; };
+		9B2BB40B16123502002CFD96 /* QuickConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickConnectViewController.h; sourceTree = "<group>"; };
+		9B2BB40C16123502002CFD96 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		9B2BB40E16123502002CFD96 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		9B2BB41016123502002CFD96 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		9B2BB41216123502002CFD96 /* mappings.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mappings.js; sourceTree = "<group>"; };
+		9B2BB41416123502002CFD96 /* functions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = functions.js; sourceTree = "<group>"; };
+		9B2BB41616123502002CFD96 /* databaseDefinition.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = databaseDefinition.js; sourceTree = "<group>"; };
+		9B2BB41816123502002CFD96 /* com.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = com.js; sourceTree = "<group>"; };
+		9B2BB41A16123502002CFD96 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9B2BB41C16123502002CFD96 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9B2BB41E16123502002CFD96 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9B2BB42016123502002CFD96 /* DBScript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = DBScript.js; sourceTree = "<group>"; };
+		9B2BB42216123502002CFD96 /* ImagePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickerViewController.xib; sourceTree = "<group>"; };
+		9B2BB42416123502002CFD96 /* QuickConnect.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = QuickConnect.js; sourceTree = "<group>"; };
+		9B2BB42616123502002CFD96 /* DataAccessObject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = DataAccessObject.js; sourceTree = "<group>"; };
+		9B2BB42816123502002CFD96 /* LocationObject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = LocationObject.js; sourceTree = "<group>"; };
+		9B2BB42A16123502002CFD96 /* EnterpriseSync.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = EnterpriseSync.css; sourceTree = "<group>"; };
+		9B2BB42C16123502002CFD96 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		9B2BB42E16123502002CFD96 /* ServerAccessObject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ServerAccessObject.js; sourceTree = "<group>"; };
+		9B2BB43016123503002CFD96 /* EnterpriseSyncFunctions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = EnterpriseSyncFunctions.js; sourceTree = "<group>"; };
+		9B2BB43216123503002CFD96 /* QCNativeFooter.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = QCNativeFooter.js; sourceTree = "<group>"; };
+		9B2BB43416123503002CFD96 /* EnterpriseSyncMappings.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = EnterpriseSyncMappings.js; sourceTree = "<group>"; };
+		9B2BB43616123503002CFD96 /* QCUtilities.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = QCUtilities.js; sourceTree = "<group>"; };
+		9B2BB43816123503002CFD96 /* SetupQC.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = SetupQC.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B2BB3D116123501002CFD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2BB3DD16123501002CFD96 /* UIKit.framework in Frameworks */,
+				9B2BB3DF16123501002CFD96 /* Foundation.framework in Frameworks */,
+				9B2BB3E116123501002CFD96 /* CoreGraphics.framework in Frameworks */,
+				9B2BB3E316123501002CFD96 /* QuartzCore.framework in Frameworks */,
+				9B2BB3E516123501002CFD96 /* Accelerate.framework in Frameworks */,
+				9B2BB3E716123501002CFD96 /* AddressBook.framework in Frameworks */,
+				9B2BB3E916123501002CFD96 /* AddressBookUI.framework in Frameworks */,
+				9B2BB3EB16123501002CFD96 /* AudioToolbox.framework in Frameworks */,
+				9B2BB3ED16123501002CFD96 /* AVFoundation.framework in Frameworks */,
+				9B2BB3EF16123501002CFD96 /* CoreLocation.framework in Frameworks */,
+				9B2BB3F116123501002CFD96 /* GameKit.framework in Frameworks */,
+				9B2BB3F316123501002CFD96 /* iAd.framework in Frameworks */,
+				9B2BB3F516123501002CFD96 /* MapKit.framework in Frameworks */,
+				9B2BB3F716123501002CFD96 /* MediaPlayer.framework in Frameworks */,
+				9B2BB3F916123501002CFD96 /* MessageUI.framework in Frameworks */,
+				9B2BB3FB16123501002CFD96 /* QuickLook.framework in Frameworks */,
+				9B2BB3FD16123501002CFD96 /* StoreKit.framework in Frameworks */,
+				9B2BB3FF16123501002CFD96 /* SystemConfiguration.framework in Frameworks */,
+				9B2BB40A16123502002CFD96 /* qc_hybrid.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B2BB3D416123501002CFD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B2BB3C916123501002CFD96 = {
+			isa = PBXGroup;
+			children = (
+				9B2BB40016123501002CFD96 /* HTML5 DB Script */,
+				9B2BB3DB16123501002CFD96 /* Frameworks */,
+				9B2BB3D916123501002CFD96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B2BB3D916123501002CFD96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B2BB3D816123501002CFD96 /* HTML5 DB Script.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B2BB3DB16123501002CFD96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B2BB3DC16123501002CFD96 /* UIKit.framework */,
+				9B2BB3DE16123501002CFD96 /* Foundation.framework */,
+				9B2BB3E016123501002CFD96 /* CoreGraphics.framework */,
+				9B2BB3E216123501002CFD96 /* QuartzCore.framework */,
+				9B2BB3E416123501002CFD96 /* Accelerate.framework */,
+				9B2BB3E616123501002CFD96 /* AddressBook.framework */,
+				9B2BB3E816123501002CFD96 /* AddressBookUI.framework */,
+				9B2BB3EA16123501002CFD96 /* AudioToolbox.framework */,
+				9B2BB3EC16123501002CFD96 /* AVFoundation.framework */,
+				9B2BB3EE16123501002CFD96 /* CoreLocation.framework */,
+				9B2BB3F016123501002CFD96 /* GameKit.framework */,
+				9B2BB3F216123501002CFD96 /* iAd.framework */,
+				9B2BB3F416123501002CFD96 /* MapKit.framework */,
+				9B2BB3F616123501002CFD96 /* MediaPlayer.framework */,
+				9B2BB3F816123501002CFD96 /* MessageUI.framework */,
+				9B2BB3FA16123501002CFD96 /* QuickLook.framework */,
+				9B2BB3FC16123501002CFD96 /* StoreKit.framework */,
+				9B2BB3FE16123501002CFD96 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B2BB40016123501002CFD96 /* HTML5 DB Script */ = {
+			isa = PBXGroup;
+			children = (
+				9B2BB40C16123502002CFD96 /* index.html */,
+				9B2BB40E16123502002CFD96 /* main.css */,
+				9B2BB41016123502002CFD96 /* main.js */,
+				9B2BB41216123502002CFD96 /* mappings.js */,
+				9B2BB41416123502002CFD96 /* functions.js */,
+				9B2BB41616123502002CFD96 /* databaseDefinition.js */,
+				9B2BB40116123501002CFD96 /* Supporting Files */,
+			);
+			path = "HTML5 DB Script";
+			sourceTree = "<group>";
+		};
+		9B2BB40116123501002CFD96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B2BB40216123501002CFD96 /* HTML5 DB Script-Info.plist */,
+				9B2BB40316123501002CFD96 /* InfoPlist.strings */,
+				9B2BB40616123501002CFD96 /* main.m */,
+				9B2BB40816123501002CFD96 /* HTML5 DB Script-Prefix.pch */,
+				9B2BB40916123502002CFD96 /* qc_hybrid.a */,
+				9B2BB40B16123502002CFD96 /* QuickConnectViewController.h */,
+				9B2BB41816123502002CFD96 /* com.js */,
+				9B2BB41A16123502002CFD96 /* Default-568h@2x.png */,
+				9B2BB41C16123502002CFD96 /* Default@2x.png */,
+				9B2BB41E16123502002CFD96 /* Default.png */,
+				9B2BB42016123502002CFD96 /* DBScript.js */,
+				9B2BB42216123502002CFD96 /* ImagePickerViewController.xib */,
+				9B2BB42416123502002CFD96 /* QuickConnect.js */,
+				9B2BB42616123502002CFD96 /* DataAccessObject.js */,
+				9B2BB42816123502002CFD96 /* LocationObject.js */,
+				9B2BB42A16123502002CFD96 /* EnterpriseSync.css */,
+				9B2BB42C16123502002CFD96 /* MapView.xib */,
+				9B2BB42E16123502002CFD96 /* ServerAccessObject.js */,
+				9B2BB43016123503002CFD96 /* EnterpriseSyncFunctions.js */,
+				9B2BB43216123503002CFD96 /* QCNativeFooter.js */,
+				9B2BB43416123503002CFD96 /* EnterpriseSyncMappings.js */,
+				9B2BB43616123503002CFD96 /* QCUtilities.js */,
+				9B2BB43816123503002CFD96 /* SetupQC.js */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B2BB3D716123501002CFD96 /* HTML5 DB Script */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B2BB43C16123503002CFD96 /* Build configuration list for PBXNativeTarget "HTML5 DB Script" */;
+			buildPhases = (
+				9B2BB3D016123501002CFD96 /* Sources */,
+				9B2BB3D116123501002CFD96 /* Frameworks */,
+				9B2BB3D216123501002CFD96 /* Resources */,
+				9B2BB3D316123501002CFD96 /* Sources */,
+				9B2BB3D416123501002CFD96 /* Frameworks */,
+				9B2BB3D516123501002CFD96 /* ShellScript */,
+				9B2BB3D616123501002CFD96 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HTML5 DB Script";
+			productName = "HTML5 DB Script";
+			productReference = 9B2BB3D816123501002CFD96 /* HTML5 DB Script.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B2BB3CB16123501002CFD96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Lee Barney";
+			};
+			buildConfigurationList = 9B2BB3CE16123501002CFD96 /* Build configuration list for PBXProject "HTML5 DB Script" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9B2BB3C916123501002CFD96;
+			productRefGroup = 9B2BB3D916123501002CFD96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B2BB3D716123501002CFD96 /* HTML5 DB Script */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B2BB3D216123501002CFD96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2BB40516123501002CFD96 /* InfoPlist.strings in Resources */,
+				9B2BB40D16123502002CFD96 /* index.html in Resources */,
+				9B2BB40F16123502002CFD96 /* main.css in Resources */,
+				9B2BB41116123502002CFD96 /* main.js in Resources */,
+				9B2BB41316123502002CFD96 /* mappings.js in Resources */,
+				9B2BB41516123502002CFD96 /* functions.js in Resources */,
+				9B2BB41716123502002CFD96 /* databaseDefinition.js in Resources */,
+				9B2BB41916123502002CFD96 /* com.js in Resources */,
+				9B2BB41B16123502002CFD96 /* Default-568h@2x.png in Resources */,
+				9B2BB41D16123502002CFD96 /* Default@2x.png in Resources */,
+				9B2BB41F16123502002CFD96 /* Default.png in Resources */,
+				9B2BB42116123502002CFD96 /* DBScript.js in Resources */,
+				9B2BB42316123502002CFD96 /* ImagePickerViewController.xib in Resources */,
+				9B2BB42516123502002CFD96 /* QuickConnect.js in Resources */,
+				9B2BB42716123502002CFD96 /* DataAccessObject.js in Resources */,
+				9B2BB42916123502002CFD96 /* LocationObject.js in Resources */,
+				9B2BB42B16123502002CFD96 /* EnterpriseSync.css in Resources */,
+				9B2BB42D16123502002CFD96 /* MapView.xib in Resources */,
+				9B2BB42F16123502002CFD96 /* ServerAccessObject.js in Resources */,
+				9B2BB43116123503002CFD96 /* EnterpriseSyncFunctions.js in Resources */,
+				9B2BB43316123503002CFD96 /* QCNativeFooter.js in Resources */,
+				9B2BB43516123503002CFD96 /* EnterpriseSyncMappings.js in Resources */,
+				9B2BB43716123503002CFD96 /* QCUtilities.js in Resources */,
+				9B2BB43916123503002CFD96 /* SetupQC.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B2BB3D516123501002CFD96 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t#androidVersionFilePath=\"$SOURCE_ROOT_AS_PATH_COMPONENT/$EXECUTABLE_NAME_AS_PATH_COMPONENT/main.m\" \n        androidVersionFilePath=\"$SOURCE_ROOT/$EXECUTABLE_NAME/main.m\"      \n        androidVersionLine=`grep \"AndroidSDK\" \"$androidVersionFilePath\"`\n        #echo $androidVersionLine\n        androidVersion=0\n        for word in $androidVersionLine           \n        do               \n        androidVersion=$word\n        #echo 'word: '$androidVersion\n        done  \n        if [ $androidVersion = 0 ]; then\n            echo 'not building for android'\n            exit 0;\n        fi    \n        echo '---------------Building for Android------------------'\n        \t\t\t\t\nif [ ! -d AndroidBuild ]; then               \nmkdir AndroidBuild           \nfi                                 \n#get the bundle identifier    \necho $INFOPLIST_FILE\nBUNDLE_ID=($(/usr/libexec/PlistBuddy -c Print:CFBundleIdentifier \"$INFOPLIST_FILE\"))         \nBUNDLE_VERSION=($(/usr/libexec/PlistBuddy -c Print:CFBundleVersion \"$INFOPLIST_FILE\"))           \nANDROID_VERSION_NAME=($(/usr/libexec/PlistBuddy -c Print:AndroidAppVersionCode \"$INFOPLIST_FILE\")) \nif [ -z BUNDLE_VERSION ]; then\n    BUNDLE_VERSION='1.0'\nfi\n\n#check to see if the developer has defined an integer value for the android application version           \nif [ ${#ANDROID_VERSION_NAME} = 0 ]; then\n    ANDROID_VERSION_NAME=1                       \n    fi \n    \n    APP_PACKAGE=${BUNDLE_ID%\\$*}\n    APP_PACKAGE_LEN=${#APP_PACKAGE}\n        APP_PACKAGE=${APP_PACKAGE:0:APP_PACKAGE_LEN-1}  \n        #EXECUTABLE_NAME_AS_PATH_COMPONENT=${EXECUTABLE_NAME// /\\\\ }\n        #SOURCE_ROOT_AS_PATH_COMPONENT=${SOURCE_ROOT// /\\\\ }\n        \n        androidSDK=/Developer/androidSDK           \n        export androidSDK\n        echo ----------------Clearing old build               \n        rm -rf AndroidBuild           \n        \n        echo ----------------Copying standard files               \n        #copy the default android_build directory and other standard files               \n        #from the template directory into the current directory               \n        cp -R $HOME/Library/Developer/Xcode/Templates/Application/QC\\ Hybrid\\ Application.xctemplate/AndroidSetup .               \n        mv AndroidSetup AndroidBuild    \n        \n        echo ----------------Copying Application files\n        #ignore the file type not found errors\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.png AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.jpg AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.gif AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.jpg AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.bmp AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.webp AndroidBuild/res/drawable/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mov AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.ogg AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.webm AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mp4 AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.3gp AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mp3 AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mid AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.wav AndroidBuild/res/raw/ 2>/dev/null\n        cp $SOURCE_ROOT/$EXECUTABLE_NAME/*.mkv AndroidBuild/res/raw/ 2>/dev/null\n        \n                                         \n                                         \n        rsync -av --exclude='bigtest11-Info.plist' --exclude='bigtest11-Prefix.pch' --exclude='com.js' --exclude='DataAccessObject.js' --exclude='DBScript.js' --exclude='en.lproj' --exclude='qc_hybrid.a' --exclude='MapView.xib' --exclude='ImagePickerViewController.xib' --exclude='EnterpriseSync.css' --exclude='EnterpriseSyncFunctions.js' --exclude='EnterpriseSyncMappings.js' --exclude='json2.js' --exclude='LocationObject.js' --exclude='QCUtilities.js' --exclude='QuickConnect.js' --exclude='ServerAccessObject.js' --exclude='setupQC.js' --exclude='QuickConnectViewController.h' --exclude='*.mov*' exclude='*.MOV*' --exclude='.m4v' --exclude='.M4V' --exclude='*.jpg*' --exclude='*.JPG*' --exclude='*.png*' --exclude='*.PNG*' --exclude='*.bmp*' --exclude='*.BMP*' --exclude='*.gif*' --exclude='*.GIF*' --exclude='*.webp*' --exclude='*.WEBP*' --exclude='*.mpg*' --exclude='*.MPG*' --exclude='*.mpeg*' --exclude='*.MPEG*' --exclude='*.webm*' --exclude='*.WEBM*' --exclude='*.wav*' --exclude='*.WAV*' --exclude='*.ogg*' --exclude='*.OGG*' --exclude='*.mid*' --exclude='*.MID*' --exclude='*.mp3*' --exclude='*.MP3*' $SOURCE_ROOT/$EXECUTABLE_NAME/ AndroidBuild/assets/\n                     \n        \n                                                                                                                                \n        \n        echo ----------------Building AndroidManifest.xml                                 \n        activityName=${EXECUTABLE_NAME// /};                              \n            #write out the AndroidManifest.xml file contents           \n            echo '<?xml version=\"1.0\" encoding=\"utf-8\"?><manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" package=\"'$APP_PACKAGE'\" android:versionCode=\"'$ANDROID_VERSION_NAME'\" android:versionName=\"1.0\"><uses-sdk android:minSdkVersion=\"'$androidVersion'\"/><uses-permission android:name=\"android.permission.INTERNET\" /><uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"></uses-permission><uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"></uses-permission><uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/><uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/><application android:icon=\"@drawable/icon\" android:label=\"@string/app_name\"><activity android:name=\"'$activityName'\" android:label=\"@string/app_name\" android:screenOrientation=\"portrait\"><intent-filter>           <action android:name=\"android.intent.action.MAIN\" /><category android:name=\"android.intent.category.LAUNCHER\" /></intent-filter></activity><uses-library android:name=\"com.google.android.maps\" /></application></manifest>' > AndroidBuild/AndroidManifest.xml                           \n            \n            \n            echo ----------------Building strings.xml               \n            #write out the strings.xml file contents               \n            echo '<?xml version=\"1.0\" encoding=\"utf-8\"?><resources><string name=\"app_name\">'$EXECUTABLE_NAME'</string></resources>' > AndroidBuild/res/values/strings.xml\n            \n            \n            echo ----------------Building Activity.java               \n            packagePath=${APP_PACKAGE//.//}               \n                mkdir -p AndroidBuild/src/$packagePath               \n                #write out the Activity.java file contents                   \n                activityFilePath=AndroidBuild/src/$packagePath/$activityName.java               \n                echo $activityFilePath               \n                echo 'package '$APP_PACKAGE'; import org.quickconnectfamily.hybrid.QCAndroid; import org.quickconnectfamily.hybrid.R; import android.app.Activity; import android.os.Bundle; public class '$activityName' extends QCAndroid { @Override public void onCreate(Bundle theBundle) {  super.onCreate(theBundle); } }' > $activityFilePath                          \n                echo ----------------Building ant files                                                                                                                             \n                echo '<?xml version=\"1.0\" encoding=\"UTF-8\"?><project name=\"'$EXECUTABLE_NAME'\" default=\"QC Hybrid Application\"><loadproperties srcFile=\"local.properties\" /><property file=\"ant.properties\" /><loadproperties srcFile=\"project.properties\" /><!-- version-tag: '$ANDROID_VERSION_NAME' --><import file=\"'$androidSDK'/tools/ant/build.xml\" /></project>' > AndroidBuild/build.xml  \n                echo 'target=Google Inc.:Google APIs:'$androidVersion > AndroidBuild/project.properties                                         \n                \n                \n                echo -------------Updating Android Keystore------------------------\n                # remove the debug keystore if it exists.  This will keep it from expiring.           \n                if [ -f ~/.Android/debug.keystore ]; then               \n                echo \"Removing old keystore\"               \n                rm ~/.Android//debug.keystore           \n                else               \n                echo \"First build.  Keystore does not exist.\"           \n                fi               \n                # regenerate the debug keystore               \n                # keytool is included in the standard JDK install               \n                keytool -genkey -v -storepass android -alias android -keypass android -keystore AndroidBuild/debug.keystore -validity 2000 -dname 'CN=Android Debug,O=Android,C=US'                                             \n                echo -------------Compiling and assembling application------------------------               \n                cd AndroidBuild               \n                ant debug                                                                                                                         \n                \n                exit 0                                  \t\t\t\t\t\t\n                    ";
+		};
+		9B2BB3D616123501002CFD96 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n                \n                #check to see if android should be run\nandroidVersionFilePath=\"$SOURCE_ROOT/$EXECUTABLE_NAME/main.m\"      \nandroidVersionLine=`grep \"AndroidSDK\" \"$androidVersionFilePath\"`\n#echo $androidVersionLine\nandroidVersion=0;\nfor word in $androidVersionLine           \ndo               \n    androidVersion=$word\n#echo 'word: '$androidVersion\ndone     \nif [ $androidVersion = 0 ]; then\n    echo 'Not building for Android'\n    exit 0;\nfi\n        echo '---------------Building for Android------------------'\n    \n                    #finding run environment\n#get the bundle identifier           \necho $INFOPLIST_FILE\nBUNDLE_ID=($(/usr/libexec/PlistBuddy -c Print:CFBundleIdentifier \"$INFOPLIST_FILE\"))         \n                             \nAPP_PACKAGE=${BUNDLE_ID%\\$*}\nAPP_PACKAGE_LEN=${#APP_PACKAGE}\nAPP_PACKAGE=${APP_PACKAGE:0:APP_PACKAGE_LEN-1}\necho -------------Initializing emulator------------------------\nandroidSDK='/Developer/androidSDK'\n# see if an emulator is running or a device is connected. \n    #/Developer/androidSDK/platform-tools/adb kill-server\n    foundDevicesAndEmulators=$($androidSDK/platform-tools/adb devices)\n    echo 'devices: '$foundDevicesAndEmulators\nFoundEmulator=$($androidSDK/platform-tools/adb devices| grep -v devices | grep emulator)           \n    \n    echo \"emulator: '$FoundEmulator'\" \nFoundDevice=$($androidSDK/platform-tools/adb devices| grep -v devices | grep -v emulator)           \n    \n    echo \"device '$FoundDevice'\"\nFound=$FoundDevice              \nif [ -z $Found ]; then               \n           echo 'checking emulator'   \n    Found=$FoundEmulator               \nfi               \n    echo 'found1: '$Found\nFound=${Found%%device*}               \nFound=$Found | sed 's/ //g' \n    echo 'found: '$Found\nif [ -z $Found ]; then               \n    echo 'No device or emulator found on which to install the application.  If you wish to run on a device plug it in.  If you want to run on an emulator start it prior to building.'               \n    \n    exit 1               \nelse \n    if [ -z $FoundDevice ]; then  \n    #exit the debugger and clear/flush the log                   \n    #$androidSDK/platform-tools/adb -s $Found logcat -c      \n\n    #bring the found emulator to the front\n    $HOME/Library/Developer/Xcode/Templates/Application/QC\\ Hybrid\\ Application.xctemplate/appswitch -a emulator-arm\n    fi\nfi\n\ninstFileName=$(pwd)/AndroidBuild/bin/$EXECUTABLE_NAME-debug.apk               \necho -------------un-installing $APP_PACKAGE from $Found---------------------- \n$androidSDK/platform-tools/adb -s $Found uninstall $APP_PACKAGE               \necho -------------Doing install / reinstall----------------------               \necho -----------installing $instFileName-----------------  \n    #installing: /Users/lee/Desktop/junk/workupJunk/bin/workupJunk-debug.apk found: \t040365FE0100400C\n    \n    \n\n    echo \"installing: $instFileName found: $Found\"\n    $androidSDK/platform-tools/adb -s $Found install -r \"$instFileName\" \n    \necho \"-------------launching $APP_PACKAGE/$EXECUTABLE_NAME--------------\"   \nactivityName=${EXECUTABLE_NAME// /};\n$androidSDK/platform-tools/adb -s $Found shell am start -a android.intent.action.MAIN -n $APP_PACKAGE/.$activityName                            \necho -------------launching debugger--------------               \n$androidSDK/platform-tools/adb -s $Found logcat -f logfile.txt *:V &               \necho -------------launch complete-------------               \n\n    exit 0\n\n                                                        \t\t\t\t\t\t\n                                                        \t\t\t\t\t\t\n                                                        \t\t\t\t\t\t\n                                                        \t\t\t\t\t\t";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B2BB3D016123501002CFD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2BB40716123501002CFD96 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B2BB3D316123501002CFD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9B2BB40316123501002CFD96 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B2BB40416123501002CFD96 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B2BB43A16123503002CFD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B2BB43B16123503002CFD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B2BB43D16123503002CFD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTML5 DB Script/HTML5 DB Script-Prefix.pch";
+				INFOPLIST_FILE = "HTML5 DB Script/HTML5 DB Script-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/HTML5 DB Script\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9B2BB43E16123503002CFD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTML5 DB Script/HTML5 DB Script-Prefix.pch";
+				INFOPLIST_FILE = "HTML5 DB Script/HTML5 DB Script-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/HTML5 DB Script\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B2BB3CE16123501002CFD96 /* Build configuration list for PBXProject "HTML5 DB Script" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2BB43A16123503002CFD96 /* Debug */,
+				9B2BB43B16123503002CFD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B2BB43C16123503002CFD96 /* Build configuration list for PBXNativeTarget "HTML5 DB Script" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2BB43D16123503002CFD96 /* Debug */,
+				9B2BB43E16123503002CFD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B2BB3CB16123501002CFD96 /* Project object */;
+}

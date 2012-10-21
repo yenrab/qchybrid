@@ -31,78 +31,78 @@
 /*
  *  File management code
  */
-qc.writeToFile = function(fileName, fileContentString){
-    var dataArray = new Array();
+qc.writeToFile = function(fileName, fileContentString, resultKey){
+    if(!aFileName || !fileContentString){
+        return false;
+    }
+    var data = new Object();
     fileName = qc.replaceAll(fileName, "\n","&nln;");
     fileContentString = qc.replaceAll(fileContentString, "\n","&nln;");
-    dataArray.push(fileName);
-    dataArray.push(fileContentString);
-    qc.makeCall("saveFile",dataArray);	
+    data['name'] = fileName;
+    data['contents'] = fileContentString;
+    data['resultKey'] = resultKey;
+    qc.makeCall("saveFile",data);
     
 }
 window.writeToFile = qc.writeToFile;
 
-qc.remove = function(fileOrDirectoryName){
+qc.remove = function(fileOrDirectoryName, resultKey){
     if(!fileOrDirectoryName){
         return false;
     }
-    var dataArray = new Array();
-    dataArray.push(escape(fileOrDirectoryName));
-    var callBackParameters = generatePassThroughParameters();
-    dataArray.push(callBackParameters);
-    //makeCall("deleteFile",JSON.stringify(dataArray));
-    makeCall("deleteFile",dataArray);
+    var data = new Object();
+    data['fileName'] = escape(fileOrDirectoryName);
+    data['resultKey'] = resultKey;
+    makeCall("deleteFile",data);
 }
 window.remove = qc.remove;
 
-qc.createDirectory = function(directoryName){
+qc.createDirectory = function(directoryName, resultKey){
     if(!directoryName){
         return false;
     }
-    var dataArray = new Array();
-    dataArray.push(escape(directoryName));
-    var callBackParameters = generatePassThroughParameters();
-    dataArray.push(callBackParameters);
-    //makeCall("makeDir",JSON.stringify(dataArray));
-    makeCall("makeDir",dataArray);
+    var data = new Object();
+    data['dirName'] = escape(directoryName);
+    data['resultKey'] = resultKey;
+    makeCall("makeDir",data);
 }
 window.createDirectory = qc.createDirectory;
 
-qc.listDirContents = function(optionalDirectoryName){
-    var dataArray = new Array();
-    dataArray.push(escape(optionalDirectoryName));
-    var callBackParameters = generatePassThroughParameters();
-    dataArray.push(callBackParameters);
-    //makeCall("listFiles",JSON.stringify(dataArray));
-    makeCall("listFiles",dataArray);
+qc.listDirContents = function(resultKey, optionalDirectoryName){
+    if(!optionalDirectoryName){
+        return false;
+    }
+    var data = new Object();
+    data['resultKey'] = resultKey;
+    if(optionalDirectoryName){
+        data['dirName'] = escape(optionalDirectoryName);
+    }
+    makeCall("listFiles",data);
 }
 window.listDirContents = qc.listDirContents;
 
-qc.getFileContents = function(aFileName){
+qc.getFileContents = function(aFileName, resultKey){
     
-    if(!aFileName){
+    if(!aFileName || !resultKey){
         return false;
     }
-    var dataArray = new Array();
-    dataArray.push(aFileName);
-    //dataArray.push(escape(aFileName));
-    //var callBackParameters = generatePassThroughParameters();
-    //dataArray.push(callBackParameters);
-    //makeCall("fileContents",JSON.stringify(dataArray));
-    makeCall("fileContents",dataArray);
+    var data = new Object();
+    data['fileName'] = aFileName;
+    data['resultKey'] = resultKey ;
+    makeCall("fileContents",data);
 }
 window.getFileContents = qc.getFileContents;
 
-qc.displayFile = function(aFileName){
+qc.displayFile = function(aFileName, resultKey){
     if(!aFileName){
         return false;
     }
-    var dataArray = new Array();
-    dataArray.push(escape(aFileName));
-    var callBackParameters = generatePassThroughParameters();
-    dataArray.push(callBackParameters);
-    //makeCall("showFile",JSON.stringify(dataArray));
-    makeCall("showFile",dataArray);
+    var data = new Object();
+    data['fileName'] = escape(aFileName);
+    if(resultKey){
+        data['resultKey'] = resultKey;
+    }
+    makeCall("showFile",data);
 }
 window.displayFile = qc.displayFile;
 
@@ -111,43 +111,31 @@ window.displayFile = qc.displayFile;
  *  iAdd code
  */
 qc.designiAd = function(TopBottomOther, optionalPortraitY, optionalLandscapeY){
-	var dataArray = new Array();
-	dataArray.push("CreateBanner");
-	
-	if (TopBottomOther.toUpperCase() == "TOP"){
-		dataArray.push("0");
-	}else if (TopBottomOther.toUpperCase() == "BOTTOM"){
-		dataArray.push("1");
+	var data = new Object();
+	data['command'] ='createBanner';
+	data['location'] = 0;//default is at the top.
+	if (TopBottomOther.toUpperCase() == "BOTTOM"){
+		data['location'] = 1;
 	}else if (TopBottomOther.toUpperCase() == "OTHER"){
-		dataArray.push("2");
-		dataArray.push(optionalPortraitY);
-		dataArray.push(optionalLandscapeY);
-	}else{
-		dataArray.push("0");  // if no param, just put it at the top.
+		data['location'] = 2;
+        data['portraitY'] = optionalPortraitY;
+		data['landscapeY'] = optionalLandscapeY;
 	}
-	
-	//makeCall("iAd", JSON.stringify(dataArray));
-    makeCall("iAd",dataArray);
+    makeCall("iAd",data);
 }
 window.designiAd = qc.designiAd;
 
 qc.showiAd = function(){
-	var dataArray = new Array();
-	dataArray.push("setHidden");
-	dataArray.push("NO");
-	
-	//makeCall("iAd", JSON.stringify(dataArray));
-    makeCall("iAd",dataArray);
+	var data = new Object();
+    data['hidden'] = "NO";
+    makeCall("iAd",data);
 }
 window.showiAd = qc.showiAd;
 
 qc.hideiAd = function(){
-	var dataArray = new Array();
-	dataArray.push("setHidden");
-	dataArray.push("YES");
-	
-	//makeCall("iAd", JSON.stringify(dataArray));
-    makeCall("iAd",dataArray);
+	var data = new Object();
+    data['hidden'] = "YES";
+    makeCall("iAd",data);
 }
 window.hideiAd = qc.hideiAd;
 
@@ -155,12 +143,16 @@ window.hideiAd = qc.hideiAd;
  * manipulate the Activity Indicator
  */
 qc.turnOffActivityIndicator = function(){
-	makeCall("switchActivityIndicator", "NO");
+    var data = new Object();
+    data['on'] = "NO";
+	makeCall("switchActivityIndicator", data);
 }
 window.turnOffActivityIndicator = qc.turnOffActivityIndicator;
 
 qc.turnOnActivityIndicator = function(){
-	makeCall("switchActivityIndicator", "YES");
+    var data = new Object();
+    data['on'] = "YES";
+	makeCall("switchActivityIndicator", data);
 }
 window.turnOffActivityIndicator = qc.turnOffActivityIndicator;
 
@@ -168,12 +160,16 @@ window.turnOffActivityIndicator = qc.turnOffActivityIndicator;
  * manipulate the Network Indicator
  */
 qc.turnOffNetworkIndicator = function(){
-	makeCall("switchNetworkIndicator", "NO");
+    var data = new Object();
+    data['on'] = "NO";
+	makeCall("switchNetworkIndicator", data);
 }
 window.turnOffNetworkIndicator = qc.turnOffNetworkIndicator;
 
 qc.turnOnNetworkIndicator = function(){
-	makeCall("switchNetworkIndicator", "YES");
+    var data = new Object();
+    data['on'] = "YES";
+	makeCall("switchNetworkIndicator", data);
 }
 window.turnOnNetworkIndicator = qc.turnOnNetworkIndicator;
 
@@ -182,12 +178,16 @@ window.turnOnNetworkIndicator = qc.turnOnNetworkIndicator;
  * manipulate the accelerometer
  */
 qc.turnOffAccelerometer = function(){
-	makeCall("switchAccelerometer", "NO");
+    var data = new Object();
+    data['on'] = "NO";
+	makeCall("switchAccelerometer", data);
 }
 window.turnOffAccelerometer = qc.turnOffAccelerometer;
 
 qc.turnOnAccelerometer = function(){
-	makeCall("switchAccelerometer", "YES");
+    var data = new Object();
+    data['on'] = "YES";
+	makeCall("switchAccelerometer", data);
 }
 window.turnOnAccelerometer = qc.turnOnAccelerometer;
 
@@ -196,12 +196,16 @@ window.turnOnAccelerometer = qc.turnOnAccelerometer;
  * manipulate the built-in compass
  */
 qc.turnOffCompass = function(){
-	makeCall("switchHeading", "NO");
+    var data = new Object();
+    data['on'] = "NO";
+	makeCall("switchHeading", data);
 }
 window.turnOffCompass = qc.turnOffCompass;
 
 qc.turnOnCompass = function(){
-	makeCall("switchHeading", "YES");
+    var data = new Object();
+    data['on'] = "YES";
+	makeCall("switchHeading", data);
 }
 window.turnOnCompass = qc.turnOnCompass;
 
@@ -209,11 +213,15 @@ window.turnOnCompass = qc.turnOnCompass;
  * manipulate auto rotation
  */
 turnOffAutoRotation = function(){
-	makeCall("switchAutoRotation", "NO");
+    var data = new Object();
+    data['on'] = "NO";
+	makeCall("switchAutoRotation", data);
 }
 
 qc.turnOnAutoRotation = function(){
-	makeCall("switchAutoRotation", "YES");
+    var data = new Object();
+    data['on'] = "YES";
+	makeCall("switchAutoRotation", data);
 }
 window.turnOnAutoRotation = qc.turnOnAutoRotation;
 
@@ -222,35 +230,37 @@ window.turnOnAutoRotation = qc.turnOnAutoRotation;
  */
 var itemArray = new Array();
 
-qc.addTabItem = function(Title, Image){
+qc.addTabItem = function(title, image){
 	var dataArray = new Array();
-	dataArray.push(Title);
-	dataArray.push(Image);
+	dataArray.push(title);
+	dataArray.push(image);
 	
 	itemArray.push(dataArray);
 }
 window.addTabItem = window.addTabItem;
 
 qc.makeTabBar = function(X,Y,Width,Height){
-	var dataArray = new Array();
-	dataArray.push(X);
-	dataArray.push(Y);
-	dataArray.push(Width);
-	dataArray.push(Height);
-	dataArray.push(itemArray);
-	
-	//makeCall("designTabBar", JSON.stringify(dataArray));
-    makeCall("designTabBar",dataArray);
+	var data = new Object();
+    data['x'] = X;
+    data['y'] = y;
+    data['width'] = Width;
+    data['height'] = Height;
+    data['items'] = itemArray;
+    makeCall("designTabBar",data);
 }
 window.makeTabBar = qc.makeTabBar;
 
 qc.showTabBar = function(){
-	makeTabBar("setHidden","NO");
+    var data = new Object();
+    data['on'] = "NO";
+	makeCall("setHidden", data);
 }
 window.showTabBar = qc.showTabBar;
 
 qc.hideTabBar = function(){
-	makeTabBar("setHidden","YES");
+    var data = new Object();
+    data['on'] = "YES";
+	makeCall("setHidden", data);
 }
 window.hideTabBar = qc.hideTabBar;
 
@@ -258,24 +268,23 @@ window.hideTabBar = qc.hideTabBar;
  * Native Switch functions
  */
 
-qc.makeSwitch = function(uniqueSwitchID,X,Y,Width,Height, defaultState){
+qc.makeSwitch = function(uniqueSwitchID,X,Y,Width,Height, defaultState, resultKey){
 	
 	if (uniqueSwitchID=="0"){
 		debug('0 is not a valid uniqueSwitchID, use any int > 0');
 		return false;
 	}
 	
-	var dataArray = new Array();
-	dataArray.push("CreateSwitch");
-	dataArray.push(uniqueSwitchID);	
-	dataArray.push(X);
-	dataArray.push(Y);
-	dataArray.push(Width);
-	dataArray.push(Height);
-	dataArray.push(defaultState);
-	
-	//makeCall("designSwitch", JSON.stringify(dataArray));
-    makeCall("designSwitch",dataArray);
+	var data = new Object();
+    data['command'] = "CreateSwitch";
+    data['id'] = uniqueSwitchID;
+    data['x'] = X;
+    data['y'] = Y;
+    data['width'] = Width;
+    data['height'] = Height;
+    data['defaultState'] = defaultState;
+    data['resultKey'] = resultKey;
+    makeCall("designSwitch",data);
 }
 window.makeSwitch = qc.makeSwitch;
 
@@ -285,13 +294,11 @@ qc.hideSwitch = function(uniqueSwitchID){
 		return false;
 	}
 	
-	var dataArray = new Array();
-	dataArray.push("setHidden");
-	dataArray.push(uniqueSwitchID);
-	dataArray.push("YES");
+	var data = new Object();
+    data['hidden'] = 'YES';
+    data['id'] = uniqueSwitchID;
 	
-	//makeCall("designSwitch", JSON.stringify(dataArray));
-    makeCall("designSwitch",dataArray);
+    makeCall("designSwitch",data);
 }
 window.hideSwitch = qc.hideSwitch;
 
@@ -300,14 +307,11 @@ qc.showSwitch = function(uniqueSwitchID){
 		debug('0 is not a valid uniqueSwitchID, use any int > 0');
 		return false;
 	}
+	var data = new Object();
+    data['hidden'] = 'NO';
+    data['id'] = uniqueSwitchID;
 	
-	var dataArray = new Array();
-	dataArray.push("setHidden");
-	dataArray.push(uniqueSwitchID);
-	dataArray.push("NO");
-	
-	//makeCall("designSwitch", JSON.stringify(dataArray));
-    makeCall("designSwitch",dataArray);
+    makeCall("designSwitch",data);
 }
 window.showSwitch = qc.showSwitch;
 
@@ -316,15 +320,13 @@ qc.switchSetValue = function(uniqueSwitchID, valueYESNO, animatedYESNO){
 		debug('0 is not a valid uniqueSwitchID, use any int > 0');
 		return false;
 	}
+	var data = new Object();
+    data['command'] = 'setValue';
+    data['id'] = uniqueSwitchID;
+    data['value'] = valueYESNO;
+    data['animated'] = animatedYESNO;
 	
-	var dataArray = new Array();
-	dataArray.push("setValue");
-	dataArray.push(uniqueSwitchID);
-	dataArray.push(valueYESNO);
-	dataArray.push(animatedYESNO);
-	
-	//makeCall("designSwitch", JSON.stringify(dataArray));
-    makeCall("designSwitch",dataArray);
+    makeCall("designSwitch",data);
 }
 window.switchSetValue = qc.switchSetValue;
 
@@ -333,11 +335,11 @@ qc.switchGetValue = function(uniqueSwitchID){
 		debug('0 is not a valid uniqueSwitchID, use any int > 0');
 		return false;
 	}
-	var dataArray = new Array();
-	dataArray.push("getValue");
-	dataArray.push(uniqueSwitchID);
-	//makeCall("designSwitch", JSON.stringify(dataArray));
-    makeCall("designSwitch",dataArray);
+	var data = new Object();
+    data['getValue'] = 'YES';
+    data['id'] = uniqueSwitchID;
+	
+    makeCall("designSwitch",data);
 }
 window.switchGetValue = qc.switchGetValue;
 
@@ -353,17 +355,15 @@ qc.makeProgressBar = function(uniquePBID,X,Y,Width,Height,DefaultValue){
 		return false;
 	}
 	
-	var dataArray = new Array();
-	dataArray.push("CreateProgressBar");
-	dataArray.push(uniquePBID);	
-	dataArray.push(X);
-	dataArray.push(Y);
-	dataArray.push(Width);
-	dataArray.push(Height);
-	dataArray.push(DefaultValue);
-	
-	//makeCall("designProgressBar", JSON.stringify(dataArray));
-    makeCall("designProgressBar",dataArray);
+	var data = new Object();
+    data['command'] = 'create';
+    data['id'] = uniquePBID;
+    data['x'] = X;
+    data['y'] = Y;
+    data['width'] = Width;
+    data['height'] = Height;
+    data['default'] = DefaultValue;
+    makeCall("designProgressBar",data);
 }
 window.makeProgressBar = qc.makeProgressBar;
 
@@ -372,14 +372,11 @@ qc.hideProgressBar = function(uniquePBID){
 		debug('0 is not a valid uniquePBID, use any int > 0');
 		return false;
 	}
-	
-	var dataArray = new Array();
-	dataArray.push("setHidden");
-	dataArray.push(uniquePBID);
-	dataArray.push("YES");
-	
-	///makeCall("designProgressBar", JSON.stringify(dataArray));
-    makeCall("designProgressBar",dataArray);
+	var data = new Object();
+    data['hidden'] = 'YES';
+    data['id'] = uniquePBID;
+    
+    makeCall("designProgressBar",data);
 }
 window.hideProgressBar = qc.hideProgressBar;
 
@@ -389,13 +386,10 @@ qc.showProgressBar = function(uniquePBID){
 		return false;
 	}
 	
-	var dataArray = new Array();
-	dataArray.push("setHidden");
-	dataArray.push(uniquePBID);
-	dataArray.push("NO");
-	
-	//makeCall("designProgressBar", JSON.stringify(dataArray));
-    makeCall("designProgressBar",dataArray);
+	var data = new Object();
+    data['hidden'] = 'NO';
+    data['id'] = uniquePBID;
+    
 }
 window.showProgressBar = qc.showProgressBar;
 
@@ -405,13 +399,10 @@ qc.progressBarSetValue = function(uniquePBID, value){
 		return false;
 	}
 	
-	var dataArray = new Array();
-	dataArray.push("setValue");
-	dataArray.push(uniquePBID);
-	dataArray.push(value);
-	
-	//makeCall("designProgressBar", JSON.stringify(dataArray));
-    makeCall("designProgressBar",dataArray);
+	var data = new Object();
+    data['value'] = value;
+    data['id'] = uniquePBID;
+    makeCall("designProgressBar",data);
 }
 window.ProgressBarSetValue = qc.progressBarSetValue;
 
@@ -426,7 +417,7 @@ window.ProgressBarSetValue = qc.progressBarSetValue;
  * 3 - mp4
  
  */
-qc.uploadFile = function(fileName, URL, userName, password, asName, optionalMimeType, optionalURLArgumentsMap){
+qc.uploadFile = function(fileName, URL, resultKey, userName, password, asName, optionalMimeType, optionalURLArgumentsMap){
 	if(!fileName || !URL){
 		throw "ERROR: A file name and URL are required to upload a File";
 	}
@@ -437,21 +428,30 @@ qc.uploadFile = function(fileName, URL, userName, password, asName, optionalMime
 	if(!knownMimeType && !optionalMimeType){
 		throw "ERROR: Unknow mime type for file "+fileName+".  Either set the optionalMimeType parameter or upload a file of a known type";
 	}
-	var dataArray = new Array();
-	dataArray.push(fileName);
-	dataArray.push(URL);
-	dataArray.push(userName?userName : "No_Ne");
-	dataArray.push(password?password : "No_Ne");
-	dataArray.push(optionalMimeType?optionalMimeType : "No_Ne");
-	dataArray.push(optionalURLArgumentsMap ? optionalURLArgumentsMap : new Object());//placeholder
-	dataArray.push(asName ? asName : "No_Ne");
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	//makeCall("uploadFile",JSON.stringify(dataArray));	
-    makeCall("uploadFile",dataArray);
-	if(!userName || !password || URL.indexOf('https:') != 0){
+    if(!userName || !password || URL.indexOf('https:') != 0){
 		debug('WARNING: Your upload to '+URL+' is insecure.  To be secure it should be done using https and a user name and password.');
 	}
+	var data = new Object();
+	data['fileName'] = fileName;
+	data['url'] = URL;
+    data['resultKey'];
+    if(userName){
+        data['uname'] = userName;
+    }
+    if(password){
+        data['pword'] = password;
+    }
+    if(optionalMimeType){
+        data['mimeType'] = optionalMimeType;
+    }
+    if(optionalURLArgumentsMap){
+        data['args'] = optionalURLArgumentsMap;
+    }
+    if(asName){
+        data['name'] = asName;
+    }
+    makeCall("uploadFile",data);
+	
 }
 window.uploadFile = qc.uploadFile;
 /*
@@ -461,77 +461,61 @@ window.uploadFile = qc.uploadFile;
  *	3 - URL paramter pairs.  These are found after the ? character in a URL
  *  4 - a boolean indicating if an existing file should be overwritten
  */
-qc.downloadFile = function(URL, toFileName, optionalULRParameters, overwriteFlag){
-	var dataArray = new Array();
-	dataArray.push(URL);
-	dataArray.push(toFileName);
-	optionalULRParameters = optionalULRParameters ? optionalULRParameters : "url_param_place_holder";
-	dataArray.push(optionalULRParameters);
+qc.downloadFile = function(URL, toFileName, resultKey, optionalURLParameters, overwriteFlag){
+	var data = new Object();
+	data['url'] = URL;
+	data['fileName'] = toFileName;
+    data['resultKey'] = resultKey;
+    if(optionalULRParameters){
+        data['parameters'] = optionalULRParameters;
+    }
 	
-	shouldOverwrite = overwriteFlag ? "YES" : "NO";
-	dataArray.push(shouldOverwrite);
-	
-	dataArray.push("Place_holder");
-	dataArray.push("Place_holder");
-	dataArray.push("Place_holder");
-	
-	
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	//makeCall("downloadFile",JSON.stringify(dataArray));
-    makeCall("downloadFile",dataArray);
+	data['overwrite'] = overwriteFlag ? "YES" : "NO";
+    makeCall("downloadFile",data);
 	
 }
 window.downloadFile = qc.downloadFile;
 
-qc.downloadBatch = function(URLArray, toFileNameArray, optionalULRParameters){
+qc.downloadBatch = function(URLArray, toFileNameArray, resultKey, optionalULRParameters){
 	if(URLArray.length != toFileNameArray.length){
 		debug('ERROR: the number of URLS must match the number of file names in order to do a batch download');
 		return;
 	}
-	var dataArray = new Array();
-	dataArray.push(URLArray);
-	dataArray.push(toFileNameArray);
-	optionalULRParameters = optionalULRParameters ? optionalULRParameters : "url_param_place_holder";
-	dataArray.push(optionalULRParameters);
-	
-	dataArray.push("Place_holder");
-	dataArray.push("Place_holder");
-	dataArray.push("Place_holder");
-	dataArray.push("Place_holder");
-	
-	
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	//makeCall("downloadFileBatch",JSON.stringify(dataArray));
-    makeCall("downloadFileBatch",dataArray);
+	var data = new Object();
+	data['urls'] = URLArray;
+    data['fileNames'] = toFileNameArray;
+    data['resultKey'];
+    if(optionalULRParameters){
+        data['urlParamters'] = optionalULRParameters;
+    }
+    makeCall("downloadFileBatch",data);
 }
 window.downloadBatch = qc.downloadBatch;
 
 /*
  * In app purchase functions
  */
-qc.getStoreProductInfoForIdentifiers = function(identifiers){
-	makeCall("getProductInfo", identifiers);
+qc.getStoreProductInfoForIdentifiers = function(identifiers, resultKey){
+    var data = new object();
+    data['identifiers'] = identifiers;
+    data['resultKey'] = resultKey;
+	makeCall("getProductInfo", data);
 }
 window.getStoreProductInfoForIdentifiers = qc.getStoreProductInfoForIdentifiers;
 
-qc.checkCanPurchase = function(){
-	var dataArray = new Array();
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	//makeCall("canMakePaymentsCheck",JSON.stringify(dataArray));
-    makeCall("canMakePaymentsCheck",dataArray);
+qc.checkCanPurchase = function(resultKey){
+    var data = {'resultKey':resultKey};
+    makeCall("canMakePaymentsCheck", data);
 }
 window.checkCanPurchase = qc.checkCanPurchase;
 
-qc.makePurchase = function(itemIdentifier, quantity){
+qc.makePurchase = function(itemIdentifier, quantity, resultKey){
 	if(itemIdentifier && quantity > 0){
-		var dataArray = new Array();
-		dataArray.push(itemIdentifier);
-		dataArray.push(quantity);
-		//makeCall("startPurchase", JSON.stringify(dataArray));
-        makeCall("startPurchase",dataArray);
+		var data = new Object();
+        data['itemId'] = itemIdentifier;
+        data['quantity'] = quantity;
+        data['resultKey'] = resultKey;
+        makeCall("startPurchase",data);
 	}
 	else{
 		return false;
@@ -546,7 +530,8 @@ window.makePurchase = qc.makePurchase;
 
 qc.debug = function(aMessage){
     if(aMessage){
-        qc.makeCall("logMessage", qc.generateDataArray(aMessage));
+        var data = {'message':aMessage};
+        qc.makeCall("logMessage", data);
     }
 }
 window.debug = qc.debug;
@@ -562,7 +547,9 @@ window.debug = qc.debug;
  */
 qc.logError = function(err){
     if(err){
-        makeCall("logMessage", [qc.errorMessage(err)]);
+        var errorMessage = qc.errorMessage(err);
+        var data = {'message':errorMessage};
+        qc.makeCall("logMessage", data);
     }
 }
 window.logError = qc.logError;
@@ -586,29 +573,15 @@ qc.showMap = function(locationsArray, showCurrentLocation, mapType){
 	//debug('showing map');
     var locationsString = JSON.stringify(locationsArray);
 	if(locationsArray && locationsArray.length >= 1){
-		var dataArray = new Array();
-		dataArray.push(locationsArray);
+		var data = new Object();
+        data['locations'] = locationsArray;
 		if(showCurrentLocation){
-			dataArray.push(1);
-		}
-		else{
-			dataArray.push(-1);
+			data['showCurrent'] = 1;
 		}
 		if(mapType){
-			dataArray.push(mapType);
+            data['type'] = mapType;
 		}
-		else{
-			dataArray.push('standard');
-		}
-		var callBackParameters = generatePassThroughParameters();
-		dataArray.push(callBackParameters);
-		/*
-		 var params = new Array();
-		 params[0] = 0;
-		 params[1] = locationsArray;
-		 */
-		//makeCall("showMap", JSON.stringify(dataArray));
-        makeCall("showMap",dataArray);
+        makeCall("showMap",data);
 	}
 }
 window.showMap = qc.showMap;
@@ -624,19 +597,12 @@ qc.showEmail = function(toArray, subject, body){
 	if(!body){
         body = "";
 	}
-    var dataArray = generateDataArray(toArray, subject, body);
-    /*
-     var dataArray = new Array();
-     dataArray.push(toArray);
-     dataArray.push(subject);
-     dataArray.push(body);
-     var callBackParameters = generatePassThroughParameters();
-     
-     dataArray.push(callBackParameters);
-     */
+    var data = new Object();
+    data['to'] = toArray;
+    data['subject'] = subject;
+    data['body'] = body;
     
-	//makeCall("showEmail", JSON.stringify(dataArray));
-    makeCall("showEmail",dataArray);
+    makeCall("showEmail",data);
     
 }
 window.showEmail = qc.showEmail;
@@ -654,31 +620,21 @@ qc.showCamera = function(){
 window.showCamera = window.showCamera;
 
 qc.takePictureInRoll = function(){
-    var dataArray = new Array();
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	//makeCall("showCamera", JSON.stringify(dataArray));
-    makeCall("showCamera",dataArray);
+    makeCall("showCamera");
 }
 window.takePictureInRoll = qc.takePictureInRoll;
 
 qc.takePicuture = function(aPictureName){
-    var dataArray = new Array();
-	var callBackParameters = generatePassThroughParameters();
-    dataArray.push(aPictureName);
-	dataArray.push(callBackParameters);
-	//makeCall("showCamera", JSON.stringify(dataArray));
-    makeCall("showCamera",dataArray);
+    var data = new Object();
+    data['name'] = aPictureName;
+    makeCall("showCamera",data);
 }
 window.takePicuture = qc.takePicuture;
 
 qc.movePictureToRoll = function(aPictureName){
-    var dataArray = new Array();
-	var callBackParameters = generatePassThroughParameters();
-    dataArray.push(aPictureName);
-	dataArray.push(callBackParameters);
-	//makeCall("moveImage", JSON.stringify(dataArray));
-    makeCall("moveImage",dataArray);
+    var data = new Object();
+    data['name'] = aPictureName;
+    makeCall("moveImage",data);
 }
 window.movePictureToRoll = qc.movePictureToRoll;
 
@@ -692,11 +648,10 @@ qc.playSystemSound = function(aSoundFileName){
      * all sound files used as system sounds must be less than five seconds in length.
      */
     if(aSoundFileName && aSoundFileName.split('.').length == 2){
-        var dataArray = new Array();
-        dataArray[0] = 0;
-        dataArray[1] = aSoundFileName;
-        //makeCall("playSound", JSON.stringify(params));
-        makeCall("playSound",dataArray);
+        var data = new object();
+        data['asSound'] = 0;
+        data['fileName'] = aSoundFileName;
+        makeCall("playSound",data);
     }
     else{
         logError("The sound file name '"+aSoundFileName+"' is incorrectly formatted.  It should be <file_name>.<file_type>");
@@ -706,29 +661,31 @@ window.playSystemSound = qc.playSystemSound;
 
 qc.vibrate = function(){
     //the -1 indicator causes the phone to vibrate
-    makeCall("playSound", -1); 
+    var data = new object();
+    data['asSound'] = -1;
+    makeCall("playSound", data);
 }
 window.vibrate;
 
 
 qc.record = function(aFileName){
     if(aFileName){
-        var dataArray = new Array();
-        dataArray[0] = aFileName+".caf";
-        dataArray[1] = "start";
-        //makeCall("rec", JSON.stringify(params));
-        makeCall("rec",dataArray);
+        var data = new Object();
+        data['fileName'] = aFileName+".caf";
+        data['command'] = "start";
+        
+        makeCall("rec",data);
     }
 }
 window.record = qc.record;
 
 qc.stopRecording = function(aFileName){
     if(aFileName){
-        var dataArray = new Array();
-        dataArray[0] = aFileName+".caf";
-        dataArray[1] = "stop";
-        //makeCall("rec", JSON.stringify(params));
-        makeCall("rec",dataArray);
+        var data = new Object();
+        data['fileName'] = aFileName+".caf";
+        data['command'] = "stop";
+        
+        makeCall("rec",data);
     }
 }
 window.stopRecording = qc.stopRecording;
@@ -736,49 +693,32 @@ window.stopRecording = qc.stopRecording;
 //set loop count to a number of loops or -1 for continuous looping
 qc.play = function(aFileName, loopCount){
     if(aFileName){
-        var dataArray = new Array();
+        var data = new Object();
 		if(aFileName.indexOf('.') == -1){
 			aFileName = aFileName+".caf";
 		}
-		dataArray[0] = aFileName;
-        dataArray[1] = "start";
-		dataArray[2] = 0;
+		data['fileName'] = aFileName;
+        data['command'] = "start";
+		data['asSound'] = 0;
 		if(loopCount){
-			params[2] = loopCount;
+			data['loop'] = loopCount;
 		}
-        ///makeCall("play", JSON.stringify(params));
-        makeCall("play",dataArray);
+        makeCall("play",data);
     }
 }
 window.play = qc.play;
-/*
- *	Pause is removed for now since the standard apple Objective-C
- *  class fails to play an audio file that is paused.
- *
- pausePlaying(aFileName){
- 
- if(aFileName){
- var params = new Array();
- if(aFileName.indexOf('.') == -1){
- aFileName = aFileName+".caf";
- }
- params[0] = aFileName;
- params[1] = "pause";
- makeCall("play", JSON.stringify(params));
- }
- }
- */
+
 qc.stopPlaying = function(aFileName){
     
     if(aFileName){
-        var dataArray = new Array();
+        var data = new Object();
         if(aFileName.indexOf('.') == -1){
 			aFileName = aFileName+".caf";
 		}
-		dataArray[0] = aFileName;
-        dataArray[1] = "stop";
-        //makeCall("play", JSON.stringify(params));
-        makeCall("play",dataArray);
+		data['fileName'] = aFileName;
+        data['command'] = "stop";
+        
+        makeCall("play",data);
     }
 }
 window.stopPlaying = qc.stopPlaying;
@@ -787,10 +727,17 @@ window.stopPlaying = qc.stopPlaying;
  *  date and date/time picker functions
  */
 
-qc.showPicker = function(aSelectorType)
+qc.showPicker = function(aSelectorType, resultKey)
 {
+    if(!resultKey){
+        logError("Missing resultKey parameter");
+        return;
+    }
     if(aSelectorType == "Date" || aSelectorType == "DateTime"){
-        makeCall("showDate", aSelectorType);
+        var data = new Object();
+        data['type'] = aSelectorType;
+        data['resultKey'] = resultKey;
+        makeCall("showDate", data);
     }
     else{
         logError("Incorrect selector type: "+aSelectorType);
@@ -806,18 +753,18 @@ window.showPicker = qc.showPicker;
  *
  */
 
-qc.determineReachability = function(){
+qc.determineReachability = function(resultKey, optionalURL){
+    var data = new object();
+    data['resultKey'] = resultKey;
 	makeCall("networkStatus");
 }
 window.determineReachability = qc.determineReachability;
 
-qc.getPreference = function(preferenceName){
-    var dataArray = new Array();
-    dataArray.push(preferenceName);
-    var callBackParameters = generatePassThroughParameters();
-    dataArray.push(callBackParameters);
-    //makeCall("getPreference", JSON.stringify(dataArray));
-    makeCall("getPreference",dataArray);
+qc.getPreference = function(preferenceName, resultKey){
+    var data = new Object();
+    data['name'] = preferenceName;
+    data['resultKey'] = resultKey;
+    makeCall("getPreference",data);
 }
 window.getPreference = qc.getPreference;
 
@@ -828,17 +775,15 @@ window.getPreference = qc.getPreference;
  */
 var messages = new Array();
 
-qc.makeCall = function(command, dataArray){
+qc.makeCall = function(command, parameters){
     
     if(command){
-        if(dataArray.constructor != Array){
-            dataArray = [dataArray];
-        }
+        var aMessage = {"cmd":command, "parameters":parameters};
         //don't push pass through parameters to the debug function since it will cause an infinite loop in some conditions.
-        if(arguments.callee.caller != qc.debug){
-            dataArray.push(generatePassThroughParameters());
+        if(arguments.callee.caller != qc.debug && arguments.callee.caller != qc.logError
+           && arguments.callee.caller != qc.logMessage){
+            parameters['exKey'] = generateExecutionKey();
         }
-        var aMessage = {"cmd":command, "parameters":dataArray};
         messages.push(aMessage);
     }
 }
@@ -864,97 +809,71 @@ qc.messageQueueAsJSON = function(){
 
 qc.closeDeviceData = function(dbName){
     if(dbName){
-        var dataArray = new Array();
-		dataArray.push(dbName);
-        var callBackParameters = generatePassThroughParameters();
-        dataArray.push(callBackParameters);
+        var data = new Object();
+		data['dbName'] = dbName;
         
-		//var dataString = JSON.stringify(dataArray);
-		//makeCall("closeData", dataString);
-        makeCall("closeData",dataArray);
+        makeCall("closeData",data);
     }
 }
 window.closeData = qc.closeDeviceData;
 
-qc.getDeviceData = function(dbName, SQL, preparedStatementParameters, callBackParams){
-	if(dbName && SQL){
+qc.getDeviceData = function(dbName, resultKey, SQL, preparedStatementParameters){
+	if(dbName && SQL && resultKey){
 		//SQL = escape(SQL);
-		var dataArray = new Array();
-		dataArray.push(dbName);
-		dataArray.push(SQL);
+		var data = new Object();
+		data['dbName'] = dbName;
+        data['sql'] = SQL;
+        data['resultKey'] = resultKey;
 		if(preparedStatementParameters){
-			dataArray.push(preparedStatementParameters);
+			data['prepStmtParams'] = preparedStatementParameters;
 		}
-        else{
-            //put in a placeholder
-            dataArray.push(new Array());
-        }
-        //var callBackParameters = generatePassThroughParameters();
-        //dataArray.push(callBackParameters);
-        
-		//var dataString = JSON.stringify(dataArray);
-		//makeCall("getData", dataString);
-        makeCall("getData",dataArray);
+        makeCall("getData",data);
 	}
     return null;
 }
 window.getDeviceData = qc.getDeviceData;
 
-qc.setDeviceData = function(dbName, SQL, preparedStatementParameters, callBackParams){
-	if(dbName && SQL){
+qc.setDeviceData = function(dbName,resultKey, SQL, preparedStatementParameters){
+	if(dbName && SQL && resultKey){
 		//SQL = escape(SQL);
         //SQL = replaceAll(SQL, "=","%3D");
         //SQL = replaceAll(SQL, "?","%3F");
-		var dataArray = new Array();
-		dataArray.push(dbName);
-		dataArray.push(SQL);
+		var data = new Object();
+		data['dbName'] = dbName;
+        data['sql'] = SQL;
+        data['resultKey'] = resultKey;
 		if(preparedStatementParameters){
-			dataArray.push(preparedStatementParameters);
+			data['prepStmtParams'] = preparedStatementParameters;
 		}
-        else{
-            //put in a placeholder
-            dataArray.push(new Array());
-        }
-        //var callBackParameters = generatePassThroughParameters();
-        //dataArray.push(callBackParameters);
-        
-		//var dataString = JSON.stringify(dataArray);
-		//return makeCall("setData", dataString);
-        makeCall("setData",dataArray);
+        makeCall("setData",data);
 	}
 	return null;
 }
 window.setDeviceData = qc.setDeviceData;
 
-qc.startDeviceTransaction = function(dbName){
-	makeTransactionRequest(dbName, 'start');
+qc.startDeviceTransaction = function(dbName, resultKey){
+	makeTransactionRequest(dbName, 'start', resultKey);
 }
 window.startDeviceTransaction = qc.startDeviceTransaction;
 
-qc.commitDeviceTransaction = function(dbName){
-	makeTransactionRequest(dbName, 'commit');
+qc.commitDeviceTransaction = function(dbName, resultKey){
+	makeTransactionRequest(dbName, 'commit', resultKey);
 }
 window.commitDeviceTransaction = qc.commitDeviceTransaction;
 
-qc.rollbackDeviceTransaction = function(dbName){
-	makeTransactionRequest(dbName, 'rollback');
+qc.rollbackDeviceTransaction = function(dbName, resultKey){
+	makeTransactionRequest(dbName, 'rollback', resultKey);
 }
 window.rollbackDeviceTransaction = qc.rollbackDeviceTransaction;
 
-qc.makeTransactionRequest = function(dbName, type){
+qc.makeTransactionRequest = function(dbName, type, resultKey){
 	//debug('transaction request of type: '+type);
-	var dataArray = new Array();
-	dataArray.push(dbName);
+	var data = new Object();
+	data['dbName'] = dbName;
 	//add in a placeholder for what is usually the sql passed
-	dataArray.push(type);
-	//add a placeholder array for what is usually the prepared statement paramters
-	dataArray.push(new Array());
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	
-	//var dataString = JSON.stringify(dataArray);
-	//return makeCall("handleTransactionRequest", dataString);
-    makeCall("handleTransactionRequest", dataArray);
+	data['type'] = type;
+    data['resultKey'] = resultKey;
+    makeCall("handleTransactionRequest", data);
 }
 window.makeTransactionRequest = qc.makeTransactionRequest;
 
@@ -965,23 +884,9 @@ window.makeTransactionRequest = qc.makeTransactionRequest;
  *
  */
 
-qc.showAllContacts = function(){
-	var dataArray = new Array();
-	var callBackParameters = generatePassThroughParameters();
-	dataArray.push(callBackParameters);
-	
-	//var dataString = JSON.stringify(dataArray);
-	//makeCall("allContacts", dataString);
-    makeCall("allContacts", dataArray);
+qc.showAllContacts = function(resultKey){
+    var data = new Object();
+    data['resultKey'] = resultKey;
+    makeCall("allContacts");
 }
 window.showAllContacts = qc.showAllContacts;
-
-
-qc.generateDataArray = function(){
-    var numParameters = arguments.length;
-    var dataArray = new Array();
-    for(var i = 0; i < numParameters; i++){
-        dataArray.push(arguments[i]);
-    }
-    return dataArray;
-}

@@ -11,7 +11,6 @@
  included in all copies or substantial portions of the Software.
  
  
- 
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
@@ -29,14 +28,9 @@
  *  the developer can add to this in the mappings.js and functions.js files
  */
 
-try{
- qc.mapCommandToBCF('QCsync', QCgetLastSyncDateBCF)
- qc.mapCommandToBCF('QCsync', QCgetSyncDataFromTempTableBCF);
- //mapCommandToBCF('QCsync', QCgetManipDataBCF);
- qc.mapCommandToBCF('QCsync', QCsyncBCF);
- qc.mapCommandToBCF('QCsync', QCupdateLocalDbaseBCF);
- qc.mapCommandToVCF('QCsync', QCdoneSyncingVCF);
- }
- catch(err){
-    logError(err);
- }
+ mapCommandToDCF('QCsync', QCgetLastSyncDateDCF)
+ mapCommandToDCF('QCsync', QCgetSyncDataFromTempTableDCF);
+ //mapCommandToDCF('QCsync', QCgetManipDataDCF);
+ mapCommandToDCF('QCsync', QCsyncDCF);
+ mapCommandToDCF('QCsync', QCupdateLocalDbaseDCF);
+ mapCommandToVCF('QCsync', QCdoneSyncingVCF);

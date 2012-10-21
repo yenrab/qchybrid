@@ -583,6 +583,22 @@ echo -------------launch complete-------------
                         <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 15</string>
                     </dict>
                 </dict>
+                <key>16</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 16</string>
+                    </dict>
+                </dict>
+                <key>17</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:comments</key>
+                        <string>//Do NOT remove or move this comment.  It is needed for android app builds.  AndroidSDK version 17</string>
+                    </dict>
+                </dict>
 			</dict>
 		</dict>
 	</array>
