@@ -20,8 +20,7 @@
  
  
  */
- alert('this one');
-alert('loading scripts');
+ 
 var qc = new Object();
 
 (function() {
@@ -34,6 +33,4 @@ var qc = new Object();
  
  document.write(qcScripts);
  })();
- 
- alert('done loading scripts'):
 
