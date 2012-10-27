@@ -29,20 +29,20 @@
 
 \fs38 \cf0 \
 2.  Install and Update the Android QC Tools\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\fs24 \cf0 \
+\fs24 \
 \pard\tx2380\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2880\fi-2880\pardirnatural
 \ls2\ilvl3\cf0 {\listtext	\uc0\u8259 	}Extract the qc_android.zip file and place it in a directory path with no spaces. Ex. C:\\qc_android.\
 {\listtext	\uc0\u8259 	}Double click the SDK Manager.exe file found in the android-sdk directory and update the toolset.\
 {\listtext	\uc0\u8259 	}Within the SDK Manager download the versions of the SDK you plan on using. Make sure to include the Google extensions.\
+{\listtext	\uc0\u8259 	}Edit the qc_run.sh file found in the qc_android directory to reflect where you installed Java by changing the JAVA_HOME variable. Also change the ANDROID_HOME variable to reflect where the qc_android directory exists. Both of these variables are found at the top of the file.\
+{\listtext	\uc0\u8259 	}Edit the qc_create.sh file to reflect where the qc_android directory exists by changing the ANDROID_HOME variable at the top of the file.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \fs38 \cf0 \
 3.  Create your AVD's.\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\fs24 \cf0 \
+\fs24 \
 \pard\tx2380\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2880\fi-2880\pardirnatural
 \ls3\ilvl3\cf0 {\listtext	\uc0\u8259 	}Double click the  AVD Manager.exe and create one or more AVD's that use the Google extensions.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
@@ -53,31 +53,28 @@
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \fs24 \cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\fs38 \cf0 1.  Working in Cygwin\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\fs38 1.  Working in Cygwin\
 
-\fs24 \cf0 \
+\fs24 \
 \pard\tx2380\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2880\fi-2880\pardirnatural
 \ls4\ilvl3\cf0 {\listtext	\uc0\u8259 	}Double click the Cygwin Terminal.lnk file found in the qc_android directory.\
 {\listtext	\uc0\u8259 	}Enter: cd ../../cygdrive/c/qc_android\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 \cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\fs38 \cf0 1.  Project Creation\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\fs38 1.  Project Creation\
 
-\fs24 \cf0 \
+\fs24 \
 \pard\tx2380\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2880\fi-2880\pardirnatural
 \ls5\ilvl3\cf0 {\listtext	\uc0\u8259 	}In the Cygwin Terminal enter: ./qc_create.sh. You will be asked for an application name and a version of Android on which your application will run.\
 {\listtext	\uc0\u8259 	}A directory with the same name that you gave for the application name will be created for you in the QCApplications directory.\
 {\listtext	\uc0\u8259 	}To create the UI and functionality of your application edit the files in this project directory.  You will find them in the build/assets directory. They are the index.html, main.js, functions.js, mappings.js, and main.css files.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 \ls5\ilvl3\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 \ls5\ilvl3
-\fs38 1.  Running the Application
+\fs38 \cf0 1.  Running the Application
 \fs60 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
