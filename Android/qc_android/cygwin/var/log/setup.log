@@ -1,0 +1,509 @@
+2012/05/03 10:03:43 Starting cygwin install, version 2.774
+2012/05/03 10:03:43 User has backup/restore rights
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/last-cache) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/last-action) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/net-method) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/net-proxy-host) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/net-proxy-port) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/last-mirror) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/extrakeys) failed 2 No such file or directory
+2012/05/03 10:03:43 io_stream_cygfile: fopen(/etc/setup/chooser_window_settings) failed 2 No such file or directory
+2012/05/03 10:03:43 Current Directory: C:\Users\Lee\Downloads
+2012/05/03 10:03:43 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2012/05/03 10:03:49 source: network install
+2012/05/03 10:03:53 root: C:\cygwin binary system
+2012/05/03 10:04:04 Selected local directory: C:\Users\Lee\Downloads
+2012/05/03 10:04:07 net: Direct
+2012/05/03 10:04:07 io_stream_cygfile: fopen(/etc/setup/mirrors-lst) failed 2 No such file or directory
+2012/05/03 10:04:24 site: ftp://lug.mtu.edu/cygwin/
+2012/05/03 10:04:26 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2012/05/03 10:04:27 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+2012/05/03 10:04:27 io_stream_cygfile: fopen(/etc/setup/new-cygwin-version) failed 2 No such file or directory
+2012/05/03 10:05:07 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/_autorebase/_autorebase-000050-1.tar.bz2
+2012/05/03 10:05:07 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/_update-info-dir/_update-info-dir-01046-1.tar.bz2
+2012/05/03 10:05:08 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2012/05/03 10:05:08 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/base-cygwin/base-cygwin-3.1-1.tar.bz2
+2012/05/03 10:05:09 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/base-files/base-files-4.1-1.tar.bz2
+2012/05/03 10:05:10 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/bash/bash-4.1.10-4.tar.bz2
+2012/05/03 10:05:11 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2012/05/03 10:05:13 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/coreutils/coreutils-8.15-1.tar.bz2
+2012/05/03 10:05:14 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/cygutils/cygutils-1.4.10-2.tar.bz2
+2012/05/03 10:05:15 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/cygwin/cygwin-1.7.14-2.tar.bz2
+2012/05/03 10:26:47 mbox yesno: Download Incomplete.  Try again?
+2012/05/03 10:26:58 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/_autorebase/_autorebase-000050-1.tar.bz2
+2012/05/03 10:26:58 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/_update-info-dir/_update-info-dir-01046-1.tar.bz2
+2012/05/03 10:26:58 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2012/05/03 10:26:58 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/base-cygwin/base-cygwin-3.1-1.tar.bz2
+2012/05/03 10:26:58 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/base-files/base-files-4.1-1.tar.bz2
+2012/05/03 10:26:58 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/bash/bash-4.1.10-4.tar.bz2
+2012/05/03 10:26:59 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2012/05/03 10:26:59 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/coreutils/coreutils-8.15-1.tar.bz2
+2012/05/03 10:27:01 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/cygutils/cygutils-1.4.10-2.tar.bz2
+2012/05/03 10:27:02 Extracting from file://C:\Users\Lee\Downloads/ftp%3a%2f%2flug.mtu.edu%2fcygwin%2f/release/cygwin/cygwin-1.7.14-2.tar.bz2
+2012/05/03 10:27:03 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:05 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:06 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:06 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:07 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:07 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:08 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:08 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:08 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:09 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:09 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:10 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:10 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:10 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:11 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:11 mbox note: Can't open (null) for reading: No such file
+2012/05/03 10:27:16 Ending cygwin install
+2012/05/03 10:27:31 Starting cygwin install, version 2.774
+2012/05/03 10:27:31 User has backup/restore rights
+2012/05/03 10:27:31 io_stream_cygfile: fopen(/etc/setup/net-proxy-host) failed 2 No such file or directory
+2012/05/03 10:27:31 io_stream_cygfile: fopen(/etc/setup/net-proxy-port) failed 2 No such file or directory
+2012/05/03 10:27:31 io_stream_cygfile: fopen(/etc/setup/extrakeys) failed 2 No such file or directory
+2012/05/03 10:27:31 io_stream_cygfile: fopen(/etc/setup/chooser_window_settings) failed 2 No such file or directory
+2012/05/03 10:27:31 Current Directory: C:\Users\Lee\Downloads
+2012/05/03 10:27:31 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2012/05/03 10:27:35 source: network install
+2012/05/03 10:27:37 root: C:\cygwin binary system
+2012/05/03 10:27:38 Selected local directory: C:\Users\Lee\Downloads
+2012/05/03 10:27:39 net: Direct
+2012/05/03 10:27:49 site: ftp://mirrors.xmission.com/cygwin/
+2012/05/03 10:27:50 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2012/05/03 10:29:12 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/_autorebase/_autorebase-000050-1.tar.bz2
+2012/05/03 10:29:12 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/_update-info-dir/_update-info-dir-01046-1.tar.bz2
+2012/05/03 10:29:13 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2012/05/03 10:29:13 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/base-cygwin/base-cygwin-3.1-1.tar.bz2
+2012/05/03 10:29:13 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/base-files/base-files-4.1-1.tar.bz2
+2012/05/03 10:29:14 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/bash/bash-4.1.10-4.tar.bz2
+2012/05/03 10:29:15 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2012/05/03 10:29:16 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/coreutils/coreutils-8.15-1.tar.bz2
+2012/05/03 10:29:17 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cygutils/cygutils-1.4.10-2.tar.bz2
+2012/05/03 10:29:18 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cygwin/cygwin-1.7.14-2.tar.bz2
+2012/05/03 10:29:18 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cygwin-doc/cygwin-doc-1.7-1.tar.bz2
+2012/05/03 10:29:19 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/dash/dash-0.5.7-1.tar.bz2
+2012/05/03 10:29:20 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/diffutils/diffutils-3.2-1.tar.bz2
+2012/05/03 10:29:20 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/dos2unix/dos2unix-5.3.3-1.tar.bz2
+2012/05/03 10:29:21 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/editrights/editrights-1.01-2.tar.bz2
+2012/05/03 10:29:22 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/file/file-5.11-1.tar.bz2
+2012/05/03 10:39:49 Ending cygwin install
+2012/05/03 12:04:52 Starting cygwin install, version 2.774
+2012/05/03 12:04:53 User has backup/restore rights
+2012/05/03 12:04:53 io_stream_cygfile: fopen(/etc/setup/net-proxy-host) failed 2 No such file or directory
+2012/05/03 12:04:53 io_stream_cygfile: fopen(/etc/setup/net-proxy-port) failed 2 No such file or directory
+2012/05/03 12:04:53 io_stream_cygfile: fopen(/etc/setup/extrakeys) failed 2 No such file or directory
+2012/05/03 12:04:53 io_stream_cygfile: fopen(/etc/setup/chooser_window_settings) failed 2 No such file or directory
+2012/05/03 12:04:53 Current Directory: C:\Users\Lee\Downloads
+2012/05/03 12:04:53 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2012/05/03 12:05:01 source: network install
+2012/05/03 12:05:04 root: C:\cygwin binary system
+2012/05/03 12:05:06 Selected local directory: C:\Users\Lee\Downloads
+2012/05/03 12:05:07 net: Direct
+2012/05/03 12:05:09 site: ftp://mirrors.xmission.com/cygwin/
+2012/05/03 12:05:10 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2012/05/03 12:08:37 Adding required dependency autoconf: Selecting version 10-1 for installation.
+2012/05/03 12:08:37 Adding required dependency autoconf2.1: Selecting version 2.13-10 for installation.
+2012/05/03 12:08:37 Adding required dependency autoconf2.5: Selecting version 2.68-1 for installation.
+2012/05/03 12:08:37 Adding required dependency automake: Selecting version 4-10 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.10: Selecting version 1.10.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.11: Selecting version 1.11.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.4: Selecting version 1.4p6-10 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.5: Selecting version 1.5-10 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.6: Selecting version 1.6.3-11 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.7: Selecting version 1.7.9-10 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.8: Selecting version 1.8.5-10 for installation.
+2012/05/03 12:08:37 Adding required dependency automake1.9: Selecting version 1.9.6-10 for installation.
+2012/05/03 12:08:37 Adding required dependency binutils: Selecting version 2.22.51-2 for installation.
+2012/05/03 12:08:37 Adding required dependency boost-devel: Selecting version 1.43.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency ca-certificates: Selecting version 1.81-1 for installation.
+2012/05/03 12:08:37 Adding required dependency cloog-ppl: Selecting version 0.15.7-1 for installation.
+2012/05/03 12:08:37 Adding required dependency cpio: Selecting version 2.11-2 for installation.
+2012/05/03 12:08:37 Adding required dependency csih: Selecting version 0.9.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency cvs: Selecting version 1.12.13-10 for installation.
+2012/05/03 12:08:37 Adding required dependency cvsps: Selecting version 2.2b1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency damageproto: Selecting version 1.2.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency dbus: Selecting version 1.4.16-1 for installation.
+2012/05/03 12:08:37 Adding required dependency dri-drivers: Selecting version 7.11.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency fixesproto: Selecting version 5.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency flexdll: Selecting version 0.26-1 for installation.
+2012/05/03 12:08:37 Adding required dependency font-adobe-dpi75: Selecting version 1.0.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency font-encodings: Selecting version 1.0.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency font-misc-misc: Selecting version 1.1.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency font-tektronix-misc: Selecting version 2.6-2 for installation.
+2012/05/03 12:08:37 Adding required dependency fontconfig: Selecting version 2.8.0-2 for installation.
+2012/05/03 12:08:37 Adding required dependency fontsproto: Selecting version 2.1.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency gcc4-core: Selecting version 4.5.3-3 for installation.
+2012/05/03 12:08:37 Adding required dependency gcc4-g++: Selecting version 4.5.3-3 for installation.
+2012/05/03 12:08:37 Adding required dependency gettext-devel: Selecting version 0.18.1.1-2 for installation.
+2012/05/03 12:08:37 Adding required dependency ghostscript: Selecting version 9.04-1 for installation.
+2012/05/03 12:08:37 Adding required dependency ghostscript-fonts-other: Selecting version 6.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency ghostscript-fonts-std: Selecting version 8.11-1 for installation.
+2012/05/03 12:08:37 Adding required dependency git: Selecting version 1.7.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency glib: Selecting version 1.2.10-11 for installation.
+2012/05/03 12:08:37 Adding required dependency glib-devel: Selecting version 1.2.10-10 for installation.
+2012/05/03 12:08:37 Adding required dependency glib2: Selecting version 2.20.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency glproto: Selecting version 1.4.15-1 for installation.
+2012/05/03 12:08:37 Adding required dependency gnome-icon-theme: Selecting version 3.2.1.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency gsettings-desktop-schemas: Selecting version 3.2.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency gtk+: Selecting version 1.2.10-11 for installation.
+2012/05/03 12:08:37 Adding required dependency gtk2-x11-runtime: Selecting version 2.16.5-1 for installation.
+2012/05/03 12:08:37 Adding required dependency hicolor-icon-theme: Selecting version 0.12-1 for installation.
+2012/05/03 12:08:37 Adding required dependency imake: Selecting version 1.0.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency kbproto: Selecting version 1.0.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libasn1_8: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libatk1.0_0: Selecting version 2.2.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libaudio2: Selecting version 1.9.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libaudiofile0: Selecting version 0.3.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libboost_python1.48: Selecting version 1.48.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libcairo2: Selecting version 1.10.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libcom_err2: Selecting version 1.41.14-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libcroco0.6_3: Selecting version 0.6.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libcurl4: Selecting version 7.24.0-3 for installation.
+2012/05/03 12:08:37 Adding required dependency libdbus1_3: Selecting version 1.4.16-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libesd0: Selecting version 0.2.41-11 for installation.
+2012/05/03 12:08:37 Adding required dependency libfcgi0: Selecting version 2.4.0-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libfltk1.1: Selecting version 1.1.10-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libfontconfig-devel: Selecting version 2.8.0-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libfontconfig1: Selecting version 2.8.0-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libfontenc1: Selecting version 1.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libfreetype-devel: Selecting version 2.4.9-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libfreetype6: Selecting version 2.4.9-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libgcj-common: Selecting version 4.5.3-3 for installation.
+2012/05/03 12:08:37 Adding required dependency libgdk_pixbuf2.0_0: Selecting version 2.24.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libgif-devel: Selecting version 4.1.6-10 for installation.
+2012/05/03 12:08:37 Adding required dependency libgif4: Selecting version 4.1.6-10 for installation.
+2012/05/03 12:08:37 Adding required dependency libGL-devel: Selecting version 7.11.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libGL1: Selecting version 7.11.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libglade2: Selecting version 2.6.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libglade2.0_0: Selecting version 2.6.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libglapi0: Selecting version 7.11.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libglib1.2-devel: Selecting version 1.2.10-11 for installation.
+2012/05/03 12:08:37 Adding required dependency libglib1.2_0: Selecting version 1.2.10-11 for installation.
+2012/05/03 12:08:37 Adding required dependency libGLU-devel: Selecting version 7.11.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libGLU1: Selecting version 7.11.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libGraphicsMagick3: Selecting version 1.3.14-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libgssapi3: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libgtk1.2_0: Selecting version 1.2.10-11 for installation.
+2012/05/03 12:08:37 Adding required dependency libgtk2.0_0: Selecting version 2.24.10-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libguile12: Selecting version 1.6.7-4 for installation.
+2012/05/03 12:08:37 Adding required dependency libhdf5-devel: Selecting version 1.8.8-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libheimbase1: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libheimntlm0: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libhx509_5: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libICE-devel: Selecting version 1.0.7-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libICE6: Selecting version 1.0.7-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libicu-devel: Selecting version 4.8.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libjpeg62: Selecting version 6b-21 for installation.
+2012/05/03 12:08:37 Adding required dependency libkrb5_26: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libMagick-devel: Selecting version 6.7.6.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libMagickCore5: Selecting version 6.7.6.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libpango1.0_0: Selecting version 1.29.4-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libpaper-bin: Selecting version 1.1.24-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libpaper1: Selecting version 1.1.24-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libpixman1_0: Selecting version 0.24.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libplot-devel: Selecting version 2.6-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libplot2: Selecting version 2.6-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libplotter2: Selecting version 2.6-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libproj0: Selecting version 4.5.0a-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libproxy-devel: Selecting version 0.4.7-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libproxy1: Selecting version 0.4.7-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libroken18: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency librsvg2_2: Selecting version 2.34.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libSM-devel: Selecting version 1.2.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libSM6: Selecting version 1.2.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libssh2_1: Selecting version 1.4.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libthai0: Selecting version 0.1.15-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libtirpc: Selecting version 0.2.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libtool: Selecting version 2.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libungif4: Selecting version 4.1.4-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libvorbis: Selecting version 1.3.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libwind0: Selecting version 1.5.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libwrap0: Selecting version 7.6-21 for installation.
+2012/05/03 12:08:37 Adding required dependency libX11-devel: Selecting version 1.4.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libX11-xcb-devel: Selecting version 1.4.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libX11-xcb1: Selecting version 1.4.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libX11_6: Selecting version 1.4.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXau-devel: Selecting version 1.0.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXau6: Selecting version 1.0.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXaw-devel: Selecting version 1.0.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXaw7: Selecting version 1.0.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libxcb-devel: Selecting version 1.7-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libxcb-glx-devel: Selecting version 1.7-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libxcb-glx0: Selecting version 1.7-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libxcb-render0: Selecting version 1.7-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libxcb-shm0: Selecting version 1.7-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libxcb1: Selecting version 1.7-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libXcomposite1: Selecting version 0.4.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXcursor1: Selecting version 1.1.12-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXdamage-devel: Selecting version 1.1.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXdamage1: Selecting version 1.1.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXdmcp-devel: Selecting version 1.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXdmcp6: Selecting version 1.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXext-devel: Selecting version 1.3.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXext6: Selecting version 1.3.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXfixes-devel: Selecting version 5.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXfixes3: Selecting version 5.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXft2: Selecting version 2.2.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXi6: Selecting version 1.4.5-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXinerama1: Selecting version 1.1.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libxkbfile1: Selecting version 1.0.7-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXm-devel: Selecting version 0.95.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libXm2: Selecting version 0.95.2-2 for installation.
+2012/05/03 12:08:37 Adding required dependency libxml2-devel: Selecting version 2.7.8-3 for installation.
+2012/05/03 12:08:37 Adding required dependency libXmu-devel: Selecting version 1.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXmu6: Selecting version 1.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXmuu1: Selecting version 1.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXpm-devel: Selecting version 3.5.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXpm4: Selecting version 3.5.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXrandr2: Selecting version 1.3.2-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXrender1: Selecting version 0.9.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libxslt: Selecting version 1.1.26-3 for installation.
+2012/05/03 12:08:37 Adding required dependency libXss1: Selecting version 1.2.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXt-devel: Selecting version 1.1.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency libXt6: Selecting version 1.1.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency make: Selecting version 3.82.90-1 for installation.
+2012/05/03 12:08:37 Adding required dependency makedepend: Selecting version 1.0.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency mkfontdir: Selecting version 1.0.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency mkfontscale: Selecting version 1.0.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency ncurses: Selecting version 5.7-18 for installation.
+2012/05/03 12:08:37 Adding required dependency openssl: Selecting version 1.0.1b-2 for installation.
+2012/05/03 12:08:37 Adding required dependency pcre-devel: Selecting version 7.9-1 for installation.
+2012/05/03 12:08:37 Adding required dependency perl-Error: Selecting version 0.17016-1 for installation.
+2012/05/03 12:08:37 Adding required dependency pkg-config: Selecting version 0.23b-10 for installation.
+2012/05/03 12:08:37 Adding required dependency printproto: Selecting version 1.0.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency python-libxml2: Selecting version 2.7.8-3 for installation.
+2012/05/03 12:08:37 Adding required dependency shared-mime-info: Selecting version 1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency subversion: Selecting version 1.7.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency texinfo: Selecting version 4.13-4 for installation.
+2012/05/03 12:08:37 Adding required dependency unzip: Selecting version 6.0-10 for installation.
+2012/05/03 12:08:37 Adding required dependency wget: Selecting version 1.13.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xauth: Selecting version 1.0.6-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xcursor-themes: Selecting version 1.0.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xemacs-emacs-common: Selecting version 21.4.22-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xextproto: Selecting version 7.2.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xf86-video-dummy: Selecting version 0.3.5-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xf86-video-nested: Selecting version 0.1.0-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xkbcomp: Selecting version 1.2.3-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xkeyboard-config: Selecting version 2.5.1-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xorg-cf-files: Selecting version 1.0.4-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xorg-server: Selecting version 1.12.0-5 for installation.
+2012/05/03 12:08:37 Adding required dependency xorg-server-common: Selecting version 1.12.0-5 for installation.
+2012/05/03 12:08:37 Adding required dependency xpdf: Selecting version 3.03-1 for installation.
+2012/05/03 12:08:37 Adding required dependency xproto: Selecting version 7.0.23-1 for installation.
+2012/05/03 12:08:37 Adding required dependency zip: Selecting version 3.0-11 for installation.
+2012/05/03 12:08:39 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/CUnit/CUnit-2.1.2-1.tar.bz2
+2012/05/03 12:08:39 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/ELFIO/ELFIO-1.0.2-1.tar.bz2
+2012/05/03 12:08:44 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/R/R-2.14.2-1.tar.bz2
+2012/05/03 12:08:46 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/SWI-Prolog/SWI-Prolog-5.6.36-1.tar.bz2
+2012/05/03 12:08:49 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/SuiteSparse/SuiteSparse-3.6.1-1.tar.bz2
+2012/05/03 12:08:49 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X11/XmHTML/XmHTML-1.1.7-10.tar.bz2
+2012/05/03 12:08:51 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X11/XmHTML/XmHTML-devel/XmHTML-devel-1.1.7-10.tar.bz2
+2012/05/03 12:08:51 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/aalib/aalib-1.4rc5-10.tar.bz2
+2012/05/03 12:08:52 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/aalib/aalib-devel/aalib-devel-1.4rc5-10.tar.bz2
+2012/05/03 12:08:52 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/arpack/arpack-3.1.0-1.tar.bz2
+2012/05/03 12:08:52 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/autoconf/autoconf-10-1.tar.bz2
+2012/05/03 12:08:53 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/autoconf/autoconf2.1/autoconf2.1-2.13-10.tar.bz2
+2012/05/03 12:08:54 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/autoconf/autoconf2.5/autoconf2.5-2.68-1.tar.bz2
+2012/05/03 12:08:55 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake-4-10.tar.bz2
+2012/05/03 12:08:56 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.10/automake1.10-1.10.3-1.tar.bz2
+2012/05/03 12:08:57 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.11/automake1.11-1.11.3-1.tar.bz2
+2012/05/03 12:08:58 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.4/automake1.4-1.4p6-10.tar.bz2
+2012/05/03 12:08:58 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.5/automake1.5-1.5-10.tar.bz2
+2012/05/03 12:08:59 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.6/automake1.6-1.6.3-11.tar.bz2
+2012/05/03 12:09:00 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.7/automake1.7-1.7.9-10.tar.bz2
+2012/05/03 12:09:01 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.8/automake1.8-1.8.5-10.tar.bz2
+2012/05/03 12:09:02 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/automake/automake1.9/automake1.9-1.9.6-10.tar.bz2
+2012/05/03 12:09:03 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/autotrace/autotrace-0.31.1-11.tar.bz2
+2012/05/03 12:09:03 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/bash/bash-completion/bash-completion-1.3-1.tar.bz2
+2012/05/03 12:09:04 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/bc/bc-1.06-2.tar.bz2
+2012/05/03 12:09:12 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/binutils/binutils-2.22.51-2.tar.bz2
+2012/05/03 12:09:55 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/boost/boost-1.48.0-1-src.tar.bz2
+2012/05/03 12:09:56 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/boost/boost-devel/boost-devel-1.43.0-1.tar.bz2
+2012/05/03 12:09:56 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/ca-certificates/ca-certificates-1.81-1.tar.bz2
+2012/05/03 12:10:01 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/chicken/chicken-3.4.0-1.tar.bz2
+2012/05/03 12:10:18 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/clisp/clisp-2.48-3.tar.bz2
+2012/05/03 12:10:23 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/clisp/clisp-clx/clisp-clx-2.48-3.tar.bz2
+2012/05/03 12:10:28 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/clisp/clisp-gdi/clisp-gdi-2.48-3.tar.bz2
+2012/05/03 12:10:32 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/clisp/clisp-gtk2/clisp-gtk2-2.48-3.tar.bz2
+2012/05/03 12:10:32 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cloog-ppl/cloog-ppl-0.15.7-1.tar.bz2
+2012/05/03 12:10:33 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/compface/compface-1.5.2-11.tar.bz2
+2012/05/03 12:10:34 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cpio/cpio-2.11-2.tar.bz2
+2012/05/03 12:10:34 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/crypt/crypt-1.1-1.tar.bz2
+2012/05/03 12:10:35 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/csih/csih-0.9.6-1.tar.bz2
+2012/05/03 12:10:36 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cvs/cvs-1.12.13-10.tar.bz2
+2012/05/03 12:10:36 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/cvsps/cvsps-2.2b1-1.tar.bz2
+2012/05/03 12:10:37 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/damageproto/damageproto-1.2.1-1.tar.bz2
+2012/05/03 12:10:37 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/db/db4.5/db-4.5.20.2-3.tar.bz2
+2012/05/03 12:10:38 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/db/db4.8/db4.8-4.8.30-1.tar.bz2
+2012/05/03 12:10:40 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/dbus/dbus-1.4.16-1.tar.bz2
+2012/05/03 12:10:40 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/dialog/dialog-1.1-20111020-1.tar.bz2
+2012/05/03 12:10:43 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/mesa/dri-drivers/dri-drivers-7.11.2-1.tar.bz2
+2012/05/03 12:11:03 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/emacs/emacs-23.4-1.tar.bz2
+2012/05/03 12:11:05 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/emacs/emacs-X11/emacs-X11-23.4-1.tar.bz2
+2012/05/03 12:11:19 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/emacs/emacs-el/emacs-el-23.4-1.tar.bz2
+2012/05/03 12:11:19 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/ocaml/emacs-ocaml/emacs-ocaml-3.12.1-2.tar.bz2
+2012/05/03 12:11:20 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/eventlog/eventlog-0.2.12-1-src.tar.bz2
+2012/05/03 12:11:20 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/expat/expat-2.0.1-1.tar.bz2
+2012/05/03 12:11:21 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/ffcall/ffcall-1.10-1.tar.bz2
+2012/05/03 12:11:21 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/fftw3/fftw3-3.3-1.tar.bz2
+2012/05/03 12:11:23 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/fftw3/fftw3-doc/fftw3-doc-3.3-1.tar.bz2
+2012/05/03 12:11:24 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/findutils/findutils-4.5.9-2.tar.bz2
+2012/05/03 12:11:24 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/fixesproto/fixesproto-5.0-1.tar.bz2
+2012/05/03 12:11:25 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/flac/flac-devel/flac-devel-1.2.1-2.tar.bz2
+2012/05/03 12:11:26 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/flexdll/flexdll-0.26-1.tar.bz2
+2012/05/03 12:11:31 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/font-adobe-dpi75/font-adobe-dpi75-1.0.2-1.tar.bz2
+2012/05/03 12:11:33 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/font-encodings/font-encodings-1.0.4-1.tar.bz2
+2012/05/03 12:11:36 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/font-misc-misc/font-misc-misc-1.1.1-1.tar.bz2
+2012/05/03 12:11:37 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/plotutils/font-tektronix-misc/font-tektronix-misc-2.6-2.tar.bz2
+2012/05/03 12:11:37 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X11/fontconfig/fontconfig-2.8.0-2.tar.bz2
+2012/05/03 12:11:38 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/X.Org/fontsproto/fontsproto-2.1.2-1.tar.bz2
+2012/05/03 12:11:39 Downloaded C:\Users\Lee\Downloads/ftp%3a%2f%2fmirrors.xmission.com%2fcygwin%2f/release/freeglut/freeglut-2.6.0-1.tar.bz2
+2012/05/03 12:31:38 mbox yesno: Download Incomplete.  Try again?
+2012/05/03 14:30:36 site: ftp://ftp.easynet.be/cygwin/
+2012/05/03 14:31:41 Ending cygwin install
+2012/05/03 14:34:28 Starting cygwin install, version 2.774
+2012/05/03 14:34:28 User has backup/restore rights
+2012/05/03 14:34:28 io_stream_cygfile: fopen(/etc/setup/net-proxy-host) failed 2 No such file or directory
+2012/05/03 14:34:28 io_stream_cygfile: fopen(/etc/setup/net-proxy-port) failed 2 No such file or directory
+2012/05/03 14:34:28 io_stream_cygfile: fopen(/etc/setup/extrakeys) failed 2 No such file or directory
+2012/05/03 14:34:28 io_stream_cygfile: fopen(/etc/setup/chooser_window_settings) failed 2 No such file or directory
+2012/05/03 14:34:28 Current Directory: C:\Users\Lee\Downloads
+2012/05/03 14:34:28 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2012/05/03 14:34:43 source: network install
+2012/05/03 14:34:45 root: C:\cygwin binary system
+2012/05/03 14:34:46 Selected local directory: C:\Users\Lee\Downloads
+2012/05/03 14:34:47 net: Direct
+2012/05/03 14:34:49 site: ftp://ftp.easynet.be/cygwin/
+2012/05/03 14:35:13 Ending cygwin install
+2012/05/03 14:37:55 Starting cygwin install, version 2.774
+2012/05/03 14:37:55 User has backup/restore rights
+2012/05/03 14:37:55 io_stream_cygfile: fopen(/etc/setup/net-proxy-host) failed 2 No such file or directory
+2012/05/03 14:37:55 io_stream_cygfile: fopen(/etc/setup/net-proxy-port) failed 2 No such file or directory
+2012/05/03 14:37:55 io_stream_cygfile: fopen(/etc/setup/extrakeys) failed 2 No such file or directory
+2012/05/03 14:37:55 io_stream_cygfile: fopen(/etc/setup/chooser_window_settings) failed 2 No such file or directory
+2012/05/03 14:37:55 Current Directory: C:\Users\Lee\Downloads
+2012/05/03 14:37:55 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2012/05/03 14:38:04 source: network install
+2012/05/03 14:38:07 root: C:\cygwin binary system
+2012/05/03 14:38:08 Selected local directory: C:\Users\Lee\Downloads
+2012/05/03 14:38:10 net: Direct
+2012/05/03 14:38:22 site: http://www.netgull.com/cygwin/
+2012/05/03 14:38:25 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2012/05/03 14:38:47 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/_autorebase/_autorebase-000051-1.tar.bz2
+2012/05/03 14:38:47 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/_update-info-dir/_update-info-dir-01047-1.tar.bz2
+2012/05/03 14:38:48 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2012/05/03 14:38:49 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/base-cygwin/base-cygwin-3.1-1.tar.bz2
+2012/05/03 14:38:52 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/base-files/base-files-4.1-1.tar.bz2
+2012/05/03 14:38:54 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/bash/bash-4.1.10-4.tar.bz2
+2012/05/03 14:38:56 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2012/05/03 14:38:58 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/coreutils/coreutils-8.15-1.tar.bz2
+2012/05/03 14:39:00 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/cygutils/cygutils-1.4.10-2.tar.bz2
+2012/05/03 14:39:02 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/cygwin/cygwin-1.7.14-2.tar.bz2
+2012/05/03 14:39:04 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/cygwin-doc/cygwin-doc-1.7-1.tar.bz2
+2012/05/03 14:39:05 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/dash/dash-0.5.7-1.tar.bz2
+2012/05/03 14:39:08 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/diffutils/diffutils-3.2-1.tar.bz2
+2012/05/03 14:39:08 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/dos2unix/dos2unix-5.3.3-1.tar.bz2
+2012/05/03 14:39:09 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/editrights/editrights-1.01-2.tar.bz2
+2012/05/03 14:39:10 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/file/file-5.11-1.tar.bz2
+2012/05/03 14:39:12 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/findutils/findutils-4.5.9-2.tar.bz2
+2012/05/03 14:39:14 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gawk/gawk-4.0.1-1.tar.bz2
+2012/05/03 14:39:16 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gettext/gettext-0.18.1.1-2.tar.bz2
+2012/05/03 14:39:17 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/grep/grep-2.6.3-1.tar.bz2
+2012/05/03 14:39:20 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/groff/groff-1.21-2.tar.bz2
+2012/05/03 14:39:21 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gzip/gzip-1.4-1.tar.bz2
+2012/05/03 14:39:21 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/ipc-utils/ipc-utils-1.0-1.tar.bz2
+2012/05/03 14:39:23 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/less/less-444-1.tar.bz2
+2012/05/03 14:39:23 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/attr/libattr1/libattr1-2.4.43-1.tar.bz2
+2012/05/03 14:39:24 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/bzip2/libbz2_1/libbz2_1-1.0.6-2.tar.bz2
+2012/05/03 14:39:24 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gcc4/libgcc1/libgcc1-4.5.3-3.tar.bz2
+2012/05/03 14:39:25 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gmp/libgmp3/libgmp3-4.3.2-1.tar.bz2
+2012/05/03 14:39:27 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/libiconv/libiconv2/libiconv2-1.14-2.tar.bz2
+2012/05/03 14:39:28 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gettext/libintl8/libintl8-0.18.1.1-2.tar.bz2
+2012/05/03 14:39:29 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/xz/liblzma5/liblzma5-5.0.2_20110517-1.tar.bz2
+2012/05/03 14:39:30 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/ncurses/libncurses10/libncurses10-5.7-18.tar.bz2
+2012/05/03 14:39:31 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/ncursesw/libncursesw10/libncursesw10-5.7-18.tar.bz2
+2012/05/03 14:39:32 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/pcre/libpcre0/libpcre0-8.21-2.tar.bz2
+2012/05/03 14:39:33 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/popt/libpopt0/libpopt0-1.6.4-4.tar.bz2
+2012/05/03 14:39:34 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/readline/libreadline7/libreadline7-6.1.2-2.tar.bz2
+2012/05/03 14:39:34 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/libsigsegv/libsigsegv2/libsigsegv2-2.10-1.tar.bz2
+2012/05/03 14:39:36 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gcc4/libstdc++6/libstdc++6-4.5.3-3.tar.bz2
+2012/05/03 14:39:36 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/login/login-1.10-10.tar.bz2
+2012/05/03 14:39:38 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/man/man-1.6g-1.tar.bz2
+2012/05/03 14:39:39 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/mintty/mintty-1.0.3-1.tar.bz2
+2012/05/03 14:39:40 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/rebase/rebase-4.1.0-1.tar.bz2
+2012/05/03 14:39:41 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/run/run-1.1.13-1.tar.bz2
+2012/05/03 14:39:42 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/sed/sed-4.2.1-2.tar.bz2
+2012/05/03 14:39:44 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/tar/tar-1.25-1.tar.bz2
+2012/05/03 14:39:45 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/terminfo/terminfo-5.7_20091114-14.tar.bz2
+2012/05/03 14:39:46 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/texinfo/texinfo-4.13-4.tar.bz2
+2012/05/03 14:39:48 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/tzcode/tzcode-2012b-1.tar.bz2
+2012/05/03 14:39:49 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/which/which-2.20-2.tar.bz2
+2012/05/03 14:39:50 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/xz/xz-5.0.2_20110517-1.tar.bz2
+2012/05/03 14:39:50 Downloaded C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/zlib/zlib0/zlib0-1.2.5-1.tar.bz2
+2012/05/03 14:39:53 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/_autorebase/_autorebase-000051-1.tar.bz2
+2012/05/03 14:39:53 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/_update-info-dir/_update-info-dir-01047-1.tar.bz2
+2012/05/03 14:39:53 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2012/05/03 14:39:54 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/base-cygwin/base-cygwin-3.1-1.tar.bz2
+2012/05/03 14:39:54 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/base-files/base-files-4.1-1.tar.bz2
+2012/05/03 14:39:55 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/bash/bash-4.1.10-4.tar.bz2
+2012/05/03 14:39:57 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2012/05/03 14:39:57 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/coreutils/coreutils-8.15-1.tar.bz2
+2012/05/03 14:40:02 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/cygutils/cygutils-1.4.10-2.tar.bz2
+2012/05/03 14:40:04 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/cygwin/cygwin-1.7.14-2.tar.bz2
+2012/05/03 14:40:08 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/cygwin-doc/cygwin-doc-1.7-1.tar.bz2
+2012/05/03 14:40:11 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/dash/dash-0.5.7-1.tar.bz2
+2012/05/03 14:40:11 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/diffutils/diffutils-3.2-1.tar.bz2
+2012/05/03 14:40:14 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/dos2unix/dos2unix-5.3.3-1.tar.bz2
+2012/05/03 14:40:14 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/editrights/editrights-1.01-2.tar.bz2
+2012/05/03 14:40:14 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/file/file-5.11-1.tar.bz2
+2012/05/03 14:40:15 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/findutils/findutils-4.5.9-2.tar.bz2
+2012/05/03 14:40:17 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gawk/gawk-4.0.1-1.tar.bz2
+2012/05/03 14:40:17 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gettext/gettext-0.18.1.1-2.tar.bz2
+2012/05/03 14:40:18 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/grep/grep-2.6.3-1.tar.bz2
+2012/05/03 14:40:19 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/groff/groff-1.21-2.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gzip/gzip-1.4-1.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/ipc-utils/ipc-utils-1.0-1.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/less/less-444-1.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/attr/libattr1/libattr1-2.4.43-1.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/bzip2/libbz2_1/libbz2_1-1.0.6-2.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gcc4/libgcc1/libgcc1-4.5.3-3.tar.bz2
+2012/05/03 14:40:29 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gmp/libgmp3/libgmp3-4.3.2-1.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/libiconv/libiconv2/libiconv2-1.14-2.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gettext/libintl8/libintl8-0.18.1.1-2.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/xz/liblzma5/liblzma5-5.0.2_20110517-1.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/ncurses/libncurses10/libncurses10-5.7-18.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/ncursesw/libncursesw10/libncursesw10-5.7-18.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/pcre/libpcre0/libpcre0-8.21-2.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/popt/libpopt0/libpopt0-1.6.4-4.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/readline/libreadline7/libreadline7-6.1.2-2.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/libsigsegv/libsigsegv2/libsigsegv2-2.10-1.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/gcc4/libstdc++6/libstdc++6-4.5.3-3.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/login/login-1.10-10.tar.bz2
+2012/05/03 14:40:30 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/man/man-1.6g-1.tar.bz2
+2012/05/03 14:40:31 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/mintty/mintty-1.0.3-1.tar.bz2
+2012/05/03 14:40:31 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/rebase/rebase-4.1.0-1.tar.bz2
+2012/05/03 14:40:31 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/run/run-1.1.13-1.tar.bz2
+2012/05/03 14:40:31 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/sed/sed-4.2.1-2.tar.bz2
+2012/05/03 14:40:32 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/tar/tar-1.25-1.tar.bz2
+2012/05/03 14:40:32 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/terminfo/terminfo-5.7_20091114-14.tar.bz2
+2012/05/03 14:40:34 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/texinfo/texinfo-4.13-4.tar.bz2
+2012/05/03 14:40:34 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/tzcode/tzcode-2012b-1.tar.bz2
+2012/05/03 14:40:49 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/which/which-2.20-2.tar.bz2
+2012/05/03 14:40:49 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/xz/xz-5.0.2_20110517-1.tar.bz2
+2012/05/03 14:40:50 Extracting from file://C:\Users\Lee\Downloads/http%3a%2f%2fwww.netgull.com%2fcygwin%2f/release/zlib/zlib0/zlib0-1.2.5-1.tar.bz2
+2012/05/03 14:40:50 Changing gid back to original
+2012/05/03 14:40:50 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/000-cygwin-post-install.sh"
+2012/05/03 14:40:53 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/update-info-dir.sh"
+2012/05/03 14:40:58 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/terminfo.sh"
+2012/05/03 14:41:02 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/bash.sh"
+2012/05/03 14:41:02 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/coreutils.sh"
+2012/05/03 14:41:03 running: cmd.exe /c "C:\cygwin\etc\postinstall\autorebase.bat"
+2012/05/03 14:41:04 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-profile.sh"
+2012/05/03 14:41:06 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-mketc.sh"
+2012/05/03 14:41:07 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/cygutils.sh"
+2012/05/03 14:41:07 running: C:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/man.sh"
+2012/05/03 14:41:07 Changing gid to Administrators
+2012/05/03 14:41:10 note: Installation Complete
+2012/05/03 14:41:10 Ending cygwin install
