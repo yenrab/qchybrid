@@ -8,7 +8,7 @@
 
 #import "BatchQCHTTPHandler.h"
 #import "QCHTTPHandler.h"
-#import "JSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 
@@ -53,10 +53,10 @@
 		[retVal addObject:(self.passThroughParameters)[8]];
 		//NSLog(@"%@",retVal);
 		
-		NSError *genError;
-		SBJSON *generator = [SBJSON alloc];
-		NSString *dataString = [generator stringWithObject:retVal error:&genError];
-		//self.saveFilePaths;
+		NSError *error;
+      // Convert the array into a JSON string by first converting it to NSData
+      NSData * temp = [NSJSONSerialization dataWithJSONObject:retVal options:0 error:&error];
+      NSString *dataString = [[NSString alloc] initWithBytes:[temp bytes] length:[temp length] encoding:NSASCIIStringEncoding];
 		dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
 		dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
 		NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];

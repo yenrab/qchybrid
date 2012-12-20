@@ -24,10 +24,9 @@
  */
 
 #import "CanMakePaymentsVCO.h"
-#import "SBJSON.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
-
+#import "NSJSONSerialization+Generator.h"
 #import <StoreKit/StoreKit.h>
 
 
@@ -50,8 +49,9 @@
 	//NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
 	
 	NSError *error;
-	SBJSON *generator = [SBJSON alloc];
-	NSString *dataString = [generator stringWithObject:retVal error:&error];
+   // Convert the array into a JSON string by first turning it into NSData
+   NSData * temp = [NSJSONSerialization dataWithJSONObject:retVal options:0 error:&error];
+	NSString *dataString = [[NSString alloc] initWithBytes:[temp bytes] length:[temp length] encoding:NSASCIIStringEncoding];
 	//NSLog(@"error: %@",error);
     //NSLog(@"about to send JSON: %@", dataString);
 

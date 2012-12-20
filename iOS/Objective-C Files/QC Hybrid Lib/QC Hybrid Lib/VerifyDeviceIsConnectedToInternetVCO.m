@@ -29,7 +29,7 @@
 #import "VerifyDeviceIsConnectedToInternetVCO.h"
 #import "QuickConnectViewController.h"
 #import "Reachability.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 
 
@@ -65,10 +65,9 @@
     NSString *executionKey = [dictionary[@"parameters"] lastObject][0];
     [retVal addObject:executionKey];
     //NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
-	SBJSON *generator = [SBJSON alloc];
 	
 	NSError *error;
-	NSString *dataString = [generator stringWithObject:retVal error:&error];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&error];
     //NSLog(@"about to send JSON: %@", dataString);
     
     NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];

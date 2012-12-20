@@ -23,7 +23,7 @@
  */
 
 #import "DataAccessResult.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 
 
@@ -69,10 +69,11 @@
             }
         }
     }
-    SBJSON *generator = [SBJSON alloc];
 	NSError *error;
-	NSString *dataString = [generator stringWithObject:self.results error:&error];
-	NSString *fieldNamesString = fieldNames ? [generator stringWithObject:fieldNames error:&error] : @"[]";
+   // Convert the array into a JSON string by first turning it into NSData
+   NSData * temp = [NSJSONSerialization dataWithJSONObject:self.results options:0 error:&error];
+	NSString *dataString = [[NSString alloc] initWithBytes:[temp bytes] length:[temp length] encoding:NSASCIIStringEncoding];
+	NSString *fieldNamesString = fieldNames ? [NSJSONSerialization stringWithJSONObject:fieldNames error:&error] : @"[]";
     NSString *result = [NSString stringWithFormat:@"{\"data\":%@,\"errorMessage\":\"%@\",\"numRowsFetched\":%d,\"insertedID\":%d,\"numResultFields\":%d,\"fieldNames\":%@,\"rowsAffected\":%d}"
             , dataString
             , [self.errorDescription stringByReplacingOccurrencesOfString:@"\"" withString:@"'"]

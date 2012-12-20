@@ -25,7 +25,7 @@
 
 #import "PickResultsVCO.h"
 #import "QuickConnectViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 
 
@@ -44,10 +44,9 @@
 		//NSLog(@"%@",aDateString);
         NSMutableArray *passingArray = [[NSMutableArray alloc] initWithCapacity:1];
         [passingArray addObject:aDateString];
-        SBJSON *generator = [SBJSON alloc];
         
         NSError *error;
-        NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
+        NSString *paramsToPass = [NSJSONSerialization stringWithJSONObject:passingArray error:&error];
         
         NSString *jsString = [[NSString alloc] initWithFormat:@"handleJSONRequest('showPickResults', '%@')", paramsToPass];
         //NSLog(@"%@",jsString);

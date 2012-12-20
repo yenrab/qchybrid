@@ -10,7 +10,7 @@
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 #import "FileDisplayDataSource.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 
 
 @implementation ShowFileVCO
@@ -43,8 +43,7 @@
                        executionKey];
     
     NSError *genError;
-    SBJSON *generator = [SBJSON alloc];
-    NSString *dataString = [generator stringWithObject:retVal error:&genError];
+    NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&genError];
  
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];

@@ -43,7 +43,7 @@
 #import "RecordAudioVCO.h"
 #import "PlayAudioVCO.h"
 #import "GetPreferencesBCO.h"
-#import "GetPreferencesVCO.h"
+//#import "GetPreferencesVCO.h"
 #import "CreateFooterVCO.h"
 #import "CreateButtonVCO.h"
 #import "HideFooterVCO.h"
@@ -78,7 +78,7 @@
 #endif
 
 #import "SaveContentsToFileBCO.h"
-#import "SendSaveResultsVCO.h"
+//#import "SendSaveResultsVCO.h"
 #import "ListFilesBCO.h"
 #import "ListFilesVCO.h"
 #import "FileManipulationVCO.h"

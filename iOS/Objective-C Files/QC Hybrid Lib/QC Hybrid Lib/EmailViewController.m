@@ -23,7 +23,7 @@
  */
 
 #import "EmailViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 
 @implementation EmailViewController
@@ -76,14 +76,14 @@
     
 	//[self.theQCController.webView.superview bringSubviewToFront:self.theQCController.webView];
     
-	SBJSON *generator = [SBJSON alloc];
+
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
 	[retVal addObject:resultMessage];
 	[retVal addObject:(self.passThroughParams)[4]];
 	NSError *JSONError;
-	NSString *dataString = [generator stringWithObject:retVal error:&JSONError];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&JSONError];
     //NSLog(@"about to send JSON: %@", dataString);
-    
+   
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
     //NSString *jsString = @"alert('hello')";
 	//NSLog(@"JSON String: %@",jsString);

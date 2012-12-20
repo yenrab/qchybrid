@@ -24,7 +24,7 @@
  */
 
 #import "CloseDataVCO.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 
@@ -38,10 +38,11 @@
     [retVal addObject:@"place holder"];
     [retVal addObject:parameters[2]];
     //NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
-	SBJSON *generator = [SBJSON alloc];
 	
 	NSError *error;
-	NSString *dataString = [generator stringWithObject:retVal error:&error];
+   // Convert the array into a JSON string by first turning it into NSData
+   NSData * temp = [NSJSONSerialization dataWithJSONObject:retVal options:0 error:&error];
+	NSString *dataString = [[NSString alloc] initWithBytes:[temp bytes] length:[temp length] encoding:NSASCIIStringEncoding];
     //NSLog(@"about to send JSON: %@", dataString);
 	
     

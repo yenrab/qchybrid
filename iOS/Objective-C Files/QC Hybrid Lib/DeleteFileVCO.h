@@ -31,7 +31,7 @@
 #import "QCControlObject.h"
 
 
-@interface DeleteFileVCO : NSObject <QCControlObject> {
+@interface DeleteFileVCO : QCControlObject {
     
 }
 

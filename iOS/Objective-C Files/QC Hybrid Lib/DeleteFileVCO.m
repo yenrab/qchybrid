@@ -28,13 +28,13 @@
  */
 
 #import "DeleteFileVCO.h"
-#import "SBJSON.h"
 #import "QuickConnectViewController.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 
 
 @implementation DeleteFileVCO
-+ (id) handleIt:(NSMutableDictionary*) dictionary{
++ (BOOL) handleIt:(NSMutableDictionary*) dictionary{
     //add the execution the list and the key in to send them back to the JavaScript
     NSArray *deleteResult = [[dictionary objectForKey:@"BCOresults"] objectAtIndex:0];
     NSString *executionKey = [[[dictionary objectForKey:@"parameters"] lastObject] objectAtIndex:0];
@@ -44,8 +44,7 @@
                        executionKey, nil];
     
     NSError *genError;
-    SBJSON *generator = [SBJSON alloc];
-    NSString *dataString = [generator stringWithObject:retVal error:&genError];
+    NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&genError];
     
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];
@@ -53,6 +52,6 @@
     QuickConnectViewController *controller = [[dictionary objectForKey:@"parameters"] objectAtIndex:0];
     [controller.webView stringByEvaluatingJavaScriptFromString:jsString];
    
-    return nil;
+    return QC_STACK_CONTINUE;
 }
 @end

@@ -25,6 +25,7 @@
 
 #import "InterlayerMessageSystem.h"
 #import "QuickConnectViewController.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnect.h"
 #import "DeviceWebView.h"
 

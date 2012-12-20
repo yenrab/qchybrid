@@ -25,7 +25,7 @@
 
 #import "ExecuteDBScriptBCO.h"
 #import "QuickConnectViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DataAccessResult.h"
 #import "SQLiteDataAccess.h"
 
@@ -51,7 +51,6 @@
 		}
 		retVal = [aDBAccess startTransaction];
 		
-		SBJSON *generator = [SBJSON alloc];
 		NSError *error;
 		int numStatements = [linker count];
 		for (int i = 0; i < numStatements; i++) {
@@ -60,7 +59,7 @@
 			
 			SQL = [SQL stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 			//NSLog(@"SQL: %@",SQL);
-			NSArray *key = [generator objectWithString:row[0] error:&error];
+			NSArray *key = [NSJSONSerialization JSONObjectWithString:row[0] error:&error];
 			NSArray *values = key[1];
 			NSMutableArray *mutableValues = [NSMutableArray arrayWithArray:values];
 			//NSLog(@"values: %@",mutableValues);

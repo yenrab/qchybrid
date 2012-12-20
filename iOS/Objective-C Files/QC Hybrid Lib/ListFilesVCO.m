@@ -23,7 +23,7 @@
  */
 
 #import "ListFilesVCO.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 
@@ -38,8 +38,7 @@
                        executionKey];
     //NSLog(@"retVal in list files: %@",retVal);
     NSError *genError;
-    SBJSON *generator = [SBJSON alloc];
-    NSString *dataString = [generator stringWithObject:retVal error:&genError];
+    NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&genError];
     //NSLog(@"error: %@",genError);
     
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
@@ -50,7 +49,7 @@
     QuickConnectViewController *controller = dictionary[@"parameters"][0];
     [controller.webView stringByEvaluatingJavaScriptFromString:jsString];
     
-    return QC_STACK_EXIT;
+	return QC_STACK_EXIT;
 }
 
 @end
