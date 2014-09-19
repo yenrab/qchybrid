@@ -25,7 +25,7 @@
 
 #import "SwitchBCO.h"
 #import "QuickConnectViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 
 @implementation SwitchBCO
@@ -89,9 +89,8 @@
 			[passingArray addObject:@"NO"];
 		}
 		
-		SBJSON *generator = [SBJSON alloc];
 		NSError *error;
-		NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
+		NSString *paramsToPass = [NSJSONSerialization stringWithJSONObject:passingArray error:&error];
 
 		NSString *jsString = [[NSString alloc] initWithFormat:@"handleJSONRequest('switchVal', '%@')", paramsToPass];
 		[controller.webView stringByEvaluatingJavaScriptFromString:jsString];

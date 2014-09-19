@@ -7,7 +7,7 @@
 //
 
 #import "QCStorePurchaseRequestDelegate.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 
 
@@ -42,8 +42,7 @@
 		}
 		
 		NSError *error;
-		SBJSON *generator = [SBJSON alloc];
-		NSString *dataString = [generator stringWithObject:retVal error:&error];
+		NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&error];
 		//NSLog(@"error: %@",error);
 		//NSLog(@"about to send JSON: %@", dataString);
 		dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];

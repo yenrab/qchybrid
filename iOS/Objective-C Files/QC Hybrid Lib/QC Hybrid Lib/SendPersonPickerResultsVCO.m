@@ -25,7 +25,7 @@
 
 #import "SendPersonPickerResultsVCO.h"
 #import "PrepareNonStandardEntity.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 
@@ -46,8 +46,7 @@
 	//NSLog(@"returning results from SENDDBRESULTVCO: %@",retVal);
 	
 	NSError *error;
-	SBJSON *generator = [SBJSON alloc];
-	NSString *dataString = [generator stringWithObject:retVal error:&error];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&error];
 	//NSLog(@"error: %@",error);
 
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];

@@ -7,7 +7,7 @@
 //
 
 #import "MoveImageToCameraRollVCO.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 
@@ -23,8 +23,7 @@
                        executionKey];
     
     NSError *genError;
-    SBJSON *generator = [SBJSON alloc];
-    NSString *dataString = [generator stringWithObject:retVal error:&genError];
+    NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&genError];
    
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
     dataString = [dataString stringByReplacingOccurrencesOfString:@"&" withString:@"\\&"];

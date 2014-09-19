@@ -7,7 +7,7 @@
 //
 
 #import "ImagePickerViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "DeviceWebView.h"
 #import "QuickConnect.h"
 
@@ -129,11 +129,10 @@
     NSArray *resultsVal = @[retVal, 
                        executionKey];
 	
-	SBJSON *generator = [SBJSON alloc];
 	//NSLog(@"passThroughParams %@",self.passThroughParams);
 	[retVal addObject:(self.passThroughParams)[1]];
 	NSError *JSONError;
-	NSString *dataString = [generator stringWithObject:resultsVal error:&JSONError];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:resultsVal error:&JSONError];
 	//NSLog(@"Error: %@",JSONError);
     
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
@@ -156,9 +155,8 @@
 	[retVal addObject:@"canceled"];
 	[retVal addObject:[self.passThroughParams lastObject]];
     
-	SBJSON *generator = [SBJSON alloc];
 	NSError *JSONError;
-	NSString *dataString = [generator stringWithObject:retVal error:&JSONError];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&JSONError];
     //NSLog(@"about to send JSON: %@", dataString);
     
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];
@@ -172,8 +170,7 @@
     [self.view removeFromSuperview];
     [self.theQCController.window bringSubviewToFront:self.theQCController.view];
     //[self.theQCController.view addSubview:self.theQCController.webView];
-	
-	SBJSON *generator = [SBJSON alloc];
+
 	NSMutableArray *retVal = [[NSMutableArray alloc] init];
 	/*
 	 * return 'canceled' to the JavaScript side
@@ -182,7 +179,7 @@
 	[retVal addObject:@"canceled"];
 	[retVal addObject:[self.passThroughParams lastObject]];
 	NSError *JSONError;
-	NSString *dataString = [generator stringWithObject:retVal error:&JSONError];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&JSONError];
     //NSLog(@"about to send JSON: %@", dataString);
     
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleRequestCompletionFromNative('%@')", dataString];

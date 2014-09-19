@@ -25,7 +25,7 @@
 
 #import "SendDBResultVCO.h"
 #import "DataAccessResult.h"
-#import "SBJSON.h"
+#import <Foundation/Foundation.h>
 #import "QuickConnectViewController.h"
 #import "InterlayerMessageSystem.h"
 #import "DeviceWebView.h"

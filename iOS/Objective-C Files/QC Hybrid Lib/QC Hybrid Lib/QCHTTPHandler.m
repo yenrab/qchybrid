@@ -28,7 +28,7 @@
 #include <CFNetwork/CFNetwork.h>
 
 #import "QuickConnectViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "BatchQCHTTPHandler.h"
 #import "DeviceWebView.h"
 
@@ -656,8 +656,7 @@ enum {
 	[retVal addObject:results];
 	[retVal addObject:(self.passThroughParameters)[8]];
     NSError *genError;
-	SBJSON *generator = [SBJSON alloc];
-	NSString *dataString = [generator stringWithObject:retVal error:&genError];
+	NSString *dataString = [NSJSONSerialization stringWithJSONObject:retVal error:&genError];
 	//NSLog(@"error: %@",error);
     //NSLog(@"about to send JSON: %@", dataString);
     dataString = [dataString stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];

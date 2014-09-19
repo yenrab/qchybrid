@@ -24,7 +24,7 @@
 #import <StoreKit/StoreKit.h>
 
 #import "QuickConnectViewController.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnect.h"
 #import "AllCOHeaders.h"
 #import "QCStorePurchaseRequestDelegate.h"
@@ -272,20 +272,20 @@
     
     [theHandler mapCommandToBCO:@"saveFile" withObject:[SaveContentsToFileBCO class]];
     //[theHandler mapCommandToVCO:@"saveFile" withObject:[SendSaveResultsVCO class]];
-    [theHandler mapCommandToVCO:@"saveFile" withObject:[FileManipulationVCO class]];
+    //[theHandler mapCommandToVCO:@"saveFile" withObject:[FileManipulationVCO class]];
     
     [theHandler mapCommandToBCO:@"fileContents" withObject:[GetContentsOfFileBCO class]];
-    [theHandler mapCommandToVCO:@"fileContents" withObject:[FileManipulationVCO class]];
+	//[theHandler mapCommandToVCO:@"fileContents" withObject:[FileManipulationVCO class]];
     
     [theHandler mapCommandToBCO:@"makeDir" withObject:[CreateDirBCO class]];
     //[theHandler mapCommandToVCO:@"makeDir" withObject:[SendSaveResultsVCO class]];
-    [theHandler mapCommandToVCO:@"makeDir" withObject:[SendSaveResultsVCO class]];
+    //[theHandler mapCommandToVCO:@"makeDir" withObject:[SendSaveResultsVCO class]];
     
     [theHandler mapCommandToBCO:@"listFiles" withObject:[ListFilesBCO class]];
-    [theHandler mapCommandToVCO:@"listFiles" withObject:[ListFilesVCO class]];
+    //[theHandler mapCommandToVCO:@"listFiles" withObject:[ListFilesVCO class]];
     
     [theHandler mapCommandToBCO:@"deleteFile" withObject:[DeleteFileBCO class]];
-    [theHandler mapCommandToVCO:@"deleteFile" withObject:[FileManipulationVCO class]];
+	//[theHandler mapCommandToVCO:@"deleteFile" withObject:[FileManipulationVCO class]];
     
     /*
      * mappings for device behaviors
@@ -322,11 +322,11 @@
 	
 	[theHandler mapCommandToVCO:@"showCamera" withObject:[ShowCameraPickerVCO class]];
     [theHandler mapCommandToBCO:@"moveImage" withObject:[MoveImageToCameraRollBCO class]];
-    [theHandler mapCommandToVCO:@"moveImage" withObject:[MoveImageToCameraRollVCO class]];
+    //[theHandler mapCommandToVCO:@"moveImage" withObject:[MoveImageToCameraRollVCO class]];
 	
 	[theHandler mapCommandToBCO:@"designTabBar" withObject:[TabBarBCO class]];
 	
-	[theHandler mapCommandToVCO:@"designSwitch" withObject:[SwitchBCO class]];
+	//[theHandler mapCommandToVCO:@"designSwitch" withObject:[SwitchBCO class]];
 	
 	[theHandler mapCommandToVCO:@"designProgressBar" withObject:[ProgressBarVCO class]];
     
@@ -360,7 +360,7 @@
 	
     
 	[theHandler mapCommandToBCO:@"getPreference" withObject:[GetPreferencesBCO class]];
-	[theHandler mapCommandToVCO:@"getPreference" withObject:[GetPreferencesVCO class]];
+	//[theHandler mapCommandToVCO:@"getPreference" withObject:[GetPreferencesVCO class]];
 	
 	
 	/*
@@ -767,9 +767,8 @@
 	//NSLog(@"%@",item.title);
 	NSMutableArray *passingArray = [[NSMutableArray alloc] initWithCapacity:1];
 	[passingArray addObject:@(item.tag)];
-	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
-	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
+	NSString *paramsToPass = [NSJSONSerialization stringWithJSONObject:passingArray error:&error];
 	
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleJSONRequest('tabBarVal', '%@')", paramsToPass];
 	//NSLog(jsString);
@@ -822,8 +821,7 @@
 		
     }
 	  NSError *error;
-	  SBJSON *generator = [SBJSON alloc];
-	  NSString *dataString = [generator stringWithObject:transactionResults error:&error];
+	  NSString *dataString = [NSJSONSerialization stringWithJSONObject:transactionResults error:&error];
 	  //NSLog(@"error: %@",error);		
 	  //NSLog(@"about to send JSON: %@", dataString);
 	  
@@ -850,9 +848,8 @@
 		[passingArray addObject:@"NO"];
 	}
 	
-	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
-	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
+	NSString *paramsToPass = [NSJSONSerialization stringWithJSONObject:passingArray error:&error];
 	
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleJSONRequest('switchVal', '%@')", paramsToPass];
 	[webView stringByEvaluatingJavaScriptFromString:jsString];
@@ -880,9 +877,8 @@
                           ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
                           ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
     NSArray *passingArray = @[hexToken];
-	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
-	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
+	NSString *paramsToPass = [NSJSONSerialization stringWithJSONObject:passingArray error:&error];
 	
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleJSONRequest('sendTokenToPushProvider', '%@')", paramsToPass];
 	//NSLog(@"%@",jsString);
@@ -895,9 +891,8 @@
 - (void) pushNotificationToJavaScript:(NSDictionary *)userInfo{
 	
 	NSArray *passingArray = @[userInfo];
-	SBJSON *generator = [SBJSON alloc];
 	NSError *error;
-	NSString *paramsToPass = [generator stringWithObject:passingArray error:&error];
+	NSString *paramsToPass = [NSJSONSerialization stringWithJSONObject:passingArray error:&error];
 	
 	NSString *jsString = [[NSString alloc] initWithFormat:@"handleJSONRequest('getNotificationPushData', '%@')", paramsToPass];
 	//NSLog(@"%@",jsString);

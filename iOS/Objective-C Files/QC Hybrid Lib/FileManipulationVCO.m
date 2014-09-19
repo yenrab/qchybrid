@@ -23,7 +23,7 @@
  */
 
 #import "FileManipulationVCO.h"
-#import "SBJSON.h"
+#import "NSJSONSerialization+Generator.h"
 #import "QuickConnectViewController.h"
 #import "DeviceWebView.h"
 #import "InterlayerMessageSystem.h"
@@ -64,6 +64,6 @@
     QuickConnectViewController *controller = [[dictionary objectForKey:@"parameters"] objectAtIndex:0];
     [controller.webView stringByEvaluatingJavaScriptFromString:jsString];
      */
-    return QC_STACK_EXIT;
+	return QC_STACK_EXIT;
 }
 @end
